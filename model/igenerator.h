@@ -4,8 +4,9 @@
 
 #include <QStringList>
 #include "exercise.h"
+#include "model_global.h"
 
-class IGenerator
+class MODEL_API IGenerator
 {
 public:
     virtual QList<Exercise> Generate( const QString& theLine, const Context& theContext ) const = 0;

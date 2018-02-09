@@ -1,23 +1,8 @@
 
 #include <gtest/gtest.h>
 #include <model/model.h>
+#include <model/eg_one.h>
 #include <QString>
-
-TEST(TestModel, LoadingIsOK)
-{
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test1.lang" ) );
-    ASSERT_EQ( aModel.Size(), 7 );
-}
-
-TEST(TestModel, BuildIsOK)
-{
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test1.lang" ) );
-
-    QList<Exercise> ex = aModel.Build( QList<IGenerator*>() );
-    //TODO
-}
 
 TEST(TestModel, NoDuplicates)
 {
@@ -34,4 +19,46 @@ TEST(TestModel, NoDuplicates)
 
     ASSERT_TRUE( aModel.Add( "test 2" ) );
     ASSERT_EQ( aModel.Size(), 2 );
+}
+
+TEST(TestModel, LoadingIsOK)
+{
+    Model aModel;
+    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test1.lang" ) );
+    ASSERT_EQ( aModel.Size(), 7 );
+}
+
+TEST(TestModel, BuildWithOneIsOK)
+{
+    Model aModel;
+    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test2.lang" ) );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_One() );
+    QList<Exercise> ex = aModel.Build( gen );
+    ASSERT_EQ( ex.size(), 8 );
+
+    ASSERT_EQ( ex[0].Question.toStdString(), "couper <?> pomme en deux parties" );
+    ASSERT_EQ( ex[0].Answer.toStdString(), "une" );
+
+    ASSERT_EQ( ex[1].Question.toStdString(), "couper une pomme <?> deux parties" );
+    ASSERT_EQ( ex[1].Answer.toStdString(), "en" );
+
+    ASSERT_EQ( ex[2].Question.toStdString(), "aller <?> Italie" );
+    ASSERT_EQ( ex[2].Answer.toStdString(), "en" );
+
+    ASSERT_EQ( ex[3].Question.toStdString(), "<?> scène = сцена" );
+    ASSERT_EQ( ex[3].Answer.toStdString(), "une" );
+
+    ASSERT_EQ( ex[4].Question.toStdString(), "<?> modèle = модель" );
+    ASSERT_EQ( ex[4].Answer.toStdString(), "un" );
+
+    ASSERT_EQ( ex[5].Question.toStdString(), "<?>, marcher" );
+    ASSERT_EQ( ex[5].Answer.toStdString(), "aller" );
+
+    ASSERT_EQ( ex[6].Question.toStdString(), "aller, <?>" );
+    ASSERT_EQ( ex[6].Answer.toStdString(), "marcher" );
+
+    ASSERT_EQ( ex[7].Question.toStdString(), "<?>" );
+    ASSERT_EQ( ex[7].Answer.toStdString(), "abat-jour" );
 }
