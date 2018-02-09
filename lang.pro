@@ -1,3 +1,3 @@
 
 TEMPLATE = subdirs
-SUBDIRS += model tests
+SUBDIRS += model tests gui
