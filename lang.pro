@@ -1,5 +1,3 @@
-TEMPLATE = subdirs
 
-SUBDIRS += \
-    model \
-    tests
+TEMPLATE = subdirs
+SUBDIRS += model tests

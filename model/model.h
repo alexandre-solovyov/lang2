@@ -9,6 +9,8 @@ class MODEL_API Model
 public:
     Model();
     ~Model();
+
+    bool Load( const QString& );
 };
 
 #endif // MODEL_H
