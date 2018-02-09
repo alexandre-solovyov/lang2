@@ -1,7 +1,9 @@
 
 #include <gtest/gtest.h>
+#include <model/model.h>
 
 TEST(TestModel, LoadingIsOK)
 {
-    EXPECT_EQ(1, 1);
+    Model aModel;
+
 }
