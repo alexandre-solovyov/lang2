@@ -6,6 +6,9 @@
 #include "exercise.h"
 #include "model_global.h"
 
+const QString MARK = "*";
+const QString QUEST = "<?>";
+
 class MODEL_API IGenerator
 {
 public:

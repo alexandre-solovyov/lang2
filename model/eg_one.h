@@ -13,4 +13,4 @@ public:
     virtual QList<Exercise> Generate( const QString& theLine, const Context& theContext ) const;
 };
 
-#endif // IGENERATOR_H
+#endif // EG_ONE_H

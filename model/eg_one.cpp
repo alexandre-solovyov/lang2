@@ -12,8 +12,6 @@ EG_One::~EG_One()
 
 QList<Exercise> EG_One::Generate( const QString& theLine, const Context& theContext ) const
 {
-    static QString MARK = "*";
-    static QString QUEST = "<?>";
     static QRegExp PATTERN( QString( "\\%0[\\w\\-]+" ).arg( MARK ) );
 
     QList<Exercise> ex;
