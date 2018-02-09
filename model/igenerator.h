@@ -3,8 +3,8 @@
 #define IGENERATOR_H
 
 #include <QStringList>
-#include "exercise.h"
-#include "model_global.h"
+#include <model/exercise.h>
+#include <model/model_global.h>
 
 const QString MARK = "*";
 const QString QUEST = "<?>";

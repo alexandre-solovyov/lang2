@@ -2,9 +2,9 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "model_global.h"
-#include "exercise.h"
-#include "igenerator.h"
+#include <model/model_global.h>
+#include <model/exercise.h>
+#include <model/igenerator.h>
 #include <QStringList>
 #include <QHash>
 

@@ -1,5 +1,5 @@
 
-#include "eg_trans.h"
+#include <model/eg_trans.h>
 
 EG_Trans::EG_Trans()
 {

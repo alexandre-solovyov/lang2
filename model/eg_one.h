@@ -2,7 +2,7 @@
 #ifndef EG_ONE_H
 #define EG_ONE_H
 
-#include "igenerator.h"
+#include <model/igenerator.h>
 
 class MODEL_API EG_One : public IGenerator
 {

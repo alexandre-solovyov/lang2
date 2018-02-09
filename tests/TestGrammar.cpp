@@ -1,6 +1,7 @@
 
 #include <gtest/gtest.h>
 #include <model/grammar.h>
+#include <model/grammarset.h>
 
 TEST(TestGrammar, SetOperationsAreOK)
 {
@@ -36,7 +37,9 @@ TEST(TestGrammar, RuleIsOK)
 
 TEST(TestGrammar, FormsAreOK)
 {
+    GrammarSet pr = GrammarSet() << "je" << "tu" << "il" << "nous" << "vous" << "ils";
+
     GrammarRule r( "[PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );
-    ASSERT_EQ( r.Forms("parler").toString().toStdString(), "parle, parles, parle, parlons, parlez, parlent" );
-    ASSERT_EQ( r.Forms("venir").toString().toStdString(), "" );
+    GrammarSet f = pr + " " + r.Forms("parler");
+    ASSERT_EQ( f.toString().toStdString(), "je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent" );
 }

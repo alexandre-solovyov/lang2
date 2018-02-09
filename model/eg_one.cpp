@@ -1,5 +1,5 @@
 
-#include "eg_one.h"
+#include <model/eg_one.h>
 #include <QRegExp>
 
 EG_One::EG_One()
