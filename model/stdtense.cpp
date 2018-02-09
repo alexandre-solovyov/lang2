@@ -1,6 +1,22 @@
 
 #include <model/stdtense.h>
+#include <model/grammarrule.h>
 #include <model/grammarset.h>
+
+StdTense::StdTense( const QString& theName )
+    : ITense( theName )
+{
+}
+
+StdTense::~StdTense()
+{
+}
+
+void StdTense::Add( const QString& theRule )
+{
+    GrammarRule gr( QString( "[%0] %1").arg( Name() ).arg( theRule ) );
+    myRules.append( gr );
+}
 
 GrammarSet StdTense::Forms( const QString& theWord ) const
 {

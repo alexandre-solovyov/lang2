@@ -2,6 +2,8 @@
 #include <gtest/gtest.h>
 #include <model/grammar.h>
 #include <model/grammarset.h>
+#include <model/stdtense.h>
+#include <model/deptense.h>
 
 TEST(TestGrammar, SetOperationsAreOK)
 {
@@ -42,4 +44,20 @@ TEST(TestGrammar, FormsAreOK)
     GrammarRule r( "[PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );
     GrammarSet f = pr + " " + r.Forms("parler");
     ASSERT_EQ( f.toString().toStdString(), "je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent" );
+}
+
+TEST(TestGrammar, PresentIsOK)
+{
+    Grammar gr( true );
+
+    StdTense* pr = new StdTense( "PrInd" );
+    pr->Add( "~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );
+    pr->Add( "~ir >> ~is, ~is, ~it, ~issons, ~issez, ~issent" );
+    gr.Add( pr );
+
+    DepTense* sub = new DepTense( "PrSubj", "PrInd", 5, GrammarSet("~e, ~es, ~e, ~ions, ~iez, ~ient" ) );
+
+    ASSERT_EQ( gr.Forms("PrInd", "parler").toString().toStdString(), "parle, parles, parle, parlons, parlez, parlent" );
+    ASSERT_EQ( gr.Forms("PrInd", "finir").toString().toStdString(), "finis, finis, finit, finissons, finissez, finissent" );
+    //ASSERT_EQ( gr.Forms("PrSubj", "parler").toString().toStdString(), "parle, parles, parle, parlions, parliez, parlient" );
 }

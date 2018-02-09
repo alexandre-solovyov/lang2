@@ -13,6 +13,8 @@ SOURCES += model.cpp \
            grammarset.cpp \
            eg_one.cpp \
            eg_trans.cpp \
+           itense.cpp \
+           deptense.cpp \
            stdtense.cpp \
 
 HEADERS += model.h \
@@ -24,6 +26,7 @@ HEADERS += model.h \
            grammarset.h \
            igenerator.h \ 
            itense.h \
+           deptense.h \
            stdtense.h \
            eg_one.h \
            eg_trans.h \

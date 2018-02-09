@@ -12,13 +12,15 @@ class ITense;
 class MODEL_API Grammar
 {
 public:
-    Grammar();
+    Grammar( bool isOwner=true );
     ~Grammar();
 
+    void Add( ITense* );
     GrammarSet Forms( const QString& theTense, const QString& theWord ) const;
 
 private:
     QMap<QString, ITense*> myTenses;
+    bool myIsOwner;
 };
 
 #endif // GRAMMAR_H

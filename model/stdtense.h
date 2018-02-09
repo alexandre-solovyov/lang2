@@ -6,9 +6,14 @@
 #include <model/grammarrule.h>
 #include <QList>
 
-class StdTense : public ITense
+class MODEL_API StdTense : public ITense
 {
 public:
+    StdTense( const QString& );
+    virtual ~StdTense();
+
+    void Add( const QString& );
+
     virtual GrammarSet Forms( const QString& theWord ) const;
 
 private:
