@@ -12,6 +12,7 @@ SOURCES += main.cpp \
            TestModel.cpp \
 
 INCLUDEPATH += $$PWD/..
+DEFINES += TEST_DATA=\\\"$$PWD/../testdata\\\"
 
 CONFIG(debug)
 {
