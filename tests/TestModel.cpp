@@ -7,6 +7,16 @@ TEST(TestModel, LoadingIsOK)
 {
     Model aModel;
     ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test1.lang" ) );
+    ASSERT_EQ( aModel.Size(), 7 );
+}
+
+TEST(TestModel, BuildIsOK)
+{
+    Model aModel;
+    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test1.lang" ) );
+
+    QList<Exercise> ex = aModel.Build( QList<IGenerator*>() );
+    //TODO
 }
 
 TEST(TestModel, NoDuplicates)

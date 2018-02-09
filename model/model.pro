@@ -10,4 +10,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += model.cpp
 
 HEADERS += model.h \
-           model_global.h 
+           model_global.h \
+           exercise.h \
+           igenerator.h \ 
+
