@@ -22,7 +22,7 @@ public:
     Q_INVOKABLE bool checkAnswer( const QString& );
 
 private:
-    QList<Exercise> myExercises;
+    ListOfExercises myExercises;
     int             myIndex;
 };
 

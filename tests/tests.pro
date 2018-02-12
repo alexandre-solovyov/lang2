@@ -7,6 +7,7 @@ CONFIG -= app_bundle
 CONFIG += thread
 
 QT += core
+QT += gui
 
 SOURCES += main.cpp \
            TestModel.cpp \

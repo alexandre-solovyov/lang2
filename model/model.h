@@ -22,7 +22,7 @@ public:
 
     uint Size() const;
 
-    QList<Exercise> Build( const QList<IGenerator*>& );
+    ListOfExercises Build( const QList<IGenerator*>& );
 
 private:
     void ChangeContext( Context& theContext, const QString& theKey, const QString& theValue );

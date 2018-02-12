@@ -12,7 +12,8 @@ const QString QUEST = "<?>";
 class MODEL_API IGenerator
 {
 public:
-    virtual QList<Exercise> Generate( const QString& theLine, const Context& theContext ) const = 0;
+    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext ) const = 0;
+    virtual QString Type() const = 0;
 };
 
 #endif // IGENERATOR_H

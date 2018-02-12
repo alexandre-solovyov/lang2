@@ -36,7 +36,7 @@ TEST(TestModel, BuildWithOneIsOK)
 
     QList<IGenerator*> gen;
     gen.append( new EG_One() );
-    QList<Exercise> ex = aModel.Build( gen );
+    ListOfExercises ex = aModel.Build( gen );
     ASSERT_EQ( ex.size(), 8 );
 
     ASSERT_EQ( ex[0].Question.toStdString(), "couper <?> pomme en deux parties" );
@@ -95,7 +95,7 @@ TEST(TestModel, BuildWithTransIsOK)
 
     QList<IGenerator*> gen;
     gen.append( new EG_Trans() );
-    QList<Exercise> ex = aModel.Build( gen );
+    ListOfExercises ex = aModel.Build( gen );
     ASSERT_EQ( ex.size(), 6 );
 
     ASSERT_EQ( ex[0].Question.toStdString(), "une scène = <?>" );
@@ -133,4 +133,33 @@ TEST(TestModel, BuildWithTransIsOK)
     ASSERT_EQ( ex[5].Lang1.toStdString(), "ru" );
     ASSERT_EQ( ex[5].Lang2.toStdString(), "fr" );
     ASSERT_EQ( ex[5].Category.toStdString(), "basic" );
+}
+
+TEST(TestModel, TranslationVariants)
+{
+    qsrand(1234);
+
+    Model aModel;
+    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test4.lang" ) );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_Trans() );
+    ListOfExercises ex = aModel.Build( gen );
+    ASSERT_EQ( ex.size(), 40 );
+
+    ListOfExercises fex1 = ex.Filter( gen[0]->Type(), "fr", "ru" );
+    ASSERT_EQ( fex1.size(), 20 );
+
+    ListOfExercises rex1 = fex1.Random( 10 );
+    ASSERT_EQ( rex1.size(), 8 );
+
+    QStringList vars = ex.Shuffle( ex[4], rex1 );
+    ASSERT_EQ( vars.size(), 9 );
+
+    QString svars = vars.join( ", ");
+    ASSERT_EQ( ex[4].Answer.toStdString(), "проблема" );
+    ASSERT_EQ( svars.toStdString(), "сцена, отель, почта, центр, музей, проблема, река, год, принцип" );
+
+    //printf( "%s\n", ex[4].Answer.toStdString().c_str() );
+    //printf( "%s\n", svars.toStdString().c_str() );
 }

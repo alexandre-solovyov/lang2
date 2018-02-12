@@ -10,7 +10,8 @@ public:
     EG_One();
     virtual ~EG_One();
 
-    virtual QList<Exercise> Generate( const QString& theLine, const Context& theContext ) const;
+    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext ) const;
+    virtual QString Type() const;
 };
 
 #endif // EG_ONE_H

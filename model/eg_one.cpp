@@ -10,11 +10,16 @@ EG_One::~EG_One()
 {
 }
 
-QList<Exercise> EG_One::Generate( const QString& theLine, const Context& theContext ) const
+QString EG_One::Type() const
+{
+    return "one";
+}
+
+ListOfExercises EG_One::Generate( const QString& theLine, const Context& theContext ) const
 {
     static QRegExp PATTERN( QString( "\\%0[\\w\\-]+" ).arg( MARK ) );
 
-    QList<Exercise> ex;
+    ListOfExercises ex;
 
     int anOffset = 0;
 

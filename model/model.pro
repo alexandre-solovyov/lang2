@@ -13,6 +13,7 @@ SOURCES += model.cpp \
            grammarset.cpp \
            eg_one.cpp \
            eg_trans.cpp \
+           exercise.cpp \
            itense.cpp \
            deptense.cpp \
            stdtense.cpp \

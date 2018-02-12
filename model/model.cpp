@@ -58,9 +58,9 @@ QString Model::Simplify( const QString& theLine )
     return aLine;
 }
 
-QList<Exercise> Model::Build( const QList<IGenerator*>& theGenerators )
+ListOfExercises Model::Build( const QList<IGenerator*>& theGenerators )
 {
-    QList<Exercise> exercises;
+    ListOfExercises exercises;
     Context aContext;
 
     foreach( QString aLine, myLines )
@@ -83,7 +83,8 @@ QList<Exercise> Model::Build( const QList<IGenerator*>& theGenerators )
         {
             foreach( IGenerator* aGenerator, theGenerators )
             {
-                QList<Exercise> aLocal = aGenerator->Generate( aLine, aContext );
+                aContext.Type = aGenerator->Type();
+                ListOfExercises aLocal = aGenerator->Generate( aLine, aContext );
                 foreach( Exercise e, aLocal )
                     exercises.append( e );
             }

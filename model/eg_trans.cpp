@@ -9,11 +9,16 @@ EG_Trans::~EG_Trans()
 {
 }
 
-QList<Exercise> EG_Trans::Generate( const QString& theLine, const Context& theContext ) const
+QString EG_Trans::Type() const
+{
+    return "trans";
+}
+
+ListOfExercises EG_Trans::Generate( const QString& theLine, const Context& theContext ) const
 {
     const QString EQ_MARK = "=";
 
-    QList<Exercise> ex;
+    ListOfExercises ex;
 
     QStringList parts = theLine.split( EQ_MARK, QString::SkipEmptyParts );
     if( parts.size()==2 )
