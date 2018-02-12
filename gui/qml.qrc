@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>main.qml</file>
-        <file>HomeForm.qml</file>
-        <file>Exercise.qml</file>
-        <file>Statistics.qml</file>
-        <file>qtquickcontrols2.conf</file>
-    </qresource>
-</RCC>

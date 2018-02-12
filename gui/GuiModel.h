@@ -17,9 +17,11 @@ public:
     void Load( const QString& );
 
     Q_INVOKABLE QStringList randomExercise();
+    Q_INVOKABLE bool checkAnswer( const QString& );
 
 private:
     QList<Exercise> myExercises;
+    int             myIndex;
 };
 
 #endif // GUI_MODEL_H
