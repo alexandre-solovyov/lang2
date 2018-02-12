@@ -157,9 +157,28 @@ TEST(TestModel, TranslationVariants)
     ASSERT_EQ( vars.size(), 9 );
 
     QString svars = vars.join( ", ");
+    ASSERT_EQ( ex[4].Question.toStdString(), "un problème = <?>" );
     ASSERT_EQ( ex[4].Answer.toStdString(), "проблема" );
     ASSERT_EQ( svars.toStdString(), "сцена, отель, почта, центр, музей, проблема, река, год, принцип" );
 
     //printf( "%s\n", ex[4].Answer.toStdString().c_str() );
     //printf( "%s\n", svars.toStdString().c_str() );
+
+
+    qsrand(1234);
+    ListOfExercises fex2 = ex.Filter( gen[0]->Type(), "ru", "fr" );
+    ASSERT_EQ( fex2.size(), 20 );
+
+    ListOfExercises rex2 = fex2.Random( 10 );
+    ASSERT_EQ( rex2.size(), 8 );
+
+    QStringList vars2 = ex.Shuffle( ex[5], rex2 );
+    ASSERT_EQ( vars2.size(), 9 );
+
+    QString svars2 = vars2.join( ", ");
+    ASSERT_EQ( ex[5].Question.toStdString(), "проблема = <?>" );
+    ASSERT_EQ( ex[5].Answer.toStdString(), "un problème" );
+    ASSERT_EQ( svars2.toStdString(), "une scène, un hôtel, une poste, un centre, un musée, un problème, un fleuve, une année, un principe" );
+    //printf( "%s\n", ex[5].Answer.toStdString().c_str() );
+    //printf( "%s\n", svars2.toStdString().c_str() );
 }
