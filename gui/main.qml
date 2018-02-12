@@ -39,27 +39,47 @@ ApplicationWindow {
             anchors.fill: parent
 
             ItemDelegate {
-                text: qsTr("Page 1")
+                text: qsTr("Exercise")
                 width: parent.width
                 onClicked: {
-                    stackView.push("Page1Form.ui.qml")
+                    exercise();
                     drawer.close()
                 }
             }
             ItemDelegate {
-                text: qsTr("Page 2")
+                text: qsTr("Statistics")
                 width: parent.width
                 onClicked: {
-                    stackView.push("Page2Form.ui.qml")
+                    stackView.push("Statistics.qml")
                     drawer.close()
                 }
             }
         }
+
+        Component.onCompleted: exercise();
+    }
+
+    Exercise
+    {
+        id: exercise_page
+
+        function newExercise(currentItem)
+        {
+            var parts = gui_model.randomExercise();
+            currentItem.question1 = parts[0];
+            currentItem.question2 = parts[1];
+        }
+    }
+
+    function exercise()
+    {
+        stackView.push("Exercise.qml")
+        exercise_page.newExercise(stackView.currentItem)
     }
 
     StackView {
         id: stackView
-        initialItem: "HomeForm.ui.qml"
+        initialItem: "HomeForm.qml"
         anchors.fill: parent
     }
 }

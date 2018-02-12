@@ -12,7 +12,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += main.cpp
+SOURCES +=     \
+  main.cpp     \
+  GuiModel.cpp \
+       
+HEADERS +=     \
+  GuiModel.h   \
 
 RESOURCES += qml.qrc
 
@@ -26,3 +31,16 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+INCLUDEPATH += $$PWD/..
+
+CONFIG(debug)
+{
+  LIBS += -L$$OUT_PWD/../model/debug -lmodel
+}
+
+CONFIG(release)
+{
+  LIBS += -L$$OUT_PWD/../model/release -lmodel
+}
+
