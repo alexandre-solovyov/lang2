@@ -63,19 +63,21 @@ ApplicationWindow {
     {
         id: exercise_page
 
-        function newExercise(currentItem)
+        function newExercise()
         {
             var parts = gui_model.randomExercise();
-            currentItem.question1 = parts[0];
-            currentItem.question2 = parts[1];
-            currentItem.state = 0;
+            question1 = parts[0];
+            questmid = "<?>"
+            question2 = parts[1];
+            state = 0;
+            user = "";
         }
     }
 
     function exercise()
     {
-        stackView.push("Exercise.qml")
-        exercise_page.newExercise(stackView.currentItem)
+        stackView.push(exercise_page)
+        exercise_page.newExercise()
     }
 
     StackView {

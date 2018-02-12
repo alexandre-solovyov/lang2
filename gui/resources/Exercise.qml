@@ -17,21 +17,23 @@ Page {
     property int state: 0
 
     property alias question1 : part1.text
+    property alias questmid  : quest.text
     property alias question2 : part2.text
+    property alias user      : user_answer.text
 
     RowLayout {
         anchors.horizontalCenter: parent.horizontalCenter
         y: parent.height/2 - 3*margin
 
         Text { id: part1; color: "blue"; font.pointSize: mainPSize; }
-        Text { id: quest; text: "<?>"; color: "green"; font.pointSize: bigPSize; }
+        Text { id: quest; color: "green"; font.pointSize: bigPSize; }
         Text { id: part2; color: "blue"; font.pointSize: mainPSize; }
 
     }
 
     RowLayout {
         x: margin
-        y: parent.height/2 - 2*margin
+        y: parent.height/2
         width: parent.width - 2*margin
 
         TextField {
@@ -47,9 +49,14 @@ Page {
 
             onClicked:
             {
-                var ok = gui_model.checkAnswer(user_answer.text);
-                exercise_page.state = ok ? 1 : -1;
-                quest.text = gui_model.answer();
+                if(exercise_page.state == 0)
+                {
+                    var ok = gui_model.checkAnswer(user_answer.text);
+                    exercise_page.state = ok ? 1 : -1;
+                    quest.text = gui_model.answer();
+                }
+                else
+                    exercise_page.newExercise()
             }
         }
     }
