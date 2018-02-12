@@ -3,8 +3,8 @@
 #include <model/grammarrule.h>
 #include <model/grammarset.h>
 
-StdTense::StdTense( const QString& theName )
-    : ITense( theName )
+StdTense::StdTense( const QString& theName, Grammar* theGrammar )
+    : ITense( theName, theGrammar )
 {
 }
 

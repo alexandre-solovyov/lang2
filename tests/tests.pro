@@ -17,11 +17,11 @@ DEFINES += TEST_DATA=\\\"$$PWD/../testdata\\\"
 
 CONFIG(debug)
 {
-  LIBS += -L$$OUT_PWD/../model/Debug -lmodel
+  LIBS += -L$$OUT_PWD/../model/debug -lmodel
 }
 
 CONFIG(release)
 {
-  LIBS += -L$$OUT_PWD/../model/Release -lmodel
+  LIBS += -L$$OUT_PWD/../model/release -lmodel
 }
 

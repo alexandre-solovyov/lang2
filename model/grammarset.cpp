@@ -12,6 +12,11 @@ GrammarSet::GrammarSet( const QString& theValue, int theSize )
         append( theValue );
 }
 
+GrammarSet::GrammarSet( const QString& theItems, const QString& theSep )
+{
+    *this = theItems.split( theSep, QString::SkipEmptyParts );
+}
+
 QString GrammarSet::toString() const
 {
     return join( ", " );
@@ -24,7 +29,7 @@ GrammarSet GrammarSet::operator + ( const GrammarSet& theSet ) const
     {
          QString arg1 = i<size() ? this->operator [](i) : "";
          QString arg2 = i<theSet.size() ? theSet.operator [](i) : "";
-         aSet.append( arg1+arg2 );
+         aSet.append( sum( arg1, arg2 ) );
     }
     return aSet;
 }
@@ -32,6 +37,11 @@ GrammarSet GrammarSet::operator + ( const GrammarSet& theSet ) const
 GrammarSet GrammarSet::operator + ( const QString& theValue ) const
 {
     return operator + ( GrammarSet( theValue, size() ) );
+}
+
+GrammarSet operator + ( const QString& theValue, const GrammarSet& theSet )
+{
+    return GrammarSet( theValue, theSet.size() ) + theSet;
 }
 
 GrammarSet GrammarSet::operator + ( const char* theValue ) const
@@ -43,12 +53,12 @@ GrammarSet GrammarSet::operator * ( const GrammarSet& theSet ) const
 {
     GrammarSet aSet;
     for( int i=0, n=size(); i<n; i++ )
-        for( int j=0, m=size(); j<m; j++ )
-    {
-         QString arg1 = this->operator [](i);
-         QString arg2 = theSet.operator [](j);
-         aSet.append( arg1+arg2 );
-    }
+        for( int j=0, m=theSet.size(); j<m; j++ )
+        {
+             QString arg1 = this->operator [](i);
+             QString arg2 = theSet.operator [](j);
+             aSet.append( sum( arg1, arg2 ) );
+        }
     return aSet;
 }
 
@@ -61,4 +71,18 @@ GrammarSet GrammarSet::Replaced( const QString& theStrToFind, const QString& the
         aResult.append( anItem );
     }
     return aResult;
+}
+
+QString GrammarSet::sum( const QString& theArg1, const QString& theArg2 ) const
+{
+    QString res = theArg1 + theArg2;
+    int q = 0;
+    while( ( q = res.indexOf('#') ) >= 0 )
+    {
+        if( q==0 )
+            res.remove( q, 1 );
+        else
+            res.remove( q-1, 2 );
+    }
+    return res;
 }

@@ -9,7 +9,7 @@
 class MODEL_API StdTense : public ITense
 {
 public:
-    StdTense( const QString& );
+    StdTense( const QString&, Grammar* );
     virtual ~StdTense();
 
     void Add( const QString& );

@@ -10,6 +10,7 @@ class MODEL_API GrammarSet : public QStringList
 public:
     GrammarSet( const QStringList& = QStringList() );
     GrammarSet( const QString&, int = 1 );
+    GrammarSet( const QString&, const QString& );
 
     QString toString() const;
 
@@ -19,6 +20,11 @@ public:
     GrammarSet operator * ( const GrammarSet& ) const;
 
     GrammarSet Replaced( const QString& theStrToFind, const QString& theReplace );
+
+protected:
+    QString sum( const QString& theArg1, const QString& theArg2 ) const;
 };
+
+GrammarSet operator + ( const QString&, const GrammarSet& );
 
 #endif // GRAMMAR_SET_H

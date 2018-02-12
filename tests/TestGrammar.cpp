@@ -25,6 +25,46 @@ TEST(TestGrammar, SetOperationsAreOK)
     ASSERT_EQ( ( gs1 + " test" ).toString().toStdString(), "a test, b test" );
 }
 
+TEST(TestGrammar, OperationsWithOneItemAreOK)
+{
+    GrammarSet gs1;
+    gs1.append( "a" );
+
+    GrammarSet gs2;
+    gs2.append( "test1" );
+    gs2.append( "test2" );
+    gs2.append( "test3" );
+    gs2.append( "test4" );
+    gs2.append( "test5" );
+    gs2.append( "test6" );
+
+    ASSERT_EQ( ( gs1 + gs2 ).toString().toStdString(), "atest1, test2, test3, test4, test5, test6" );
+    ASSERT_EQ( ( gs1 * gs2 ).toString().toStdString(), "atest1, atest2, atest3, atest4, atest5, atest6" );
+}
+
+TEST(TestGrammar, RemovingOK)
+{
+    GrammarSet gs1;
+    gs1.append( "##test1" );
+
+    GrammarSet gs2;
+    gs2.append( "##test2" );
+
+    ASSERT_EQ( ( gs1 + gs2 ).toString().toStdString(), "testest2" );
+    ASSERT_EQ( ( gs1 * gs2 ).toString().toStdString(), "testest2" );
+
+    GrammarSet gs3;
+    gs3.append( "parlent" );
+
+    GrammarSet gs4;
+    gs4.append( "###ions" );
+    gs4.append( "###iez" );
+    gs4.append( "###ient" );
+
+    ASSERT_EQ( ( gs3 + gs4 ).toString().toStdString(), "parlions, iez, ient" );
+    ASSERT_EQ( ( gs3 * gs4 ).toString().toStdString(), "parlions, parliez, parlient" );
+}
+
 TEST(TestGrammar, RuleIsOK)
 {
     GrammarRule r( "[PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );
@@ -50,14 +90,15 @@ TEST(TestGrammar, PresentIsOK)
 {
     Grammar gr( true );
 
-    StdTense* pr = new StdTense( "PrInd" );
+    StdTense* pr = new StdTense( "PrInd", &gr );
     pr->Add( "~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );
     pr->Add( "~ir >> ~is, ~is, ~it, ~issons, ~issez, ~issent" );
-    gr.Add( pr );
 
-    DepTense* sub = new DepTense( "PrSubj", "PrInd", 5, GrammarSet("~e, ~es, ~e, ~ions, ~iez, ~ient" ) );
+    new DepTense( "PrSubj", &gr, "PrInd", 5, GrammarSet( "###e, ###es, ###e, ###ions, ###iez, ###ient", ", " ) );
 
     ASSERT_EQ( gr.Forms("PrInd", "parler").toString().toStdString(), "parle, parles, parle, parlons, parlez, parlent" );
     ASSERT_EQ( gr.Forms("PrInd", "finir").toString().toStdString(), "finis, finis, finit, finissons, finissez, finissent" );
-    //ASSERT_EQ( gr.Forms("PrSubj", "parler").toString().toStdString(), "parle, parles, parle, parlions, parliez, parlient" );
+    ASSERT_EQ( gr.Forms("PrSubj", "parler").toString().toStdString(), "parle, parles, parle, parlions, parliez, parlient" );
+    ASSERT_EQ( gr.Forms("PrSubj", "finir").toString().toStdString(), "finisse, finisses, finisse, finissions, finissiez, finissient" );
 }
+
