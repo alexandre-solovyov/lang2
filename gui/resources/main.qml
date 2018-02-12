@@ -68,6 +68,7 @@ ApplicationWindow {
             var parts = gui_model.randomExercise();
             currentItem.question1 = parts[0];
             currentItem.question2 = parts[1];
+            currentItem.state = 0;
         }
     }
 

@@ -49,3 +49,11 @@ bool GuiModel::checkAnswer( const QString& theAnswer )
     //TODO: more intelligent check
     return myExercises[myIndex].Answer.toLower()==theAnswer.toLower();
 }
+
+QString GuiModel::answer() const
+{
+    if( myIndex < 0 )
+        return "";
+    else
+        return myExercises[myIndex].Answer;
+}

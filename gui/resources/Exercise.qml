@@ -14,6 +14,7 @@ Page {
     property int mainPSize: 20
     property int bigPSize: 30
     property int margin: 20
+    property int state: 0
 
     property alias question1 : part1.text
     property alias question2 : part2.text
@@ -44,7 +45,29 @@ Page {
             text: "Check"
             Layout.fillWidth: false
 
-            onClicked: gui_model.checkAnswer(user_answer.text)
+            onClicked:
+            {
+                var ok = gui_model.checkAnswer(user_answer.text);
+                exercise_page.state = ok ? 1 : -1;
+                quest.text = gui_model.answer();
+            }
         }
+    }
+
+
+    Image {
+        id: state_img
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+    }
+
+    onStateChanged:
+    {
+        if(state==0)
+            state_img.source = ""
+        else if( state==1)
+            state_img.source = "image_ok.png"
+        else
+            state_img.source = "image_fail.png"
     }
 }

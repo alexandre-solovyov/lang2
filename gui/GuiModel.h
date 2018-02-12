@@ -17,6 +17,8 @@ public:
     void Load( const QString& );
 
     Q_INVOKABLE QStringList randomExercise();
+
+    Q_INVOKABLE QString answer() const;
     Q_INVOKABLE bool checkAnswer( const QString& );
 
 private:
