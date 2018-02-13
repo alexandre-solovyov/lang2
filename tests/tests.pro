@@ -6,6 +6,8 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG += thread
 
+DESTDIR = ../../bin
+
 QT += core
 QT += gui
 

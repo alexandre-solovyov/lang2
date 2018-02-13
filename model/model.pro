@@ -7,6 +7,8 @@ TEMPLATE = lib
 DEFINES += MODEL_LIBRARY
 DEFINES += QT_DEPRECATED_WARNINGS
 
+DESTDIR = ../../bin
+
 SOURCES += model.cpp \
            grammar.cpp \
            grammarrule.cpp \
