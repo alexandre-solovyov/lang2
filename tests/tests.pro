@@ -5,6 +5,7 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG += thread
+TARGET = lang_tests
 
 DESTDIR = ../../bin
 
@@ -18,13 +19,4 @@ SOURCES += main.cpp \
 INCLUDEPATH += $$PWD/..
 DEFINES += TEST_DATA=\\\"$$PWD/../testdata\\\"
 
-CONFIG(debug)
-{
-  LIBS += -L$$OUT_PWD/../model/debug -lmodel
-}
-
-CONFIG(release)
-{
-  LIBS += -L$$OUT_PWD/../model/release -lmodel
-}
-
+LIBS += -L$$DESTDIR -llang_model

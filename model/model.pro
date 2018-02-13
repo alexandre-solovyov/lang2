@@ -1,7 +1,7 @@
 
 QT -= gui
 
-TARGET = model
+TARGET = lang_model
 TEMPLATE = lib
 
 DEFINES += MODEL_LIBRARY
