@@ -84,6 +84,8 @@ ListOfExercises Model::Build( const QList<IGenerator*>& theGenerators )
             foreach( IGenerator* aGenerator, theGenerators )
             {
                 aContext.Type = aGenerator->Type();
+                QString aTag = ExtractTag( aLine );
+                aContext.Tag = aTag;
                 ListOfExercises aLocal = aGenerator->Generate( aLine, aContext );
                 foreach( Exercise e, aLocal )
                     exercises.append( e );
@@ -94,7 +96,7 @@ ListOfExercises Model::Build( const QList<IGenerator*>& theGenerators )
     return exercises;
 }
 
-void Model::ChangeContext( Context& theContext, const QString& theKey, const QString& theValue )
+void Model::ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const
 {
     if( theKey=="lang" )
     {
@@ -113,4 +115,18 @@ void Model::ChangeContext( Context& theContext, const QString& theKey, const QSt
     {
         theContext.Category = theValue;
     }
+}
+
+QString Model::ExtractTag( QString& theLine ) const
+{
+    static QRegExp TAG_PATTERN("^\\s*\\[(\\w+)\\]");
+
+    int anIndex = theLine.indexOf(TAG_PATTERN);
+    if( anIndex < 0 )
+        return "";
+
+    QString aTag = TAG_PATTERN.cap( 1 );
+    theLine.remove( 0, anIndex+TAG_PATTERN.matchedLength() );
+    theLine = theLine.trimmed();
+    return aTag;
 }

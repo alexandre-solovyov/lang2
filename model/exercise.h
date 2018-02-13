@@ -17,11 +17,11 @@ struct Exercise : public Context
         Lang2 = c.Lang2;
         Category = c.Category;
         Type = c.Type;
+        Tag = c.Tag;
     }
 
     QString Question;
     QString Answer;
-    QString Tag;
 
     bool operator == ( const Exercise& ) const;
 };

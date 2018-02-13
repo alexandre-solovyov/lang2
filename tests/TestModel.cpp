@@ -182,3 +182,19 @@ TEST(TestModel, TranslationVariants)
     //printf( "%s\n", ex[5].Answer.toStdString().c_str() );
     //printf( "%s\n", svars2.toStdString().c_str() );
 }
+
+TEST(TestModel, TagsAreOK)
+{
+    Model aModel;
+    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test5.lang" ) );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_Trans() );
+    ListOfExercises ex = aModel.Build( gen );
+    ASSERT_EQ( ex.size(), 4 );
+
+    ASSERT_EQ( ex[0].Tag.toStdString(), "просьба" );
+    ASSERT_EQ( ex[1].Tag.toStdString(), "просьба" );
+    ASSERT_EQ( ex[2].Tag.toStdString(), "благодарность" );
+    ASSERT_EQ( ex[3].Tag.toStdString(), "благодарность" );
+}

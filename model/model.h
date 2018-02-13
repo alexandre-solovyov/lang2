@@ -25,7 +25,8 @@ public:
     ListOfExercises Build( const QList<IGenerator*>& );
 
 private:
-    void ChangeContext( Context& theContext, const QString& theKey, const QString& theValue );
+    void ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const;
+    QString ExtractTag( QString& theLine ) const;
 
 private:
     QStringList myLines;

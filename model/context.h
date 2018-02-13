@@ -10,6 +10,7 @@ struct Context
     QString Lang2;
     QString Category;
     QString Type;
+    QString Tag;
 };
 
 #endif   // CONTEXT_H
