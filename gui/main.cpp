@@ -14,9 +14,22 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    QMap<QString,QString> arguments;
+    for( int i=1; i<argc; i++ )
+    {
+        QString a = argv[i];
+        QStringList parts = a.split("=", QString::SkipEmptyParts);
+        QString p1 = parts.size()>0 ? parts[0] : "";
+        QString p2 = parts.size()>1 ? parts[1] : "";
+        arguments[p1] = p2;
+    }
+
+    QString aFile = arguments["file"];
+
+
     qsrand(QTime::currentTime().msecsSinceStartOfDay());
     GuiModel gui_model;
-    gui_model.Load("D:/asl/lang/progress/french/fr_noms.lang");//TODO: via properties
+    gui_model.Load(aFile);
 
     QQmlContext* context = engine.rootContext();
     context->setContextProperty( "gui_model", &gui_model );

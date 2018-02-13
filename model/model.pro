@@ -18,6 +18,7 @@ SOURCES += model.cpp \
            exercise.cpp \
            itense.cpp \
            deptense.cpp \
+           statistics.cpp \
            stdtense.cpp \
 
 HEADERS += model.h \
@@ -30,6 +31,7 @@ HEADERS += model.h \
            igenerator.h \ 
            itense.h \
            deptense.h \
+           statistics.h \
            stdtense.h \
            eg_one.h \
            eg_trans.h \

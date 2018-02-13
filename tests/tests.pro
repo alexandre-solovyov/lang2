@@ -15,6 +15,7 @@ QT += gui
 SOURCES += main.cpp \
            TestModel.cpp \
            TestGrammar.cpp \
+           TestStatistics.cpp \
 
 INCLUDEPATH += $$PWD/..
 DEFINES += TEST_DATA=\\\"$$PWD/../testdata\\\"
