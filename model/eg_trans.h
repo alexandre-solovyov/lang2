@@ -10,7 +10,7 @@ public:
     EG_Trans( bool isBoth=true, bool isSimple=false );
     virtual ~EG_Trans();
 
-    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext ) const;
+    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const;
     virtual QString Type() const;
 
 private:

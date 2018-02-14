@@ -15,8 +15,9 @@ QString EG_Trans::Type() const
     return "trans";
 }
 
-ListOfExercises EG_Trans::Generate( const QString& theLine, const Context& theContext ) const
+ListOfExercises EG_Trans::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
+    isOtherProduct = false;
     ListOfExercises ex;
 
     QStringList parts = theLine.split( EQ_MARK, QString::SkipEmptyParts );

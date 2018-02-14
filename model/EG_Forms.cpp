@@ -19,21 +19,26 @@ QString EG_Forms::Type() const
     return "forms";
 }
 
-ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theContext ) const
+ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
+    isOtherProduct = false;
     ListOfExercises ex;
 
     if( theLine.contains( FORMS_MARK ) )
     {
         if( myGrammar )
+        {
             myGrammar->Add( theContext.Tag, theLine );
+            isOtherProduct = true;
+        }
 
         return ex;
     }
 
     if( theLine.contains( EQ_MARK ) )
     {
-        ListOfExercises ex2 = EG_Trans::Generate( theLine, theContext );
+        ListOfExercises ex2 = EG_Trans::Generate( theLine, theContext, isOtherProduct );
+        isOtherProduct = false;
         if( ex2.length() == 1 )
         {
             //Tools::print( ex2[0].Question );

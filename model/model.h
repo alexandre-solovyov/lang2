@@ -14,22 +14,30 @@ public:
     Model();
     ~Model();
 
-    bool Load( const QString& );
-    bool Add( const QString& );
+    bool Load( const QString&, bool isVerbose=false );
+
+    int  AddFile( const QString& );
+    bool Add( int theFileIndex, const QString& );
     bool HasLine( const QString& ) const;
 
     static QString Simplify( const QString& );
 
     uint Size() const;
 
-    ListOfExercises Build( const QList<IGenerator*>& );
+    ListOfExercises Build( const QList<IGenerator*>&, bool isVerbose=false );
 
 private:
     void ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const;
     QString ExtractTag( QString& theLine ) const;
 
 private:
-    QStringList myLines;
+    struct FileData
+    {
+      QString Name;
+      QStringList Lines;
+    };
+
+    QList<FileData> myFiles;
     QHash<uint, uint> myHashes;
 };
 

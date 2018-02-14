@@ -13,7 +13,7 @@ const QString EQ_MARK = "=";
 class MODEL_API IGenerator
 {
 public:
-    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext ) const = 0;
+    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const = 0;
     virtual QString Type() const = 0;
 };
 

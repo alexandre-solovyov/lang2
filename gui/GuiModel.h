@@ -3,6 +3,7 @@
 #define GUI_MODEL_H
 
 #include <model/model.h>
+#include <model/grammar.h>
 #include <QObject>
 #include <QStringList>
 
@@ -24,6 +25,7 @@ public:
 
 private:
     ListOfExercises myExercises;
+    Grammar         myGrammar;
     int             myIndex;
 };
 

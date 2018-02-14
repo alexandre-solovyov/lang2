@@ -12,7 +12,7 @@ public:
     EG_Forms( Grammar* );
     virtual ~EG_Forms();
 
-    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext ) const;
+    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const;
     virtual QString Type() const;
 
 private:

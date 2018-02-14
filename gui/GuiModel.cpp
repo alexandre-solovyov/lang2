@@ -2,6 +2,7 @@
 #include <gui/GuiModel.h>
 #include <model/eg_one.h>
 #include <model/eg_trans.h>
+#include <model/eg_forms.h>
 #include <model/tools.h>
 
 GuiModel::GuiModel()
@@ -15,13 +16,16 @@ GuiModel::~GuiModel()
 
 void GuiModel::Load( const QString& thePath )
 {
-    // TODO: load a directory
-    Model::Load( thePath );
+    bool isVerbose = true;
+
+    Model::Load( thePath, isVerbose );
 
     QList<IGenerator*> gen;
     gen.append( new EG_One() );
     gen.append( new EG_Trans() );
-    myExercises = Build(gen);
+    gen.append( new EG_Forms(&myGrammar) );
+
+    myExercises = Build( gen, isVerbose );
     myIndex = -1;
 }
 

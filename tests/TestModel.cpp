@@ -8,16 +8,17 @@ TEST(TestModel, NoDuplicates)
 {
     Model aModel;
 
-    ASSERT_TRUE( aModel.Add( "test" ) );
+    aModel.AddFile("test");
+    ASSERT_TRUE( aModel.Add( 0, "test" ) );
     ASSERT_EQ( aModel.Size(), 1 );
 
-    ASSERT_FALSE( aModel.Add( "test" ) );
+    ASSERT_FALSE( aModel.Add( 0, "test" ) );
     ASSERT_EQ( aModel.Size(), 1 );
 
-    ASSERT_FALSE( aModel.Add( "  test " ) );
+    ASSERT_FALSE( aModel.Add( 0, "  test " ) );
     ASSERT_EQ( aModel.Size(), 1 );
 
-    ASSERT_TRUE( aModel.Add( "test 2" ) );
+    ASSERT_TRUE( aModel.Add( 0, "test 2" ) );
     ASSERT_EQ( aModel.Size(), 2 );
 }
 
@@ -191,4 +192,21 @@ TEST(TestModel, TagsAreOK)
     ASSERT_EQQ( ex[1].Tag, "просьба" );
     ASSERT_EQQ( ex[2].Tag, "благодарность" );
     ASSERT_EQQ( ex[3].Tag, "благодарность" );
+}
+
+TEST(TestModel, EmptyAnswerIsSupported)
+{
+    Model aModel;
+
+    aModel.AddFile("test");
+    ASSERT_TRUE( aModel.Add( 0, "accepter * une invitation" ) );
+    ASSERT_EQ( aModel.Size(), 1 );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_One() );
+    ListOfExercises ex = aModel.Build( gen );
+    ASSERT_EQ( ex.size(), 1 );
+
+    ASSERT_EQQ( ex[0].Question, "accepter <?> une invitation" );
+    ASSERT_EQQ( ex[0].Answer, "" );
 }

@@ -15,9 +15,10 @@ QString EG_One::Type() const
     return "one";
 }
 
-ListOfExercises EG_One::Generate( const QString& theLine, const Context& theContext ) const
+ListOfExercises EG_One::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
-    static QRegExp PATTERN( QString( "\\%0[\\w\\-]+" ).arg( MARK ) );
+    isOtherProduct = false;
+    static QRegExp PATTERN( QString( "\\%0[\\w\\-]*" ).arg( MARK ) );
 
     ListOfExercises ex;
 
