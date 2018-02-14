@@ -2,6 +2,8 @@
 #include <tests.h>
 #include <model/grammar.h>
 #include <model/grammarset.h>
+#include <model/model.h>
+#include <model/eg_forms.h>
 #include <model/stdtense.h>
 #include <model/deptense.h>
 
@@ -102,3 +104,25 @@ TEST(TestGrammar, PresentIsOK)
     ASSERT_EQQ( gr.Forms("PrSubj", "finir").toString(), "finisse, finisses, finisse, finissions, finissiez, finissient" );
 }
 
+TEST(TestGrammar, FormsLoadingIsOK)
+{
+    Model aModel;
+    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test3.lang" ) );
+
+    Grammar gr;
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_Forms(&gr) );
+    aModel.Build( gen );
+
+    ASSERT_EQQ( gr.Tenses().join( ", " ), "PrInd" );
+
+    ASSERT_EQQ( gr.Forms( "PrInd", "aller" ).toString(), "vais, vas, va, allons, allez, vont" );
+    ASSERT_EQQ( gr.Forms( "PrInd", "marcher" ).toString(), "marche, marches, marche, marchons, marchez, marchent" );
+
+    ASSERT_EQQ( gr.CachedForms().join( ", " ), "aller, parler" );
+    ASSERT_EQQ( gr.CachedForms("aller").join( ", " ), "vais, vas, va, allons, allez, vont" );
+    ASSERT_EQQ( gr.CachedForms("parler").join( ", " ), "parle, parles, parle, parlons, parlez, parlent" );
+    ASSERT_EQQ( gr.CachedForms("marcher").join( ", " ), "" );
+    ASSERT_EQQ( gr.CachedForms().join( ", " ), "aller, parler" );
+}

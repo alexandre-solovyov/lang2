@@ -38,7 +38,8 @@ QString Tools::normalize( const QString& theText )
     return aText;
 }
 
-void Tools::print( const QString& theText )
+void Tools::print( const QString& theText, bool isEndOfLine )
 {
-    WriteConsoleW( GetStdHandle(STD_OUTPUT_HANDLE), theText.utf16(), theText.size(), NULL, NULL );
+    QString aText = theText + ( isEndOfLine ? "\n" : "" );
+    WriteConsoleW( GetStdHandle(STD_OUTPUT_HANDLE), aText.utf16(), aText.size(), NULL, NULL );
 }

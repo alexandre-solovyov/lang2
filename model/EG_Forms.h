@@ -1,0 +1,22 @@
+
+#ifndef EG_FORMS_H
+#define EG_FORMS_H
+
+#include <model/eg_trans.h>
+
+class Grammar;
+
+class MODEL_API EG_Forms : public EG_Trans
+{
+public:
+    EG_Forms( Grammar* );
+    virtual ~EG_Forms();
+
+    virtual ListOfExercises Generate( const QString& theLine, const Context& theContext ) const;
+    virtual QString Type() const;
+
+private:
+    Grammar* myGrammar;
+};
+
+#endif // EG_FORMS_H

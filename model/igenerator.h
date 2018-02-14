@@ -8,6 +8,7 @@
 
 const QString MARK = "*";
 const QString QUEST = "<?>";
+const QString EQ_MARK = "=";
 
 class MODEL_API IGenerator
 {

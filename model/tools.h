@@ -8,7 +8,7 @@ class MODEL_API Tools
 {
 public:
     static QString normalize( const QString& );
-    static void print( const QString& );
+    static void print( const QString&, bool isEndOfLine = true );
 };
 
 #endif // STATISTICS_H

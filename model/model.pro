@@ -13,6 +13,7 @@ SOURCES += Model.cpp \
            Grammar.cpp \
            GrammarRule.cpp \
            GrammarSet.cpp \
+           EG_Forms.cpp \
            EG_One.cpp \
            EG_Trans.cpp \
            Exercise.cpp \
@@ -34,6 +35,7 @@ HEADERS += Model.h \
            DepTense.h \
            Statistics.h \
            StdTense.h \
+           EG_Forms.h \
            EG_One.h \
            EG_Trans.h \
            Tools.h \

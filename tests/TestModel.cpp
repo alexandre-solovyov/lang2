@@ -134,7 +134,7 @@ TEST(TestModel, BuildWithTransIsOK)
     ASSERT_EQQ( ex[5].Category, "basic" );
 }
 
-TEST(TestModel, TranslationVariants)
+TEST(TestModel, TranslationVariantsAreOK)
 {
     qsrand(1234);
 
