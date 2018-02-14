@@ -5,34 +5,34 @@
 
 QString Tools::normalize( const QString& theText )
 {
-    static QMap<QString, QChar> ND;
+    static QMap<QString, QString> ND;
 
     if( ND.empty() )
     {
-        ND["a\\"] = 'à';
-        ND["a`"] = 'à';
-        ND["a^"] = 'â';
-        ND["a+"] = 'æ';
-        ND["c+"] = 'ç';
-        ND["e/"] = 'é';
-        ND["e'"] = 'é';
-        ND["e\\"] = 'è';
-        ND["e`"] = 'è';
-        ND["e^"] = 'ê';
-        ND["e:"] = 'ë';
-        ND["i:"] = 'ï';
-        ND["i^"] = 'î';
-        ND["o^"] = 'ô';
-        ND["o+"] = 'œ';
-        ND["u\\"] = 'ù';
-        ND["u`"] = 'ù';
-        ND["u^"] = 'û';
-        ND["u:"] = 'ü';
-        ND["y:"] = 'ÿ';
+        ND["a\\"] = "à";
+        ND["a`"] = "à";
+        ND["a^"] = "â";
+        ND["a+"] = "æ";
+        ND["c+"] = "ç";
+        ND["e/"] = "é";
+        ND["e'"] = "é";
+        ND["e\\"] = "è";
+        ND["e`"] = "è";
+        ND["e^"] = "ê";
+        ND["e:"] = "ë";
+        ND["i:"] = "ï";
+        ND["i^"] = "î";
+        ND["o^"] = "ô";
+        ND["o+"] = "œ";
+        ND["u\\"] = "ù";
+        ND["u`"] = "ù";
+        ND["u^"] = "û";
+        ND["u:"] = "ü";
+        ND["y:"] = "ÿ";
     }
 
     QString aText = theText;
-    QMap<QString, QChar>::const_iterator it = ND.begin(), last = ND.end();
+    QMap<QString, QString>::const_iterator it = ND.begin(), last = ND.end();
     for( ; it!=last; it++ )
         aText.replace( it.key(), it.value() );
     return aText;
