@@ -14,6 +14,7 @@ class MODEL_API IGenerator
 {
 public:
     virtual void Reset() = 0;
+    virtual void Ignore( const QStringList& ) = 0;
     virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const = 0;
     virtual QString Type() const = 0;
 };

@@ -26,12 +26,17 @@ public:
 
     QStringList Init( const QString& ) const;
 
+    void AddAsKnown( const QString& );
+    bool IsKnown( const QString& ) const;
+    uint NbKnown() const;
+
 private:
     QMap<QString, ITense*> myTenses;
     bool myIsOwner;
 
     QMap<QString, QStringList> myCachedForms; //TODO: more effective forms container
     QMap<QString, QStringList> myInit;
+    QMap<QString, char>        myKnown;
 };
 
 #endif // GRAMMAR_H

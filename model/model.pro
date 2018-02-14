@@ -21,6 +21,7 @@ SOURCES +=           \
     ITense.cpp       \
     LangFile.cpp     \
     Statistics.cpp   \
+    StdModel.cpp     \
     StdTense.cpp     \
     Tools.cpp        \
 
@@ -38,6 +39,7 @@ HEADERS += \
     ITense.h         \
     LangFile.h       \
     Statistics.h     \
+    StdModel.h       \
     StdTense.h       \
     Tools.h          \
 

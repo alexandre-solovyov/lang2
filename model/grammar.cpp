@@ -32,7 +32,10 @@ void Grammar::Add( const QString& theTense, const QString& theRule )
 
     StdTense* st = dynamic_cast<StdTense*>( myTenses[theTense] );
     if( st )
+    {
         st->Add( theRule );
+        //Tools::print( theRule );
+    }
 }
 
 GrammarSet Grammar::Forms( const QString& theTense, const QString& theWord ) const
@@ -52,8 +55,8 @@ void Grammar::CacheAllForms( const QString& theWord, const QStringList& theTense
 {
     foreach( QString aTense, theTenses )
     {
-        GrammarSet aSet = myTenses[aTense]->Forms( theWord );
         //Tools::print( QString( "CacheAllForms: " ) + theWord );
+        GrammarSet aSet = myTenses[aTense]->Forms( theWord );
 
         QStringList& lst = myCachedForms[theWord];
         foreach( QString f, aSet )
@@ -83,4 +86,19 @@ QStringList Grammar::Init( const QString& theWord ) const
     else
         return QStringList() << theWord;
 
+}
+
+void Grammar::AddAsKnown( const QString& theWord )
+{
+    myKnown[theWord] = ' ';
+}
+
+bool Grammar::IsKnown( const QString& theWord ) const
+{
+    return myKnown.contains( theWord );
+}
+
+uint Grammar::NbKnown() const
+{
+    return myKnown.size();
 }

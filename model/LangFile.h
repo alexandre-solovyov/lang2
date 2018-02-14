@@ -26,7 +26,10 @@ public:
 
 private:
     static QString Simplify( const QString& );
-    void ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const;
+    void ChangeContext( Context& theContext,
+                        const QString& theKey,
+                        const QString& theValue,
+                        const QList<IGenerator*>& theGenerators ) const;
     QString ExtractTag( QString& theLine ) const;
 
 private:

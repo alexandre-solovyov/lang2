@@ -116,7 +116,7 @@ ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool i
                 QStringList aParts = aLine.mid( 3 ).split( ":", QString::KeepEmptyParts );
                 if( aParts.size()==2 )
                 {
-                    ChangeContext( aContext, aParts[0].trimmed(), aParts[1].trimmed() );
+                    ChangeContext( aContext, aParts[0].trimmed(), aParts[1].trimmed(), theGenerators );
                 }
             }
             else if( aLine.startsWith("//") || aLine.startsWith("#"))
@@ -128,11 +128,13 @@ ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool i
             {
                 int aNbEx = 0;
                 int aNbOther = 0;
+
+                QString aTag = ExtractTag( aLine );
+                aContext.Tag = aTag;
+
                 foreach( IGenerator* aGenerator, theGenerators )
                 {
                     aContext.Type = aGenerator->Type();
-                    QString aTag = ExtractTag( aLine );
-                    aContext.Tag = aTag;
 
                     bool isOtherProduct;
                     ListOfExercises aLocal = aGenerator->Generate( aLine, aContext, isOtherProduct );
@@ -160,7 +162,10 @@ ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool i
     return exercises;
 }
 
-void LangFile::ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const
+void LangFile::ChangeContext( Context& theContext,
+                              const QString& theKey,
+                              const QString& theValue,
+                              const QList<IGenerator*>& theGenerators ) const
 {
     if( theKey=="lang" )
     {
@@ -175,9 +180,14 @@ void LangFile::ChangeContext( Context& theContext, const QString& theKey, const 
     {
         //TODO
     }
-    else if( theKey=="category")
+    else if( theKey=="category" )
     {
         theContext.Category = theValue;
+    }
+    else if( theKey=="ignore" )
+    {
+        foreach( IGenerator* aGenerator, theGenerators )
+            aGenerator->Ignore( theValue.split( ", ", QString::SkipEmptyParts ) );
     }
 }
 

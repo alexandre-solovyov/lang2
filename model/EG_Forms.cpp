@@ -22,6 +22,12 @@ QString EG_Forms::Type() const
 void EG_Forms::Reset()
 {
     myTenses.clear();
+    myIgnore.clear();
+}
+
+void EG_Forms::Ignore( const QStringList& theIgnore )
+{
+    myIgnore = theIgnore;
 }
 
 ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
@@ -33,6 +39,8 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
     {
         if( myGrammar )
         {
+            //Tools::print( theLine );
+            //Tools::print( theContext.Tag );
             myGrammar->Add( theContext.Tag, theLine );
             isOtherProduct = true;
             if( !myTenses.contains( theContext.Tag ) )
@@ -50,7 +58,12 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
         {
             //Tools::print( ex2[0].Question );
             //TODO: support multi-word forms (?)
-            myGrammar->CacheAllForms( ex2[0].Question, myTenses );
+            QString w = ex2[0].Question;
+            foreach( QString i, myIgnore )
+                w = w.replace( i, "" );
+            w = w.trimmed();
+            //Tools::print( "before forms: " + w );
+            myGrammar->CacheAllForms( w, myTenses );
         }
     }
 

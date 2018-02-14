@@ -1,6 +1,7 @@
 
 //! lang: fr, ru
 //! category: noms
+//! ignore: une, un
 
 [Pl] ~eau >> ~eaux
 [Pl] ~eu >> ~eux
@@ -102,11 +103,11 @@
 *une radio = радио
 *une télé = телевидение
 *une feuille = лист
-passage = 
-parent = 
-repas = 
-liste = 
-verre = 
+*un passage = переход
+*un parent = родитель
+*un repas = еда
+*une liste = список
+*un verre = стекло, стакан
 examen = 
 crêpe = 
 artifice = 
@@ -156,3 +157,4 @@ une boîte =
 une vache = 
 une region = 
 un morceau =
+une cité = городок

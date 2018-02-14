@@ -1,6 +1,7 @@
 
 #include <model/grammarrule.h>
 #include <model/grammarset.h>
+#include <model/Tools.h>
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
@@ -8,7 +9,7 @@ GrammarRule::GrammarRule( const QString& theRule )
 
     if( !PATTERN.exactMatch( theRule ) )
     {
-        //printf( "Not matched\n" );
+        Tools::print( QString( "Not matched: " ) + theRule );
         return;
     }
 

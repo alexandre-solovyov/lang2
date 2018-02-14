@@ -11,6 +11,7 @@ public:
     virtual ~EG_One();
 
     virtual void Reset();
+    virtual void Ignore( const QStringList& );
     virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const;
     virtual QString Type() const;
 };

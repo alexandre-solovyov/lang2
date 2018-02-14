@@ -43,3 +43,11 @@ void Tools::print( const QString& theText, bool isEndOfLine )
     QString aText = theText + ( isEndOfLine ? "\n" : "" );
     WriteConsoleW( GetStdHandle(STD_OUTPUT_HANDLE), aText.utf16(), aText.size(), NULL, NULL );
 }
+
+bool Tools::startsWithDigit( const QString& theText )
+{
+    if( theText.isEmpty() )
+        return false;
+    else
+        return theText[0].isDigit();
+}

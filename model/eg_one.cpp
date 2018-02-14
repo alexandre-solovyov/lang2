@@ -19,6 +19,10 @@ void EG_One::Reset()
 {
 }
 
+void EG_One::Ignore( const QStringList& )
+{
+}
+
 ListOfExercises EG_One::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
     isOtherProduct = false;
