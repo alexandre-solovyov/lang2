@@ -14,6 +14,7 @@ public:
     GrammarRule( const QString& theRule );
     ~GrammarRule();
 
+    bool IsSingle() const;
     bool Match( const QString& theWord ) const;
     QString Group() const;
     QString Start() const;

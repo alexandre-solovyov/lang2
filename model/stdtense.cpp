@@ -12,10 +12,11 @@ StdTense::~StdTense()
 {
 }
 
-void StdTense::Add( const QString& theRule )
+GrammarRule StdTense::Add( const QString& theRule )
 {
     GrammarRule gr( QString( "[%0] %1").arg( Name() ).arg( theRule ) );
     myRules.append( gr );
+    return gr;
 }
 
 GrammarSet StdTense::Forms( const QString& theWord ) const

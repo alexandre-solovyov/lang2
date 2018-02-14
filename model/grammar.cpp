@@ -33,9 +33,9 @@ void Grammar::Add( const QString& theTense, const QString& theRule )
     StdTense* st = dynamic_cast<StdTense*>( myTenses[theTense] );
     if( st )
     {
-        st->Add( theRule );
-        //if( gr.IsSingle() )
-        //    CacheAllForms( gr.Start(), QStringList() << theTense );
+        GrammarRule gr = st->Add( theRule );
+        if( gr.IsSingle() )
+            CacheAllForms( gr.Start(), QStringList() << theTense );
         //Tools::print( theRule );
     }
 }

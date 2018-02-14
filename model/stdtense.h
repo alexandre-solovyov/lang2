@@ -12,7 +12,7 @@ public:
     StdTense( const QString&, Grammar* );
     virtual ~StdTense();
 
-    void Add( const QString& );
+    GrammarRule Add( const QString& );
 
     virtual GrammarSet Forms( const QString& theWord ) const;
 

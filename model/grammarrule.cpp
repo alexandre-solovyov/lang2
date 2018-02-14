@@ -30,6 +30,11 @@ GrammarRule::~GrammarRule()
 {
 }
 
+bool GrammarRule::IsSingle() const
+{
+    return !myStart.contains("~");
+}
+
 QString GrammarRule::Group() const
 {
     return myGroup;
