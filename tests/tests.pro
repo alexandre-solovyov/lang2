@@ -12,10 +12,12 @@ DESTDIR = ../../bin
 QT += core
 QT += gui
 
-SOURCES += main.cpp \
+SOURCES += Main.cpp \
            TestModel.cpp \
            TestGrammar.cpp \
            TestStatistics.cpp \
+           TestTools.cpp \
+
 
 INCLUDEPATH += $$PWD/..
 DEFINES += TEST_DATA=\\\"$$PWD/../testdata\\\"
