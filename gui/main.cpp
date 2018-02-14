@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
     }
 
     QString aFile = arguments["file"];
-
+    if( aFile.isEmpty() )
+        aFile = "D:/asl/lang/progress/french/fr_noms.lang";
 
     qsrand(QTime::currentTime().msecsSinceStartOfDay());
     GuiModel gui_model;
