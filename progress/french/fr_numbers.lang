@@ -2,12 +2,14 @@
 //! lang: fr, ru
 //! category: numbers
 
-[Ord] ~e >> ~ième
-[Ord] ~ >> ~ième
+[FemPl] ~ier >> ~iers, ~ière, ~ières    # for numbers
 
 un = 1
 premier = первый
 dernier = последний
+
+[Ord] ~e >> ~ième
+[Ord] ~ >> ~ième
 
 deux = 2
 trois = 3

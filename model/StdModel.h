@@ -13,6 +13,8 @@ public:
     ~StdModel();
 
     bool Load( const QString& theFilePath, const QString& theLang, bool isVerbose=false );
+    bool LoadPrivate( const QString& theFilePath );
+
     uint NbExercises() const;
     const Grammar& grammar() const;
 

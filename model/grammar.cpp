@@ -34,6 +34,8 @@ void Grammar::Add( const QString& theTense, const QString& theRule )
     if( st )
     {
         st->Add( theRule );
+        //if( gr.IsSingle() )
+        //    CacheAllForms( gr.Start(), QStringList() << theTense );
         //Tools::print( theRule );
     }
 }
@@ -88,14 +90,14 @@ QStringList Grammar::Init( const QString& theWord ) const
 
 }
 
-void Grammar::AddAsKnown( const QString& theWord )
+void Grammar::AddAsKnown( const QString& theWord, bool isPrivate )
 {
-    myKnown[theWord] = ' ';
+    ( isPrivate ? myKnownPrivate : myKnown )[theWord] = ' ';
 }
 
 bool Grammar::IsKnown( const QString& theWord ) const
 {
-    return myKnown.contains( theWord );
+    return myKnown.contains( theWord ) || myKnownPrivate.contains( theWord );
 }
 
 uint Grammar::NbKnown() const

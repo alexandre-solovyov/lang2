@@ -26,7 +26,7 @@ public:
 
     QStringList Init( const QString& ) const;
 
-    void AddAsKnown( const QString& );
+    void AddAsKnown( const QString&, bool isPrivate );
     bool IsKnown( const QString& ) const;
     uint NbKnown() const;
 
@@ -37,6 +37,7 @@ private:
     QMap<QString, QStringList> myCachedForms; //TODO: more effective forms container
     QMap<QString, QStringList> myInit;
     QMap<QString, char>        myKnown;
+    QMap<QString, char>        myKnownPrivate;
 };
 
 #endif // GRAMMAR_H

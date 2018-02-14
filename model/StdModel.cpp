@@ -5,6 +5,7 @@
 #include <model/EG_Trans.h>
 #include <model/EG_Forms.h>
 #include <model/Tools.h>
+#include <QFile>
 
 StdModel::StdModel()
 {
@@ -44,7 +45,7 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
                 QStringList words = e.Answer.split(QRegExp("\\W+"), QString::SkipEmptyParts );
                 foreach( QString w, words )
                 {
-                    myGrammar.AddAsKnown( w );
+                    myGrammar.AddAsKnown( w, false );
                 }
             }
         }
@@ -53,4 +54,17 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
     }
 
     return isOK;
+}
+
+bool StdModel::LoadPrivate( const QString& theFilePath )
+{
+    QFile aFile( theFilePath );
+    if( !aFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
+        return false;
+
+    QString aData = aFile.readAll();
+    QStringList aLines = aData.split( "\n", QString::SkipEmptyParts );
+
+    foreach( QString aLine, aLines )
+        myGrammar.AddAsKnown( aLine, true );
 }

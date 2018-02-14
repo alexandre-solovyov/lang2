@@ -97,6 +97,12 @@ TEST(TestGrammar, CompleteFormIsOK)
     ASSERT_EQQ( r2.Forms("mettre").toString(), "met" );
 }
 
+TEST(TestGrammar, SingleFormIsOK)
+{
+    GrammarRule r1( "[Pl] leur >> leurs" );
+    ASSERT_EQQ( r1.Forms("leur").toString(), "leurs" );
+}
+
 TEST(TestGrammar, PresentIsOK)
 {
     Grammar gr( true );
