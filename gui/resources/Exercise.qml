@@ -51,6 +51,7 @@ Page {
             {
                 if(exercise_page.state == 0)
                 {
+                    user_answer.text = gui_model.normalize(user_answer.text)
                     var ok = gui_model.checkAnswer(user_answer.text);
                     exercise_page.state = ok ? 1 : -1;
                     quest.text = gui_model.answer();

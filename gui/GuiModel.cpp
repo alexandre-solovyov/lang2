@@ -2,6 +2,7 @@
 #include <gui/GuiModel.h>
 #include <model/eg_one.h>
 #include <model/eg_trans.h>
+#include <model/tools.h>
 
 GuiModel::GuiModel()
     : myIndex( -1 )
@@ -39,6 +40,11 @@ QStringList GuiModel::randomExercise()
         parts.append("");
 
     return parts;
+}
+
+QString GuiModel::normalize( const QString& theAnswer )
+{
+    return Tools::normalize( theAnswer );
 }
 
 bool GuiModel::checkAnswer( const QString& theAnswer )
