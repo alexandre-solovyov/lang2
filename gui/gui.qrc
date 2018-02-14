@@ -4,6 +4,7 @@
         <file alias="HomeForm.qml">resources/HomeForm.qml</file>
         <file alias="Exercise.qml">resources/Exercise.qml</file>
         <file alias="Statistics.qml">resources/Statistics.qml</file>
+        <file alias="LangEditor.qml">resources/LangEditor.qml</file>
         <file alias="image_ok.png">resources/image_ok.png</file>
         <file alias="image_fail.png">resources/image_fail.png</file>
         <file>qtquickcontrols2.conf</file>

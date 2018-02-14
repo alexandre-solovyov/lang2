@@ -16,8 +16,8 @@ TEST(TestTools, NormalizeIsOK)
     ASSERT_EQQ( Tools::normalize( "Noe:l" ), "Noël" );
 }
 
-TEST(TestTools, GoogleFindPictureIsOK)
+/*TEST(TestTools, GoogleFindPictureIsOK)
 {
 
-}
+}*/
 //https://www.google.ru/search?q=une+carotte+png&tbm=isch

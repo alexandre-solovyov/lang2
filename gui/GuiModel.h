@@ -22,6 +22,7 @@ public:
     Q_INVOKABLE QString normalize( const QString& );
     Q_INVOKABLE QString answer() const;
     Q_INVOKABLE bool checkAnswer( const QString& );
+    Q_INVOKABLE QString readFile( const QString& );
 
 private:
     ListOfExercises myExercises;

@@ -67,3 +67,15 @@ QString GuiModel::answer() const
     else
         return myExercises[myIndex].Answer;
 }
+
+QString GuiModel::readFile( const QString& theFilePath )
+{
+    Tools::print(theFilePath);
+    QFile aFile( theFilePath );
+    if( !aFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
+        return "";
+
+    QString aData = aFile.readAll();
+    aFile.close();
+    return aData;
+}

@@ -54,9 +54,18 @@ ApplicationWindow {
                     drawer.close()
                 }
             }
+            ItemDelegate {
+                text: qsTr("Editor")
+                width: parent.width
+                onClicked: {
+                    stackView.push(editor_page)
+                    drawer.close()
+                }
+            }
         }
 
-        Component.onCompleted: exercise();
+        //Component.onCompleted: exercise();
+        Component.onCompleted: stackView.push(editor_page)
     }
 
     Exercise
@@ -72,6 +81,11 @@ ApplicationWindow {
             state = 0;
             user = "";
         }
+    }
+
+    LangEditor
+    {
+        id: editor_page
     }
 
     function exercise()
