@@ -24,11 +24,14 @@ public:
     void CacheAllForms( const QString&, const QStringList& );
     QStringList CachedForms( const QString& = "" ) const;
 
+    QStringList Init( const QString& ) const;
+
 private:
     QMap<QString, ITense*> myTenses;
     bool myIsOwner;
 
     QMap<QString, QStringList> myCachedForms; //TODO: more effective forms container
+    QMap<QString, QStringList> myInit;
 };
 
 #endif // GRAMMAR_H

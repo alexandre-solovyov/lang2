@@ -59,6 +59,8 @@ void Grammar::CacheAllForms( const QString& theWord, const QStringList& theTense
         foreach( QString f, aSet )
         {
             lst.append(f);
+            if( !myInit[f].contains( theWord ) )
+                myInit[f].append( theWord );
             //Tools::print( "  " + f );
         }
     }
@@ -72,4 +74,13 @@ QStringList Grammar::CachedForms( const QString& theWord ) const
         return myCachedForms[theWord];
     else
         return QStringList();
+}
+
+QStringList Grammar::Init( const QString& theWord ) const
+{
+    if( myInit.contains( theWord ) )
+        return myInit[theWord];
+    else
+        return QStringList() << theWord;
+
 }
