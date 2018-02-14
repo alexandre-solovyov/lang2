@@ -1,6 +1,6 @@
 
-#ifndef MODEL_H
-#define MODEL_H
+#ifndef LANG_FILE_H
+#define LANG_FILE_H
 
 #include <model/model_global.h>
 #include <model/exercise.h>
@@ -8,25 +8,24 @@
 #include <QStringList>
 #include <QHash>
 
-class MODEL_API Model
+class MODEL_API LangFile
 {
 public:
-    Model();
-    ~Model();
+    LangFile();
+    ~LangFile();
 
     bool Load( const QString&, bool isVerbose=false );
 
-    int  AddFile( const QString& );
-    bool Add( int theFileIndex, const QString& );
+    uint AddFile( const QString& );
+    bool Add( uint theFileIndex, const QString& );
     bool HasLine( const QString& ) const;
 
-    static QString Simplify( const QString& );
-
-    uint Size() const;
+    uint NbLines() const;
 
     ListOfExercises Build( const QList<IGenerator*>&, bool isVerbose=false );
 
 private:
+    static QString Simplify( const QString& );
     void ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const;
     QString ExtractTag( QString& theLine ) const;
 
@@ -41,4 +40,4 @@ private:
     QHash<uint, uint> myHashes;
 };
 
-#endif // MODEL_H
+#endif // LANG_FILE_H

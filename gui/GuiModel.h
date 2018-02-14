@@ -2,12 +2,12 @@
 #ifndef GUI_MODEL_H
 #define GUI_MODEL_H
 
-#include <model/model.h>
+#include <model/LangFile.h>
 #include <model/grammar.h>
 #include <QObject>
 #include <QStringList>
 
-class GuiModel : public QObject, public Model
+class GuiModel : public QObject, public LangFile
 {
     Q_OBJECT
 

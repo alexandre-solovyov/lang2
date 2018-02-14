@@ -2,7 +2,7 @@
 #include <tests.h>
 #include <model/grammar.h>
 #include <model/grammarset.h>
-#include <model/model.h>
+#include <model/LangFile.h>
 #include <model/eg_forms.h>
 #include <model/stdtense.h>
 #include <model/deptense.h>
@@ -115,14 +115,14 @@ TEST(TestGrammar, PresentIsOK)
 
 TEST(TestGrammar, FormsLoadingIsOK)
 {
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test3.lang" ) );
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test3.lang" ) );
 
     Grammar gr;
 
     QList<IGenerator*> gen;
     gen.append( new EG_Forms(&gr) );
-    aModel.Build( gen );
+    aLangFile.Build( gen );
 
     ASSERT_EQQ( gr.Tenses().join( ", " ), "PrInd" );
 
@@ -142,20 +142,20 @@ TEST(TestGrammar, FormsLoadingIsOK)
 
 TEST(TestGrammar, SecondFileDeactivatesTenses)
 {
-    Model aModel;
+    LangFile aLangFile;
 
-    aModel.AddFile("1");
-    ASSERT_TRUE( aModel.Add( 0, "[PrInd] ~er >> ~ons" ) );
-    ASSERT_TRUE( aModel.Add( 0, "parler = говорить" ) );
+    aLangFile.AddFile("1");
+    ASSERT_TRUE( aLangFile.Add( 0, "[PrInd] ~er >> ~ons" ) );
+    ASSERT_TRUE( aLangFile.Add( 0, "parler = говорить" ) );
 
-    aModel.AddFile("2");
-    ASSERT_TRUE( aModel.Add( 1, "[Plur] ~ >> ~s" ) );
-    ASSERT_TRUE( aModel.Add( 1, "homme = человек" ) );
+    aLangFile.AddFile("2");
+    ASSERT_TRUE( aLangFile.Add( 1, "[Plur] ~ >> ~s" ) );
+    ASSERT_TRUE( aLangFile.Add( 1, "homme = человек" ) );
 
     Grammar gr;
     QList<IGenerator*> gen;
     gen.append( new EG_Forms(&gr) );
-    aModel.Build( gen );
+    aLangFile.Build( gen );
 
     ASSERT_EQQ( gr.CachedForms().join( ", " ), "homme, parler" );
     ASSERT_EQQ( gr.CachedForms("homme").join( ", " ), "hommes" );

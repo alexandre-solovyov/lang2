@@ -9,35 +9,36 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 DESTDIR = ../../bin
 
-SOURCES += Model.cpp \
-           Grammar.cpp \
-           GrammarRule.cpp \
-           GrammarSet.cpp \
-           EG_Forms.cpp \
-           EG_One.cpp \
-           EG_Trans.cpp \
-           Exercise.cpp \
-           ITense.cpp \
-           DepTense.cpp \
-           Statistics.cpp \
-           StdTense.cpp \
-           Tools.cpp \
+SOURCES +=           \
+    DepTense.cpp     \
+    EG_Forms.cpp     \
+    EG_One.cpp       \
+    EG_Trans.cpp     \
+    Exercise.cpp     \
+    Grammar.cpp      \
+    GrammarRule.cpp  \
+    GrammarSet.cpp   \
+    ITense.cpp       \
+    LangFile.cpp     \
+    Statistics.cpp   \
+    StdTense.cpp     \
+    Tools.cpp        \
 
-HEADERS += Model.h \
-           model_global.h \
-           Grammar.h \
-           Context.h \
-           Exercise.h \
-           GrammarRule.h \
-           GrammarSet.h \
-           IGenerator.h \ 
-           ITense.h \
-           DepTense.h \
-           Statistics.h \
-           StdTense.h \
-           EG_Forms.h \
-           EG_One.h \
-           EG_Trans.h \
-           Tools.h \
+HEADERS += \
+    model_global.h   \
+    DepTense.h       \
+    EG_Forms.h       \
+    EG_One.h         \
+    EG_Trans.h       \
+    Exercise.h       \
+    Grammar.h        \
+    GrammarRule.h    \
+    GrammarSet.h     \
+    IGenerator.h     \
+    ITense.h         \
+    LangFile.h       \
+    Statistics.h     \
+    StdTense.h       \
+    Tools.h          \
 
 INCLUDEPATH += $$PWD/..

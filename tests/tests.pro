@@ -13,7 +13,7 @@ QT += core
 QT += gui
 
 SOURCES += Main.cpp \
-           TestModel.cpp \
+           TestLangFile.cpp \
            TestGrammar.cpp \
            TestStatistics.cpp \
            TestTools.cpp \

@@ -1,27 +1,27 @@
 
-#include <model/model.h>
+#include <model/LangFile.h>
 #include <model/tools.h>
 #include <QFile>
 #include <QDir>
 #include <QTime>
 
-Model::Model()
+LangFile::LangFile()
 {
 }
 
-Model::~Model()
+LangFile::~LangFile()
 {
 }
 
-uint Model::Size() const
+uint LangFile::NbLines() const
 {
-    int s = 0;
+    uint s = 0;
     foreach( const FileData& f, myFiles )
         s += f.Lines.size();
     return s;
 }
 
-bool Model::Load( const QString& theFilePath, bool isVerbose )
+bool LangFile::Load( const QString& theFilePath, bool isVerbose )
 {
     static QStringList MASK = QStringList() << "*.lang";
     if( QFileInfo( theFilePath ).isDir() )
@@ -58,7 +58,7 @@ bool Model::Load( const QString& theFilePath, bool isVerbose )
     return true;
 }
 
-int Model::AddFile( const QString& theFilePath )
+uint LangFile::AddFile( const QString& theFilePath )
 {
     FileData d;
     d.Name = theFilePath;
@@ -66,7 +66,7 @@ int Model::AddFile( const QString& theFilePath )
     return myFiles.size()-1;
 }
 
-bool Model::Add( int theFileIndex, const QString& theLine )
+bool LangFile::Add( uint theFileIndex, const QString& theLine )
 {
     QString aLine = theLine;
     aLine = Simplify(aLine);
@@ -80,19 +80,19 @@ bool Model::Add( int theFileIndex, const QString& theLine )
     return isOK;
 }
 
-bool Model::HasLine( const QString& theStr ) const
+bool LangFile::HasLine( const QString& theStr ) const
 {
     uint aHash = qHash( theStr );
     return myHashes.contains( aHash );
 }
 
-QString Model::Simplify( const QString& theLine )
+QString LangFile::Simplify( const QString& theLine )
 {
     QString aLine = theLine.split( " ", QString::SkipEmptyParts ).join( " " );
     return aLine;
 }
 
-ListOfExercises Model::Build( const QList<IGenerator*>& theGenerators, bool isVerbose )
+ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool isVerbose )
 {
     ListOfExercises exercises;
     Context aContext;
@@ -160,7 +160,7 @@ ListOfExercises Model::Build( const QList<IGenerator*>& theGenerators, bool isVe
     return exercises;
 }
 
-void Model::ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const
+void LangFile::ChangeContext( Context& theContext, const QString& theKey, const QString& theValue ) const
 {
     if( theKey=="lang" )
     {
@@ -181,7 +181,7 @@ void Model::ChangeContext( Context& theContext, const QString& theKey, const QSt
     }
 }
 
-QString Model::ExtractTag( QString& theLine ) const
+QString LangFile::ExtractTag( QString& theLine ) const
 {
     static QRegExp TAG_PATTERN("^\\s*\\[(\\w+)\\]");
 

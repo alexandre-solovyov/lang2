@@ -18,7 +18,7 @@ void GuiModel::Load( const QString& thePath )
 {
     bool isVerbose = true;
 
-    Model::Load( thePath, isVerbose );
+    LangFile::Load( thePath, isVerbose );
 
     QList<IGenerator*> gen;
     gen.append( new EG_One() );

@@ -1,42 +1,42 @@
 
 #include <tests.h>
-#include <model/model.h>
+#include <model/LangFile.h>
 #include <model/eg_one.h>
 #include <model/eg_trans.h>
 
-TEST(TestModel, NoDuplicates)
+TEST(TestLangFile, NoDuplicates)
 {
-    Model aModel;
+    LangFile aLangFile;
 
-    aModel.AddFile("test");
-    ASSERT_TRUE( aModel.Add( 0, "test" ) );
-    ASSERT_EQ( aModel.Size(), 1 );
+    aLangFile.AddFile("test");
+    ASSERT_TRUE( aLangFile.Add( 0, "test" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 1 );
 
-    ASSERT_FALSE( aModel.Add( 0, "test" ) );
-    ASSERT_EQ( aModel.Size(), 1 );
+    ASSERT_FALSE( aLangFile.Add( 0, "test" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 1 );
 
-    ASSERT_FALSE( aModel.Add( 0, "  test " ) );
-    ASSERT_EQ( aModel.Size(), 1 );
+    ASSERT_FALSE( aLangFile.Add( 0, "  test " ) );
+    ASSERT_EQ( aLangFile.NbLines(), 1 );
 
-    ASSERT_TRUE( aModel.Add( 0, "test 2" ) );
-    ASSERT_EQ( aModel.Size(), 2 );
+    ASSERT_TRUE( aLangFile.Add( 0, "test 2" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 2 );
 }
 
-TEST(TestModel, LoadingIsOK)
+TEST(TestLangFile, LoadingIsOK)
 {
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test1.lang" ) );
-    ASSERT_EQ( aModel.Size(), 7 );
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test1.lang" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 7 );
 }
 
-TEST(TestModel, BuildWithOneIsOK)
+TEST(TestLangFile, BuildWithOneIsOK)
 {
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test2.lang" ) );
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test2.lang" ) );
 
     QList<IGenerator*> gen;
     gen.append( new EG_One() );
-    ListOfExercises ex = aModel.Build( gen );
+    ListOfExercises ex = aLangFile.Build( gen );
     ASSERT_EQ( ex.size(), 8 );
 
     ASSERT_EQQ( ex[0].Question, "couper <?> pomme en deux parties" );
@@ -88,14 +88,14 @@ TEST(TestModel, BuildWithOneIsOK)
     ASSERT_EQQ( ex[7].Category, "basic" );
 }
 
-TEST(TestModel, BuildWithTransIsOK)
+TEST(TestLangFile, BuildWithTransIsOK)
 {
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test2.lang" ) );
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test2.lang" ) );
 
     QList<IGenerator*> gen;
     gen.append( new EG_Trans() );
-    ListOfExercises ex = aModel.Build( gen );
+    ListOfExercises ex = aLangFile.Build( gen );
     ASSERT_EQ( ex.size(), 6 );
 
     ASSERT_EQQ( ex[0].Question, "une scène = <?>" );
@@ -135,16 +135,16 @@ TEST(TestModel, BuildWithTransIsOK)
     ASSERT_EQQ( ex[5].Category, "basic" );
 }
 
-TEST(TestModel, TranslationVariantsAreOK)
+TEST(TestLangFile, TranslationVariantsAreOK)
 {
     qsrand(1234);
 
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test4.lang" ) );
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test4.lang" ) );
 
     QList<IGenerator*> gen;
     gen.append( new EG_Trans() );
-    ListOfExercises ex = aModel.Build( gen );
+    ListOfExercises ex = aLangFile.Build( gen );
     ASSERT_EQ( ex.size(), 40 );
 
     ListOfExercises fex1 = ex.Filter( gen[0]->Type(), "fr", "ru" );
@@ -178,14 +178,14 @@ TEST(TestModel, TranslationVariantsAreOK)
     ASSERT_EQQ( svars2, "une scène, un hôtel, une poste, un centre, un musée, un problème, un fleuve, une année, un principe" );
 }
 
-TEST(TestModel, TagsAreOK)
+TEST(TestLangFile, TagsAreOK)
 {
-    Model aModel;
-    ASSERT_TRUE( aModel.Load( QString(TEST_DATA) + "/test5.lang" ) );
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test5.lang" ) );
 
     QList<IGenerator*> gen;
     gen.append( new EG_Trans() );
-    ListOfExercises ex = aModel.Build( gen );
+    ListOfExercises ex = aLangFile.Build( gen );
     ASSERT_EQ( ex.size(), 4 );
 
     ASSERT_EQQ( ex[0].Tag, "просьба" );
@@ -194,17 +194,17 @@ TEST(TestModel, TagsAreOK)
     ASSERT_EQQ( ex[3].Tag, "благодарность" );
 }
 
-TEST(TestModel, EmptyAnswerIsSupported)
+TEST(TestLangFile, EmptyAnswerIsSupported)
 {
-    Model aModel;
+    LangFile aLangFile;
 
-    aModel.AddFile("test");
-    ASSERT_TRUE( aModel.Add( 0, "accepter * une invitation" ) );
-    ASSERT_EQ( aModel.Size(), 1 );
+    aLangFile.AddFile("test");
+    ASSERT_TRUE( aLangFile.Add( 0, "accepter * une invitation" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 1 );
 
     QList<IGenerator*> gen;
     gen.append( new EG_One() );
-    ListOfExercises ex = aModel.Build( gen );
+    ListOfExercises ex = aLangFile.Build( gen );
     ASSERT_EQ( ex.size(), 1 );
 
     ASSERT_EQQ( ex[0].Question, "accepter <?> une invitation" );
