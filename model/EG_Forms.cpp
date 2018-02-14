@@ -19,6 +19,11 @@ QString EG_Forms::Type() const
     return "forms";
 }
 
+void EG_Forms::Reset()
+{
+    myTenses.clear();
+}
+
 ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
     isOtherProduct = false;
@@ -30,6 +35,8 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
         {
             myGrammar->Add( theContext.Tag, theLine );
             isOtherProduct = true;
+            if( !myTenses.contains( theContext.Tag ) )
+                const_cast<EG_Forms*>( this )->myTenses.append( theContext.Tag );
         }
 
         return ex;
@@ -43,7 +50,7 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
         {
             //Tools::print( ex2[0].Question );
             //TODO: support multi-word forms (?)
-            myGrammar->CacheAllForms( ex2[0].Question );
+            myGrammar->CacheAllForms( ex2[0].Question, myTenses );
         }
     }
 

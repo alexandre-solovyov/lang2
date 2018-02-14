@@ -12,11 +12,13 @@ public:
     EG_Forms( Grammar* );
     virtual ~EG_Forms();
 
+    virtual void Reset();
     virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const;
     virtual QString Type() const;
 
 private:
     Grammar* myGrammar;
+    QStringList myTenses;
 };
 
 #endif // EG_FORMS_H

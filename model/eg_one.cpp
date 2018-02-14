@@ -15,6 +15,10 @@ QString EG_One::Type() const
     return "one";
 }
 
+void EG_One::Reset()
+{
+}
+
 ListOfExercises EG_One::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
     isOtherProduct = false;

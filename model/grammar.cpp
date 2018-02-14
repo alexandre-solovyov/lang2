@@ -2,6 +2,7 @@
 #include <model/grammar.h>
 #include <model/grammarset.h>
 #include <model/stdtense.h>
+#include <model/tools.h>
 
 Grammar::Grammar( bool isOwner )
     : myIsOwner( isOwner )
@@ -47,16 +48,19 @@ QStringList Grammar::Tenses() const
     return myTenses.keys();
 }
 
-void Grammar::CacheAllForms( const QString& theWord )
+void Grammar::CacheAllForms( const QString& theWord, const QStringList& theTenses )
 {
-    QMap<QString, ITense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
-    for( ; it!=last; it++ )
+    foreach( QString aTense, theTenses )
     {
-        GrammarSet aSet = it.value()->Forms( theWord );
+        GrammarSet aSet = myTenses[aTense]->Forms( theWord );
+        //Tools::print( QString( "CacheAllForms: " ) + theWord );
 
         QStringList& lst = myCachedForms[theWord];
         foreach( QString f, aSet )
+        {
             lst.append(f);
+            //Tools::print( "  " + f );
+        }
     }
 }
 

@@ -15,6 +15,10 @@ QString EG_Trans::Type() const
     return "trans";
 }
 
+void EG_Trans::Reset()
+{
+}
+
 ListOfExercises EG_Trans::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
     isOtherProduct = false;

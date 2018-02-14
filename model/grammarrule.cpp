@@ -4,7 +4,7 @@
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
-    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?\\w+) >> (.+)" );
+    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?\\w*) >> (.+)" );
 
     if( !PATTERN.exactMatch( theRule ) )
     {

@@ -88,6 +88,15 @@ TEST(TestGrammar, FormsAreOK)
     ASSERT_EQQ( f.toString(), "je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent" );
 }
 
+TEST(TestGrammar, CompleteFormIsOK)
+{
+    GrammarRule r1( "[Plur] ~ >> ~s" );
+    ASSERT_EQQ( r1.Forms("homme").toString(), "hommes" );
+
+    GrammarRule r2( "[Plur] ~mettre >> ~met" );
+    ASSERT_EQQ( r2.Forms("mettre").toString(), "met" );
+}
+
 TEST(TestGrammar, PresentIsOK)
 {
     Grammar gr( true );
@@ -125,4 +134,27 @@ TEST(TestGrammar, FormsLoadingIsOK)
     ASSERT_EQQ( gr.CachedForms("parler").join( ", " ), "parle, parles, parle, parlons, parlez, parlent" );
     ASSERT_EQQ( gr.CachedForms("marcher").join( ", " ), "" );
     ASSERT_EQQ( gr.CachedForms().join( ", " ), "aller, parler" );
+}
+
+
+TEST(TestGrammar, SecondFileDeactivatesTenses)
+{
+    Model aModel;
+
+    aModel.AddFile("1");
+    ASSERT_TRUE( aModel.Add( 0, "[PrInd] ~er >> ~ons" ) );
+    ASSERT_TRUE( aModel.Add( 0, "parler = говорить" ) );
+
+    aModel.AddFile("2");
+    ASSERT_TRUE( aModel.Add( 1, "[Plur] ~ >> ~s" ) );
+    ASSERT_TRUE( aModel.Add( 1, "homme = человек" ) );
+
+    Grammar gr;
+    QList<IGenerator*> gen;
+    gen.append( new EG_Forms(&gr) );
+    aModel.Build( gen );
+
+    ASSERT_EQQ( gr.CachedForms().join( ", " ), "homme, parler" );
+    ASSERT_EQQ( gr.CachedForms("homme").join( ", " ), "hommes" );
+    ASSERT_EQQ( gr.CachedForms("parler").join( ", " ), "parlons" );
 }
