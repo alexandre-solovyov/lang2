@@ -64,13 +64,15 @@ ApplicationWindow {
             }
         }
 
-        //Component.onCompleted: exercise();
-        Component.onCompleted: stackView.push(editor_page)
+        Component.onCompleted: exercise();
+        //Component.onCompleted: stackView.push(editor_page)
     }
 
     Exercise
     {
         id: exercise_page
+        width: stackView.width
+        height: stackView.height
 
         function newExercise()
         {
@@ -86,6 +88,8 @@ ApplicationWindow {
     LangEditor
     {
         id: editor_page
+        width: stackView.width
+        height: stackView.height
     }
 
     function exercise()
