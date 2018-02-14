@@ -1,0 +1,14 @@
+
+//! lang: fr, ru
+//! category: noms
+
+//! group: fruits
+*un fruit = фрукт
+*un raisin = виноград
+*un orange = апельсин
+*une pomme = яблоко
+*une poire = груша
+*une banane = банан
+*un citron = лимон
+*une mandarine = мандарин
+*un melon = дыня
