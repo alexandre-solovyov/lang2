@@ -18,6 +18,7 @@ SOURCES += Main.cpp \
            TestStatistics.cpp \
            TestTools.cpp \
 
+HEADERS += tests.h \
 
 INCLUDEPATH += $$PWD/..
 DEFINES += TEST_DATA=\\\"$$PWD/../testdata\\\"
