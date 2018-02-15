@@ -23,6 +23,23 @@ TEST(TestLangFile, NoDuplicates)
     ASSERT_EQ( aLangFile.NbLines(), 2 );
 }
 
+TEST(TestLangFile, HasLineTakesIntoAccountFileIndex)
+{
+    LangFile aLangFile;
+
+    aLangFile.AddFile("test");
+    aLangFile.AddFile("test2");
+
+    ASSERT_TRUE( aLangFile.Add( 0, "test" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 1 );
+
+    ASSERT_FALSE( aLangFile.Add( 0, "test" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 1 );
+
+    ASSERT_TRUE( aLangFile.Add( 1, "test" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 2 );
+}
+
 TEST(TestLangFile, LoadingIsOK)
 {
     LangFile aLangFile;
@@ -210,6 +227,21 @@ TEST(TestLangFile, EmptyAnswerIsSupported)
 
     ASSERT_EQQ( ex[0].Question, "accepter <?> une invitation" );
     ASSERT_EQQ( ex[0].Answer, "" );
+}
+
+TEST(TestLangFile, SimplifyIsCorrect)
+{
+    ASSERT_EQQ( LangFile::Simplify(""), "" );
+    ASSERT_EQQ( LangFile::Simplify("   "), "" );
+    ASSERT_EQQ( LangFile::Simplify("abc   "), "abc" );
+    ASSERT_EQQ( LangFile::Simplify("  abc"), "abc" );
+    ASSERT_EQQ( LangFile::Simplify("  ab c   "), "ab c" );
+    ASSERT_EQQ( LangFile::Simplify("  pp        qq   "), "pp qq" );
+    ASSERT_EQQ( LangFile::Simplify("// comment"), "" );
+    ASSERT_EQQ( LangFile::Simplify("test // comment"), "test" );
+    ASSERT_EQQ( LangFile::Simplify("# comment"), "" );
+    ASSERT_EQQ( LangFile::Simplify("test # comment"), "test" );
+    ASSERT_EQQ( LangFile::Simplify("//! special"), "//! special" );
 }
 
 TEST(TestLangFile, TransAdvIsOK)

@@ -18,14 +18,15 @@ public:
 
     uint AddFile( const QString& );
     bool Add( uint theFileIndex, const QString& );
-    bool HasLine( const QString& ) const;
+    bool HasLine( uint theFileIndex, const QString& ) const;
 
     uint NbLines() const;
 
     ListOfExercises Build( const QList<IGenerator*>&, bool isVerbose=false );
 
-private:
     static QString Simplify( const QString& );
+
+private:
     void ChangeContext( Context& theContext,
                         const QString& theKey,
                         const QString& theValue,
@@ -40,7 +41,7 @@ private:
     };
 
     QList<FileData> myFiles;
-    QHash<uint, uint> myHashes;
+    QList<QHash<uint, uint> > myHashes;
 };
 
 #endif // LANG_FILE_H

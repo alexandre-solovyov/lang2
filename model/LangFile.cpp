@@ -63,6 +63,7 @@ uint LangFile::AddFile( const QString& theFilePath )
     FileData d;
     d.Name = theFilePath;
     myFiles.append( d );
+    myHashes.append( QHash<uint, uint>() );
     return myFiles.size()-1;
 }
 
@@ -71,24 +72,33 @@ bool LangFile::Add( uint theFileIndex, const QString& theLine )
     QString aLine = theLine;
     aLine = Simplify(aLine);
 
-    bool isOK = !aLine.isEmpty() && !HasLine( aLine );
+    bool isOK = !aLine.isEmpty() && !HasLine( theFileIndex, aLine );
     if( isOK )
     {
         myFiles[theFileIndex].Lines.append( aLine );
-        myHashes.insert( qHash( aLine ), 0 );
+        myHashes[theFileIndex].insert( qHash( aLine ), 0 );
     }
     return isOK;
 }
 
-bool LangFile::HasLine( const QString& theStr ) const
+bool LangFile::HasLine( uint theFileIndex, const QString& theStr ) const
 {
     uint aHash = qHash( theStr );
-    return myHashes.contains( aHash );
+    return myHashes[theFileIndex].contains( aHash );
 }
 
 QString LangFile::Simplify( const QString& theLine )
 {
     QString aLine = theLine.split( " ", QString::SkipEmptyParts ).join( " " );
+
+    int anIndex = aLine.indexOf("//");
+    if( anIndex>=0 && aLine.mid(anIndex, 3)!="//!" )
+        aLine = aLine.left( anIndex ).trimmed();
+
+    anIndex  = aLine.indexOf("#");
+    if( anIndex>=0 )
+        aLine = aLine.left( anIndex ).trimmed();
+
     return aLine;
 }
 

@@ -29,15 +29,6 @@ void Grammar::Add( const QString& theTense, const QString& theRule )
 {
     if( !myTenses.contains(theTense) )
         Add( new StdTense( theTense, this ) );
-
-    StdTense* st = dynamic_cast<StdTense*>( myTenses[theTense] );
-    if( st )
-    {
-        GrammarRule gr = st->Add( theRule );
-        if( gr.IsSingle() )
-            CacheAllForms( gr.Start(), QStringList() << theTense );
-        //Tools::print( theRule );
-    }
 }
 
 GrammarSet Grammar::Forms( const QString& theTense, const QString& theWord ) const
@@ -53,22 +44,19 @@ QStringList Grammar::Tenses() const
     return myTenses.keys();
 }
 
-void Grammar::CacheAllForms( const QString& theWord, const QStringList& theTenses )
+void Grammar::CacheAllForms( const QString& theWord, ITense* theTense )
 {
-    foreach( QString aTense, theTenses )
-    {
-        //Tools::print( QString( "CacheAllForms: " ) + theWord );
-        GrammarSet aSet = myTenses[aTense]->Forms( theWord );
+    //Tools::print( QString( "CacheAllForms: " ) + theWord );
+    GrammarSet aSet = theTense->Forms( theWord );
 
-        QStringList& lst = myCachedForms[theWord];
-        foreach( QString f, aSet )
-        {
-            if( !lst.contains(f) )
-                lst.append(f);
-            if( !myInit[f].contains( theWord ) )
-                myInit[f].append( theWord );
-            //Tools::print( "  " + f );
-        }
+    QStringList& lst = myCachedForms[theWord];
+    foreach( QString f, aSet )
+    {
+        if( !lst.contains(f) )
+            lst.append(f);
+        if( !myInit[f].contains( theWord ) )
+            myInit[f].append( theWord );
+        //Tools::print( "  " + f );
     }
 }
 

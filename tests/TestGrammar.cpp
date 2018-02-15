@@ -127,8 +127,11 @@ TEST(TestGrammar, FormsLoadingIsOK)
     Grammar gr;
 
     QList<IGenerator*> gen;
-    gen.append( new EG_Forms(&gr) );
+    EG_Forms forms(&gr);
+    gen.append( &forms );
+
     aLangFile.Build( gen );
+    forms.CopyTenses();
 
     ASSERT_EQQ( gr.Tenses().join( ", " ), "PrInd" );
 

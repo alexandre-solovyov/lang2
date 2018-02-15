@@ -21,7 +21,7 @@ public:
 
     QStringList Tenses() const;
 
-    void CacheAllForms( const QString&, const QStringList& );
+    void CacheAllForms( const QString&, ITense* );
     QStringList CachedForms( const QString& = "" ) const;
 
     QStringList Init( const QString& ) const;

@@ -1,6 +1,9 @@
 
 //! lang: fr, ru
 //! category: time
+//! ignore: une, un
+
+[TimePl] ~s >> ~s
 [TimePl] ~ >> ~s
 
 *un jour = день

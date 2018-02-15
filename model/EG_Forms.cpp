@@ -2,6 +2,7 @@
 #include <model/eg_forms.h>
 #include <model/tools.h>
 #include <model/grammar.h>
+#include <model/StdTense.h>
 
 const QString FORMS_MARK = ">>";
 
@@ -21,6 +22,10 @@ QString EG_Forms::Type() const
 
 void EG_Forms::Reset()
 {
+    QMap<QString, StdTense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
+    for( ; it!=last; ++it )
+        delete it.value();
+
     myTenses.clear();
     myIgnore.clear();
 }
@@ -41,10 +46,17 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
         {
             //Tools::print( theLine );
             //Tools::print( theContext.Tag );
-            myGrammar->Add( theContext.Tag, theLine );
-            isOtherProduct = true;
             if( !myTenses.contains( theContext.Tag ) )
-                const_cast<EG_Forms*>( this )->myTenses.append( theContext.Tag );
+                const_cast<EG_Forms*>( this )->myTenses[theContext.Tag] = new StdTense( theContext.Tag, 0 );
+            isOtherProduct = true;
+
+            StdTense* tense = dynamic_cast<StdTense*>( myTenses[theContext.Tag] );
+            GrammarRule gr = tense->Add( theLine );
+            if( gr.IsSingle() )
+            {
+                myGrammar->CacheAllForms( gr.Start(), tense );
+                //Tools::print( theRule );
+            }
         }
 
         return ex;
@@ -63,9 +75,21 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
                 w = w.replace( i, "" );
             w = w.trimmed();
             //Tools::print( "before forms: " + w );
-            myGrammar->CacheAllForms( w, myTenses );
+            QMap<QString, StdTense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
+            for( ; it!=last; ++it )
+                myGrammar->CacheAllForms( w, it.value() );
         }
     }
 
     return ex;
+}
+
+void EG_Forms::CopyTenses()
+{
+    if( myGrammar )
+    {
+        QMap<QString, StdTense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
+        for( ; it!=last; ++it )
+            myGrammar->Add(it.value());
+    }
 }
