@@ -14,6 +14,7 @@ SOURCES +=           \
     EG_Forms.cpp     \
     EG_One.cpp       \
     EG_Trans.cpp     \
+    EG_TransAdv.cpp  \
     Exercise.cpp     \
     Grammar.cpp      \
     GrammarRule.cpp  \
@@ -31,6 +32,7 @@ HEADERS += \
     EG_Forms.h       \
     EG_One.h         \
     EG_Trans.h       \
+    EG_TransAdv.h    \
     Exercise.h       \
     Grammar.h        \
     GrammarRule.h    \

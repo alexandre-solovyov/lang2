@@ -1,8 +1,9 @@
 
 #include <tests.h>
 #include <model/LangFile.h>
-#include <model/eg_one.h>
-#include <model/eg_trans.h>
+#include <model/EG_One.h>
+#include <model/EG_Trans.h>
+#include <model/EG_TransAdv.h>
 
 TEST(TestLangFile, NoDuplicates)
 {
@@ -209,4 +210,16 @@ TEST(TestLangFile, EmptyAnswerIsSupported)
 
     ASSERT_EQQ( ex[0].Question, "accepter <?> une invitation" );
     ASSERT_EQQ( ex[0].Answer, "" );
+}
+
+TEST(TestLangFile, TransAdvIsOK)
+{
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test6.lang" ) );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_TransAdv() );
+    ListOfExercises ex = aLangFile.Build( gen );
+    ASSERT_EQ( ex.size(), 0 );
+    //TODO: ex
 }
