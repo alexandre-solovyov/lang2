@@ -1,0 +1,52 @@
+
+//! lang: fr, ru
+//! category: time
+[TimePl] ~ >> ~s
+
+*un jour = день
+*un matin = утро
+*un midi = полдень
+*un minuit = полночь
+*un soir = вечер
+*une nuit = ночь
+*une journée = сутки
+
+aujourd'hui = сегодня
+hier = вчера
+demain = завтра
+maintenant = сейчас
+
+*un lundi = понедельник
+*un mardi = вторник
+*un mercredi = среда
+*un jeudi = четверг
+*un vendredi = пятница
+*un samedi = суббота
+*un dimanche = воскресенье
+
+tout à l'heure = только что
+
+*un janvier = январь
+*un février = февраль
+*un mars = март
+*un avril = апрель
+*un mai = май
+*un juin = июнь
+*un juillet = июль
+*un août = август
+*un septembre = сентябрь
+*un octobre = октябрь
+*un novembre = ноябрь
+*un décembre = декабрь
+
+*un hiver = зима
+*un printemps = весна
+*un été = лето
+*un automne = осень
+
+*une semaine = неделя
+*un mois = месяц
+*un trimestre = квартал года
+*un semestre = полугодие
+*un an = год
+*une année = год

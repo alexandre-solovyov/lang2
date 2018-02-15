@@ -2,15 +2,15 @@
 //! lang: fr, ru
 //! category: adjectives
 
-[FemPl] ~eau >> ~eaux, ~el, ~elles
-[FemPl] ~eux >> ~eux, ~euse, ~euses
-[FemPl] ~el >> ~els, ~elle, ~elles
-[FemPl] ~ier >> ~iers, ~ière, ~ières
-[FemPl] ~f >> ~fs, ~ve, ~ves
-[FemPl] ~g >> ~gs, ~gue, ~gues
-[FemPl] ~n >> ~ns, ~nne, ~nnes
-[FemPl] ~e >> ~es, ~e, ~es
-[FemPl] ~ >> ~s, ~e, ~es
+[AdjFemPl] ~eau >> ~eaux, ~el, ~elles
+[AdjFemPl] ~eux >> ~eux, ~euse, ~euses
+[AdjFemPl] ~el >> ~els, ~elle, ~elles
+[AdjFemPl] ~ier >> ~iers, ~ière, ~ières
+[AdjFemPl] ~f >> ~fs, ~ve, ~ves
+[AdjFemPl] ~g >> ~gs, ~gue, ~gues
+[AdjFemPl] ~n >> ~ns, ~nne, ~nnes
+[AdjFemPl] ~e >> ~es, ~e, ~es
+[AdjFemPl] ~ >> ~s, ~e, ~es
 
 amoureux = влюбленный
 anglais = английский

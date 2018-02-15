@@ -2,7 +2,8 @@
 //! lang: fr, ru
 //! category: numbers
 
-[FemPl] ~ier >> ~iers, ~ière, ~ières    # for numbers
+[NumFemPl] ~ier >> ~iers, ~ière, ~ières
+[NumPl] ~on >> ~ons
 
 un = 1
 premier = первый
@@ -40,3 +41,4 @@ quatre-vingts = 80
 quatre-vingt-dix = 90
 cent = 100
 mille = 1000
+*un million = миллион
