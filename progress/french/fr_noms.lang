@@ -33,7 +33,7 @@
 *un tableau = картина
 *un lieu = место
 *une semaine = неделя
-*un tour = ???
+*un tour = оборот
 *une tour = башня
 *une chambre = комната
 *un million = миллион
@@ -67,9 +67,6 @@
 *une activité = деятельность
 *un midi = полдень
 *un mois = месяц
-
-
-
 *une histoire = история
 *une géographie = география
 *une chose = вещь
@@ -136,9 +133,9 @@
 *un prix = цена
 *une heure = час
 *un espoir = надежда
-*un voyageur = 
-*une lumière = 
-*une destination = 
+*un voyageur = путешественник
+*une lumière = свет
+*une destination = назначение
 *un effet = эффект
 en effet = действительно
 *un homme = мужчина
@@ -160,3 +157,6 @@ en effet = действительно
 *un morceau = кусок
 *une cité = городок
 *un pas = шаг
+*un beaujolais = божоле
+*une Toussaint = праздник всех святых
+*un Noël = Рождество

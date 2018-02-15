@@ -7,16 +7,22 @@ int main( int argc, char** argv )
     const QString LANG_FOLDER = "D:/asl/lang3/lang/progress/french";
     const QString LANG = "fr";
     //const QString TEXT = "D:/asl/lang3/lang/texts/french/t0001_paris.txt";
-    const QString TEXT = "D:/asl/lang3/lang/texts/french/t0002_ecole_primaire.txt";
+    //const QString TEXT = "D:/asl/lang3/lang/texts/french/t0002_ecole_primaire.txt";
+    const QString TEXT = "D:/asl/lang3/lang/texts/french/t0003_fetes.txt";
 
     StdModel model;
     model.Load( LANG_FOLDER, LANG, true );
     model.LoadPrivate( LANG_FOLDER + "/private" );
 
+    Tools::print( "" );
+
     Tools::print( QString("Nb exercises: %0").arg( model.NbExercises() ) );
     Tools::print( QString("Nb known: %0").arg( model.grammar().NbKnown() ) );
 
+    Tools::print( "" );
+
     QFile aFile( TEXT );
+    Tools::print( QString( "Text file: %0").arg( TEXT) );
     if( !aFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
     {
         Tools::print( "File cannot be opened" );

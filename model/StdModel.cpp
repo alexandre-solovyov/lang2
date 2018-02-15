@@ -36,6 +36,8 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
         gen.append( new EG_One() );
         gen.append( new EG_Trans() );
         gen.append( new EG_Forms(&myGrammar) );
+        if( isVerbose )
+            Tools::print( "" );
         myExercises = lf.Build( gen, isVerbose );
 
         foreach( const Exercise& e, myExercises )

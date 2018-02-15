@@ -145,7 +145,6 @@ TEST(TestGrammar, FormsLoadingIsOK)
     ASSERT_EQQ( gr.Init("parlons").join( ", "), "parler" );
 }
 
-
 TEST(TestGrammar, SecondFileDeactivatesTenses)
 {
     LangFile aLangFile;
@@ -166,4 +165,18 @@ TEST(TestGrammar, SecondFileDeactivatesTenses)
     ASSERT_EQQ( gr.CachedForms().join( ", " ), "homme, parler" );
     ASSERT_EQQ( gr.CachedForms("homme").join( ", " ), "hommes" );
     ASSERT_EQQ( gr.CachedForms("parler").join( ", " ), "parlons" );
+}
+
+TEST(TestGrammar, KnownWordsAreCaseIndependent)
+{
+    Grammar g;
+    g.AddAsKnown("parler", false);
+    ASSERT_TRUE( g.IsKnown("parler") );
+    ASSERT_TRUE( g.IsKnown("Parler") );
+    ASSERT_TRUE( g.IsKnown("PARLER") );
+
+    g.AddAsKnown("MARCHER", false);
+    ASSERT_TRUE( g.IsKnown("marcher") );
+    ASSERT_TRUE( g.IsKnown(" Marcher") );
+    ASSERT_TRUE( g.IsKnown("MARCHER  ") );
 }

@@ -93,12 +93,14 @@ QStringList Grammar::Init( const QString& theWord ) const
 
 void Grammar::AddAsKnown( const QString& theWord, bool isPrivate )
 {
-    ( isPrivate ? myKnownPrivate : myKnown )[theWord] = ' ';
+    QString aWord = theWord.toLower().trimmed();
+    ( isPrivate ? myKnownPrivate : myKnown )[aWord] = ' ';
 }
 
 bool Grammar::IsKnown( const QString& theWord ) const
 {
-    return myKnown.contains( theWord ) || myKnownPrivate.contains( theWord );
+    QString aWord = theWord.toLower().trimmed();
+    return myKnown.contains( aWord ) || myKnownPrivate.contains( aWord );
 }
 
 uint Grammar::NbKnown() const
