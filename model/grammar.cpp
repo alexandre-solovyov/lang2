@@ -63,7 +63,8 @@ void Grammar::CacheAllForms( const QString& theWord, const QStringList& theTense
         QStringList& lst = myCachedForms[theWord];
         foreach( QString f, aSet )
         {
-            lst.append(f);
+            if( !lst.contains(f) )
+                lst.append(f);
             if( !myInit[f].contains( theWord ) )
                 myInit[f].append( theWord );
             //Tools::print( "  " + f );

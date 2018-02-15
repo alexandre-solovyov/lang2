@@ -36,18 +36,19 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
         gen.append( new EG_One() );
         gen.append( new EG_Trans() );
         gen.append( new EG_Forms(&myGrammar) );
-        myExercises = lf.Build(gen);
+        myExercises = lf.Build( gen, isVerbose );
 
         foreach( const Exercise& e, myExercises )
         {
+            QString phrase;
             if( e.Lang2==theLang )
-            {
-                QStringList words = e.Answer.split(QRegExp("\\W+"), QString::SkipEmptyParts );
-                foreach( QString w, words )
-                {
-                    myGrammar.AddAsKnown( w, false );
-                }
-            }
+                phrase = e.Answer;
+            //else if( e.Lang1==theLang )
+            //    phrase = e.Question;
+
+            QStringList words = phrase.split(QRegExp("\\W+"), QString::SkipEmptyParts );
+            foreach( QString w, words )
+                myGrammar.AddAsKnown( w, false );
         }
 
         //Tools::print( "" );

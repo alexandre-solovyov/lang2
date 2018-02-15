@@ -137,7 +137,7 @@ TEST(TestGrammar, FormsLoadingIsOK)
 
     ASSERT_EQQ( gr.CachedForms().join( ", " ), "aller, parler" );
     ASSERT_EQQ( gr.CachedForms("aller").join( ", " ), "vais, vas, va, allons, allez, vont" );
-    ASSERT_EQQ( gr.CachedForms("parler").join( ", " ), "parle, parles, parle, parlons, parlez, parlent" );
+    ASSERT_EQQ( gr.CachedForms("parler").join( ", " ), "parle, parles, parlons, parlez, parlent" );
     ASSERT_EQQ( gr.CachedForms("marcher").join( ", " ), "" );
     ASSERT_EQQ( gr.CachedForms().join( ", " ), "aller, parler" );
 
