@@ -9,14 +9,18 @@
 class GrammarSet;
 class ITense;
 
+/**
+  @class Grammar
+  @brief The implementation of the grammar
+*/
 class MODEL_API Grammar
 {
 public:
     Grammar( bool isOwner=true );
     ~Grammar();
 
-    void Add( ITense* );
-    void Add( const QString& theTense, const QString& theRule );
+    bool Add( ITense* );
+    bool Add( const QString& theTense, const QString& theRule );
     GrammarSet Forms( const QString& theTense, const QString& theWord ) const;
 
     QStringList Tenses() const;
@@ -31,13 +35,15 @@ public:
     uint NbKnown() const;
 
 private:
-    QMap<QString, ITense*> myTenses;
-    bool myIsOwner;
+    QMap<QString, ITense*> myTenses;       ///< the map of tenses
+    bool myIsOwner;                        ///< whether the grammar is owner of tenses objects
 
-    QMap<QString, QStringList> myCachedForms; //TODO: more effective forms container
-    QMap<QString, QStringList> myInit;
-    QMap<QString, char>        myKnown;
-    QMap<QString, char>        myKnownPrivate;
+    QMap<QString, QStringList> myCachedForms;   ///< the map of cached forms
+    QMap<QString, QStringList> myInit;          ///< the map of cached inverse forms
+    //TODO: more effective forms container
+
+    QMap<QString, char>        myKnown;          ///< the map of known words
+    QMap<QString, char>        myKnownPrivate;   ///< the map of private known words
 };
 
 #endif // GRAMMAR_H

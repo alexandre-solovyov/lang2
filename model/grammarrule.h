@@ -8,6 +8,10 @@
 
 class GrammarSet;
 
+/**
+  @class GrammarRule
+  @brief The implementation of the universal grammar rule
+*/
 class MODEL_API GrammarRule
 {
 public:
@@ -23,10 +27,10 @@ public:
     GrammarSet Forms( const QString& theWord ) const;
 
 private:
-    QRegExp myRule;
-    QString myGroup;
-    QString myStart;
-    QStringList myResult;
+    QRegExp myRule;          ///< the regular expression for grammar rule
+    QString myGroup;         ///< the group of the grammar rule
+    QString myStart;         ///< the start part of the grammar rule
+    QStringList myResult;    ///< the result part of the grammar rule
 };
 
 #endif // GRAMMAR_RULE_H

@@ -8,6 +8,10 @@
 class Grammar;
 class GrammarSet;
 
+/**
+  @class ITense
+  @brief The interface for grammatical tenses
+*/
 class MODEL_API ITense
 {
 public:
@@ -17,11 +21,12 @@ public:
     QString Name() const;
     Grammar* grammar() const;
 
+    virtual bool Unite( ITense* );
     virtual GrammarSet Forms( const QString& theWord ) const = 0;
 
 private:
-    QString myName;
-    Grammar* myGrammar;
+    QString myName;         ///< the tense's name
+    Grammar* myGrammar;     ///< the associated grammar
 };
 
 #endif // ITENSE_H

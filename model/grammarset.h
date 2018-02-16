@@ -5,6 +5,10 @@
 #include <model/model_global.h>
 #include <QStringList>
 
+/**
+  @class GrammarSet
+  @brief The implementation of the grammar set of words
+*/
 class MODEL_API GrammarSet : public QStringList
 {
 public:
