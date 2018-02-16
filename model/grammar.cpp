@@ -76,7 +76,6 @@ QStringList Grammar::Init( const QString& theWord ) const
         return myInit[theWord];
     else
         return QStringList() << theWord;
-
 }
 
 void Grammar::AddAsKnown( const QString& theWord, bool isPrivate )
