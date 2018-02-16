@@ -1,6 +1,7 @@
 
 //! lang: fr, ru
 //! category: numbers
+//! ignore: une, un
 
 [AdjFemPl] ~ier >> ~iers, ~ière, ~ières
 [NumPl] ~on >> ~ons
@@ -42,3 +43,4 @@ quatre-vingt-dix = 90
 cent = 100
 mille = 1000
 *un million = миллион
+*un nombre = число

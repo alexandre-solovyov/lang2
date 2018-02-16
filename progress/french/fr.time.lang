@@ -6,6 +6,11 @@
 [TimePl] ~s >> ~s
 [TimePl] ~ >> ~s
 
+*un instant = миг
+*une seconde = секунда
+*une minute = минута
+*une heure = час
+
 *un jour = день
 *un matin = утро
 *un midi = полдень

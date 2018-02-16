@@ -1,0 +1,26 @@
+
+//! lang: fr, ru
+//! category: noms
+//! ignore: une, un
+
+[NomPl] ~eau >> ~eaux
+[NomPl] ~eu >> ~eux
+[NomPl] ~s >> ~s
+[NomPl] ~ >> ~s
+
+*un nord = север
+*un sud = юг
+*un ouest = запад
+*un est = восток
+*un centre = центр
+
+*une géographie = география
+
+*un fleuve = река
+*une île = остров
+*un lieu = место
+*un monde = мир
+*un champ = поле
+
+*un touriste = турист
+*une region = область

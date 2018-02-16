@@ -61,7 +61,6 @@ bleu = синий
 bleu foncé = темно-синий
 noir = черный
 
-
 //! category: pronouns
 je = я
 tu = ты
@@ -76,11 +75,10 @@ son = его
 notre = наш
 votre = ваш
 
-
 leur = их
 [Pl] leur >> leurs
 
 que = что
 qui = кто
 tout = весь
-[ToutPl] tout >> tous, toute, toutes 
+[Pl] tout >> tous, toute, toutes 
