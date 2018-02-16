@@ -1,0 +1,31 @@
+
+//! lang: fr, ru
+//! category: noms
+//! ignore: une, un
+
+[NomPl] ~eau >> ~eaux
+[NomPl] ~eu >> ~eux
+[NomPl] ~s >> ~s
+[NomPl] ~ >> ~s
+
+*une ville = город
+*un musée = музей
+*un hôtel = отель
+*une capitale = столица
+*un palais = дворец
+*un arc = арка
+*un appartement = квартира
+*une agglomération = агломерация
+*un habitant = житель
+*un monument = памятник
+*une rue = улица
+*une gare = вокзал
+*une campagne = деревня
+*un village = село
+*une cité = городок
+*un pont = мост
+*une industrie = промышленность
+*une route = дорога
+
+*un poste = пост
+*une poste = почта
