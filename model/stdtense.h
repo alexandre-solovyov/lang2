@@ -14,6 +14,7 @@ public:
 
     GrammarRule Add( const QString& );
 
+    virtual bool Unite( ITense* );
     virtual GrammarSet Forms( const QString& theWord ) const;
 
 private:

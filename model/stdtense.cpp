@@ -29,3 +29,9 @@ GrammarSet StdTense::Forms( const QString& theWord ) const
     }
     return GrammarSet();
 }
+
+bool StdTense::Unite( ITense* )
+{
+    //TODO: some uniting of tenses rules
+    return true;
+}

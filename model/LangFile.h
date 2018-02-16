@@ -8,6 +8,10 @@
 #include <QStringList>
 #include <QHash>
 
+/**
+  @class LangFile
+  @brief The class for work with language format file
+*/
 class MODEL_API LangFile
 {
 public:
@@ -34,14 +38,18 @@ private:
     QString ExtractTag( QString& theLine ) const;
 
 private:
+    /**
+      @struct FileData
+      @brief The internal information about loaded files and lines
+    */
     struct FileData
     {
-      QString Name;
-      QStringList Lines;
+      QString Name;       ///< the loaded file's name
+      QStringList Lines;  ///< the loaded lines
     };
 
-    QList<FileData> myFiles;
-    QList<QHash<uint, uint> > myHashes;
+    QList<FileData> myFiles;              ///< the loaded files
+    QList<QHash<uint, uint> > myHashes;   ///< the hashes of loaded lines
 };
 
 #endif // LANG_FILE_H

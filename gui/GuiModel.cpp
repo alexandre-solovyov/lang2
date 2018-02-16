@@ -23,7 +23,7 @@ void GuiModel::Load( const QString& thePath )
     QList<IGenerator*> gen;
     gen.append( new EG_One() );
     gen.append( new EG_Trans() );
-    gen.append( new EG_Forms(&myGrammar) );
+    gen.append( new EG_Forms(&myGrammar, false) );
 
     myExercises = Build( gen, isVerbose );
     myIndex = -1;

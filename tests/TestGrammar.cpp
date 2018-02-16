@@ -127,11 +127,10 @@ TEST(TestGrammar, FormsLoadingIsOK)
     Grammar gr;
 
     QList<IGenerator*> gen;
-    EG_Forms forms(&gr);
+    EG_Forms forms(&gr, true);
     gen.append( &forms );
 
     aLangFile.Build( gen );
-    forms.CopyTenses();
 
     ASSERT_EQQ( gr.Tenses().join( ", " ), "PrInd" );
 
@@ -162,7 +161,7 @@ TEST(TestGrammar, SecondFileDeactivatesTenses)
 
     Grammar gr;
     QList<IGenerator*> gen;
-    gen.append( new EG_Forms(&gr) );
+    gen.append( new EG_Forms(&gr, false) );
     aLangFile.Build( gen );
 
     ASSERT_EQQ( gr.CachedForms().join( ", " ), "homme, parler" );
@@ -182,4 +181,11 @@ TEST(TestGrammar, KnownWordsAreCaseIndependent)
     ASSERT_TRUE( g.IsKnown("marcher") );
     ASSERT_TRUE( g.IsKnown(" Marcher") );
     ASSERT_TRUE( g.IsKnown("MARCHER  ") );
+}
+
+TEST(TestGrammar, AddRuleIsOK)
+{
+    Grammar gr;
+    gr.Add("PrInd", "~er >> ~ons" );
+    ASSERT_EQQ( gr.Forms("PrInd", "parler").join( ", " ), "parlons" );
 }

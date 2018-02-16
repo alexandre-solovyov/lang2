@@ -35,7 +35,7 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
         QList<IGenerator*> gen;
         gen.append( new EG_One() );
         gen.append( new EG_Trans() );
-        gen.append( new EG_Forms(&myGrammar) );
+        gen.append( new EG_Forms(&myGrammar, false) );
         if( isVerbose )
             Tools::print( "" );
         myExercises = lf.Build( gen, isVerbose );

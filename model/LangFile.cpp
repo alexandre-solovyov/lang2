@@ -115,9 +115,6 @@ ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool i
         if( isVerbose )
             Tools::print( QString( "Building file: %0..." ).arg( file.Name ) );
 
-        foreach( IGenerator* aGenerator, theGenerators )
-            aGenerator->Reset();
-
         foreach( QString aLine, file.Lines )
         {
             if( aLine.startsWith("//!") )
@@ -163,6 +160,9 @@ ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool i
                 }
             }
         }
+
+        foreach( IGenerator* aGenerator, theGenerators )
+            aGenerator->Reset();
     }
 
     double build_time = t.elapsed() * 0.001;

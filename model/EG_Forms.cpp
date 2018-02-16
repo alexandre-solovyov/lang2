@@ -6,8 +6,8 @@
 
 const QString FORMS_MARK = ">>";
 
-EG_Forms::EG_Forms( Grammar* theGrammar )
-    : EG_Trans(false, true), myGrammar( theGrammar )
+EG_Forms::EG_Forms( Grammar* theGrammar, bool isCopyTenses )
+    : EG_Trans(false, true), myGrammar( theGrammar ), myIsCopyTenses( isCopyTenses )
 {
 }
 
@@ -22,9 +22,10 @@ QString EG_Forms::Type() const
 
 void EG_Forms::Reset()
 {
-    QMap<QString, StdTense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
-    for( ; it!=last; ++it )
-        delete it.value();
+    if( myIsCopyTenses )
+        CopyTenses();
+    else
+        DeleteTenses();
 
     myTenses.clear();
     myIgnore.clear();
@@ -92,4 +93,11 @@ void EG_Forms::CopyTenses()
         for( ; it!=last; ++it )
             myGrammar->Add(it.value());
     }
+}
+
+void EG_Forms::DeleteTenses()
+{
+    QMap<QString, StdTense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
+    for( ; it!=last; ++it )
+        delete it.value();
 }

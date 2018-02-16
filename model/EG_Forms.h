@@ -11,7 +11,7 @@ class StdTense;
 class MODEL_API EG_Forms : public EG_Trans
 {
 public:
-    EG_Forms( Grammar* );
+    EG_Forms( Grammar*, bool isCopyTenses );
     virtual ~EG_Forms();
 
     virtual void Reset();
@@ -19,12 +19,15 @@ public:
     virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const;
     virtual QString Type() const;
 
+protected:
     void CopyTenses();
+    void DeleteTenses();
 
 private:
     Grammar* myGrammar;
     QMap<QString, StdTense*> myTenses;
     QStringList myIgnore;
+    bool myIsCopyTenses;
 };
 
 #endif // EG_FORMS_H

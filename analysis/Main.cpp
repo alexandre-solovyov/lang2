@@ -105,8 +105,8 @@ int main( int /*argc*/, char** /*argv*/ )
     IS_VERBOSE = false;
     Load();
 
-    //CheckTexts( 3, true );
-    CheckTexts( 4, false );
+    CheckTexts( 3, true );
+    //CheckTexts( 4, false );
 
     return 0;
 }
