@@ -23,10 +23,11 @@ void Load()
         Tools::print( "" );
 
         Tools::print( QString("Nb exercises: %0").arg( MODEL.NbExercises() ) );
-        Tools::print( QString("Nb known: %0").arg( MODEL.grammar().NbKnown() ) );
-
-        Tools::print( "" );
     }
+
+    // This information should be always printed
+    Tools::print( QString("Nb known: %0").arg( MODEL.grammar().NbKnown() ) );
+    Tools::print( "" );
 }
 
 bool CheckText( const QString& thePath )
