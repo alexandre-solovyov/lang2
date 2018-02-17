@@ -70,4 +70,6 @@ bool StdModel::LoadPrivate( const QString& theFilePath )
 
     foreach( QString aLine, aLines )
         myGrammar.AddAsKnown( aLine, true );
+
+    return true;
 }

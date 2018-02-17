@@ -22,19 +22,20 @@ void EG_TransAdv::Ignore( const QStringList& )
 {
 }
 
+/*
 void AddTr( const ListOfExercises& ex, const Context& theContext, const QString& theWord, const QString& theTrans )
 {
 }
 
 void AddVTr( const ListOfExercises& ex, const Context& theContext, const QString& theWord )
 {
-}
+}*/
 
-ListOfExercises EG_TransAdv::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
+ListOfExercises EG_TransAdv::Generate( const QString& /*theLine*/, const Context& /*theContext*/, bool& /*isOtherProduct*/ ) const
 {
     ListOfExercises ex;
 
-    QStringList parts = theLine.split( ":", QString::SkipEmptyParts );
+  /* QStringList parts = theLine.split( ":", QString::SkipEmptyParts );
     if( parts.size()==2 )
     {
         QString p1 = parts[0].trimmed();
@@ -63,7 +64,7 @@ ListOfExercises EG_TransAdv::Generate( const QString& theLine, const Context& th
                 AddTr( ex, theContext, "une" + word, trans );
             }
         }
-    }
+    }*/
 
     return ex;
 }

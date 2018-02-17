@@ -8,7 +8,7 @@ isEmpty(GOOGLETEST_DIR) {
     GOOGLETEST_DIR = C:/googletest-master
   }
   linux {
-    GOOGLETEST_DIR = /home/pi/googletest
+    GOOGLETEST_DIR = $$ENV{HOME}/googletest
   }
 }
 

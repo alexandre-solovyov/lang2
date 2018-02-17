@@ -2,7 +2,7 @@
 #include <model/DepTense.h>
 #include <model/Grammar.h>
 
-DepTense::DepTense( const QString& theName, Grammar* theGrammar, const QString& theTense, uint theForm, const GrammarSet& theEndings )
+DepTense::DepTense( const QString& theName, Grammar* theGrammar, const QString& theTense, int theForm, const GrammarSet& theEndings )
     : ITense( theName, theGrammar ),
       myTense( theTense ),
       myForm( theForm ),

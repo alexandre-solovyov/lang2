@@ -38,7 +38,7 @@ QString Tools::normalize( const QString& theText )
 
     QString aText = theText;
     QMap<QString, QString>::const_iterator it = ND.begin(), last = ND.end();
-    for( ; it!=last; it++ )
+    for( ; it!=last; ++it )
         aText.replace( it.key(), it.value() );
     return aText;
 }

@@ -3,8 +3,13 @@
 #include <model/Tools.h>
 #include <QDir>
 
-const QString LANG_FOLDER = "D:/asl/lang3/lang/progress/french";
-const QString TEXTS_FOLDER = "D:/asl/lang3/lang/texts/french";
+#ifdef WIN32
+    const QString LANG_FOLDER = "D:/asl/lang3/lang/progress/french";
+    const QString TEXTS_FOLDER = "D:/asl/lang3/lang/texts/french";
+#else
+    const QString LANG_FOLDER = QDir::home().absoluteFilePath("lang2/progress/french");
+    const QString TEXTS_FOLDER = QDir::home().absoluteFilePath("lang2/texts/french");
+#endif
 
 const QString LANG = "fr";
 

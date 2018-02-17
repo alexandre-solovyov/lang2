@@ -21,7 +21,7 @@ Grammar::~Grammar()
     if( myIsOwner )
     {
         QMap<QString, ITense*>::const_iterator it = myTenses.begin(), last = myTenses.end();
-        for( ; it!=last; it++ )
+        for( ; it!=last; ++it )
             delete it.value();
     }
 }

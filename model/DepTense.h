@@ -8,14 +8,14 @@
 class MODEL_API DepTense : public ITense
 {
 public:
-    DepTense( const QString& theName, Grammar* theGrammar, const QString& theTense, uint theForm, const GrammarSet& theEndings );
+    DepTense( const QString& theName, Grammar* theGrammar, const QString& theTense, int theForm, const GrammarSet& theEndings );
     virtual ~DepTense();
 
     virtual GrammarSet Forms( const QString& theWord ) const;
 
 private:
     QString myTense;
-    uint myForm;
+    int myForm;
     GrammarSet myEndings;
 };
 
