@@ -2,6 +2,19 @@
 #include <model/Exercise.h>
 #include <QStringList>
 
+Exercise::Exercise()
+{
+}
+
+Exercise::Exercise( const Context& theContext )
+{
+    Lang1 = theContext.Lang1;
+    Lang2 = theContext.Lang2;
+    Category = theContext.Category;
+    Type = theContext.Type;
+    Tag = theContext.Tag;
+}
+
 bool Exercise::operator == ( const Exercise& e ) const
 {
     return Lang1==e.Lang1 &&

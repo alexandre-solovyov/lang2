@@ -93,6 +93,9 @@ QStringList Grammar::Tenses() const
 */
 void Grammar::CacheAllForms( const QString& theWord, ITense* theTense )
 {
+    if( !theTense )
+        return;
+
     //Tools::print( QString( "CacheAllForms: " ) + theWord );
     GrammarSet aSet = theTense->Forms( theWord );
 

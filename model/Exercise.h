@@ -8,17 +8,8 @@
 
 struct Exercise : public Context
 {
-    Exercise()
-    {
-    }
-    Exercise( const Context& c )
-    {
-        Lang1 = c.Lang1;
-        Lang2 = c.Lang2;
-        Category = c.Category;
-        Type = c.Type;
-        Tag = c.Tag;
-    }
+    Exercise();
+    Exercise( const Context& );
 
     QString Question;
     QString Answer;

@@ -183,9 +183,19 @@ TEST(TestGrammar, KnownWordsAreCaseIndependent)
     ASSERT_TRUE( g.IsKnown("MARCHER  ") );
 }
 
+TEST(TestGrammar, NullRuleIsNotAdded)
+{
+    Grammar gr;
+    gr.Add( 0 );
+    ASSERT_EQ( gr.Tenses().size(), 0 );
+
+    gr.CacheAllForms( "", 0 );
+    ASSERT_EQ( gr.NbKnown(), 0 );
+}
+
 TEST(TestGrammar, AddRuleIsOK)
 {
     Grammar gr;
-    gr.Add("PrInd", "~er >> ~ons" );
+    gr.Add( "PrInd", "~er >> ~ons" );
     ASSERT_EQQ( gr.Forms("PrInd", "parler").join( ", " ), "parlons" );
 }

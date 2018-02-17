@@ -5,6 +5,13 @@
 #include <model/EG_Trans.h>
 #include <model/EG_TransAdv.h>
 
+TEST(TestLangFile, NotExistingFileIsOK)
+{
+    LangFile aLangFile;
+    ASSERT_FALSE( aLangFile.Load( "not-existing" ) );
+    ASSERT_EQ( aLangFile.NbLines(), 0 );
+}
+
 TEST(TestLangFile, NoDuplicates)
 {
     LangFile aLangFile;

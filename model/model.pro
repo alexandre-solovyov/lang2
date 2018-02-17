@@ -28,6 +28,7 @@ SOURCES +=           \
 
 HEADERS += \
     model_global.h   \
+    Context.h        \
     DepTense.h       \
     EG_Forms.h       \
     EG_One.h         \
