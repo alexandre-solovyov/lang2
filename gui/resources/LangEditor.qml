@@ -1,15 +1,15 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
+import QtQuick 2.2
+import QtQuick.Controls 1.2
+import QtQuick.Layouts 1.1
 
-Page {
+Rectangle {
 
     id: editor_page
 
     width: 600
     height: 400
 
-    title: qsTr("Editor")
+    //title: qsTr("Editor")
     property string fileName;
 
     Flickable {

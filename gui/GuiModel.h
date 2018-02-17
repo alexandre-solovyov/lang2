@@ -3,7 +3,7 @@
 #define GUI_MODEL_H
 
 #include <model/LangFile.h>
-#include <model/grammar.h>
+#include <model/Grammar.h>
 #include <QObject>
 #include <QStringList>
 

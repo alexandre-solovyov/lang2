@@ -26,7 +26,11 @@ int main(int argc, char *argv[])
 
     QString aFile = arguments["file"];
     if( aFile.isEmpty() )
+#ifdef WIN32
         aFile = "D:/asl/lang/progress/french";
+#else
+        aFile = "/home/pi/lang2/progress/french";
+#endif
 
     qsrand(QTime::currentTime().msecsSinceStartOfDay());
     GuiModel gui_model;

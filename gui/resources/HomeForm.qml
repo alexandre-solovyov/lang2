@@ -1,11 +1,11 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.2
+import QtQuick.Controls 1.2
 
-Page {
+Rectangle {
     width: 600
     height: 400
 
-    title: qsTr("Lang")
+    //title: qsTr("Lang")
 
     Label {
         text: qsTr("")

@@ -1,15 +1,15 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtQuick.Layouts 1.3
+import QtQuick 2.2
+import QtQuick.Controls 1.2
+import QtQuick.Layouts 1.1
 
-Page {
+Rectangle {
 
     id: exercise_page
 
     width: 600
     height: 400
 
-    title: qsTr("Exercise")
+    //title: qsTr("Exercise")
 
     property int mainPSize: 20
     property int bigPSize: 30
@@ -38,7 +38,7 @@ Page {
 
         TextField {
             id: user_answer
-            color: "green"
+            //color: "green"
             font.pointSize: bigPSize
             Layout.fillWidth: true
         }

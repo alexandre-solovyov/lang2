@@ -1,5 +1,5 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.2
+import QtQuick.Controls 1.2
 
 ApplicationWindow {
     id: window
@@ -8,7 +8,7 @@ ApplicationWindow {
     height: 480
     title: qsTr("Lang")
 
-    header: ToolBar {
+    /*header: ToolBar {
         contentHeight: toolButton.implicitHeight
 
         ToolButton {
@@ -28,9 +28,9 @@ ApplicationWindow {
             text: stackView.currentItem.title
             anchors.centerIn: parent
         }
-    }
+    }*/
 
-    Drawer {
+    /*Drawer {
         id: drawer
         width: window.width * 0.66
         height: window.height
@@ -38,7 +38,7 @@ ApplicationWindow {
         Column {
             anchors.fill: parent
 
-            ItemDelegate {
+            Item {
                 text: qsTr("Exercise")
                 width: parent.width
                 onClicked: {
@@ -46,7 +46,7 @@ ApplicationWindow {
                     drawer.close()
                 }
             }
-            ItemDelegate {
+            Item {
                 text: qsTr("Statistics")
                 width: parent.width
                 onClicked: {
@@ -54,7 +54,7 @@ ApplicationWindow {
                     drawer.close()
                 }
             }
-            ItemDelegate {
+            Item {
                 text: qsTr("Editor")
                 width: parent.width
                 onClicked: {
@@ -66,7 +66,7 @@ ApplicationWindow {
 
         Component.onCompleted: exercise();
         //Component.onCompleted: stackView.push(editor_page)
-    }
+    }*/
 
     Exercise
     {
@@ -100,7 +100,8 @@ ApplicationWindow {
 
     StackView {
         id: stackView
-        initialItem: "HomeForm.qml"
+        //initialItem: "HomeForm.qml"
+        initialItem: exercise_page
         anchors.fill: parent
     }
 }

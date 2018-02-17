@@ -1,9 +1,10 @@
 
 #include <gui/GuiModel.h>
-#include <model/eg_one.h>
-#include <model/eg_trans.h>
-#include <model/eg_forms.h>
-#include <model/tools.h>
+#include <model/EG_One.h>
+#include <model/EG_Trans.h>
+#include <model/EG_Forms.h>
+#include <model/Tools.h>
+#include <QFile>
 
 GuiModel::GuiModel()
     : myIndex( -1 )
