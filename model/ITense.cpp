@@ -1,6 +1,6 @@
 
-#include <model/itense.h>
-#include <model/grammar.h>
+#include <model/ITense.h>
+#include <model/Grammar.h>
 
 /**
   @brief Constructor

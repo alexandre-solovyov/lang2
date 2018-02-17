@@ -177,7 +177,11 @@ TEST(TestLangFile, TranslationVariantsAreOK)
     QString svars = vars.join( ", ");
     ASSERT_EQQ( ex[4].Question, "un problème = <?>" );
     ASSERT_EQQ( ex[4].Answer, "проблема" );
+#ifdef WIN32
     ASSERT_EQQ( svars, "сцена, отель, почта, центр, музей, проблема, река, год, принцип" );
+#else
+    ASSERT_EQQ( svars, "дело, почта, правило, столица, центр, проблема, пост, модель, отель" );
+#endif
 
 
     qsrand(1234);
@@ -193,7 +197,11 @@ TEST(TestLangFile, TranslationVariantsAreOK)
     QString svars2 = vars2.join( ", ");
     ASSERT_EQQ( ex[5].Question, "проблема = <?>" );
     ASSERT_EQQ( ex[5].Answer, "un problème" );
+#ifdef WIN32
     ASSERT_EQQ( svars2, "une scène, un hôtel, une poste, un centre, un musée, un problème, un fleuve, une année, un principe" );
+#else
+    ASSERT_EQQ( svars2, "un problème, un modèle, une capitale, une affaire, une règle, un hôtel, une poste, un centre, un poste" );
+#endif
 }
 
 TEST(TestLangFile, TagsAreOK)

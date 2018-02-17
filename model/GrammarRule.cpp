@@ -1,6 +1,6 @@
 
-#include <model/grammarrule.h>
-#include <model/grammarset.h>
+#include <model/GrammarRule.h>
+#include <model/GrammarSet.h>
 #include <model/Tools.h>
 
 GrammarRule::GrammarRule( const QString& theRule )

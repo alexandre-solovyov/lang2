@@ -1,8 +1,8 @@
 
-#include <model/grammar.h>
-#include <model/grammarset.h>
-#include <model/stdtense.h>
-#include <model/tools.h>
+#include <model/Grammar.h>
+#include <model/GrammarSet.h>
+#include <model/StdTense.h>
+#include <model/Tools.h>
 
 /**
   @brief Constructor

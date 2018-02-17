@@ -4,6 +4,7 @@
 
 #include <model/model_global.h>
 #include <QHash>
+#include <QString>
 
 class MODEL_API Statistics
 {

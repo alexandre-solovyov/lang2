@@ -1,7 +1,7 @@
 
-#include <model/eg_forms.h>
-#include <model/tools.h>
-#include <model/grammar.h>
+#include <model/EG_Forms.h>
+#include <model/Tools.h>
+#include <model/Grammar.h>
 #include <model/StdTense.h>
 
 const QString FORMS_MARK = ">>";

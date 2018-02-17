@@ -1,7 +1,7 @@
 
-#include <model/stdtense.h>
-#include <model/grammarrule.h>
-#include <model/grammarset.h>
+#include <model/StdTense.h>
+#include <model/GrammarRule.h>
+#include <model/GrammarSet.h>
 
 StdTense::StdTense( const QString& theName, Grammar* theGrammar )
     : ITense( theName, theGrammar )

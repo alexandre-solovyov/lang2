@@ -1,5 +1,6 @@
 
-#include <model/exercise.h>
+#include <model/Exercise.h>
+#include <QStringList>
 
 bool Exercise::operator == ( const Exercise& e ) const
 {

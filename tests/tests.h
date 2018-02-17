@@ -3,7 +3,7 @@
 #define TESTS_H
 
 #include <gtest/gtest.h>
-#include <model/tools.h>
+#include <model/Tools.h>
 #include <QString>
 
 #define ASSERT_EQQ( actual, expected )                                    \

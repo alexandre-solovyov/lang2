@@ -2,8 +2,8 @@
 #ifndef STD_TENSE_H
 #define STD_TENSE_H
 
-#include <model/itense.h>
-#include <model/grammarrule.h>
+#include <model/ITense.h>
+#include <model/GrammarRule.h>
 #include <QList>
 
 class MODEL_API StdTense : public ITense

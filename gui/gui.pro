@@ -1,4 +1,4 @@
-QT += quick
+#QT += quick
 CONFIG += c++11
 TARGET = lang_gui
 CONFIG += console

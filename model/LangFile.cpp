@@ -1,6 +1,6 @@
 
 #include <model/LangFile.h>
-#include <model/tools.h>
+#include <model/Tools.h>
 #include <QFile>
 #include <QDir>
 #include <QTime>

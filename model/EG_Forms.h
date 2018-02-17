@@ -2,7 +2,7 @@
 #ifndef EG_FORMS_H
 #define EG_FORMS_H
 
-#include <model/eg_trans.h>
+#include <model/EG_Trans.h>
 #include <QMap>
 
 class Grammar;

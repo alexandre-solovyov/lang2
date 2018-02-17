@@ -3,7 +3,7 @@
 #define EXERCISE_H
 
 #include <model/model_global.h>
-#include <model/context.h>
+#include <model/Context.h>
 #include <QList>
 
 struct Exercise : public Context

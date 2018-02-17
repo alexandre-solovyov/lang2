@@ -1,6 +1,6 @@
 
 #include <gtest/gtest.h>
-#include <model/tools.h>
+#include <model/Tools.h>
 #include <QString>
 
 int main(int argc, char *argv[])

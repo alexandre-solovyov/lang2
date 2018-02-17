@@ -2,7 +2,7 @@
 #ifndef EG_TRANS_ADV_H
 #define EG_TRANS_ADV_H
 
-#include <model/igenerator.h>
+#include <model/IGenerator.h>
 
 class MODEL_API EG_TransAdv : public IGenerator
 {

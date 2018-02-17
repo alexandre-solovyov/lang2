@@ -1,11 +1,11 @@
 
 #include <tests.h>
-#include <model/grammar.h>
-#include <model/grammarset.h>
+#include <model/Grammar.h>
+#include <model/GrammarSet.h>
 #include <model/LangFile.h>
-#include <model/eg_forms.h>
-#include <model/stdtense.h>
-#include <model/deptense.h>
+#include <model/EG_Forms.h>
+#include <model/StdTense.h>
+#include <model/DepTense.h>
 
 TEST(TestGrammar, SetOperationsAreOK)
 {

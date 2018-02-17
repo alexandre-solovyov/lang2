@@ -1,5 +1,5 @@
 
-#include <model/eg_trans.h>
+#include <model/EG_Trans.h>
 
 EG_Trans::EG_Trans( bool isBoth, bool isSimple )
     : myIsBoth( isBoth ), myIsSimple( isSimple )

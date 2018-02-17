@@ -1,5 +1,5 @@
 
-#include <model/statistics.h>
+#include <model/Statistics.h>
 
 Statistics::Statistics()
 {

@@ -3,7 +3,7 @@
 #define GRAMMAR_H
 
 #include <model/model_global.h>
-#include <model/grammarrule.h>
+#include <model/GrammarRule.h>
 #include <QMap>
 
 class GrammarSet;

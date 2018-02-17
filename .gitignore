@@ -1,3 +1,5 @@
 *.pro.user
 *.log
 doc
+Makefile
+*.o

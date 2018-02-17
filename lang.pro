@@ -1,5 +1,6 @@
 
 TEMPLATE = subdirs
-SUBDIRS += model tests gui analysis
+SUBDIRS += model tests analysis
+#SUBDIRS += gui
 CONFIG += ordered
 

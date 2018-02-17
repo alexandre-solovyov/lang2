@@ -1,6 +1,6 @@
 
-#include <model/deptense.h>
-#include <model/grammar.h>
+#include <model/DepTense.h>
+#include <model/Grammar.h>
 
 DepTense::DepTense( const QString& theName, Grammar* theGrammar, const QString& theTense, uint theForm, const GrammarSet& theEndings )
     : ITense( theName, theGrammar ),

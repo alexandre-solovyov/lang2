@@ -3,8 +3,8 @@
 #define LANG_FILE_H
 
 #include <model/model_global.h>
-#include <model/exercise.h>
-#include <model/igenerator.h>
+#include <model/Exercise.h>
+#include <model/IGenerator.h>
 #include <QStringList>
 #include <QHash>
 

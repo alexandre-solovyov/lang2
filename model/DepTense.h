@@ -2,8 +2,8 @@
 #ifndef DEP_TENSE_H
 #define DEP_TENSE_H
 
-#include <model/itense.h>
-#include <model/grammarset.h>
+#include <model/ITense.h>
+#include <model/GrammarSet.h>
 
 class MODEL_API DepTense : public ITense
 {

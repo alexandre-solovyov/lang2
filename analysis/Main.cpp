@@ -74,7 +74,7 @@ bool CheckText( const QString& thePath )
     }
     else
     {
-        QString words = unknown.keys().join( ", " );
+        QString words = QStringList(unknown.keys()).join( ", " );
         words = words.left( LIST_TRIM );
         Tools::print( "  " + words );
     }

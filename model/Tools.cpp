@@ -1,6 +1,11 @@
 
-#include <model/tools.h>
-#include <windows.h>
+#include <model/Tools.h>
+#ifdef WIN32
+  #include <windows.h>
+#else
+  #include <stdio.h>
+#endif
+#include <QString>
 #include <QMap>
 
 QString Tools::normalize( const QString& theText )
@@ -41,7 +46,12 @@ QString Tools::normalize( const QString& theText )
 void Tools::print( const QString& theText, bool isEndOfLine )
 {
     QString aText = theText + ( isEndOfLine ? "\n" : "" );
+#ifdef WIN32
     WriteConsoleW( GetStdHandle(STD_OUTPUT_HANDLE), aText.utf16(), aText.size(), NULL, NULL );
+#else
+    //TODO: unicode console on Linux
+    printf( "%s", aText.toStdString().c_str() );
+#endif
 }
 
 bool Tools::startsWithDigit( const QString& theText )

@@ -1,5 +1,5 @@
 
-#include <grammarset.h>
+#include <model/GrammarSet.h>
 
 GrammarSet::GrammarSet( const QStringList& theList )
     : QStringList( theList )
