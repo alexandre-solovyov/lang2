@@ -9,17 +9,12 @@
 [PrInd] ~(sen|men|par|sor)tir >> ~.s, ~.s, ~.t, ~.tons, ~.tez, ~.tent
 
 # First group
-
 [PrInd] ~cer >> ~ce, ~ces, ~ce, ~çons, ~cez, ~cent
 [PrInd] ~ger >> ~ge, ~ges, ~ge, ~geons, ~gez, ~gent
-//[PrInd] ~guer >> ~gue, ~gues, ~gue, ~guons, ~guez, ~guent
 
 [PrInd] ~jeter >> ~jette, ~jettes, ~jette, ~jetons, ~jetez, ~jettent
 [PrInd] ~appeler >> ~appelle, ~appelles, ~appelle, ~appelons, ~appelez, ~appellent
 [PrInd] interpeler >> interpelle, interpelles, interpelle, interpelons, interpelez, interpellent
-
-//[PrInd] ~eter >> ~ète, ~ètes, ~ète, ~etons, ~etez, ~ètent
-//[PrInd] ~eler >> ~èle, ~èles, ~èle, ~elons, ~elez, ~èlent
 
 [PrInd] ~e.er >> ~è.e, ~è.es, ~è.e, ~e.ons, ~e.ez, ~è.ent
 [PrInd] ~é.er >> ~è.e, ~è.es, ~è.e, ~é.ons, ~é.ez, ~è.ent
@@ -32,6 +27,5 @@
 [PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent
 
 # Second group
-
 [PrInd] haïr >> hais, hais, hait, haïssons, haïssez, haïssent
 [PrInd] ~ir >> ~is, ~is, ~it, ~issons, ~issez, ~issent
