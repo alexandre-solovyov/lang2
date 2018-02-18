@@ -6,20 +6,31 @@
 
 const QString FORMS_MARK = ">>";
 
+/**
+  @brief Constructor
+  @param theGrammar the associated grammar
+*/
 EG_Forms::EG_Forms( Grammar* theGrammar, bool isCopyTenses )
     : EG_Trans(false, true), myGrammar( theGrammar ), myIsCopyTenses( isCopyTenses )
 {
 }
 
+/**
+  @brief Destructor
+*/
 EG_Forms::~EG_Forms()
 {
 }
 
+/**
+*/
 QString EG_Forms::Type() const
 {
     return "forms";
 }
 
+/**
+*/
 void EG_Forms::Reset()
 {
     if( myIsCopyTenses )
@@ -31,11 +42,15 @@ void EG_Forms::Reset()
     myIgnore.clear();
 }
 
+/**
+*/
 void EG_Forms::Ignore( const QStringList& theIgnore )
 {
     myIgnore = theIgnore;
 }
 
+/**
+*/
 ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
     isOtherProduct = false;

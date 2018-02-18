@@ -9,15 +9,21 @@ EG_TransAdv::~EG_TransAdv()
 {
 }
 
+/**
+*/
 QString EG_TransAdv::Type() const
 {
     return "trans_adv";
 }
 
+/**
+*/
 void EG_TransAdv::Reset()
 {
 }
 
+/**
+*/
 void EG_TransAdv::Ignore( const QStringList& )
 {
 }
@@ -31,6 +37,8 @@ void AddVTr( const ListOfExercises& ex, const Context& theContext, const QString
 {
 }*/
 
+/**
+*/
 ListOfExercises EG_TransAdv::Generate( const QString& /*theLine*/, const Context& /*theContext*/, bool& /*isOtherProduct*/ ) const
 {
     ListOfExercises ex;

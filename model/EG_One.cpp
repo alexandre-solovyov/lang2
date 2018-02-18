@@ -10,19 +10,27 @@ EG_One::~EG_One()
 {
 }
 
+/**
+*/
 QString EG_One::Type() const
 {
     return "one";
 }
 
+/**
+*/
 void EG_One::Reset()
 {
 }
 
+/**
+*/
 void EG_One::Ignore( const QStringList& )
 {
 }
 
+/**
+*/
 ListOfExercises EG_One::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
 {
     isOtherProduct = false;
