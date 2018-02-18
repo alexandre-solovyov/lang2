@@ -5,7 +5,7 @@
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
-    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?[\\w\\.]*) >> (.+)" );
+    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?[\\w\\.\\(\\)\\|]*) >> (.+)" );
 
     if( !PATTERN.exactMatch( theRule ) )
     {
@@ -13,21 +13,23 @@ GrammarRule::GrammarRule( const QString& theRule )
         return;
     }
 
-    //printf( "Matched\n" );
     myGroup  = PATTERN.cap( 1 );
     myStart  = PATTERN.cap( 2 );
     myResult = PATTERN.cap( 3 ).split( "," );
+    //Tools::print( "Matched: " + myStart );
+
     for( int i=0, n=myResult.size(); i<n; i++ )
         myResult[i] = myResult[i].trimmed();
 
     myParts = 0;
     QString aRule = "^" + myStart + "$";
     foreach( QChar c, myStart )
-        if( c=='~' || c=='.' )
+        if( c=='~' || c=='.' || c=='(' )
             myParts++;
 
     aRule.replace( "~", "(\\w*)");
     aRule.replace( ".", "(.)");
+    //Tools::print( aRule );
 
     myRule = QRegExp( aRule );
 }
@@ -65,6 +67,10 @@ GrammarSet GrammarRule::Forms( const QString& theWord ) const
 {
     if( !Match( theWord ) )
         return GrammarSet();
+
+    //Tools::print( QString( "Matched word: " ) + theWord );
+    //for( int i=0; i<myParts; i++ )
+    //    Tools::print( myRule.cap( i+1 ) );
 
     GrammarSet aResult(myResult);
     for( int i=0; i<myParts; i++ )

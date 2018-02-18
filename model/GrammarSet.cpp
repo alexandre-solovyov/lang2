@@ -74,19 +74,32 @@ GrammarSet GrammarSet::Replaced( const QString& theStrToFind, const QString& the
     return aResult;
 }
 
+void replaceIn( QString& theItem, const QString& theReplace )
+{
+    for( int j=0, m=theItem.size(); j<m; j++ )
+    {
+        if( theItem[j]=='~' || theItem[j]=='.' )
+        {
+            theItem.replace( j, 1, theReplace );
+            break;
+        }
+    }
+}
+
 void GrammarSet::ReplaceNext( const QString& theReplace )
 {
     for( int i=0, n=size(); i<n; i++ )
     {
         QString& anItem = operator[]( i );
-        for( int j=0, m=anItem.size(); j<m; j++ )
+        if( anItem.contains('|') )
         {
-            if( anItem[j]=='~' || anItem[j]=='.' )
-            {
-                anItem.replace( j, 1, theReplace );
-                break;
-            }
+            QStringList items = anItem.split("|");
+            for( int j=0, m=items.size(); j<m; j++)
+                replaceIn( items[j], theReplace );
+            anItem = items.join('|');
         }
+        else
+            replaceIn( anItem, theReplace );
     }
 }
 
