@@ -1,0 +1,9 @@
+
+//! lang: fr, ru
+//! category: PrInd
+
+[PrInd] ~cer >> ~ce, ~ces, ~ce, ~çons, ~cez, ~cent
+[PrInd] ~ger >> ~ge, ~ges, ~ge, ~geons, ~gez, ~gent
+//[PrInd] ~guer >> ~gue, ~gues, ~gue, ~guons, ~guez, ~guent
+[PrInd] ~e.er >> ~è.e, ~è.es, ~è.e, ~e.ons, ~e.ez, ~è.ent
+[PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent

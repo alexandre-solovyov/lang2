@@ -15,6 +15,7 @@ QT += gui
 SOURCES += Main.cpp \
            TestLangFile.cpp \
            TestGrammar.cpp \
+           TestPrInd.cpp \
            TestStatistics.cpp \
            TestTools.cpp \
 

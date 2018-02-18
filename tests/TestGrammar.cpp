@@ -199,3 +199,10 @@ TEST(TestGrammar, AddRuleIsOK)
     gr.Add( "PrInd", "~er >> ~ons" );
     ASSERT_EQQ( gr.Forms("PrInd", "parler").join( ", " ), "parlons" );
 }
+
+TEST(TestGrammar, OneLetterMarkIsMatched)
+{
+    GrammarRule r1( "[PrInd] ~e.er >> ~e.e" );
+    ASSERT_TRUE( r1.Match("peser") );
+    ASSERT_FALSE( r1.Match("aller") );
+}

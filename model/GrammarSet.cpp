@@ -1,5 +1,6 @@
 
 #include <model/GrammarSet.h>
+#include <model/Tools.h>
 
 GrammarSet::GrammarSet( const QStringList& theList )
     : QStringList( theList )
@@ -71,6 +72,22 @@ GrammarSet GrammarSet::Replaced( const QString& theStrToFind, const QString& the
         aResult.append( anItem );
     }
     return aResult;
+}
+
+void GrammarSet::ReplaceNext( const QString& theReplace )
+{
+    for( int i=0, n=size(); i<n; i++ )
+    {
+        QString& anItem = operator[]( i );
+        for( int j=0, m=anItem.size(); j<m; j++ )
+        {
+            if( anItem[j]=='~' || anItem[j]=='.' )
+            {
+                anItem.replace( j, 1, theReplace );
+                break;
+            }
+        }
+    }
 }
 
 QString GrammarSet::sum( const QString& theArg1, const QString& theArg2 ) const

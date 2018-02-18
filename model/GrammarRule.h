@@ -20,6 +20,8 @@ public:
 
     bool IsSingle() const;
     bool Match( const QString& theWord ) const;
+    bool Include( const GrammarRule& ) const;
+
     QString Group() const;
     QString Start() const;
     GrammarSet Result() const;
@@ -27,10 +29,11 @@ public:
     GrammarSet Forms( const QString& theWord ) const;
 
 private:
-    QRegExp myRule;          ///< the regular expression for grammar rule
-    QString myGroup;         ///< the group of the grammar rule
-    QString myStart;         ///< the start part of the grammar rule
+    QRegExp     myRule;      ///< the regular expression for grammar rule
+    QString     myGroup;     ///< the group of the grammar rule
+    QString     myStart;     ///< the start part of the grammar rule
     QStringList myResult;    ///< the result part of the grammar rule
+    int         myParts;
 };
 
 #endif // GRAMMAR_RULE_H

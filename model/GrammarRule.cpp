@@ -5,7 +5,7 @@
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
-    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?\\w*) >> (.+)" );
+    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?[\\w\\.]*) >> (.+)" );
 
     if( !PATTERN.exactMatch( theRule ) )
     {
@@ -20,8 +20,14 @@ GrammarRule::GrammarRule( const QString& theRule )
     for( int i=0, n=myResult.size(); i<n; i++ )
         myResult[i] = myResult[i].trimmed();
 
+    myParts = 0;
     QString aRule = "^" + myStart + "$";
+    foreach( QChar c, myStart )
+        if( c=='~' || c=='.' )
+            myParts++;
+
     aRule.replace( "~", "(\\w*)");
+    aRule.replace( ".", "(.)");
 
     myRule = QRegExp( aRule );
 }
@@ -60,6 +66,20 @@ GrammarSet GrammarRule::Forms( const QString& theWord ) const
     if( !Match( theWord ) )
         return GrammarSet();
 
-    QString aBase = myRule.cap( 1 );
-    return GrammarSet(myResult).Replaced( "~", aBase );
+    GrammarSet aResult(myResult);
+    for( int i=0; i<myParts; i++ )
+    {
+        QString aPlaceHolder = myRule.cap( i+1 );
+        aResult.ReplaceNext( aPlaceHolder );
+    }
+
+    return aResult;
+}
+
+bool GrammarRule::Include( const GrammarRule& theRule ) const
+{
+    QString start = theRule.Start();
+    QString var1 = start; var1.replace( "~", "" );
+    QString var2 = start; var1.replace( "~", "%" );
+    return Match( var1 ) && Match( var2 );
 }

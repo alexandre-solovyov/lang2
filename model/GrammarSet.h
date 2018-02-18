@@ -24,6 +24,7 @@ public:
     GrammarSet operator * ( const GrammarSet& ) const;
 
     GrammarSet Replaced( const QString& theStrToFind, const QString& theReplace );
+    void ReplaceNext( const QString& theReplace );
 
 protected:
     QString sum( const QString& theArg1, const QString& theArg2 ) const;
