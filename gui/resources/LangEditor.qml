@@ -1,5 +1,5 @@
 import QtQuick 2.2
-import QtQuick.Controls 1.2
+import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1
 
 Rectangle {
@@ -54,7 +54,7 @@ Rectangle {
         }
     }
 
-    Component.onCompleted: fileName = 'D:/asl/lang3/lang/progress/french/fr_noms.lang'
+    Component.onCompleted: fileName = ''//'D:/asl/lang3/lang/progress/french/fr_noms.lang'
 
     onFileNameChanged:
     {

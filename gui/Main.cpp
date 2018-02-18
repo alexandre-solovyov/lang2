@@ -2,7 +2,9 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QTime>
+#include <QDir>
 #include <gui/GuiModel.h>
+#include <model/Tools.h>
 
 int main(int argc, char *argv[])
 {
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
 #ifdef WIN32
         aFile = "D:/asl/lang/progress/french";
 #else
-        aFile = "/home/pi/lang2/progress/french";
+        aFile = QDir::home().absoluteFilePath("lang2/progress/french");
 #endif
 
     qsrand(QTime::currentTime().msecsSinceStartOfDay());
