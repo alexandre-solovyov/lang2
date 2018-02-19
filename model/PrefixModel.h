@@ -12,7 +12,7 @@ public:
     PrefixModel();
     ~PrefixModel();
 
-    void Add( const QString& );
+    bool Add( const QString& );
     uint Size() const;
     QStringList Starts( const QString& ) const;
 

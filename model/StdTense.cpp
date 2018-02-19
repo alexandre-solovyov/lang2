@@ -2,6 +2,7 @@
 #include <model/StdTense.h>
 #include <model/GrammarRule.h>
 #include <model/GrammarSet.h>
+#include <model/Grammar.h>
 
 StdTense::StdTense( const QString& theName, Grammar* theGrammar )
     : ITense( theName, theGrammar )
@@ -23,7 +24,7 @@ GrammarSet StdTense::Forms( const QString& theWord ) const
 {
     foreach( const GrammarRule& aRule, myRules )
     {
-        GrammarSet gs = aRule.Forms( theWord );
+        GrammarSet gs = aRule.Forms( theWord, grammar()->prefixModel() );
         if( !gs.empty() )
             return gs;
     }

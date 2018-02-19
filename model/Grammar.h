@@ -4,6 +4,7 @@
 
 #include <model/model_global.h>
 #include <model/GrammarRule.h>
+#include <model/PrefixModel.h>
 #include <QMap>
 
 class GrammarSet;
@@ -21,6 +22,8 @@ public:
 
     bool Add( ITense* );
     bool Add( const QString& theTense, const QString& theRule );
+    bool AddPrefix( const QString& theLine );
+
     GrammarSet Forms( const QString& theTense, const QString& theWord ) const;
 
     QStringList Tenses() const;
@@ -34,16 +37,20 @@ public:
     bool IsKnown( const QString& ) const;
     uint NbKnown() const;
 
+    const PrefixModel* prefixModel() const;
+
 private:
-    QMap<QString, ITense*> myTenses;       ///< the map of tenses
-    bool myIsOwner;                        ///< whether the grammar is owner of tenses objects
+    QMap<QString, ITense*>     myTenses;        ///< the map of tenses
+    bool                       myIsOwner;       ///< whether the grammar is owner of tenses objects
 
     QMap<QString, QStringList> myCachedForms;   ///< the map of cached forms
     QMap<QString, QStringList> myInit;          ///< the map of cached inverse forms
     //TODO: more effective forms container
 
-    QMap<QString, char>        myKnown;          ///< the map of known words
-    QMap<QString, char>        myKnownPrivate;   ///< the map of private known words
+    QMap<QString, char>        myKnown;         ///< the map of known words
+    QMap<QString, char>        myKnownPrivate;  ///< the map of private known words
+
+    PrefixModel                myPrefixModel;
 };
 
 #endif // GRAMMAR_H

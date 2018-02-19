@@ -1,7 +1,8 @@
 
 //! lang: fr, ru
 //! category: PrInd
-//! prefixes: r+h+<a>, ré+h+<a>, res+s, re+<c>-sh
+
+@prefixes >> r+h+<a>, ré+h+<a>, res+s, re+<c>-sh
 
 # Irregular vers (third group)
 [PrInd] aller >> vais, vas, va, allons, allez, vont

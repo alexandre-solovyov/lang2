@@ -6,6 +6,8 @@
 #include <QRegExp>
 #include <QStringList>
 
+class PrefixModel;
+
 class GrammarSet;
 
 /**
@@ -19,14 +21,14 @@ public:
     ~GrammarRule();
 
     bool IsSingle() const;
-    bool Match( const QString& theWord ) const;
+    bool Match( const QString& theWord, const PrefixModel* thePrefixModel=0 ) const;
     bool Include( const GrammarRule& ) const;
 
     QString Group() const;
     QString Start() const;
     GrammarSet Result() const;
 
-    GrammarSet Forms( const QString& theWord ) const;
+    GrammarSet Forms( const QString& theWord, const PrefixModel* thePrefixModel=0 ) const;
 
 private:
     QRegExp     myRule;      ///< the regular expression for grammar rule

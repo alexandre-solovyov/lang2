@@ -10,20 +10,24 @@ PrefixModel::~PrefixModel()
 {
 }
 
-void PrefixModel::Add( const QString& theLine )
+bool PrefixModel::Add( const QString& theLine )
 {
     if( theLine.contains( ",") )
     {
         QStringList parts = theLine.split( ",", QString::SkipEmptyParts );
+        bool isOK = true;
         foreach( QString p, parts )
-            Add( p.trimmed() );
-        return;
+        {
+            if( !Add( p.trimmed() ) )
+                isOK = false;
+        }
+        return isOK;
     }
 
     QStringList parts2 = theLine.split( "+", QString::SkipEmptyParts );
     int n = parts2.size();
     if( n==0 )
-        return;
+        return false;
 
     QString aPrefix = parts2[0].trimmed();
     QStringList& starts = myPrefixes[aPrefix];
@@ -34,6 +38,8 @@ void PrefixModel::Add( const QString& theLine )
     }
     else
         starts.append("");
+
+    return true;
 }
 
 uint PrefixModel::Size() const

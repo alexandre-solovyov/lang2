@@ -37,6 +37,8 @@ bool Grammar::Add( ITense* theTense )
         return false;
 
     QString aName = theTense->Name();
+    if( theTense->grammar() != this )
+        theTense->setGrammar( this );
     if( myTenses.contains(aName) )
         myTenses[aName]->Unite( theTense );
     else
@@ -168,4 +170,14 @@ bool Grammar::IsKnown( const QString& theWord ) const
 uint Grammar::NbKnown() const
 {
     return myKnown.size();
+}
+
+bool Grammar::AddPrefix( const QString& theLine )
+{
+    return myPrefixModel.Add( theLine );
+}
+
+const PrefixModel* Grammar::prefixModel() const
+{
+    return &myPrefixModel;
 }

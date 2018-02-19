@@ -20,6 +20,7 @@ public:
 
     QString Name() const;
     Grammar* grammar() const;
+    void setGrammar( Grammar* );
 
     virtual bool Unite( ITense* );
     virtual GrammarSet Forms( const QString& theWord ) const = 0;

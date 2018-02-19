@@ -61,24 +61,16 @@ GrammarSet GrammarRule::Result() const
     return myResult;
 }
 
-bool GrammarRule::Match( const QString& theWord ) const
+bool GrammarRule::Match( const QString& theWord, const PrefixModel* thePrefixModel ) const
 {
     bool isOK = myRule.exactMatch( theWord );
-    if( isOK && myIsPrefix )
+    if( isOK && myIsPrefix && thePrefixModel )
     {
         QString aPrefix = myRule.cap( 1 );
         if( !aPrefix.isEmpty() )
         {
             //Tools::print( QString( "Match with prefix: %0 %1" ).arg( aPrefix ).arg( theWord ) );
-
-            //TODO: prefix model from file
-            static PrefixModel pm;
-            if( pm.Size()==0 )
-            {
-                pm.Add("r+h+<a>, ré+h+<a>, res+s, re+<c>-sh");
-            }
-
-            if( !pm.Match(theWord, aPrefix) )
+            if( !thePrefixModel->Match(theWord, aPrefix) )
             {
                 //Tools::print("Not match by prefix");
                 return false;
@@ -88,9 +80,9 @@ bool GrammarRule::Match( const QString& theWord ) const
     return isOK;
 }
 
-GrammarSet GrammarRule::Forms( const QString& theWord ) const
+GrammarSet GrammarRule::Forms( const QString& theWord, const PrefixModel* thePrefixModel ) const
 {
-    if( !Match( theWord ) )
+    if( !Match( theWord, thePrefixModel ) )
         return GrammarSet();
 
     //Tools::print( QString( "Matched word: " ) + theWord );

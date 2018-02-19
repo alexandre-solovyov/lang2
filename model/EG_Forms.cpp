@@ -5,6 +5,7 @@
 #include <model/StdTense.h>
 
 const QString FORMS_MARK = ">>";
+const QString PREFIXES_MARK = "@prefixes";
 
 /**
   @brief Constructor
@@ -60,18 +61,28 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
     {
         if( myGrammar )
         {
-            //Tools::print( theLine );
-            //Tools::print( theContext.Tag );
-            if( !myTenses.contains( theContext.Tag ) )
-                const_cast<EG_Forms*>( this )->myTenses[theContext.Tag] = new StdTense( theContext.Tag, 0 );
-            isOtherProduct = true;
-
-            StdTense* tense = dynamic_cast<StdTense*>( myTenses[theContext.Tag] );
-            GrammarRule gr = tense->Add( theLine );
-            if( gr.IsSingle() )
+            if( theLine.left( PREFIXES_MARK.size() ) == PREFIXES_MARK )
             {
-                myGrammar->CacheAllForms( gr.Start(), tense );
-                //Tools::print( theRule );
+                QString aLine = theLine;
+                aLine.remove( PREFIXES_MARK );
+                aLine.remove( FORMS_MARK );
+                myGrammar->AddPrefix( aLine );
+            }
+            else
+            {
+                //Tools::print( theLine );
+                //Tools::print( theContext.Tag );
+                if( !myTenses.contains( theContext.Tag ) )
+                    const_cast<EG_Forms*>( this )->myTenses[theContext.Tag] = new StdTense( theContext.Tag, 0 );
+                isOtherProduct = true;
+
+                StdTense* tense = dynamic_cast<StdTense*>( myTenses[theContext.Tag] );
+                GrammarRule gr = tense->Add( theLine );
+                if( gr.IsSingle() )
+                {
+                    myGrammar->CacheAllForms( gr.Start(), tense );
+                    //Tools::print( theRule );
+                }
             }
         }
 

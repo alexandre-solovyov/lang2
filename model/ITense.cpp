@@ -39,6 +39,11 @@ Grammar* ITense::grammar() const
     return myGrammar;
 }
 
+void ITense::setGrammar( Grammar* theGrammar )
+{
+    myGrammar = theGrammar;
+}
+
 bool ITense::Unite( ITense* )
 {
     // On the basic level the implementation is empty
