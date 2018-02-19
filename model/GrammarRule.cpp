@@ -90,7 +90,7 @@ GrammarSet GrammarRule::Forms( const QString& theWord, const PrefixModel* thePre
     //    Tools::print( myRule.cap( i+1 ) );
 
     GrammarSet aResult(myResult);
-    for( int i=0; i<myParts; i++ )
+    for( uint i=0; i<myParts; i++ )
     {
         QString aPlaceHolder = myRule.cap( i+1 );
         aResult.ReplaceNext( aPlaceHolder );

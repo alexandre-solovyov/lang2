@@ -3,14 +3,32 @@
 //! category: PrInd
 
 @prefixes >> r+h+<a>, ré+h+<a>, res+s, re+<c>-sh
+@prefixes >> dé+<a>, des+s, dé+<c>-s
 
 # Irregular vers (third group)
 [PrInd] aller >> vais, vas, va, allons, allez, vont
+[PrInd] avoir >> ai, as, a, avons, avez, ont
 [PrInd] être >> suis, es, est, sommes, êtes, sont
 [PrInd] maudire >> maudis, maudis, maudit, maudissons, maudissez, maudissent
 
 [PrInd] ~(t|v)enir >> ~.iens, ~.iens, ~.ient, ~.enons, ~.enez, ~.iennen
-[PrInd] @(sen|men|par|sor)tir >> ~.s, ~.s, ~.t, ~.tons, ~.tez, ~.tent
+[PrInd] @(sen|men|par|sor|repen)tir >> ~.s, ~.s, ~.t, ~.tons, ~.tez, ~.tent
+[PrInd] @servir >> ~sers, ~sers, ~sert, ~servons, ~servez, ~servent
+
+[PrInd] ~cueillir >> ~cueille, ~cueilles, ~cueille, ~cueillons, ~cueillez, ~cueillent
+[PrInd] ~courir >> ~cours, ~cours, ~court, ~courons, ~courez, ~courent
+[PrInd] mourir >> meurs, meurs, meurt, mourons, mourez, meurent
+
+[PrInd] ~cevoir >> ~çois, ~çois, ~çoit, ~cevons, ~cevez, ~çoivent
+[PrInd] savoir >> sais, sais, sait, savons, savez, savent
+[PrInd] pouvoir >> peux, peux, peut, pouvons, pouvez, peuvent
+[PrInd] vouloir >> veux, veux, veut, voulons, voulez, veulent
+[PrInd] ~voir >> ~vois, ~vois, ~voit, ~voyons, ~voyez, ~voient
+
+[PrInd] ~prendre >> ~prends, ~prends, ~prend, ~prenons, ~prennent
+[PrInd] ~(en|an|on|er|or)dre >> ~.ds, ~.ds, ~.d, ~.dons, ~.dez, ~.dent
+
+[PrInd] ~(ba|me)ttre >> ~.ts, ~.ts, ~.t, ~.ttons, ~.ttez, ~.ttent
 
 # First group
 [PrInd] ~cer >> ~ce, ~ces, ~ce, ~çons, ~cez, ~cent
