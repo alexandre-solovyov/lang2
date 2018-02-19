@@ -4,6 +4,7 @@
 
 [AdjFemPl] ~eau >> ~eaux, ~el, ~elles
 [AdjFemPl] ~eux >> ~eux, ~euse, ~euses
+[AdjFemPl] ~al >> ~aux, ~ale, ~ales
 [AdjFemPl] ~el >> ~els, ~elle, ~elles
 [AdjFemPl] ~ier >> ~iers, ~ière, ~ières
 [AdjFemPl] ~f >> ~fs, ~ve, ~ves
@@ -52,3 +53,6 @@ long = длинный
 merveilleux = замечательный
 seul = единственный
 saint = святой
+différent = разный
+international = международный
+régional = региональный

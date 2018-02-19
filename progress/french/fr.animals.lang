@@ -1,0 +1,13 @@
+
+//! lang: fr, ru
+//! category: animaux
+//! ignore: une, un
+
+[NomPl] ~eau >> ~eaux
+[NomPl] ~eu >> ~eux
+[NomPl] ~s >> ~s
+[NomPl] ~ >> ~s
+
+*un escargot = улитка
+*un canard = утка
+*un agneau = ягненок
