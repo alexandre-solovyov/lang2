@@ -2,27 +2,50 @@
 #include <model/GrammarSet.h>
 #include <model/Tools.h>
 
+/**
+  @brief Constructor (list of values)
+  @param theList the list of values
+*/
 GrammarSet::GrammarSet( const QStringList& theList )
     : QStringList( theList )
 {
 }
 
+/**
+  @brief Constructor (repeated value)
+  @param theValue the value to repeat
+  @param theSize the count of repeats
+*/
 GrammarSet::GrammarSet( const QString& theValue, int theSize )
 {
     for( int i=0; i<theSize; i++ )
         append( theValue );
 }
 
+/**
+  @brief Constructor (split string)
+  @param theItems the string to split
+  @param theSep the separator
+*/
 GrammarSet::GrammarSet( const QString& theItems, const QString& theSep )
 {
     *this = theItems.split( theSep, QString::SkipEmptyParts );
 }
 
+/**
+  @brief Convert grammar set to string
+  @return the result string
+*/
 QString GrammarSet::toString() const
 {
     return join( ", " );
 }
 
+/**
+  @brief Sum of corresponding forms
+  @param theSet another grammar set for sum
+  @return the result grammar set
+*/
 GrammarSet GrammarSet::operator + ( const GrammarSet& theSet ) const
 {
     GrammarSet aSet;
@@ -35,11 +58,22 @@ GrammarSet GrammarSet::operator + ( const GrammarSet& theSet ) const
     return aSet;
 }
 
+/**
+  @brief Sum of forms with one given form
+  @param theValue the fixed form for sum
+  @return the result grammar set
+*/
 GrammarSet GrammarSet::operator + ( const QString& theValue ) const
 {
     return operator + ( GrammarSet( theValue, size() ) );
 }
 
+/**
+  @brief Sum of one given form with other forms
+  @param theValue the fixed form for sum
+  @param theSet the other forms for sum
+  @return the result grammar set
+*/
 GrammarSet operator + ( const QString& theValue, const GrammarSet& theSet )
 {
     return GrammarSet( theValue, theSet.size() ) + theSet;
