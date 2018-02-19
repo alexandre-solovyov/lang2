@@ -24,10 +24,22 @@ public:
 
     /**
       @brief Set ignore list for the generator
-      @param
+      @param theIgnoreList the ignore list
     */
     virtual void Ignore( const QStringList& theIgnoreList ) = 0;
+
+    /**
+      @brief Generate the exercise(s) from a given line
+      @param theLine the input line
+      @param theContext the current context
+      @param isOtherProduct whether the generator produces other output (not only exercises)
+    */
     virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const = 0;
+
+    /**
+      @brief Get the type of generator
+      @return the type of generator
+    */
     virtual QString Type() const = 0;
 };
 
