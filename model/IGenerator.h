@@ -33,6 +33,7 @@ public:
       @param theLine the input line
       @param theContext the current context
       @param isOtherProduct whether the generator produces other output (not only exercises)
+      @return list of generated exercises
     */
     virtual ListOfExercises Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const = 0;
 

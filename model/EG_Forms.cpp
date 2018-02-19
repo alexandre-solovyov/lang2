@@ -10,6 +10,7 @@ const QString PREFIXES_MARK = "@prefixes";
 /**
   @brief Constructor
   @param theGrammar the associated grammar
+  @param isCopyTenses if tenses should be copied to grammar when generator is reset
 */
 EG_Forms::EG_Forms( Grammar* theGrammar, bool isCopyTenses )
     : EG_Trans(false, true), myGrammar( theGrammar ), myIsCopyTenses( isCopyTenses )

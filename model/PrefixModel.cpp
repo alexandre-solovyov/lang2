@@ -2,14 +2,25 @@
 #include <model/PrefixModel.h>
 #include <model/Tools.h>
 
+/**
+  @brief Constructor
+*/
 PrefixModel::PrefixModel()
 {
 }
 
+/**
+  @brief Destructor
+*/
 PrefixModel::~PrefixModel()
 {
 }
 
+/**
+  @brief Add the prefixes description
+  @param theLine the prefixes description
+  @return if the addition is successful
+*/
 bool PrefixModel::Add( const QString& theLine )
 {
     if( theLine.contains( ",") )
@@ -42,11 +53,19 @@ bool PrefixModel::Add( const QString& theLine )
     return true;
 }
 
+/**
+  @brief Get the model's size
+  @return the model's size
+*/
 uint PrefixModel::Size() const
 {
     return myPrefixes.size();
 }
 
+/**
+  @brief Get allowed start letters for a given prefix
+  @return the allowed start letters
+*/
 QStringList PrefixModel::Starts( const QString& thePrefix ) const
 {
     if( myPrefixes.contains(thePrefix) )
@@ -55,6 +74,12 @@ QStringList PrefixModel::Starts( const QString& thePrefix ) const
         return QStringList();
 }
 
+/**
+  @brief Verify if the word matches to a given prefix
+  @param theWord the word to check
+  @param thePrefix the prefix to check
+  @return whether the word matches to the given prefix
+*/
 bool PrefixModel::Match( const QString& theWord, const QString& thePrefix ) const
 {
     if( !myPrefixes.contains(thePrefix) )
@@ -69,6 +94,12 @@ bool PrefixModel::Match( const QString& theWord, const QString& thePrefix ) cons
     return false;
 }
 
+/**
+  @brief Verify if start letters are equal to given word's part
+  @param theStart the start letters to check
+  @param theWordPart the word part to check
+  @return if letters are equal to part
+*/
 bool PrefixModel::IsEqual( const QString& theStart, const QString& theWordPart ) const
 {
     if( theWordPart.isEmpty() )

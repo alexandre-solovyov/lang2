@@ -73,6 +73,11 @@ void fillND()
     ND.Add("y:",  "ÿ");
 }
 
+/**
+  @brief Normalize the given text
+  @param theText the text to normalize
+  @return the normalized text
+*/
 QString Tools::normalize( const QString& theText )
 {
     if( ND.empty() )
@@ -85,6 +90,11 @@ QString Tools::normalize( const QString& theText )
     return aText;
 }
 
+/**
+  @brief Print the given text in the unicode console
+  @param theText the text to print
+  @param isEndOfLine if the end-of-line should be printed
+*/
 void Tools::print( const QString& theText, bool isEndOfLine )
 {
     QString aText = theText + ( isEndOfLine ? "\n" : "" );
@@ -96,6 +106,11 @@ void Tools::print( const QString& theText, bool isEndOfLine )
 #endif
 }
 
+/**
+  @brief Check if the text starts with digit
+  @param theText the text to check
+  @return whether the text starts with digit
+*/
 bool Tools::startsWithDigit( const QString& theText )
 {
     if( theText.isEmpty() )

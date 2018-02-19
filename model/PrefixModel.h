@@ -6,6 +6,10 @@
 #include <QStringList>
 #include <QMap>
 
+/**
+  @class PrefixModel
+  @brief The class for universal prefixes model
+*/
 class MODEL_API PrefixModel
 {
 public:
@@ -22,8 +26,8 @@ private:
     bool IsEqual( const QString& theStart, const QString& theWordPart ) const;
 
 private:
-    typedef QMap<QString, QStringList> Prefixes;
-    Prefixes myPrefixes;
+    typedef QMap<QString, QStringList> Prefixes;  ///< the type definition for prefixes map
+    Prefixes myPrefixes;                          ///< the prefixes map
 };
 
 #endif // PREFIX_MODEL_H

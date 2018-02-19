@@ -8,6 +8,10 @@
 class Grammar;
 class StdTense;
 
+/**
+  @class EG_Forms
+  @brief The implementation of the forms generator
+*/
 class MODEL_API EG_Forms : public EG_Trans
 {
 public:
@@ -24,10 +28,10 @@ protected:
     void DeleteTenses();
 
 private:
-    Grammar* myGrammar;
-    QMap<QString, StdTense*> myTenses;
-    QStringList myIgnore;
-    bool myIsCopyTenses;
+    Grammar*                 myGrammar;      ///< the associated grammar
+    QMap<QString, StdTense*> myTenses;       ///< the map of temporary (internal) tenses
+    QStringList              myIgnore;       ///< the ignore list of words (not to apply form generation)
+    bool                     myIsCopyTenses; ///< whether the tenses should be copied to grammar on reset
 };
 
 #endif // EG_FORMS_H
