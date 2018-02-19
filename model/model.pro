@@ -21,6 +21,7 @@ SOURCES +=           \
     GrammarSet.cpp   \
     ITense.cpp       \
     LangFile.cpp     \
+    PrefixModel.cpp  \
     Statistics.cpp   \
     StdModel.cpp     \
     StdTense.cpp     \
@@ -41,6 +42,7 @@ HEADERS += \
     IGenerator.h     \
     ITense.h         \
     LangFile.h       \
+    PrefixModel.h    \
     Statistics.h     \
     StdModel.h       \
     StdTense.h       \

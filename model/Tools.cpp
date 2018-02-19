@@ -8,36 +8,78 @@
 #include <QString>
 #include <QMap>
 
-QString Tools::normalize( const QString& theText )
+class InvMap
 {
-    static QMap<QString, QString> ND;
-
-    if( ND.empty() )
+public:
+    void Add( const QString& key, const QString& value )
     {
-        ND["a\\"] = "à";
-        ND["a`"] = "à";
-        ND["a^"] = "â";
-        ND["a+"] = "æ";
-        ND["c+"] = "ç";
-        ND["e/"] = "é";
-        ND["e'"] = "é";
-        ND["e\\"] = "è";
-        ND["e`"] = "è";
-        ND["e^"] = "ê";
-        ND["e:"] = "ë";
-        ND["i:"] = "ï";
-        ND["i^"] = "î";
-        ND["o^"] = "ô";
-        ND["o+"] = "œ";
-        ND["u\\"] = "ù";
-        ND["u`"] = "ù";
-        ND["u^"] = "û";
-        ND["u:"] = "ü";
-        ND["y:"] = "ÿ";
+        if( value.isEmpty() )
+            return;
+        myDirect.insert( key, value[0] );
+        myInverse.insert( value[0].unicode(), key );
     }
 
+    bool empty() const
+    {
+        return myDirect.empty();
+    }
+
+    QMap<QString, QChar>::const_iterator begin() const
+    {
+        return myDirect.begin();
+    }
+
+    QMap<QString, QChar>::const_iterator end() const
+    {
+        return myDirect.end();
+    }
+
+    QString inverse( const QChar& c ) const
+    {
+        if( myInverse.contains(c) )
+            return myInverse[c];
+        else
+            return "";
+    }
+
+private:
+    QMap<QString, QChar>  myDirect;
+    QMap<QChar, QString>  myInverse;
+};
+
+InvMap ND;
+
+void fillND()
+{
+    ND.Add("a\\", "à");
+    ND.Add("a`",  "à");
+    ND.Add("a^",  "â");
+    ND.Add("a+",  "æ");
+    ND.Add("c+",  "ç");
+    ND.Add("e/",  "é");
+    ND.Add("e'",  "é");
+    ND.Add("e\\", "è");
+    ND.Add("e`",  "è");
+    ND.Add("e^",  "ê");
+    ND.Add("e:",  "ë");
+    ND.Add("i:",  "ï");
+    ND.Add("i^",  "î");
+    ND.Add("o^",  "ô");
+    ND.Add("o+",  "œ");
+    ND.Add("u\\", "ù");
+    ND.Add("u`",  "ù");
+    ND.Add("u^",  "û");
+    ND.Add("u:",  "ü");
+    ND.Add("y:",  "ÿ");
+}
+
+QString Tools::normalize( const QString& theText )
+{
+    if( ND.empty() )
+        fillND();
+
     QString aText = theText;
-    QMap<QString, QString>::const_iterator it = ND.begin(), last = ND.end();
+    QMap<QString, QChar>::const_iterator it = ND.begin(), last = ND.end();
     for( ; it!=last; ++it )
         aText.replace( it.key(), it.value() );
     return aText;
@@ -60,4 +102,30 @@ bool Tools::startsWithDigit( const QString& theText )
         return false;
     else
         return theText[0].isDigit();
+}
+
+QChar Tools::toLatin1( const QChar& c )
+{
+    if( ND.empty() )
+        fillND();
+
+    QString q = ND.inverse( c );
+    if( q.isEmpty() )
+        return c;
+    else
+        return q[0];
+}
+
+bool Tools::isVowel( const QChar& c, const QString& ignore )
+{
+    static QString VOWELS( "aeiouy");
+    QChar cl = toLatin1(c);
+    return VOWELS.contains( cl ) && !ignore.contains( cl );
+}
+
+bool Tools::isConsonant( const QChar& c, const QString& ignore )
+{
+    static QString CONSONANTS( "bcdfghjklmnpqrstvwxz");
+    QChar cl = toLatin1(c);
+    return CONSONANTS.contains( cl ) && !ignore.contains( cl );
 }
