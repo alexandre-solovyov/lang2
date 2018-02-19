@@ -33,7 +33,8 @@ private:
     QString     myGroup;     ///< the group of the grammar rule
     QString     myStart;     ///< the start part of the grammar rule
     QStringList myResult;    ///< the result part of the grammar rule
-    int         myParts;
+    uint        myParts;
+    bool        myIsPrefix;
 };
 
 #endif // GRAMMAR_RULE_H

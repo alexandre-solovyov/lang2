@@ -44,4 +44,7 @@ TEST(TestPrefixModel, MatchIsOK)
     ASSERT_TRUE ( pm.Match("réagir",     "ré") );
     ASSERT_TRUE ( pm.Match("réécrire",   "ré") );
     ASSERT_TRUE ( pm.Match("réassortir", "ré") );
+
+    ASSERT_TRUE ( pm.Match("réhabiliter", "ré") );
+    ASSERT_TRUE ( pm.Match("rhabiller", "r") );
 }

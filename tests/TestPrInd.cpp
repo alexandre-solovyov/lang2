@@ -56,8 +56,12 @@ TEST(TestPrInd, Group2IsOK)
 
     ASSERT_EQQ( GR.Forms("PrInd", "finir").toString(), "finis, finis, finit, finissons, finissez, finissent");
     ASSERT_EQQ( GR.Forms("PrInd", "haïr").toString(), "hais, hais, hait, haïssons, haïssez, haïssent" );
-    //ASSERT_EQQ( GR.Forms("PrInd", "assortir").toString(), "assortis, assortis, assortit, assortissons, assortissez, assortissent" );
+    ASSERT_EQQ( GR.Forms("PrInd", "amuïr").toString(), "amuis, amuis, amuit, amuïssons, amuïssez, amuïssent" );
+    ASSERT_EQQ( GR.Forms("PrInd", "assortir").toString(), "assortis, assortis, assortit, assortissons, assortissez, assortissent" );
+    ASSERT_EQQ( GR.Forms("PrInd", "réassortir").toString(), "réassortis, réassortis, réassortit, réassortissons, réassortissez, réassortissent" );
     ASSERT_EQQ( GR.Forms("PrInd", "sertir").toString(), "sertis, sertis, sertit, sertissons, sertissez, sertissent" );
+    ASSERT_EQQ( GR.Forms("PrInd", "répartir").toString(), "répartis, répartis, répartit, répartissons, répartissez, répartissent" );
+    ASSERT_EQQ( GR.Forms("PrInd", "maudire").toString(), "maudis, maudis, maudit, maudissons, maudissez, maudissent" );
 }
 
 TEST(TestPrInd, Group3IsOK)
@@ -72,6 +76,7 @@ TEST(TestPrInd, Group3IsOK)
     ASSERT_EQQ( GR.Forms("PrInd", "sentir").toString(), "sens, sens, sent, sentons, sentez, sentent" );
     ASSERT_EQQ( GR.Forms("PrInd", "mentir").toString(), "mens, mens, ment, mentons, mentez, mentent" );
     ASSERT_EQQ( GR.Forms("PrInd", "partir").toString(), "pars, pars, part, partons, partez, partent" );
+    ASSERT_EQQ( GR.Forms("PrInd", "repartir").toString(), "repars, repars, repart, repartons, repartez, repartent" );
     ASSERT_EQQ( GR.Forms("PrInd", "sortir").toString(), "sors, sors, sort, sortons, sortez, sortent" );
     ASSERT_EQQ( GR.Forms("PrInd", "ressortir").toString(), "ressors, ressors, ressort, ressortons, ressortez, ressortent" );
 }

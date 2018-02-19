@@ -1,11 +1,12 @@
 
 #include <model/GrammarRule.h>
 #include <model/GrammarSet.h>
+#include <model/PrefixModel.h>
 #include <model/Tools.h>
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
-    QRegExp PATTERN( "\\[(\\w+)\\] (\\~?[\\w\\.\\(\\)\\|]*) >> (.+)" );
+    QRegExp PATTERN( "\\[(\\w+)\\] ([\\~\\@]?[\\w\\.\\(\\)\\|]*) >> (.+)" );
 
     if( !PATTERN.exactMatch( theRule ) )
     {
@@ -22,11 +23,13 @@ GrammarRule::GrammarRule( const QString& theRule )
         myResult[i] = myResult[i].trimmed();
 
     myParts = 0;
+    myIsPrefix = myStart.contains( '@' );
     QString aRule = "^" + myStart + "$";
     foreach( QChar c, myStart )
-        if( c=='~' || c=='.' || c=='(' )
+        if( c=='~' || c=='@' || c=='.' || c=='(' )
             myParts++;
 
+    aRule.replace( "@", "(\\w*)");
     aRule.replace( "~", "(\\w*)");
     aRule.replace( ".", "(.)");
     //Tools::print( aRule );
@@ -60,7 +63,29 @@ GrammarSet GrammarRule::Result() const
 
 bool GrammarRule::Match( const QString& theWord ) const
 {
-    return myRule.exactMatch( theWord );
+    bool isOK = myRule.exactMatch( theWord );
+    if( isOK && myIsPrefix )
+    {
+        QString aPrefix = myRule.cap( 1 );
+        if( !aPrefix.isEmpty() )
+        {
+            //Tools::print( QString( "Match with prefix: %0 %1" ).arg( aPrefix ).arg( theWord ) );
+
+            //TODO: prefix model from file
+            static PrefixModel pm;
+            if( pm.Size()==0 )
+            {
+                pm.Add("r+h+<a>, ré+h+<a>, res+s, re+<c>-sh");
+            }
+
+            if( !pm.Match(theWord, aPrefix) )
+            {
+                //Tools::print("Not match by prefix");
+                return false;
+            }
+        }
+    }
+    return isOK;
 }
 
 GrammarSet GrammarRule::Forms( const QString& theWord ) const
