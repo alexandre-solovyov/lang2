@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file alias="main.qml">resources/main.qml</file>
+        <file alias="main2.qml">resources/main2.qml</file>
         <file alias="HomeForm.qml">resources/HomeForm.qml</file>
         <file alias="Exercise.qml">resources/Exercise.qml</file>
         <file alias="Statistics.qml">resources/Statistics.qml</file>

@@ -6,9 +6,6 @@ Rectangle {
 
     id: exercise_page
 
-    width: 600
-    height: 400
-
     //title: qsTr("Exercise")
 
     property int mainPSize: 20
@@ -28,7 +25,6 @@ Rectangle {
         Text { id: part1; color: "blue"; font.pointSize: mainPSize; }
         Text { id: quest; color: "green"; font.pointSize: bigPSize; }
         Text { id: part2; color: "blue"; font.pointSize: mainPSize; }
-
     }
 
     RowLayout {
@@ -38,7 +34,7 @@ Rectangle {
 
         TextField {
             id: user_answer
-            //color: "green"
+            textColor: "magenta"
             font.pointSize: bigPSize
             Layout.fillWidth: true
         }

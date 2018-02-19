@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     QString aFile = arguments["file"];
     if( aFile.isEmpty() )
 #ifdef WIN32
-        aFile = "D:/asl/lang/progress/french";
+        aFile = "D:/asl/lang3/lang/progress/french";
 #else
         aFile = QDir::home().absoluteFilePath("lang2/progress/french");
 #endif
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     QQmlContext* context = engine.rootContext();
     context->setContextProperty( "gui_model", &gui_model );
 
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/main2.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 
