@@ -6,7 +6,7 @@ Rectangle {
 
     id: exercise_page
 
-    //title: qsTr("Exercise")
+    property string title: qsTr("Exercise")
 
     property int mainPSize: 20
     property int bigPSize: 30

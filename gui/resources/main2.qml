@@ -9,10 +9,11 @@ ApplicationWindow {
     height: 480
     title: qsTr("Lang")
 
+    property alias pageName: label.text
+
     Rectangle
     {
         id: title_rect
-        property alias text: label.text
 
         anchors.left: parent.left
         anchors.right: parent.right
@@ -50,6 +51,8 @@ ApplicationWindow {
         function newExercise()
         {
             var parts = gui_model.randomExercise();
+            main_window.pageName = exercise_page.title
+
             question1 = parts[0];
             questmid = "<?>"
             question2 = parts[1];
