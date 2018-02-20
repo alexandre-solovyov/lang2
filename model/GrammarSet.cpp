@@ -150,3 +150,19 @@ QString GrammarSet::sum( const QString& theArg1, const QString& theArg2 ) const
     }
     return res;
 }
+
+void GrammarSet::processSpecial()
+{
+    for( int i=0, n=size(); i<n; i++ )
+    {
+        QString& anItem = operator[]( i );
+        int ind;
+        while( ( ind = anItem.indexOf( '&') ) >= 0 )
+        {
+            if( ind==0 )
+                anItem.remove( ind, 1 );
+            else
+                anItem[ind] = anItem[ind-1]; // the sign '&' means duplication of previous letter
+        }
+    }
+}

@@ -17,7 +17,7 @@ class GrammarSet;
 class MODEL_API GrammarRule
 {
 public:
-    GrammarRule( const QString& theRule );
+    GrammarRule( const QString& theRule="" );
     ~GrammarRule();
 
     bool IsSingle() const;

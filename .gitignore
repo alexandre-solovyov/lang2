@@ -3,3 +3,5 @@
 doc/html
 Makefile
 *.o
+*.pdf
+*.xml

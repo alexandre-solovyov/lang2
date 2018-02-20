@@ -26,6 +26,8 @@ public:
     GrammarSet Replaced( const QString& theStrToFind, const QString& theReplace );
     void ReplaceNext( const QString& theReplace );
 
+    void processSpecial();
+
 protected:
     QString sum( const QString& theArg1, const QString& theArg2 ) const;
 };

@@ -6,7 +6,10 @@
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
-    QRegExp PATTERN( "\\[(\\w+)\\] ([\\~\\@]?[\\w\\.\\(\\)\\|]*) >> (.+)" );
+    if( theRule.isEmpty() )
+        return;
+
+    static QRegExp PATTERN( "\\[(\\w+)\\] ([\\~\\@]?[\\w\\~\\.\\(\\)\\|]*) >> (.+)" );
 
     if( !PATTERN.exactMatch( theRule ) )
     {
@@ -30,7 +33,7 @@ GrammarRule::GrammarRule( const QString& theRule )
             myParts++;
 
     aRule.replace( "@", "(\\w*)");
-    aRule.replace( "~", "(\\w*)");
+    aRule.replace( "~", "([\\w\\-]*)");
     aRule.replace( ".", "(.)");
     //Tools::print( aRule );
 
@@ -95,6 +98,8 @@ GrammarSet GrammarRule::Forms( const QString& theWord, const PrefixModel* thePre
         QString aPlaceHolder = myRule.cap( i+1 );
         aResult.ReplaceNext( aPlaceHolder );
     }
+
+    aResult.processSpecial();
 
     return aResult;
 }
