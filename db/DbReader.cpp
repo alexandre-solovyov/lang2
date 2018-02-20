@@ -2,6 +2,8 @@
 #include <DbReader.h>
 #include <Rule.h>
 #include <model/Tools.h>
+#include <model/Grammar.h>
+#include <model/GrammarSet.h>
 #include <QFile>
 #include <QXmlStreamReader>
 
@@ -19,9 +21,10 @@ int DbReader::Count() const
     return myCount;
 }
 
-bool DbReader::Perform( Rules* theRules )
+bool DbReader::Perform( Rules* theRules, Grammar* theGrammar )
 {
     myRules = theRules;
+    myGrammar = theGrammar;
 
     QFile aFile( myFileName );
     if( !aFile.open( QFile::ReadOnly | QFile::Text ) )
@@ -117,19 +120,29 @@ void DbReader::PerformData( const QString& theWord, const QString& theGroup )
     if( myIsVerbose==2 )
         Tools::print( theWord + ": " + theGroup );
 
-    QString forms;
+    QString forms1, forms2;
     QString errMsg;
     if( myRules )
     {
-        forms = myRules->Forms( theWord, theGroup, errMsg );
+        forms1 = myRules->Forms( theWord, theGroup, errMsg );
         if( !errMsg.isEmpty() )
         {
             myErrors.append( errMsg );
         }
+
+        else if( myGrammar )
+        {
+            forms2 = myGrammar->Forms( "PrInd", theWord ).toString();
+            if( forms1!=forms2 )
+            {
+                errMsg = QString( "Forms are different:\n%0\n%1\n" ).arg( forms1 ).arg( forms2 );
+                myErrors.append( errMsg );
+            }
+        }
     }
 
     if( myIsVerbose==2 )
-        Tools::print( forms+"\n" );
+        Tools::print( forms1+"\n" );
 }
 
 QStringList DbReader::Errors() const

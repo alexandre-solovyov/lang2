@@ -2,6 +2,9 @@
 #include <DbReader.h>
 #include <Rule.h>
 #include <model/Tools.h>
+#include <model/LangFile.h>
+#include <model/Grammar.h>
+#include <model/EG_Forms.h>
 #include <QDir>
 
 int main( int argc, char** argv )
@@ -126,13 +129,25 @@ int main( int argc, char** argv )
     //Tools::print( r.Forms("harceler", "1m", isOK) );
     //Tools::print( r.Forms("haleter", "1m", isOK) );
 
+
 #ifdef WIN32
-    QString aFile = "d:/asl/lang3/lang/db/dubois.xml";
+    QString DB_FILE = "d:/asl/lang3/lang/db/dubois.xml";
+    QString T_FILE = "d:/asl/lang3/lang/testdata/pr_ind.lang";"
 #else
-    QString aFile = QDir::home().absoluteFilePath( "lang2/db/dubois.xml" );
+    QString DB_FILE = QDir::home().absoluteFilePath( "lang2/db/dubois.xml" );
+    QString T_FILE = QDir::home().absoluteFilePath( "lang2/testdata/pr_ind.lang" );
 #endif
-    DbReader aReader( aFile, 20000, 200, 1 );
-    aReader.Perform(&r);
+
+    Grammar aGrammar;
+    LangFile aLangFile;
+    aLangFile.Load( T_FILE );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_Forms(&aGrammar, true) );
+    aLangFile.Build(gen, false);
+
+    DbReader aReader( DB_FILE, 20000, 200, 1 );
+    aReader.Perform(&r, &aGrammar);
 
 
     Tools::print( "\n\nRESULTS:" );
