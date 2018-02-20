@@ -33,7 +33,7 @@ GrammarRule::GrammarRule( const QString& theRule )
             myParts++;
 
     aRule.replace( "@", "(\\w*)");
-    aRule.replace( "~", "([\\w\\-]*)");
+    aRule.replace( "~", "([\\w\\-\\']*)");
     aRule.replace( ".", "(.)");
     //Tools::print( aRule );
 

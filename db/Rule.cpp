@@ -80,27 +80,25 @@ void Rules::Add( const QString& theGroup, const QString& thePattern )
         return Rule();
 }*/
 
-QString Rules::Forms( const QString& theWord, const QString& theGroup, bool& isOK ) const
+QString Rules::Forms( const QString& theWord, const QString& theGroup, QString& theError ) const
 {
+    theError = "";
     if( myRules.contains(theGroup) )
     {
         GrammarSet res = myRules[theGroup].Forms(theWord);
         if( res.isEmpty() )
         {
-            isOK = false;
-            Tools::print( QString( "EMPTY GRAMMAR SET: %0; %1" ).arg( theWord ).arg( theGroup) );
+            theError = QString( "EMPTY GRAMMAR SET: %0; %1" ).arg( theWord ).arg( theGroup);
             return "";
         }
         else
         {
-            isOK = true;
             return res.toString();
         }
     }
     else
     {
-        isOK = false;
-        Tools::print( QString( "NOT FOUND GROUP: %0; %1" ).arg( theGroup ).arg( theWord ) );
+        theError = QString( "NOT FOUND GROUP: %0; %1" ).arg( theGroup ).arg( theWord );
         return "";
     }
 }

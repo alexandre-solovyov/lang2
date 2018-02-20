@@ -5,8 +5,8 @@
 #include <QFile>
 #include <QXmlStreamReader>
 
-DbReader::DbReader( const QString& theFileName, int theLimit, int theErrLimit, bool isVerbose )
-    : myFileName( theFileName ), myLimit( theLimit ), myErrLimit( theErrLimit ), myCount( 0 ), myErrorCount( 0 ), myRules( 0 ), myIsVerbose( isVerbose )
+DbReader::DbReader( const QString& theFileName, int theLimit, int theErrLimit, int isVerbose )
+    : myFileName( theFileName ), myLimit( theLimit ), myErrLimit( theErrLimit ), myCount( 0 ), myRules( 0 ), myIsVerbose( isVerbose )
 {
 }
 
@@ -31,7 +31,8 @@ bool DbReader::Perform( Rules* theRules )
     }
 
     myCount = 0;
-    myErrorCount = 0;
+    myErrors.clear();
+    myWP = "";
 
     QXmlStreamReader aReader( &aFile );
     while( aReader.readNextStartElement() )
@@ -59,7 +60,7 @@ void DbReader::PerformVerbs( QXmlStreamReader& theReader )
         if( theReader.name() == "verbe" )
         {
             PerformVerb( theReader );
-            if( myCount>=myLimit || myErrorCount>=myErrLimit )
+            if( myCount>=myLimit || myErrors.size()>=myErrLimit )
                 break;
         }
         else
@@ -103,18 +104,35 @@ void DbReader::PerformVerb( QXmlStreamReader& theReader )
 
 void DbReader::PerformData( const QString& theWord, const QString& theGroup )
 {
-    if( myIsVerbose )
+    if( myIsVerbose==1 )
+    {
+        QString wp = theWord.left( 1 );
+        if( myWP!=wp )
+        {
+            Tools::print( wp+", ", false );
+            myWP = wp;
+        }
+    }
+
+    if( myIsVerbose==2 )
         Tools::print( theWord + ": " + theGroup );
 
     QString forms;
-    bool isOK;
+    QString errMsg;
     if( myRules )
     {
-        forms = myRules->Forms( theWord, theGroup, isOK );
-        if( !isOK )
-            myErrorCount++;
+        forms = myRules->Forms( theWord, theGroup, errMsg );
+        if( !errMsg.isEmpty() )
+        {
+            myErrors.append( errMsg );
+        }
     }
 
-    if( myIsVerbose )
+    if( myIsVerbose==2 )
         Tools::print( forms+"\n" );
+}
+
+QStringList DbReader::Errors() const
+{
+    return myErrors;
 }
