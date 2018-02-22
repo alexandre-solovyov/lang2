@@ -29,7 +29,7 @@ GrammarSet::GrammarSet( const QString& theValue, int theSize )
 */
 GrammarSet::GrammarSet( const QString& theItems, const QString& theSep )
 {
-    *this = theItems.split( theSep, QString::SkipEmptyParts );
+    *this = theItems.split( theSep, QString::KeepEmptyParts );
 }
 
 /**

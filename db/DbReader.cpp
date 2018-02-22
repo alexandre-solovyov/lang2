@@ -135,7 +135,7 @@ void DbReader::PerformData( const QString& theWord, const QString& theGroup )
             forms2 = myGrammar->Forms( "PrInd", theWord ).toString();
             if( forms1!=forms2 )
             {
-                errMsg = QString( "Forms are different:\n%0\n%1\n" ).arg( forms1 ).arg( forms2 );
+                errMsg = QString( "Forms are different:\n%0\nDubois: %1\nLang:   %2\n" ).arg( theWord ).arg( forms1 ).arg( forms2 );
                 myErrors.append( errMsg );
             }
         }

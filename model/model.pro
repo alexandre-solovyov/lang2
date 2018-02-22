@@ -26,6 +26,7 @@ SOURCES +=           \
     StdModel.cpp     \
     StdTense.cpp     \
     Tools.cpp        \
+    FrPrInd.cpp      \
 
 HEADERS += \
     model_global.h   \
@@ -47,5 +48,6 @@ HEADERS += \
     StdModel.h       \
     StdTense.h       \
     Tools.h          \
+    FrPrInd.h        \
 
 INCLUDEPATH += $$PWD/..

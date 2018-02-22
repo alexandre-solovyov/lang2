@@ -5,6 +5,7 @@
 #include <model/LangFile.h>
 #include <model/Grammar.h>
 #include <model/EG_Forms.h>
+#include <model/FrPrInd.h>
 #include <QDir>
 
 int main( int argc, char** argv )
@@ -17,7 +18,7 @@ int main( int argc, char** argv )
     r.Add( "1a", "[a] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );                             // chanter
     r.Add( "1A", "[a] ester >> -, -, -, -, -, -" );                                       // ester
     r.Add( "1b", "[a] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent" );                             // baisser, pleurer, etc.
-    r.Add( "1c", "[a] ~yer >> ~yie, ~ies, ~ie, ~yons, ~yez, ~ient" );                     // ployer, essuyer
+    r.Add( "1c", "[a] ~yer >> ~ie, ~ies, ~ie, ~yons, ~yez, ~ient" );                      // ployer, essuyer
     r.Add( "1d", "[a] ~yer >> ~ie|~ye, ~ies|~yes, ~ie|~ye, ~yons, ~yez, ~ient, ~yent" );  // payer"
     r.Add( "1e", "[a] ~cer >> ~ce, ~ces, ~ce, ~çons, ~cez, ~cent" );                      // avancer, acquiescer
     r.Add( "1f", "[a] ~ger >> ~ge, ~ges, ~ge, ~geons, ~gez, ~gent" );                     // manger, déneiger
@@ -132,21 +133,16 @@ int main( int argc, char** argv )
 
 #ifdef WIN32
     QString DB_FILE = "d:/asl/lang3/lang/db/dubois.xml";
-    QString T_FILE = "d:/asl/lang3/lang/testdata/pr_ind.lang";"
+    //QString T_FILE = "d:/asl/lang3/lang/testdata/pr_ind_com.lang";"
 #else
     QString DB_FILE = QDir::home().absoluteFilePath( "lang2/db/dubois.xml" );
-    QString T_FILE = QDir::home().absoluteFilePath( "lang2/testdata/pr_ind.lang" );
+    //QString T_FILE = QDir::home().absoluteFilePath( "lang2/testdata/pr_ind_com.lang" );
 #endif
 
     Grammar aGrammar;
-    LangFile aLangFile;
-    aLangFile.Load( T_FILE );
+    new FrPrInd( &aGrammar );
 
-    QList<IGenerator*> gen;
-    gen.append( new EG_Forms(&aGrammar, true) );
-    aLangFile.Build(gen, false);
-
-    DbReader aReader( DB_FILE, 20000, 200, 1 );
+    DbReader aReader( DB_FILE, 20000, 100, 1 );
     aReader.Perform(&r, &aGrammar);
 
 
