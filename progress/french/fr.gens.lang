@@ -1,0 +1,30 @@
+
+//! lang: fr, ru
+//! category: gens
+//! ignore: une, un
+
+[NomPl] ~eau >> ~eaux
+[NomPl] ~eu >> ~eux
+[NomPl] ~s >> ~s
+[NomPl] ~ >> ~s
+
+*une dame = дама
+*un hôte = хозяин
+*un enfant = ребенок
+*un garçon = мальчик
+*une fille = девочка
+*un écolier = школьник
+*un étudiant = студент
+*un ami = друг
+*un père = отец
+*une famille = семья
+*un parent = родитель
+*un cycliste = велосипедист
+*un lycéen = лицеист
+*un coureur = бегун
+*une personne = личность
+*un voyageur = путешественник
+*un homme = мужчина
+*une femme = женщина
+*un amateur = любитель
+*un voisin = сосед

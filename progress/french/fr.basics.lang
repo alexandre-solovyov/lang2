@@ -1,6 +1,7 @@
 
 //! lang: fr, ru
 //! category: basic
+
 oui = да
 non = нет
 
@@ -11,14 +12,15 @@ merci = спасибо
 bonjour = добрый день
 salut = привет
 à bientôt = до скорого
+bien = хорошо
 certainement = несомненно
+
 chaque = каждый
 à partir de = начиная с
 
 pendant = в течение
 surtout = особенно
 généralement = в целом
-bien = хорошо
 autour = вокруг
 avec = с
 
@@ -74,7 +76,6 @@ ton = твой
 son = его
 notre = наш
 votre = ваш
-
 leur = их
 [Pl] leur >> leurs
 

@@ -78,11 +78,14 @@ ListOfExercises EG_Forms::Generate( const QString& theLine, const Context& theCo
                 isOtherProduct = true;
 
                 StdTense* tense = dynamic_cast<StdTense*>( myTenses[theContext.Tag] );
-                GrammarRule gr = tense->Add( theLine );
-                if( gr.IsSingle() )
+                if( tense )
                 {
-                    myGrammar->CacheAllForms( gr.Start(), tense );
-                    //Tools::print( theRule );
+                    GrammarRule gr = tense->Add( theLine );
+                    if( gr.IsSingle() )
+                    {
+                        myGrammar->CacheAllForms( gr.Start(), tense );
+                        //Tools::print( theRule );
+                    }
                 }
             }
         }

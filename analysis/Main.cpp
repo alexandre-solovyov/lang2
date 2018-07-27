@@ -134,5 +134,7 @@ int main( int /*argc*/, char** /*argv*/ )
     //CheckTexts( 4, false );
     CheckTexts( 6, false );
 
+    printf("\n\n");
+
     return 0;
 }

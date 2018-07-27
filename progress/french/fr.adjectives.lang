@@ -6,7 +6,7 @@
 [AdjFemPl] ~eux >> ~eux, ~euse, ~euses
 [AdjFemPl] ~al >> ~aux, ~ale, ~ales
 [AdjFemPl] ~el >> ~els, ~elle, ~elles
-[AdjFemPl] ~ier >> ~iers, ~ière, ~ières
+[AdjFemPl] ~er >> ~ers, ~ère, ~ères
 [AdjFemPl] ~f >> ~fs, ~ve, ~ves
 [AdjFemPl] ~g >> ~gs, ~gue, ~gues
 [AdjFemPl] ~n >> ~ns, ~nne, ~nnes
@@ -20,18 +20,23 @@ bon = хороший
 célèbre = знаменитый
 connu = известный
 culturel = культурный
+différent = разный
 difficile = трудный
 économique = экономический
 élémentaire = элементарный
 entier = целый
+étranger = иностранный
 familial = семейный
 férié = нерабочий
 français = французский
 grand = большой
 important = важный 
 intéressant = интересный
+international = международный
 japonais = японский
+long = длинный
 magnifique = великолепный
+merveilleux = замечательный
 militaire = военный
 moyen = средний
 nationale = национальный
@@ -39,20 +44,16 @@ nouveau = новый
 obligatoire = обязательный
 parisien = парижский
 petit = маленький
+poétique = поэтический
 politique = политический
 populaire = популярный
 premier = первый
 préparatoire = подготовительный
 primaire = первичный
+régional = региональный
 riche = богатый
+saint = святой
+seul = единственный
 situé = расположенный
 sportif = спортивный
 touristique = туристический
-poétique = поэтический
-long = длинный
-merveilleux = замечательный
-seul = единственный
-saint = святой
-différent = разный
-international = международный
-régional = региональный
