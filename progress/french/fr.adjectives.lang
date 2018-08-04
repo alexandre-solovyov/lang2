@@ -13,6 +13,7 @@
 [AdjFemPl] ~e >> ~es, ~e, ~es
 [AdjFemPl] ~ >> ~s, ~e, ~es
 
+aérien = воздушный
 amoureux = влюбленный
 anglais = английский
 artistique = артистический
@@ -25,8 +26,10 @@ différent = разный
 difficile = трудный
 économique = экономический
 élémentaire = элементарный
+européen = европейский
 entier = целый
 étranger = иностранный
+express = срочный
 familial = семейный
 férié = нерабочий
 français = французский
@@ -44,8 +47,10 @@ moyen = средний
 nationale = национальный
 nouveau = новый
 obligatoire = обязательный
+olympique = олимпийский
 parisien = парижский
 petit = маленький
+plusieurs = несколько
 poétique = поэтический
 politique = политический
 populaire = популярный
@@ -53,6 +58,7 @@ pratique = практический
 premier = первый
 préparatoire = подготовительный
 primaire = первичный
+rapide = быстрый
 régional = региональный
 riche = богатый
 saint = святой
@@ -60,4 +66,5 @@ seul = единственный
 situé = расположенный
 sportif = спортивный
 touristique = туристический
+vite = скорый
 vrai = истинный

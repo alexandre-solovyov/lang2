@@ -26,6 +26,8 @@ avec = с
 
 et = и
 ou = или
+où = где, куда
+même = тот же, сам, даже
 mais = но
 dans = в
 [сравнительное] comme = как
@@ -51,6 +53,9 @@ alors = тогда
 déjà = уже
 donc = итак
 là = там
+depuis = начиная с
+à propos = кстати
+car = так как
 
 //! category: colors
 blanc = белый
@@ -76,7 +81,8 @@ ton = твой
 son = его
 notre = наш
 votre = ваш
-leur = их
+lui = ему
+leur = им, их
 [Pl] leur >> leurs
 
 que = что

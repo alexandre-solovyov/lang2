@@ -14,17 +14,42 @@
 [PrInd] ~tendre >> ~tends, ~tends, ~tend, ~tendons, ~tendez, ~tendent
 
 [PrInd] atteindre >> atteins, atteins, atteint, atteignons, atteignez, atteignent 
+[PrInd] perdre >> perds, perds, perd, perdons, perdez, perdent
 
+[PrInd] ~eillir >> ~eille, ~eilles, ~eille, ~eillons, ~eillez, ~eillent
 [PrInd] ~frir >> ~fre, ~fres, ~fre, ~frons, ~frez, ~frent
 [PrInd] ~tir >> ~s, ~s, ~t, ~tons, ~tez, ~tent
+[PrInd] ~uire >> ~uis, ~uis, ~uit, ~uisons, ~uisez, ~uisent
+
 [PrInd] ~ir >> ~is, ~is, ~it, ~issons, ~issez, ~issent
 
 [PrInd] appeler >> appelle, appelles, appelle, appelons, appelez, appellent
 [PrInd] ~oyer >> ~oie, ~oies, ~oie, ~oyons, ~oyez, ~oient
+[PrInd] ~érer >> ~ère, ~ères, ~ère, ~érons, ~érez, ~èrent
 [PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent
 
 [PartPre] ~er >> ~ant
-[PartPas] ~er >> ~é
+
+[PartPas] avoir >> eu
+[PartPas] devoir >> dû
+[PartPas] ~rendre >> ~rendu, ~rendue
+[PartPas] ~ire >> ~it, ~its, ~ite, ~ites
+[PartPas] ~ir >> ~i, ~is, ~ie, ~ies
+[PartPas] ~er >> ~é, ~és, ~ée, ~ées
+
+[Fut] ~e >> ~ai, ~as, ~a, ~ons, ~ez, ~ont
+[Fut] ~ >> ~ai, ~as, ~a, ~ons, ~ez, ~ont
+[FutCond] ~e >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
+
+[FutCond] ~ >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
+
+[SubjPas] avoir >> aie, aies, ait, ayons, ayez, aient
+
+[Impar] être >> étais, étais, était, étions, étiez, étaient
+[Impar] avoir >> avais, avais, avait, avions, aviez, avaient
+[Impar] pouvoir >> pouvais, pouvais, pouvait, pouvions, pouviez, pouvaient
+[Impar] ~er >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
+
 
 aller = ходить
 arriver = прибывать
@@ -94,3 +119,10 @@ disposer = размещать
 dépasser = обгонять
 observer = наблюдать
 surmonter = возвышаться
+préférer = предпочитать
+accueillir = принимать
+construire = сооружать
+exploser = резко вырасти, взрываться
+devoir = быть должным
+perdre = терять
+relier = связывать
