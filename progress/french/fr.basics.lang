@@ -23,6 +23,7 @@ surtout = особенно
 généralement = в целом
 autour = вокруг
 avec = с
+sinon = если не
 
 et = и
 ou = или
@@ -56,6 +57,9 @@ là = там
 depuis = начиная с
 à propos = кстати
 car = так как
+combien = сколько
+autant = столько
+quand = когда
 
 //! category: colors
 blanc = белый
@@ -67,6 +71,7 @@ gris = серый
 bleu = синий
 bleu foncé = темно-синий
 noir = черный
+pâle = бледный
 
 //! category: pronouns
 je = я

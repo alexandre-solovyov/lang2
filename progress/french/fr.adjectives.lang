@@ -9,6 +9,8 @@
 [AdjFemPl] ~er >> ~ers, ~ère, ~ères
 [AdjFemPl] ~f >> ~fs, ~ve, ~ves
 [AdjFemPl] ~g >> ~gs, ~gue, ~gues
+[AdjFemPl] ~un >> ~uns, ~une, ~unes
+[AdjFemPl] ~ul >> ~uls, ~ulle, ~ulles
 [AdjFemPl] ~n >> ~ns, ~nne, ~nnes
 [AdjFemPl] ~e >> ~es, ~e, ~es
 [AdjFemPl] ~ >> ~s, ~e, ~es
@@ -17,11 +19,17 @@ aérien = воздушный
 amoureux = влюбленный
 anglais = английский
 artistique = артистический
+autre = другой
 bas = низкий
 bon = хороший
 célèbre = знаменитый
+certain = уверенный, некоторый
+chacun = каждый
+cher = дорогой
+commun = общественный
 connu = известный
 culturel = культурный
+délicieux = прелестный
 différent = разный
 difficile = трудный
 économique = экономический
@@ -33,6 +41,9 @@ express = срочный
 familial = семейный
 férié = нерабочий
 français = французский
+gastronomique = гастрономический
+géographique = географический
+gustatif = вкусовой
 grand = большой
 important = важный 
 incroyable = невероятный
@@ -45,7 +56,9 @@ merveilleux = замечательный
 militaire = военный
 moyen = средний
 nationale = национальный
+normand = нормандский
 nouveau = новый
+nul = никакой
 obligatoire = обязательный
 olympique = олимпийский
 parisien = парижский
@@ -58,13 +71,17 @@ pratique = практический
 premier = первый
 préparatoire = подготовительный
 primaire = первичный
+quel = какой
+quelque = какой-нибудь
 rapide = быстрый
 régional = региональный
 riche = богатый
 saint = святой
+secret = секретный
 seul = единственный
 situé = расположенный
 sportif = спортивный
 touristique = туристический
 vite = скорый
 vrai = истинный
+vulgaire = обыкновенный

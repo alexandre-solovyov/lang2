@@ -10,12 +10,17 @@
 [PrInd] devoir >> dois, dois, doit, devons, devez, doivent
 [PrInd] ~voir >> ~vois, ~vois, ~voit, ~voyons, ~voyez, ~voient
 
-[PrInd] ~rendre >> ~rends, ~rends, ~rend, ~renons, ~renez, ~rennent
-[PrInd] ~tendre >> ~tends, ~tends, ~tend, ~tendons, ~tendez, ~tendent
+[PrInd] ~prendre >> ~prends, ~prends, ~prend, ~prenons, ~prenez, ~prennent
+[PrInd] ~endre >> ~ends, ~ends, ~end, ~endons, ~endez, ~endent
 
 [PrInd] atteindre >> atteins, atteins, atteint, atteignons, atteignez, atteignent 
 [PrInd] perdre >> perds, perds, perd, perdons, perdez, perdent
+[PrInd] dire >> dis, dis, dit, disons, dites, disent
+[PrInd] faire >> fais, fais, fait, faisons, faites, font
+[PrInd] falloir >> faut
 
+[PrInd] ~tenir >> ~tiens, ~tiens, ~tient, ~tenons, ~tenez, ~tiennent
+[PrInd] ~venir >> ~viens, ~viens, ~vient, ~venons, ~venez, ~viennent
 [PrInd] ~eillir >> ~eille, ~eilles, ~eille, ~eillons, ~eillez, ~eillent
 [PrInd] ~frir >> ~fre, ~fres, ~fre, ~frons, ~frez, ~frent
 [PrInd] ~tir >> ~s, ~s, ~t, ~tons, ~tez, ~tent
@@ -28,6 +33,8 @@
 [PrInd] ~érer >> ~ère, ~ères, ~ère, ~érons, ~érez, ~èrent
 [PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent
 
+[PartPre] avoir >> ayant
+[PartPre] faire >> faisant
 [PartPre] ~er >> ~ant
 
 [PartPas] avoir >> eu
@@ -37,12 +44,19 @@
 [PartPas] ~ir >> ~i, ~is, ~ie, ~ies
 [PartPas] ~er >> ~é, ~és, ~ée, ~ées
 
+[Fut] avoir >> aurai, auras, aura, aurons, aurez, auront
+[Fut] être >> serai, seras, sera, serons, serez, seront
+[Fut] pouvoir >> pourrai, pourras, pourra, pourrons, pourrez, pourront
 [Fut] ~e >> ~ai, ~as, ~a, ~ons, ~ez, ~ont
 [Fut] ~ >> ~ai, ~as, ~a, ~ons, ~ez, ~ont
-[FutCond] ~e >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
 
+[FutCond] avoir >> aurais, aurais, aurait, aurions, auriez, auraient
+[FutCond] pouvoir >> pourrais, pourrais, pourrait, pourrions, pourriez, pourraient
+[FutCond] falloir >> faudrait
+[FutCond] ~e >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
 [FutCond] ~ >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
 
+[Subj] être >> sois, sois, soit, soyons, soyez, soient
 [SubjPas] avoir >> aie, aies, ait, ayons, ayez, aient
 
 [Impar] être >> étais, étais, était, étions, étiez, étaient
@@ -126,3 +140,38 @@ exploser = резко вырасти, взрываться
 devoir = быть должным
 perdre = терять
 relier = связывать
+manger = кушать
+ajouter = добавлять
+occuper = занимать
+produire = производить
+agir = действовать
+tenir = держать
+appartenir = принадлежать
+collecter = собирать
+concerner = иметь отношение
+définir = определять
+délimiter = разграничивать
+délocaliser = перемещать
+goûter = отведывать
+protéger = защищать
+prévaloir = одерживать верх
+imaginer = воображать
+figurer = представлять
+varier = разнообразить, меняться
+indiquer = указывать
+répondre = отвечать
+copier = копировать, подражать
+faire = делать
+falloir = надлежать
+importer = ввозить, быть важным
+intéresser = интересовать
+mouler = отливать в форму
+participer = участвовать
+prétendre = утверждать, претендовать
+puer = вонять
+remonter = вновь поднимать
+vendre = продавать
+développer = развивать
+caractériser = характеризовать
+cultiver = разводить
+

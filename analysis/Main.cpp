@@ -130,9 +130,11 @@ int main( int /*argc*/, char** /*argv*/ )
     Load();
 
     //CheckTexts( 1, true );
+    //CheckTexts( 2, true );
     //CheckTexts( 3, true );
-    CheckTexts( 4, false );
-    //CheckTexts( 6, false );
+    //CheckTexts( 4, true );
+    //CheckTexts( 5, true );
+    CheckTexts( 6, false );
     //CheckText( QDir( TEXTS_FOLDER ).absoluteFilePath("breve_histoire.txt") );
 
 
