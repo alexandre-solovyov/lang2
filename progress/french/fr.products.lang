@@ -1,20 +1,24 @@
 
 //! lang: fr, ru
-//! category: fruits
+//! category: products
+//! ignore: une, un
 
-*un fruit = фрукт
-*un raisin = виноград
-*un orange = апельсин
-*une pomme = яблоко
-*une poire = груша
-*une banane = банан
-*un citron = лимон
-*une mandarine = мандарин
-*un melon = дыня
-*une tomate = помидор
+[NomPl] ~s >> ~s
+[NomPl] ~x >> ~x
+[NomPl] ~ >> ~s
+
 *un choux = капуста
-
+*un citron = лимон
+*un fruit = фрукт
 *un gâteau = пирожное
+*un melon = дыня
+*un orange = апельсин
+*un raisin = виноград
 
+*une banane = банан
+*une mandarine = мандарин
+*une poire = груша
+*une pomme = яблоко
 *une sauce = соус
 *une tarte = пирог
+*une tomate = помидор
