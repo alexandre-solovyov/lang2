@@ -14,7 +14,11 @@
 [Past] grow >> grew
 [Past] have >> had
 [Past] hold >> held
+[Past] say >> said
+[Past] send >> sent
 [Past] take >> took, taken
+[Past] throw >> threw
+[Past] ~ap >> ~apped
 [Past] ~op >> ~opped
 [Past] ~ >> ~ed
 
@@ -41,3 +45,13 @@ let = позволять
 mop = вытирать
 pass = проходить
 pull = вытащить
+say = сказать
+send = отправить
+take = брать
+throw = бросать
+tore = оторвать
+fasten = пристегнуть
+unfasten = отстегнуть
+win = выиграть
+wrap = заворачивать
+strip = сбрасывать
