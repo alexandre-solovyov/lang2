@@ -1,0 +1,29 @@
+
+//! lang: en, ru
+//! category: basic
+
+and = и
+
+about = около
+against = против
+after = после
+all = все
+along = вдоль
+around = вокруг
+but = но
+
+up = вверх
+down = вниз
+
+I = я
+you = вы
+he = он
+she = она
+we = мы
+they = они
+[Forms] he >> his, him, himself
+[Forms] we >> us
+[Forms] they >> them, themselves
+
+once = один раз
+once upon a time = давным-давно

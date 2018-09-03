@@ -1,0 +1,25 @@
+
+//! lang: en, ru
+//! category: noms
+//! ignore: 
+
+[Pl] ray >> rays
+[Pl] ~y >> ~ies
+[Pl] ~ >> ~s
+
+beam = луч
+blast = взрыв
+body = тело
+brow = чело
+cap = кепка
+cloak = плащ
+effort = усилие
+end = конец
+force = сила
+gust = порыв
+man = мужчина
+north = север
+persuasion = убедительность
+quarrel = ссора
+ray = луч
+road = дорога

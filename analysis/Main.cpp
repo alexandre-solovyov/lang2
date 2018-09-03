@@ -99,11 +99,24 @@ void CheckTexts( int theIndex, bool isSeveral )
         CheckText( files[theIndex-1].absoluteFilePath() );
 }
 
-#define FRANCAIS
+#define ENGLISH
+//#define FRANCAIS
 //#define GERMAN
 
 int main( int /*argc*/, char** /*argv*/ )
 {
+#ifdef ENGLISH
+    IS_VERBOSE = true;
+    #ifdef WIN32
+        LANG_FOLDER = "D:/asl/lang3/lang/progress/english";
+        TEXTS_FOLDER = "D:/asl/lang3/lang/texts/english";
+    #else
+        LANG_FOLDER = QDir::home().absoluteFilePath("lang2/progress/english");
+        TEXTS_FOLDER = QDir::home().absoluteFilePath("lang2/texts/english");
+    #endif
+    LANG = "en";
+#endif
+
 #ifdef FRANCAIS
     IS_VERBOSE = true;
     #ifdef WIN32
@@ -129,12 +142,12 @@ int main( int /*argc*/, char** /*argv*/ )
 
     Load();
 
-    //CheckTexts( 1, true );
+    CheckTexts( 1, true );
     //CheckTexts( 2, true );
     //CheckTexts( 3, true );
     //CheckTexts( 4, true );
     //CheckTexts( 5, true );
-    CheckTexts( 6, false );
+    //CheckTexts( 6, false );
     //CheckText( QDir( TEXTS_FOLDER ).absoluteFilePath("breve_histoire.txt") );
 
 

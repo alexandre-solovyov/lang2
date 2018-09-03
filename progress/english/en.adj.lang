@@ -1,0 +1,20 @@
+
+//! lang: en, ru
+//! category: adjectives
+
+[Adv] ~y >> ~ily
+[Adv] ~ >> ~ly
+[Deg] ~ >> ~er, ~est
+[Nom1] ~ >> ~ness
+
+angry = сердитый
+bitter = горький
+closely = тесно
+cold = холодный
+gentle = нежный
+hard = жесткий
+immediate = немедленный
+kind = добрый
+loose = свободный
+pleasant = приятный
+roadside = придорожный

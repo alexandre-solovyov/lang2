@@ -1,0 +1,43 @@
+
+//! lang: en, ru
+//! category: verbs
+
+[Present] be >> am, is, are
+[Present] ~ >> ~s
+[PresentParticiple] ~e >> ~ing
+[PresentParticiple] ~ >> ~ing
+
+[Past] be >> was, were, been
+[Past] begin >> began
+[Past] blow >> blew
+[Past] ~come >> ~came
+[Past] grow >> grew
+[Past] have >> had
+[Past] hold >> held
+[Past] take >> took, taken
+[Past] ~op >> ~opped
+[Past] ~ >> ~ed
+
+agree = согласиться
+be = быть
+become = становиться
+begin = начинать
+blaze = полыхать
+blow = дуть
+bluster = бушевать
+can = мочь
+close = закрыть
+dispute = спорить
+escape = сбежать
+fail = потерпеть неудачу
+grow = расти
+growl = рычать
+hang = вешать
+have = иметь
+heat = греть
+hold = держать
+howl = выть
+let = позволять
+mop = вытирать
+pass = проходить
+pull = вытащить
