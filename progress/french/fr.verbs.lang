@@ -25,6 +25,7 @@
 [PrInd] ~frir >> ~fre, ~fres, ~fre, ~frons, ~frez, ~frent
 [PrInd] ~tir >> ~s, ~s, ~t, ~tons, ~tez, ~tent
 [PrInd] ~uire >> ~uis, ~uis, ~uit, ~uisons, ~uisez, ~uisent
+[PrInd] ~illir >> ~ille, ~illes, ~ille, ~illons, ~illez, ~illent
 
 [PrInd] ~ir >> ~is, ~is, ~it, ~issons, ~issez, ~issent
 
@@ -34,6 +35,7 @@
 [PrInd] ~er >> ~e, ~es, ~e, ~ons, ~ez, ~ent
 
 [PartPre] avoir >> ayant
+[PartPas] ~illir >> ~illi
 [PartPre] faire >> faisant
 [PartPre] ~er >> ~ant
 
@@ -64,6 +66,10 @@
 [Impar] pouvoir >> pouvais, pouvais, pouvait, pouvions, pouviez, pouvaient
 [Impar] ~er >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
 
+
+[Imp] être >> étais, étais, était, étions, étiez, étaient
+[Imp] avoir >> avais, avais, avait, avions, aviez, avaient
+[Imp] ~er >> ~ais, ~ais, ~ait, ~ions, ~iez, ~aient
 
 aller = ходить
 arriver = прибывать
@@ -129,6 +135,7 @@ abriter = вмещать
 accompagner = сопровождать
 acheter = покупать
 penser = думать
+accueillir = встречать
 disposer = размещать
 dépasser = обгонять
 observer = наблюдать

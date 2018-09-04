@@ -186,10 +186,10 @@ TEST(TestGrammar, KnownWordsAreCaseIndependent)
 TEST(TestGrammar, NullRuleIsNotAdded)
 {
     Grammar gr;
-    gr.Add( 0 );
+    gr.Add( nullptr );
     ASSERT_EQ( gr.Tenses().size(), 0 );
 
-    gr.CacheAllForms( "", 0 );
+    gr.CacheAllForms( "", nullptr );
     ASSERT_EQ( gr.NbKnown(), 0 );
 }
 
