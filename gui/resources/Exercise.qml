@@ -37,6 +37,15 @@ Rectangle {
             textColor: "magenta"
             font.pointSize: bigPSize
             Layout.fillWidth: true
+
+            Keys.onPressed:
+            {
+                if (event.key == Qt.Key_Return)
+                {
+                    exercise_page.check()
+                    event.accepted = true;
+                }
+            }
         }
         Button {
             id: check_btn
@@ -45,15 +54,7 @@ Rectangle {
 
             onClicked:
             {
-                if(exercise_page.state == 0)
-                {
-                    user_answer.text = gui_model.normalize(user_answer.text)
-                    var ok = gui_model.checkAnswer(user_answer.text);
-                    exercise_page.state = ok ? 1 : -1;
-                    quest.text = gui_model.answer();
-                }
-                else
-                    exercise_page.newExercise()
+                exercise_page.check()
             }
         }
     }
@@ -73,5 +74,18 @@ Rectangle {
             state_img.source = "image_ok.png"
         else
             state_img.source = "image_fail.png"
+    }
+
+    function check()
+    {
+        if(exercise_page.state == 0)
+        {
+            user_answer.text = gui_model.normalize(user_answer.text)
+            var ok = gui_model.checkAnswer(user_answer.text);
+            exercise_page.state = ok ? 1 : -1;
+            quest.text = gui_model.answer();
+        }
+        else
+            exercise_page.newExercise()
     }
 }
