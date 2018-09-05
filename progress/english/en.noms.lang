@@ -7,15 +7,27 @@
 [Pl] ~y >> ~ies
 [Pl] ~ >> ~s
 
+
+air = воздух
+animal = животное
 beam = луч
+bird = птица
 blast = взрыв
 body = тело
 brow = чело
 cap = кепка
+Chipmunk = бурундук
 cloak = плащ
+cloud = облако
+countryside = сельская местность
+crow = ворона
+curiosity = любопытство
+day = день
+duck = утка
 effort = усилие
 end = конец
 force = сила
+house, home = дом
 gust = порыв
 man = мужчина
 north = север
@@ -31,5 +43,7 @@ sunshine = солнечный свет
 traveler = путешественник
 tree = дерево
 warmth = тепло
+word = слово
 wind = ветер
+year = год
 

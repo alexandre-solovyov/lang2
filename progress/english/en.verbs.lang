@@ -3,6 +3,7 @@
 //! category: verbs
 
 [Present] be >> am, is, are
+[Present] ~y >> ~ies
 [Present] ~ >> ~s
 [PresentParticiple] ~e >> ~ing
 [PresentParticiple] ~ >> ~ing
@@ -10,19 +11,27 @@
 [Past] be >> was, were, been
 [Past] begin >> began
 [Past] blow >> blew
+[Past] can >> cannot, could
 [Past] ~come >> ~came
+[Past] fall >> fell, fallen
+[Past] feel >> felt
+[Past] fly >> flew
+[Past] go >> went, gone
 [Past] grow >> grew
 [Past] have >> had
 [Past] hold >> held
 [Past] say >> said
+[Past] see >> saw, seen
 [Past] send >> sent
 [Past] take >> took, taken
 [Past] throw >> threw
 [Past] ~ap >> ~apped
 [Past] ~op >> ~opped
+[Past] ~y >> ~ied
 [Past] ~ >> ~ed
 
 agree = согласиться
+astonish = удивлять
 be = быть
 become = становиться
 begin = начинать
@@ -30,28 +39,42 @@ blaze = полыхать
 blow = дуть
 bluster = бушевать
 can = мочь
+carry = нести
 close = закрыть
+cry = плакать
 dispute = спорить
+drag = тащить
 escape = сбежать
 fail = потерпеть неудачу
+fall = падать
+fasten = пристегнуть
+unfasten = отстегнуть
+feel = чувствовать
+fly = летать
+go = идти
 grow = расти
 growl = рычать
 hang = вешать
 have = иметь
 heat = греть
+help = помогать
 hold = держать
 howl = выть
+know = знать
 let = позволять
 mop = вытирать
+open = открывать
 pass = проходить
 pull = вытащить
 say = сказать
+see = видеть
 send = отправить
+strip = сбрасывать
 take = брать
 throw = бросать
 tore = оторвать
-fasten = пристегнуть
-unfasten = отстегнуть
+try = пытаться
+want = хотеть
 win = выиграть
 wrap = заворачивать
-strip = сбрасывать
+wish = желать

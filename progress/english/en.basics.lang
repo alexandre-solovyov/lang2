@@ -21,19 +21,33 @@ he = он
 she = она
 we = мы
 they = они
+[Forms] you >> your, yours
 [Forms] he >> his, him, himself
 [Forms] we >> us
 [Forms] they >> them, themselves
 
+this = этот
+[Forms] this >> these, those
+
+always = всегда
+as = как
+back = назад
+because = потому что
+each = каждый
+far = далеко
+how = как
 once = один раз
 once upon a time = давным-давно
+or = или
 then = тогда
 very = очень
 welcome = добро пожаловать
 well = хорошо
+when = когда
 where = где, куда
 which = который
 while = в то время как
 who = кто
 with = с
+why = почему
 

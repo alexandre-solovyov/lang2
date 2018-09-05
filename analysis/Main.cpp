@@ -142,7 +142,7 @@ int main( int /*argc*/, char** /*argv*/ )
 
     Load();
 
-    CheckTexts( 1, true );
+    CheckTexts( 2, false );
     //CheckTexts( 2, true );
     //CheckTexts( 3, true );
     //CheckTexts( 4, true );
