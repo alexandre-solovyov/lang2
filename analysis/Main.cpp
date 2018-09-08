@@ -10,6 +10,8 @@ QString LANG;
 bool    IS_VERBOSE = false;
 int     LIST_TRIM = 70;
 
+const QString END = "_END_";
+
 StdModel MODEL;
 
 void Load()
@@ -45,6 +47,9 @@ bool CheckText( const QString& thePath )
     QMap<QString, int> unknown;
     foreach( QString w, words )
     {
+		if( w==END )
+			break;
+			
         w = w.toLower();
         if( Tools::startsWithDigit(w) )
             continue;
@@ -142,7 +147,7 @@ int main( int /*argc*/, char** /*argv*/ )
 
     Load();
 
-    CheckTexts( 2, false );
+    CheckTexts( 3, false );
     //CheckTexts( 2, true );
     //CheckTexts( 3, true );
     //CheckTexts( 4, true );

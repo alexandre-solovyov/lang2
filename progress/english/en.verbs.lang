@@ -2,7 +2,7 @@
 //! lang: en, ru
 //! category: verbs
 
-[Present] be >> am, is, are
+[Present] be >> am, is, are, being
 [Present] ~y >> ~ies
 [Present] ~ >> ~s
 [PresentParticiple] ~e >> ~ing
@@ -13,6 +13,7 @@
 [Past] blow >> blew
 [Past] can >> cannot, could
 [Past] ~come >> ~came
+[Past] do >> did, done
 [Past] fall >> fell, fallen
 [Past] feel >> felt
 [Past] fly >> flew
@@ -20,14 +21,20 @@
 [Past] grow >> grew
 [Past] have >> had
 [Past] hold >> held
+[Past] know >> knew, known
+[Past] lose >> lost
+[Past] meet >> met
+[Past] run >> ran
 [Past] say >> said
 [Past] see >> saw, seen
 [Past] send >> sent
 [Past] take >> took, taken
+[Past] tell >> told
 [Past] throw >> threw
 [Past] ~ap >> ~apped
 [Past] ~op >> ~opped
 [Past] ~y >> ~ied
+[Past] ~e >> ~ed
 [Past] ~ >> ~ed
 
 agree = согласиться
@@ -35,19 +42,26 @@ astonish = удивлять
 be = быть
 become = становиться
 begin = начинать
+belong = принадлежать
 blaze = полыхать
 blow = дуть
 bluster = бушевать
+buy = купить
+call = окликать
 can = мочь
 carry = нести
+clean = чистить
 close = закрыть
 cry = плакать
+dash = бросаться, нестись
 dispute = спорить
+do = делать
 drag = тащить
 escape = сбежать
 fail = потерпеть неудачу
 fall = падать
 fasten = пристегнуть
+finish = закончить
 unfasten = отстегнуть
 feel = чувствовать
 fly = летать
@@ -60,21 +74,39 @@ heat = греть
 help = помогать
 hold = держать
 howl = выть
+invite = пригласить
+keep = держать
 know = знать
+lead = вести
+leave = оставлять
 let = позволять
+lose = терять
+meet = встретить
 mop = вытирать
+move = двигать
 open = открывать
 pass = проходить
+plan = планировать
 pull = вытащить
+punish = наказать
+run = бежать
+sail = плавать
 say = сказать
 see = видеть
+seem = казаться
+seize = хватать
 send = отправить
+stay = пребывать
 strip = сбрасывать
 take = брать
+tell = рассказывать
 throw = бросать
 tore = оторвать
 try = пытаться
+turn = поворачивать
 want = хотеть
+wash = мыть
 win = выиграть
-wrap = заворачивать
 wish = желать
+wrap = заворачивать
+

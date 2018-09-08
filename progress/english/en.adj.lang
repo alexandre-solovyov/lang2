@@ -3,33 +3,60 @@
 //! category: adjectives
 
 [Adv] ~y >> ~ily
+[Adv] ~le >> ~ly
 [Adv] ~ >> ~ly
 [Deg] ~ >> ~er, ~est
 [Nom1] ~ >> ~ness
 
+able = способный
 angry = сердитый
+another = еще один
 bitter = горький
+bright = яркий
+careful = заботливый
 certain = определенный
 closely = тесно
 cold = холодный
-dashed = пунктирный
 discontented = недовольный
 eager = нетерпеливый
 especial = особенный
 even = даже
 firmly = твердо
+foolish = глупо
+gay = веселый
 gentle = нежный
+glad = радостный
+happy = счастливый
 hard = жесткий
 immediate = немедленный
+important = важный
 kind = добрый
+lazy = ленивый
+little, small = маленький
+long = длинный
 loose = свободный
+near = ближний
+nice = милый
+next = следующий
+nimble = проворный
+other = другой
 pleasant = приятный
+proud = гордый
+quiet = тихий
+quick = быстрый
 roadside = придорожный
+sad = грустный
 short = короткий
+slow = медленный
+sorry = сожалеющий
 strange = странный
 strong = сильный
+such = такой
+sudden = внезапный
 sure = уверенный
 tight = плотный
 vain = тщеславный
 warm = теплый
 whipped = взбитый
+whole = целый, полный
+young = юный

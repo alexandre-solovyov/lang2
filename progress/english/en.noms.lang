@@ -3,6 +3,7 @@
 //! category: noms
 //! ignore: 
 
+[Pl] tooth >> teeth
 [Pl] ray >> rays
 [Pl] ~y >> ~ies
 [Pl] ~ >> ~s
@@ -10,40 +11,74 @@
 
 air = воздух
 animal = животное
+arm = рука
 beam = луч
+bed = кровать
+bell = колокольчик
 bird = птица
 blast = взрыв
 body = тело
+box = коробка
 brow = чело
 cap = кепка
-Chipmunk = бурундук
+cent = цент
+chipmunk = бурундук
 cloak = плащ
 cloud = облако
 countryside = сельская местность
 crow = ворона
 curiosity = любопытство
 day = день
+dollar = доллар
+door = дверь
 duck = утка
 effort = усилие
 end = конец
+face = лицо
+food = еда
 force = сила
+hall = холл
 house, home = дом
+gift = подарок
+ground = земля
 gust = порыв
+hare = заяц
+king = король
+leg = нога
 man = мужчина
+matter = сущность
+misfortune = несчастье
+mouth = рот
 north = север
+pair = пара
 persuasion = убедительность
+piece = кусок
 quarrel = ссора
 ray = луч
+result = результат
 road = дорога
+rock = камень
+room = комната
 shade = тень
 shine = блеск
 shoulder = плечо
+sight = взгляд, вид
+stay-at-home = домосед
+stick = палка
 sun = солнце
 sunshine = солнечный свет
+tooth = зуб
+tortoise = черепаха
 traveler = путешественник
 tree = дерево
+trouble = неприятность
+vanity = суета
 warmth = тепло
+watch = часы
+wedding = свадьба
 word = слово
+world = мир
 wind = ветер
+window = окно
 year = год
 

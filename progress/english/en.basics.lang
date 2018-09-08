@@ -2,19 +2,6 @@
 //! lang: en, ru
 //! category: basic
 
-and = и
-
-about = около
-against = против
-after = после
-all = все
-along = вдоль
-around = вокруг
-but = но
-
-up = вверх
-down = вниз
-
 I = я
 you = вы
 he = он
@@ -29,16 +16,36 @@ they = они
 this = этот
 [Forms] this >> these, those
 
+up = вверх
+down = вниз
+
+about = около
+after = после
+against = против
+all = все
+almost = почти
+along = вдоль
 always = всегда
+already = уже
+also = также
+and = и
+around = вокруг
 as = как
+aside = в сторону
 back = назад
 because = потому что
+but = но
 each = каждый
 far = далеко
 how = как
+indeed = в самом деле
+now = сейчас
+often = часто
 once = один раз
 once upon a time = давным-давно
+only = только
 or = или
+toward = навстречу
 then = тогда
 very = очень
 welcome = добро пожаловать
