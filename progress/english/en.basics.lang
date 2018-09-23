@@ -8,10 +8,15 @@ he = он
 she = она
 we = мы
 they = они
+it = это
+
+[Forms] I >> me, my
 [Forms] you >> your, yours
 [Forms] he >> his, him, himself
+[Forms] she >> her
 [Forms] we >> us
-[Forms] they >> them, themselves
+[Forms] they >> them, themselves, their, theirs
+[Forms] it >> its, itself
 
 this = этот
 [Forms] this >> these, those
@@ -21,7 +26,9 @@ down = вниз
 
 about = около
 after = после
+again = опять
 against = против
+ago = тому назад
 all = все
 almost = почти
 along = вдоль
@@ -29,24 +36,41 @@ always = всегда
 already = уже
 also = также
 and = и
+anything = что-нибудь
 around = вокруг
 as = как
 aside = в сторону
 back = назад
 because = потому что
+before = до
+below = ниже
+beside = рядом
+between = между
 but = но
 each = каждый
+enough = достаточно
 far = далеко
+for = для
 how = как
+however = однако
+if = если
 indeed = в самом деле
+more = больше
+nothing = ничего
 now = сейчас
 often = часто
 once = один раз
 once upon a time = давным-давно
 only = только
 or = или
-toward = навстречу
+perhaps = возможно
+quite = вполне
+same = тот же
+something = что-нибудь
+still = все еще
 then = тогда
+tomorrow = завтра
+toward = навстречу
 very = очень
 welcome = добро пожаловать
 well = хорошо

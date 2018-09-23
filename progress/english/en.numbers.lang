@@ -2,10 +2,6 @@
 //! lang: en, ru
 //! category: numbers
 
-first = первый
-last = последний
-
-
 one = один
 two = два
 three = три
@@ -20,3 +16,10 @@ ten = десять
 twenty = двадцать
 eighty = восемьдесят
 
+
+first = первый
+second = второй
+
+last = последний
+
+both = оба

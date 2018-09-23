@@ -6,6 +6,7 @@
 [Present] ~y >> ~ies
 [Present] ~ >> ~s
 [PresentParticiple] ~e >> ~ing
+[PresentParticiple] ~an >> ~anning
 [PresentParticiple] ~ >> ~ing
 
 [Past] be >> was, were, been
@@ -24,10 +25,13 @@
 [Past] know >> knew, known
 [Past] lose >> lost
 [Past] meet >> met
+[Past] make >> made
+[Past] pay >> paid
 [Past] run >> ran
 [Past] say >> said
 [Past] see >> saw, seen
 [Past] send >> sent
+[Past] stand >> stood
 [Past] take >> took, taken
 [Past] tell >> told
 [Past] throw >> threw
@@ -38,6 +42,7 @@
 [Past] ~ >> ~ed
 
 agree = согласиться
+ask = просить
 astonish = удивлять
 be = быть
 become = становиться
@@ -52,23 +57,31 @@ can = мочь
 carry = нести
 clean = чистить
 close = закрыть
+count = подсчитывать
 cry = плакать
 dash = бросаться, нестись
 dispute = спорить
 do = делать
 drag = тащить
+dress = одевать
+dry = сушить
+enter = войти
 escape = сбежать
+expect = ожидать
 fail = потерпеть неудачу
 fall = падать
 fasten = пристегнуть
-finish = закончить
 unfasten = отстегнуть
+finish = закончить
 feel = чувствовать
 fly = летать
+furnish = отделывать
+furnished = меблированный
 go = идти
 grow = расти
 growl = рычать
 hang = вешать
+happen = случаться
 have = иметь
 heat = греть
 help = помогать
@@ -80,15 +93,24 @@ know = знать
 lead = вести
 leave = оставлять
 let = позволять
+live = жить
+look = смотреть
 lose = терять
+make = делать
+master = овладевать
 meet = встретить
+might = мог бы
 mop = вытирать
 move = двигать
 open = открывать
+own = владеть
 pass = проходить
+pay = платить
 plan = планировать
+place = размещать
 pull = вытащить
 punish = наказать
+reach = достичь
 run = бежать
 sail = плавать
 say = сказать
@@ -96,7 +118,10 @@ see = видеть
 seem = казаться
 seize = хватать
 send = отправить
+shine = блестеть
+stand = стоять
 stay = пребывать
+stop = остановить
 strip = сбрасывать
 take = брать
 tell = рассказывать
@@ -104,6 +129,7 @@ throw = бросать
 tore = оторвать
 try = пытаться
 turn = поворачивать
+view = смотреть
 want = хотеть
 wash = мыть
 win = выиграть
