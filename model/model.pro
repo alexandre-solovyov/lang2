@@ -13,6 +13,7 @@ SOURCES +=           \
     DepTense.cpp     \
     EG_Forms.cpp     \
     EG_One.cpp       \
+    EG_Place.cpp     \
     EG_Trans.cpp     \
     EG_TransAdv.cpp  \
     Exercise.cpp     \
@@ -34,6 +35,7 @@ HEADERS += \
     DepTense.h       \
     EG_Forms.h       \
     EG_One.h         \
+    EG_Place.h       \
     EG_Trans.h       \
     EG_TransAdv.h    \
     Exercise.h       \

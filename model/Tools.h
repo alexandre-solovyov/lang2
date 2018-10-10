@@ -14,6 +14,7 @@ public:
     static QChar   toLatin1( const QChar& );
     static bool    isVowel( const QChar&, const QString& theIgnore = "" );
     static bool    isConsonant( const QChar&, const QString& theIgnore = "" );
+    static QString simplifySpaces( const QString& );
 };
 
 #endif // STATISTICS_H

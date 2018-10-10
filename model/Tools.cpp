@@ -144,3 +144,18 @@ bool Tools::isConsonant( const QChar& c, const QString& ignore )
     QChar cl = toLatin1(c);
     return CONSONANTS.contains( cl ) && !ignore.contains( cl );
 }
+
+QString Tools::simplifySpaces( const QString& theLine )
+{
+    QString aLine = theLine.split( " ", QString::SkipEmptyParts ).join( " " );
+
+    int anIndex = aLine.indexOf("//");
+    if( anIndex>=0 && aLine.mid(anIndex, 3)!="//!" )
+        aLine = aLine.left( anIndex ).trimmed();
+
+    anIndex  = aLine.indexOf("#");
+    if( anIndex>=0 )
+        aLine = aLine.left( anIndex ).trimmed();
+
+    return aLine;
+}

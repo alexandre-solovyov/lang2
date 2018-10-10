@@ -28,8 +28,6 @@ public:
 
     ListOfExercises Build( const QList<IGenerator*>&, bool isVerbose=false );
 
-    static QString Simplify( const QString& );
-
 private:
     void ChangeContext( Context& theContext,
                         const QString& theKey,

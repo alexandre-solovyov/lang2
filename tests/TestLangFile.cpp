@@ -2,6 +2,7 @@
 #include <tests.h>
 #include <model/LangFile.h>
 #include <model/EG_One.h>
+#include <model/EG_Place.h>
 #include <model/EG_Trans.h>
 #include <model/EG_TransAdv.h>
 
@@ -246,17 +247,17 @@ TEST(TestLangFile, EmptyAnswerIsSupported)
 
 TEST(TestLangFile, SimplifyIsCorrect)
 {
-    ASSERT_EQQ( LangFile::Simplify(""), "" );
-    ASSERT_EQQ( LangFile::Simplify("   "), "" );
-    ASSERT_EQQ( LangFile::Simplify("abc   "), "abc" );
-    ASSERT_EQQ( LangFile::Simplify("  abc"), "abc" );
-    ASSERT_EQQ( LangFile::Simplify("  ab c   "), "ab c" );
-    ASSERT_EQQ( LangFile::Simplify("  pp        qq   "), "pp qq" );
-    ASSERT_EQQ( LangFile::Simplify("// comment"), "" );
-    ASSERT_EQQ( LangFile::Simplify("test // comment"), "test" );
-    ASSERT_EQQ( LangFile::Simplify("# comment"), "" );
-    ASSERT_EQQ( LangFile::Simplify("test # comment"), "test" );
-    ASSERT_EQQ( LangFile::Simplify("//! special"), "//! special" );
+    ASSERT_EQQ( Tools::simplifySpaces(""), "" );
+    ASSERT_EQQ( Tools::simplifySpaces("   "), "" );
+    ASSERT_EQQ( Tools::simplifySpaces("abc   "), "abc" );
+    ASSERT_EQQ( Tools::simplifySpaces("  abc"), "abc" );
+    ASSERT_EQQ( Tools::simplifySpaces("  ab c   "), "ab c" );
+    ASSERT_EQQ( Tools::simplifySpaces("  pp        qq   "), "pp qq" );
+    ASSERT_EQQ( Tools::simplifySpaces("// comment"), "" );
+    ASSERT_EQQ( Tools::simplifySpaces("test // comment"), "test" );
+    ASSERT_EQQ( Tools::simplifySpaces("# comment"), "" );
+    ASSERT_EQQ( Tools::simplifySpaces("test # comment"), "test" );
+    ASSERT_EQQ( Tools::simplifySpaces("//! special"), "//! special" );
 }
 
 TEST(TestLangFile, TransAdvIsOK)
@@ -269,4 +270,27 @@ TEST(TestLangFile, TransAdvIsOK)
     ListOfExercises ex = aLangFile.Build( gen );
     ASSERT_EQ( ex.size(), 0 );
     //TODO: ex
+}
+
+TEST(TestLangFile, PlaceIsOK)
+{
+    LangFile aLangFile;
+    ASSERT_TRUE( aLangFile.Load( QString(TEST_DATA) + "/test7.lang" ) );
+
+    QList<IGenerator*> gen;
+    gen.append( new EG_Place() );
+    ListOfExercises ex = aLangFile.Build( gen );
+    ASSERT_EQ( ex.size(), 3 );
+
+    ASSERT_EQQ( ex[0].Question, "There is room for everybody to sit down." );
+    ASSERT_EQQ( ex[0].Tag, "enough");
+    ASSERT_EQQ( ex[0].Answer, "There is enough room for everybody to sit down." );
+
+    ASSERT_EQQ( ex[1].Question, "I haven't seen Europe." );
+    ASSERT_EQQ( ex[1].Tag, "enough of");
+    ASSERT_EQQ( ex[1].Answer, "I haven't seen enough of Europe." );
+
+    ASSERT_EQQ( ex[2].Question, "The book is big" );
+    ASSERT_EQQ( ex[2].Tag, "enough");
+    ASSERT_EQQ( ex[2].Answer, "The book is big enough" );
 }

@@ -9,6 +9,7 @@
 const QString MARK = "*";
 const QString QUEST = "<?>";
 const QString EQ_MARK = "=";
+const QString EQ_PLACE_MARK = "@";
 
 /**
   @class IGenerator

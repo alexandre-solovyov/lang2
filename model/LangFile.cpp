@@ -70,7 +70,7 @@ uint LangFile::AddFile( const QString& theFilePath )
 bool LangFile::Add( uint theFileIndex, const QString& theLine )
 {
     QString aLine = theLine;
-    aLine = Simplify(aLine);
+    aLine = Tools::simplifySpaces(aLine);
 
     bool isOK = !aLine.isEmpty() && !HasLine( theFileIndex, aLine );
     if( isOK )
@@ -85,21 +85,6 @@ bool LangFile::HasLine( uint theFileIndex, const QString& theStr ) const
 {
     uint aHash = qHash( theStr );
     return myHashes[theFileIndex].contains( aHash );
-}
-
-QString LangFile::Simplify( const QString& theLine )
-{
-    QString aLine = theLine.split( " ", QString::SkipEmptyParts ).join( " " );
-
-    int anIndex = aLine.indexOf("//");
-    if( anIndex>=0 && aLine.mid(anIndex, 3)!="//!" )
-        aLine = aLine.left( anIndex ).trimmed();
-
-    anIndex  = aLine.indexOf("#");
-    if( anIndex>=0 )
-        aLine = aLine.left( anIndex ).trimmed();
-
-    return aLine;
 }
 
 ListOfExercises LangFile::Build( const QList<IGenerator*>& theGenerators, bool isVerbose )

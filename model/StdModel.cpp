@@ -4,6 +4,7 @@
 #include <model/EG_One.h>
 #include <model/EG_Trans.h>
 #include <model/EG_Forms.h>
+#include <model/EG_Place.h>
 #include <model/Tools.h>
 #include <QFile>
 
@@ -36,6 +37,7 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
         gen.append( new EG_One() );
         gen.append( new EG_Trans() );
         gen.append( new EG_Forms(&myGrammar, false) );
+        gen.append( new EG_Place() );
         if( isVerbose )
             Tools::print( "" );
         myExercises = lf.Build( gen, isVerbose );
