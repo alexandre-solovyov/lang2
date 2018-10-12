@@ -5,6 +5,7 @@
 
 [Pl] child >> children
 [Pl] man >> men
+[Pl] mage >> magi
 [Pl] woman >> women
 [Pl] tooth >> teeth
 [Pl] ~ay >> ~ays
@@ -105,7 +106,6 @@ light = свет
 looking-glass = зеркало
 love = любовь
 mage = маг
-magi = волхвы
 man = мужчина
 mark = отметка
 material = материал
