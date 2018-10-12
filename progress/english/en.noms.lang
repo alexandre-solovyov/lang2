@@ -4,6 +4,8 @@
 //! ignore: 
 
 [Pl] child >> children
+[Pl] man >> men
+[Pl] woman >> women
 [Pl] tooth >> teeth
 [Pl] ~ay >> ~ays
 [Pl] ~y >> ~ies
@@ -26,6 +28,7 @@ blast = взрыв
 body = тело
 box = коробка
 boy = мальчик
+[Rich] boy >> schoolboy
 breath = дыхание
 brow = чело
 cap = кепка
@@ -109,6 +112,7 @@ material = материал
 matter = сущность
 meat = мясо
 mind = разум
+minute = минута
 misfortune = несчастье
 moment = момент
 month = месяц
@@ -117,10 +121,13 @@ mouth = рот
 name = имя
 night = ночь
 north = север
+order = заказ
 pair = пара
+paper = бумага
 person = человек
 persuasion = убедительность
 piece = кусок
+prayer = молитва
 quarrel = ссора
 queen = королева
 ray = луч
@@ -129,6 +136,7 @@ riches = богатство
 road = дорога
 rock = камень
 room = комната
+second = секунда
 shade = тень
 shine = блеск
 shoulder = плечо
@@ -136,6 +144,7 @@ shop = магазин
 sight = взгляд, вид
 sign = знак
 sound = звук
+spirit = дух
 stay-at-home = домосед
 stick = палка
 story = рассказ
@@ -143,6 +152,8 @@ stream = поток
 street = улица
 sun = солнце
 sunshine = солнечный свет
+surprise = сюрприз
+table = стол
 tear = слеза
 thing = вещь
 time = время, раз
@@ -153,13 +164,14 @@ tree = дерево
 trouble = неприятность
 value = ценность
 [Adje] value >> valuable
-
 vanity = суета
 warmth = тепло
 watch = часы
 water = вода
+waterfall = водопад
 wedding = свадьба
 week = неделя
+weight = вес
 word = слово
 world = мир
 wind = ветер

@@ -6,6 +6,7 @@
 [Present] ~y >> ~ies
 [Present] ~ >> ~s
 [PresentParticiple] ~e >> ~ing
+[PresentParticiple] ~ean >> ~eaning
 [PresentParticiple] ~an >> ~anning
 [PresentParticiple] ~ >> ~ing
 
@@ -34,6 +35,7 @@
 [Past] run >> ran
 [Past] say >> said
 [Past] see >> saw, seen
+[Past] sell >> sold
 [Past] send >> sent
 [Past] sit >> sat
 [Past] speak >> spoke, spoken
@@ -44,6 +46,7 @@
 [Past] win >> won
 [Past] ~ap >> ~apped
 [Past] ~op >> ~opped
+[Past] ~ep >> ~epped
 [Past] ~y >> ~ied
 [Past] ~e >> ~ed
 [Past] ~ >> ~ed
@@ -111,6 +114,7 @@ hear = слышать
 heat = греть
 help = помогать
 hold = держать
+hope = надеяться
 howl = выть
 hurry = торопить
 hunt = охотиться
@@ -119,6 +123,7 @@ jump = прыгать
 keep = держать
 kill = убивать
 know = знать
+lay = лежать
 lead = вести
 learn = учиться
 leave = оставлять
@@ -127,8 +132,12 @@ lift = поднимать
 live = жить
 look = смотреть
 lose = терять
+love = любить
 make = делать
 master = овладевать
+may = быть вероятным
+[Adv] may >> maybe
+mean = означать
 meet = встретить
 might = мог бы
 mop = вытирать
@@ -144,12 +153,14 @@ pull = вытащить
 punish = наказать
 quiet = успокаивать
 reach = достичь
+receive = получать
 run = бежать
 sail = плавать
 say = сказать
 see = видеть
 seem = казаться
 seize = хватать
+sell = продавать
 send = отправить
 shine = блестеть
 sing = петь
@@ -159,15 +170,19 @@ speak = говорить
 stand = стоять
 start = начинать
 stay = пребывать
+step = шагать
 stop = остановить
 strip = сбрасывать
 take = брать
 tell = рассказывать
 think = думать
 throw = бросать
+tie = связать
 tore = оторвать
 try = пытаться
 turn = поворачивать
+understand = понимать
+use = использовать
 view = смотреть
 want = хотеть
 wash = мыть
