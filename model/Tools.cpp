@@ -5,7 +5,7 @@
 #else
   #include <stdio.h>
 #endif
-#include <QString>
+#include <QStringList>
 #include <QMap>
 
 class InvMap
