@@ -20,6 +20,7 @@
 [Past] feel >> felt
 [Past] find >> found
 [Past] fly >> flew
+[Past] get >> got
 [Past] go >> went, gone
 [Past] grow >> grew
 [Past] have >> had
@@ -40,6 +41,7 @@
 [Past] take >> took, taken
 [Past] tell >> told
 [Past] throw >> threw
+[Past] win >> won
 [Past] ~ap >> ~apped
 [Past] ~op >> ~opped
 [Past] ~y >> ~ied
@@ -76,23 +78,28 @@ dance = танцевать
 dash = бросаться, нестись
 dispute = спорить
 do = делать
+doubt = сомневаться
 drag = тащить
 dress = одевать
 dry = сушить
+eat = кушать
 enter = войти
 escape = сбежать
+explain = объяснять
 expect = ожидать
 eye = разглядывать
 fail = потерпеть неудачу
 fall = падать
 fasten = пристегнуть
 unfasten = отстегнуть
+fill = наполнять
 find = находить
 finish = закончить
 feel = чувствовать
 fly = летать
 furnish = отделывать
 furnished = меблированный
+get = получить
 give = дать
 go = идти
 grow = расти
@@ -106,8 +113,11 @@ help = помогать
 hold = держать
 howl = выть
 hurry = торопить
+hunt = охотиться
 invite = пригласить
+jump = прыгать
 keep = держать
+kill = убивать
 know = знать
 lead = вести
 learn = учиться
@@ -123,6 +133,7 @@ meet = встретить
 might = мог бы
 mop = вытирать
 move = двигать
+need = нуждаться
 open = открывать
 own = владеть
 pass = проходить
@@ -143,6 +154,7 @@ send = отправить
 shine = блестеть
 sing = петь
 sit = сидеть
+smile = улыбаться
 speak = говорить
 stand = стоять
 start = начинать
@@ -161,5 +173,6 @@ want = хотеть
 wash = мыть
 win = выиграть
 wish = желать
+wonder = удивляться, интересоваться
+[Adje] wonder >> wonderful, wonderfully
 wrap = заворачивать
-

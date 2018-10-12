@@ -1,5 +1,18 @@
 
 //! lang: en, ru
+//! category: colors
+
+brown = коричневый
+red = красный
+yellow = желтый
+green = зеленый
+blue = синий
+purple = пурпурный
+white = белый
+black = черный
+gray, grey = серый
+
+
 //! category: adjectives
 
 [Adv] ~y >> ~ily
@@ -11,26 +24,25 @@
 able = способный
 angry = сердитый
 another = еще один
-beautiful = прекрасный
 bitter = горький
 bright = яркий
-careful = заботливый
 certain = определенный
 closely = тесно
 cold = холодный
 complete = полный
 dear = дорогой
 deep = глубокий
+different = отличающийся
 discontented = недовольный
 eager = нетерпеливый
 easy = легкий
 electric = электрический
 especial = особенный
-even = даже
 every = каждый
 everyday = повседневный
+fast = быстрый
 fine = утонченный
-firmly = твердо
+firm = твердый
 foolish = глупо
 gay = веселый
 gentle = нежный
@@ -44,6 +56,7 @@ important = важный
 kind = добрый
 large = крупный
 large-hearted = великодушный
+late = поздний
 lazy = ленивый
 little, small = маленький
 long = длинный
@@ -81,20 +94,8 @@ thick = толстый
 thin = тонкий
 tight = плотный
 vain = тщеславный
-valuable = ценный
 warm = теплый
 whipped = взбитый
 whole = целый, полный
 worth = заслуживающий
 young = юный
-
-//! category: colors
-brown = коричневый
-red = красный
-yellow = желтый
-green = зеленый
-blue = синий
-purple = пурпурный
-white = белый
-black = черный
-gray, grey = серый

@@ -13,7 +13,7 @@ it = это
 [Forms] I >> me, my
 [Forms] you >> your, yours
 [Forms] he >> his, him, himself
-[Forms] she >> her, herself
+[Forms] she >> her, hers, herself
 [Forms] we >> us
 [Forms] they >> them, themselves, their, theirs
 [Forms] it >> its, itself
@@ -51,12 +51,18 @@ but = но
 each = каждый
 else = еще, кроме
 enough = достаточно
+even = даже
+ever = всегда
+everywhere = везде
+expression = выражение
 far = далеко
 for = для
+here = здесь
 how = как
 however = однако
 if = если
 indeed = в самом деле
+inside = внутри
 more = больше
 never = никогда
 nothing = ничего
@@ -88,5 +94,6 @@ which = который
 while = в то время как
 who = кто
 with = с
+[Neg] with >> without
 why = почему
 
