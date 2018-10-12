@@ -10,6 +10,8 @@
 [Pl] tooth >> teeth
 [Pl] ~ay >> ~ays
 [Pl] ~y >> ~ies
+[Pl] ~sh >> ~shes
+[Pl] ~ss >> ~sses
 [Pl] ~ >> ~s
 
 
@@ -23,6 +25,7 @@ beam = луч
 bed = кровать
 beauty = красота
 [Adje] beauty >> beautiful
+bear = медведь
 bell = колокольчик
 bird = птица
 blast = взрыв
@@ -32,11 +35,14 @@ boy = мальчик
 [Rich] boy >> schoolboy
 breath = дыхание
 brow = чело
+busy = занятый
 cap = кепка
 care = забота
 [Adje] care >> careful
 cent = цент
+ceremony = обряд
 chain = цепь
+chamber = камера, комната
 child = ребенок
 chipmunk = бурундук
 christmas = рождество
@@ -48,11 +54,14 @@ comb = гребень
 color = цвет
 cost = стоимость
 countryside = сельская местность
+creature = существо
 crow = ворона
 curiosity = любопытство
+daughter = дочь
 day = день
 dinner = обед
 direction = направление
+dish = блюдо
 dog = собака
 dollar = доллар
 door = дверь
@@ -64,6 +73,7 @@ end = конец
 eye = глаз
 face = лицо
 family = семья
+fashion = мода
 father = отец
 fear = страх
 fellow = парень
@@ -82,7 +92,7 @@ head = голова
 heart = сердце
 house, home = дом
 gift = подарок
-glass = стакан
+glass = стекло, стакан
 gold = золото
 ground = земля
 gust = порыв
@@ -91,6 +101,8 @@ hare = заяц
 hand = рука (кисть)
 honor = честь
 hour = час
+humor = юмор
+husband = муж
 interest = интерес
 jewel = драгоценный камень
 joy = радость
@@ -107,6 +119,7 @@ looking-glass = зеркало
 love = любовь
 mage = маг
 man = мужчина
+[Rich] man >> gentleman
 mark = отметка
 material = материал
 matter = сущность
@@ -117,6 +130,7 @@ misfortune = несчастье
 moment = момент
 month = месяц
 money = деньги
+mother = мать
 mouth = рот
 name = имя
 night = ночь
@@ -124,10 +138,12 @@ north = север
 order = заказ
 pair = пара
 paper = бумага
+people = люди
 person = человек
 persuasion = убедительность
 piece = кусок
 prayer = молитва
+quality = качество
 quarrel = ссора
 queen = королева
 ray = луч
@@ -143,6 +159,8 @@ shoulder = плечо
 shop = магазин
 sight = взгляд, вид
 sign = знак
+sister = сестра
+son = сын
 sound = звук
 spirit = дух
 stay-at-home = домосед
@@ -155,6 +173,7 @@ sunshine = солнечный свет
 surprise = сюрприз
 table = стол
 tear = слеза
+temper = характер
 thing = вещь
 time = время, раз
 tooth = зуб
@@ -172,8 +191,10 @@ waterfall = водопад
 wedding = свадьба
 week = неделя
 weight = вес
+woman = женщина
 word = слово
 world = мир
+wife = жена
 wind = ветер
 window = окно
 year = год

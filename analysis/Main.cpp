@@ -49,7 +49,7 @@ bool CheckText( const QString& thePath )
     {
 		if( w==END )
 			break;
-			
+
         w = w.toLower();
         if( Tools::startsWithDigit(w) )
             continue;
@@ -147,7 +147,7 @@ int main( int /*argc*/, char** /*argv*/ )
 
     Load();
 
-    CheckTexts( 3, false );
+    CheckTexts( 4, false );
     //CheckTexts( 2, true );
     //CheckTexts( 3, true );
     //CheckTexts( 4, true );

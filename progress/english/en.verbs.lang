@@ -54,6 +54,7 @@
 add = прибавлять
 agree = согласиться
 answer = отвечать
+appear = появляться
 arrive = прибывать
 ask = просить
 astonish = удивлять
@@ -64,12 +65,14 @@ belong = принадлежать
 blaze = полыхать
 blow = дуть
 bluster = бушевать
+bore = надоедать
 bring = приносить
 buy = купить
 call = окликать
 can = мочь
 carry = нести
 change = менять
+choose = выбирать
 clean = чистить
 close = закрыть
 come = приходить
@@ -134,6 +137,7 @@ look = смотреть
 lose = терять
 love = любить
 make = делать
+marry = жениться
 master = овладевать
 may = быть вероятным
 [Adv] may >> maybe
@@ -190,4 +194,5 @@ win = выиграть
 wish = желать
 wonder = удивляться, интересоваться
 [Adje] wonder >> wonderful, wonderfully
+work = работать
 wrap = заворачивать
