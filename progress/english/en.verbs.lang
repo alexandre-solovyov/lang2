@@ -12,15 +12,18 @@
 [Past] be >> was, were, been
 [Past] begin >> began
 [Past] blow >> blew
+[Past] bring >> brought
 [Past] can >> cannot, could
 [Past] ~come >> ~came
 [Past] do >> did, done
 [Past] fall >> fell, fallen
 [Past] feel >> felt
+[Past] find >> found
 [Past] fly >> flew
 [Past] go >> went, gone
 [Past] grow >> grew
 [Past] have >> had
+[Past] hear >> heard
 [Past] hold >> held
 [Past] know >> knew, known
 [Past] lose >> lost
@@ -31,6 +34,8 @@
 [Past] say >> said
 [Past] see >> saw, seen
 [Past] send >> sent
+[Past] sit >> sat
+[Past] speak >> spoke, spoken
 [Past] stand >> stood
 [Past] take >> took, taken
 [Past] tell >> told
@@ -41,7 +46,10 @@
 [Past] ~e >> ~ed
 [Past] ~ >> ~ed
 
+add = прибавлять
 agree = согласиться
+answer = отвечать
+arrive = прибывать
 ask = просить
 astonish = удивлять
 be = быть
@@ -51,14 +59,20 @@ belong = принадлежать
 blaze = полыхать
 blow = дуть
 bluster = бушевать
+bring = приносить
 buy = купить
 call = окликать
 can = мочь
 carry = нести
+change = менять
 clean = чистить
 close = закрыть
+come = приходить
 count = подсчитывать
+cover = накрывать
 cry = плакать
+cut = резать
+dance = танцевать
 dash = бросаться, нестись
 dispute = спорить
 do = делать
@@ -68,31 +82,38 @@ dry = сушить
 enter = войти
 escape = сбежать
 expect = ожидать
+eye = разглядывать
 fail = потерпеть неудачу
 fall = падать
 fasten = пристегнуть
 unfasten = отстегнуть
+find = находить
 finish = закончить
 feel = чувствовать
 fly = летать
 furnish = отделывать
 furnished = меблированный
+give = дать
 go = идти
 grow = расти
 growl = рычать
 hang = вешать
 happen = случаться
 have = иметь
+hear = слышать
 heat = греть
 help = помогать
 hold = держать
 howl = выть
+hurry = торопить
 invite = пригласить
 keep = держать
 know = знать
 lead = вести
+learn = учиться
 leave = оставлять
 let = позволять
+lift = поднимать
 live = жить
 look = смотреть
 lose = терять
@@ -110,6 +131,7 @@ plan = планировать
 place = размещать
 pull = вытащить
 punish = наказать
+quiet = успокаивать
 reach = достичь
 run = бежать
 sail = плавать
@@ -119,12 +141,17 @@ seem = казаться
 seize = хватать
 send = отправить
 shine = блестеть
+sing = петь
+sit = сидеть
+speak = говорить
 stand = стоять
+start = начинать
 stay = пребывать
 stop = остановить
 strip = сбрасывать
 take = брать
 tell = рассказывать
+think = думать
 throw = бросать
 tore = оторвать
 try = пытаться

@@ -3,13 +3,15 @@
 //! category: noms
 //! ignore: 
 
+[Pl] child >> children
 [Pl] tooth >> teeth
-[Pl] ray >> rays
+[Pl] ~ay >> ~ays
 [Pl] ~y >> ~ies
 [Pl] ~ >> ~s
 
 
 air = воздух
+anger = гнев
 animal = животное
 arm = рука
 art = изобразительное искусство
@@ -21,21 +23,29 @@ bird = птица
 blast = взрыв
 body = тело
 box = коробка
+boy = мальчик
 breath = дыхание
 brow = чело
 cap = кепка
+care = забота
 cent = цент
+chain = цепь
+child = ребенок
 chipmunk = бурундук
 christmas = рождество
+city, town = город
 cloak = плащ
 cloud = облако
 coat = пальто
+comb = гребень
 color = цвет
 cost = стоимость
 countryside = сельская местность
 crow = ворона
 curiosity = любопытство
 day = день
+dinner = обед
+dog = собака
 dollar = доллар
 door = дверь
 duck = утка
@@ -43,9 +53,15 @@ effort = усилие
 end = конец
 eye = глаз
 face = лицо
+family = семья
 father = отец
+fellow = парень
+floor = пол
 food = еда
 force = сила
+friend = друг
+girl = девочка
+god = бог
 hall = холл
 hat = шапка
 head = голова
@@ -57,10 +73,12 @@ ground = земля
 gust = порыв
 hair = волосы
 hare = заяц
+hand = рука (кисть)
 honor = честь
 hour = час
 interest = интерес
 jewel = драгоценный камень
+kind = сорт
 king = король
 knee = колено
 lady = леди
@@ -69,15 +87,19 @@ length = длина
 letter = письмо
 light = свет
 looking-glass = зеркало
+love = любовь
 mage = маг
 magi = волхвы
 man = мужчина
 mark = отметка
+material = материал
 matter = сущность
 meat = мясо
+mind = разум
 misfortune = несчастье
 moment = момент
 month = месяц
+money = деньги
 mouth = рот
 name = имя
 north = север
@@ -96,7 +118,9 @@ room = комната
 shade = тень
 shine = блеск
 shoulder = плечо
+shop = магазин
 sight = взгляд, вид
+sign = знак
 sound = звук
 stay-at-home = домосед
 stick = палка
@@ -112,6 +136,7 @@ tortoise = черепаха
 traveler = путешественник
 tree = дерево
 trouble = неприятность
+value = ценность
 vanity = суета
 warmth = тепло
 watch = часы

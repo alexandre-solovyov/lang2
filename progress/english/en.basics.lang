@@ -13,7 +13,7 @@ it = это
 [Forms] I >> me, my
 [Forms] you >> your, yours
 [Forms] he >> his, him, himself
-[Forms] she >> her
+[Forms] she >> her, herself
 [Forms] we >> us
 [Forms] they >> them, themselves, their, theirs
 [Forms] it >> its, itself
@@ -35,6 +35,7 @@ along = вдоль
 always = всегда
 already = уже
 also = также
+among = между, среди
 and = и
 anything = что-нибудь
 around = вокруг
@@ -48,6 +49,7 @@ beside = рядом
 between = между
 but = но
 each = каждый
+else = еще, кроме
 enough = достаточно
 far = далеко
 for = для
@@ -56,6 +58,7 @@ however = однако
 if = если
 indeed = в самом деле
 more = больше
+never = никогда
 nothing = ничего
 now = сейчас
 often = часто
@@ -67,13 +70,18 @@ perhaps = возможно
 quite = вполне
 same = тот же
 something = что-нибудь
+sometimes = иногда
+soon = скоро
 still = все еще
 then = тогда
+though = хотя
 tomorrow = завтра
+together = вместе
 toward = навстречу
 very = очень
 welcome = добро пожаловать
 well = хорошо
+what = что?
 when = когда
 where = где, куда
 which = который
