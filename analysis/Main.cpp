@@ -3,15 +3,13 @@
 #include <model/Tools.h>
 #include <QDir>
 
-QString LANG_FOLDER;
-QString TEXTS_FOLDER;
-QString LANG;
-
-bool    IS_VERBOSE = false;
-int     LIST_TRIM = 70;
-
+const int     LIST_TRIM = 20;
 const QString END = "_END_";
 
+bool     IS_VERBOSE = false;
+QString  LANG_FOLDER;
+QString  TEXTS_FOLDER;
+QString  LANG;
 StdModel MODEL;
 
 void Load()
@@ -73,8 +71,11 @@ bool CheckText( const QString& thePath )
     if( IS_VERBOSE )
     {
         QMap<QString, int>::const_iterator it = unknown.begin(), last = unknown.end();
-        for( ; it!=last; it++ )
+        int i = 0;
+        for( ; it!=last && i<LIST_TRIM; ++it, i++ )
             Tools::print( QString( "%0: %1" ).arg(it.key()).arg(it.value()) + ";  ", false );
+        if( i==LIST_TRIM )
+			Tools::print( "..." );
     }
     else
     {

@@ -9,51 +9,74 @@
 [Pl] woman >> women
 [Pl] tooth >> teeth
 [Pl] ~ay >> ~ays
+[Pl] ~oy >> ~oys
 [Pl] ~y >> ~ies
 [Pl] ~sh >> ~shes
 [Pl] ~ss >> ~sses
 [Pl] ~ >> ~s
 
 
+adventure = приключение
 air = воздух
+alarm = тревога
 anger = гнев
 animal = животное
 arm = рука
+arrow = стрелка
 art = изобразительное искусство
 article = статья
+ball = мяч
+basket = корзина
+bath = ванна
+[Comp] bath >> bathroom
+bay = залив
 beam = луч
-bed = кровать
+beard = борода
 beauty = красота
 [Adje] beauty >> beautiful
 bear = медведь
+bed = постель
+[Comp] bed >> bedroom, bedtime
 bell = колокольчик
 bird = птица
 blast = взрыв
+boat = лодка
 body = тело
 box = коробка
 boy = мальчик
-[Rich] boy >> schoolboy
+[Comp] boy >> schoolboy
 breath = дыхание
 brow = чело
+brother = брат
 busy = занятый
+cabin = кабина
 cap = кепка
+captain = капитан
 care = забота
 [Adje] care >> careful
 cent = цент
 ceremony = обряд
 chain = цепь
 chamber = камера, комната
+chapter = глава (в книге)
+cheek = щека
 child = ребенок
 chipmunk = бурундук
 christmas = рождество
+cinder = зола
 city, town = город
 cloak = плащ
+clothes = одежда
 cloud = облако
 coat = пальто
 comb = гребень
 color = цвет
+[Adje] color >> colourful
 cost = стоимость
+country = страна
 countryside = сельская местность
+courage = мужество
+[Adje] courage >> courageous, courageously
 creature = существо
 crow = ворона
 curiosity = любопытство
