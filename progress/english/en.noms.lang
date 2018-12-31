@@ -60,16 +60,20 @@ chain = цепь
 chamber = камера, комната
 chapter = глава (в книге)
 cheek = щека
+chief = начальник
 child = ребенок
 chipmunk = бурундук
 christmas = рождество
 cinder = зола
 city, town = город
+[Pl] city >> cities
 cloak = плащ
+clock = часы
 clothes = одежда
 cloud = облако
 coat = пальто
 comb = гребень
+comfort = комфорт
 color = цвет
 [Adje] color >> colourful
 cost = стоимость
