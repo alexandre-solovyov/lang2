@@ -47,7 +47,7 @@ signals:
 
 private:
     QList<WordInfo> myItems;
-    QString myFileName;
+    QString         myFileName;
 };
 
 #endif // TEXTMODEL_H

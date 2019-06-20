@@ -169,7 +169,7 @@ void TextModel::setText(QString theText)
             if(!aPart.isEmpty())
             {
                 QString aTranslation;
-                bool isKnown = false;
+                bool isKnown = true;
                 WordInfo anInfo(aPart, aTranslation, isLetter, isKnown);
                 myItems.append(anInfo);
             }

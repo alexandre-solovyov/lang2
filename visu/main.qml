@@ -17,26 +17,34 @@ Window {
         fileName: "D:/lang/texts/english/1_North_wind_and_the_Sun.txt";
     }
 
-    Flow {
-        id: flowId;
+    Flickable {
+        id: flickable;
         anchors.fill: parent;
-        flow: Flow.LeftToRight;
-        layoutDirection: Qt.LeftToRight;
-        spacing: 10;
+        contentHeight: flowId.implicitHeight;
+        clip: true;
+        ScrollBar.vertical: ScrollBar{}
 
-        Repeater {
-            id: repeatId;
-            model: modelId;
+        Flow {
+            id: flowId;
+            anchors.fill: parent;
+            flow: Flow.LeftToRight;
+            layoutDirection: Qt.LeftToRight;
+            spacing: 10;
 
-            delegate: Word {
-                        spacing: 15;
-                        fontSize: 18;
-                        maxWidth: mainId.width;
-                        text: m_text;
-                        translation: m_translation;
-                        isWord: m_isWord;
-                        isKnown: m_isKnown;
-                    }
+            Repeater {
+                id: repeatId;
+                model: modelId;
+
+                delegate: Word {
+                    spacing: 15;
+                    fontSize: 18;
+                    maxWidth: mainId.width;
+                    text: m_text;
+                    translation: m_translation;
+                    isWord: m_isWord;
+                    isKnown: m_isKnown;
+                }
+            }
         }
     }
 }
