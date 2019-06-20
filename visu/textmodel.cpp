@@ -27,7 +27,7 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
  * @param theParent the parent object
  */
 TextModel::TextModel(QObject* theParent)
-    : QAbstractListModel(theParent), myModel(new StdModel())
+    : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(0)
 {
     QString LANG_FOLDER = "d:/lang/progress/english";
     QString LANG = "en";
@@ -40,7 +40,6 @@ TextModel::TextModel(QObject* theParent)
     // This information should be always printed
     Tools::print( QString("Nb known: %0").arg( myModel->grammar().NbKnown() ) );
     Tools::print( "" );
-
 }
 
 /**
@@ -211,4 +210,14 @@ WordInfo TextModel::generate(QString theText, bool isWord)
     bool isKnown = myModel->grammar().IsKnown(init);
     QString aTranslation;
     return WordInfo(theText, aTranslation, isWord, isKnown);
+}
+
+void TextModel::select(QQuickItem* theItem)
+{
+    if(myCurrent)
+        myCurrent->setProperty("selection", false);
+
+    myCurrent = theItem;
+    if(myCurrent)
+        myCurrent->setProperty("selection", true);
 }

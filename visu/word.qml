@@ -6,17 +6,18 @@ Item {
     id: rootId;
     property int spacing: 0;
     property int v_spacing: 1;
+    property alias fontSize: internalTextId.font.pointSize;
+    property color knownColor: "#aed581";
+    property color unknownColor: "#f48fb1";
+    property int maxWidth: 1000;
 
     property alias text: internalTextId.text;
     property string translation: "";
     property bool isWord: true;
     property bool isKnown: true;
 
-    property color knownColor: "#aed581";
-    property color unknownColor: "#f48fb1";
-    property int maxWidth: 1000;
-
-    property alias fontSize: internalTextId.font.pointSize;
+    property bool selection: false;
+    signal selectedByClick();
 
     width: {
         if (text==="\r")
@@ -34,16 +35,16 @@ Item {
     Rectangle {
         anchors.fill: parent;
         border.color: {
-            /*if(selected)
+            if(selection)
                 "red";
-            else*/
+            else
                 "lightblue";
         }
         border.width: {
             if(text==="\r" || text==="  ")
                 0;
-            //else if(selected)
-            //    2;
+            else if(selection)
+                2;
             else
                 1;
         }
@@ -68,6 +69,7 @@ Item {
         MouseArea {
             anchors.fill: parent;
             onClicked: {
+                selectedByClick();
             }
         }
     }

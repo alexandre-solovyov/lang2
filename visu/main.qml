@@ -43,6 +43,10 @@ Window {
                     translation: m_translation;
                     isWord: m_isWord;
                     isKnown: m_isKnown;
+
+                    onSelectedByClick: {
+                        modelId.select(this);
+                    }
                 }
             }
         }

@@ -2,6 +2,7 @@
 #define TEXTMODEL_H
 
 #include <QAbstractListModel>
+#include <QQuickItem>
 #include <model/StdModel.h>
 
 class WordInfo
@@ -40,6 +41,8 @@ public:
     QString fileName() const;
     void setFileName(QString theFileName);
 
+    Q_INVOKABLE void select(QQuickItem*);
+
 signals:
     void fileNameChanged(QString theFileName);
 
@@ -52,6 +55,7 @@ private:
     QList<WordInfo> myItems;
     QString         myFileName;
     StdModel*       myModel;
+    QQuickItem*     myCurrent;
 };
 
 #endif // TEXTMODEL_H
