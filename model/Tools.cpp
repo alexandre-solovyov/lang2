@@ -7,6 +7,7 @@
 #endif
 #include <QStringList>
 #include <QMap>
+#include <QDebug>
 
 class InvMap
 {
@@ -100,6 +101,7 @@ void Tools::print( const QString& theText, bool isEndOfLine )
     QString aText = theText + ( isEndOfLine ? "\n" : "" );
 #ifdef WIN32
     WriteConsoleW( GetStdHandle(STD_OUTPUT_HANDLE), aText.utf16(), aText.size(), NULL, NULL );
+    qDebug() << theText;
 #else
     //TODO: unicode console on Linux
     printf( "%s", aText.toStdString().c_str() );

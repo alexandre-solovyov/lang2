@@ -2,6 +2,7 @@
 #define TEXTMODEL_H
 
 #include <QAbstractListModel>
+#include <model/StdModel.h>
 
 class WordInfo
 {
@@ -39,15 +40,18 @@ public:
     QString fileName() const;
     void setFileName(QString theFileName);
 
-    bool load(QString theFileName);
-    void setText(QString theText);
-
 signals:
     void fileNameChanged(QString theFileName);
+
+protected:
+    bool load();
+    void setText(QString theText);
+    WordInfo generate(QString theText, bool isWord);
 
 private:
     QList<WordInfo> myItems;
     QString         myFileName;
+    StdModel*       myModel;
 };
 
 #endif // TEXTMODEL_H

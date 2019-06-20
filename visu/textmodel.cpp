@@ -1,6 +1,7 @@
 #include "textmodel.h"
 #include <QDebug>
 #include <QFile>
+#include <model/Tools.h>
 
 static QRegExp RE("\\s");    ///< the regular expression for spaces
 static QRegExp WW("^\\w+");  ///< the regular expression for words
@@ -26,8 +27,20 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
  * @param theParent the parent object
  */
 TextModel::TextModel(QObject* theParent)
-    : QAbstractListModel(theParent)
+    : QAbstractListModel(theParent), myModel(new StdModel())
 {
+    QString LANG_FOLDER = "d:/lang/progress/english";
+    QString LANG = "en";
+
+    myModel->Load( LANG_FOLDER, LANG, true );
+    myModel->LoadPrivate( LANG_FOLDER + "/private" );
+
+    Tools::print( "" );
+    Tools::print( QString("Nb exercises: %0").arg( myModel->NbExercises() ) );
+    // This information should be always printed
+    Tools::print( QString("Nb known: %0").arg( myModel->grammar().NbKnown() ) );
+    Tools::print( "" );
+
 }
 
 /**
@@ -36,6 +49,7 @@ TextModel::TextModel(QObject* theParent)
  */
 TextModel::~TextModel()
 {
+    delete myModel;
 }
 
 /**
@@ -119,22 +133,23 @@ QString TextModel::fileName() const
  */
 void TextModel::setFileName(QString theFileName)
 {
+    qDebug() << "setFileName";
     if (myFileName == theFileName)
         return;
 
     myFileName = theFileName;
-    load(myFileName);
+    load();
     emit fileNameChanged(myFileName);
 }
 
 /**
  * @brief TextModel::load
  * Load the given file
- * @param theFileName the name of a file to load
  */
-bool TextModel::load(QString theFileName)
+bool TextModel::load()
 {
-    QFile aFile( theFileName );
+    qDebug() << "TextModel::load()";
+    QFile aFile( myFileName );
     if( !aFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
         return false;
 
@@ -168,10 +183,7 @@ void TextModel::setText(QString theText)
             aPart = aPart.trimmed();
             if(!aPart.isEmpty())
             {
-                QString aTranslation;
-                bool isKnown = true;
-                WordInfo anInfo(aPart, aTranslation, isLetter, isKnown);
-                myItems.append(anInfo);
+                myItems.append(generate(aPart, isLetter));
             }
             if(aPart.contains("."))
             {
@@ -180,4 +192,23 @@ void TextModel::setText(QString theText)
             }
         }
     }
+}
+
+/**
+ * @brief TextModel::generate
+ * Generate the word information by the given text
+ * @param theText the text to analyze
+ * @return the generated word information
+ */
+WordInfo TextModel::generate(QString theText, bool isWord)
+{
+    //qDebug() << "generate for" << theText;
+    QString aText = theText.toLower();
+    if( Tools::startsWithDigit(aText) )
+        return WordInfo(theText, "", isWord, true);
+
+    QString init = myModel->grammar().Init(aText).join(" ");
+    bool isKnown = myModel->grammar().IsKnown(init);
+    QString aTranslation;
+    return WordInfo(theText, aTranslation, isWord, isKnown);
 }

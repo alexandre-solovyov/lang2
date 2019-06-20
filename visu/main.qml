@@ -14,7 +14,7 @@ Window {
 
     TextModel {
         id: modelId;
-        fileName: "D:/lang/texts/english/1_North_wind_and_the_Sun.txt";
+        fileName: "D:/lang/texts/english/4_Peter_Pan.txt";
     }
 
     Flickable {
