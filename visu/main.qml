@@ -14,7 +14,8 @@ Window {
 
     TextModel {
         id: modelId;
-        fileName: "D:/lang/texts/english/4_Peter_Pan.txt";
+        //fileName: "4_Peter_Pan.txt";
+        fileName: "1_course_beginner.txt";
     }
 
     Flickable {
@@ -22,7 +23,9 @@ Window {
         anchors.fill: parent;
         contentHeight: flowId.implicitHeight;
         clip: true;
-        ScrollBar.vertical: ScrollBar{}
+        ScrollBar.vertical: ScrollBar{
+            id: vScrollId;
+        }
 
         Flow {
             id: flowId;
@@ -46,9 +49,33 @@ Window {
 
                     onSelectedByClick: {
                         modelId.select(this);
+                        infoId.x = this.x + this.width;
+                        var d = vScrollId.position * flowId.height;
+                        infoId.y = this.y + this.height - d;
+                        //console.log(vScrollId.position);
+                        infoId.visible = true;
+                        internalInfoId.text = modelId.translation(this.text);
                     }
                 }
             }
+        }
+    }
+
+    Rectangle {
+        id: infoId;
+        width: internalInfoId.implicitWidth + 10;
+        height: internalInfoId.implicitHeight + 10;
+        color: "dodgerblue";
+        visible: false;
+
+        Text {
+            id: internalInfoId;
+            anchors.fill: parent;
+            text: "test";
+            color: "white";
+            font.pointSize: 16;
+            horizontalAlignment: Text.AlignHCenter;
+            verticalAlignment: Text.AlignVCenter;
         }
     }
 }

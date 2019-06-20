@@ -18,6 +18,8 @@ public:
     uint NbExercises() const;
     const Grammar& grammar() const;
 
+    QString Translation( const QString& theWord ) const;
+
 private:
     Grammar myGrammar;
     ListOfExercises myExercises;

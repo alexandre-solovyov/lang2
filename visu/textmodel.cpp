@@ -29,11 +29,17 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
 TextModel::TextModel(QObject* theParent)
     : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(0)
 {
-    QString LANG_FOLDER = "d:/lang/progress/english";
-    QString LANG = "en";
+    //QString LANG = "en";
+    //QString LANGUAGE = "english";
+    QString LANG = "de";
+    QString LANGUAGE = "german";
+    QString LANG_FOLDER = "d:/lang/";
 
-    myModel->Load( LANG_FOLDER, LANG, true );
-    myModel->LoadPrivate( LANG_FOLDER + "/private" );
+    myProgressDir = LANG_FOLDER + "/progress/" + LANGUAGE;
+    myTextDir = LANG_FOLDER + "/texts/" + LANGUAGE;
+
+    myModel->Load( myProgressDir, LANG, true );
+    myModel->LoadPrivate( myProgressDir + "/private" );
 
     Tools::print( "" );
     Tools::print( QString("Nb exercises: %0").arg( myModel->NbExercises() ) );
@@ -147,8 +153,9 @@ void TextModel::setFileName(QString theFileName)
  */
 bool TextModel::load()
 {
-    qDebug() << "TextModel::load()";
-    QFile aFile( myFileName );
+    QString aFileName = myTextDir + "/" + myFileName;
+    qDebug() << "TextModel::load()" << aFileName;
+    QFile aFile( aFileName );
     if( !aFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
         return false;
 
@@ -184,7 +191,7 @@ void TextModel::setText(QString theText)
             {
                 myItems.append(generate(aPart, isLetter));
             }
-            if(aPart.contains("."))
+            if(aPart.contains(".") || aPart.contains("!") || aPart.contains("?"))
             {
                 myItems.append(WordInfo("<endline>"));
                 myItems.append(WordInfo("<newline>"));
@@ -199,17 +206,36 @@ void TextModel::setText(QString theText)
  * @param theText the text to analyze
  * @return the generated word information
  */
-WordInfo TextModel::generate(QString theText, bool isWord)
+WordInfo TextModel::generate(QString theText, bool isWord) const
 {
     //qDebug() << "generate for" << theText;
     QString aText = theText.toLower();
     if( Tools::startsWithDigit(aText) )
         return WordInfo(theText, "", isWord, true);
 
-    QString init = myModel->grammar().Init(aText).join(" ");
-    bool isKnown = myModel->grammar().IsKnown(init);
     QString aTranslation;
-    return WordInfo(theText, aTranslation, isWord, isKnown);
+    bool known = isKnown(aText);
+    return WordInfo(theText, aTranslation, isWord, known);
+}
+
+bool TextModel::isKnown(QString theWord) const
+{
+    bool isRussian = true;
+    foreach(QChar c, theWord)
+    {
+        QChar cc = c.toLower();
+        if(c.isLetter() && !(c>=u'а' && c<=u'я'))
+        {
+            isRussian = false;
+            break;
+        }
+    }
+    if(isRussian)
+        return true;
+
+    QString init = myModel->grammar().Init(theWord).join(" ");
+    bool known = myModel->grammar().IsKnown(init);
+    return known;
 }
 
 void TextModel::select(QQuickItem* theItem)
@@ -221,3 +247,21 @@ void TextModel::select(QQuickItem* theItem)
     if(myCurrent)
         myCurrent->setProperty("selection", true);
 }
+
+QString TextModel::translation(QString theWord) const
+{
+    QString aText = theWord.toLower();
+    if( Tools::startsWithDigit(aText) )
+        return theWord;
+
+    QString init = myModel->grammar().Init(aText).join(" ");
+
+    QString aResult;
+    if( init != aText )
+        aResult += " > " + init;
+    QString aTranslation = myModel->Translation(init);
+    if( !aTranslation.isEmpty() )
+        aResult += " > " + aTranslation;
+    return aResult;
+}
+

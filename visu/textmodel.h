@@ -42,6 +42,7 @@ public:
     void setFileName(QString theFileName);
 
     Q_INVOKABLE void select(QQuickItem*);
+    Q_INVOKABLE QString translation(QString theWord) const;
 
 signals:
     void fileNameChanged(QString theFileName);
@@ -49,10 +50,13 @@ signals:
 protected:
     bool load();
     void setText(QString theText);
-    WordInfo generate(QString theText, bool isWord);
+    WordInfo generate(QString theText, bool isWord) const;
+    bool isKnown(QString theWord) const;
 
 private:
     QList<WordInfo> myItems;
+    QString         myProgressDir;
+    QString         myTextDir;
     QString         myFileName;
     StdModel*       myModel;
     QQuickItem*     myCurrent;

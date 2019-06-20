@@ -7,6 +7,7 @@
 #include <model/EG_Place.h>
 #include <model/Tools.h>
 #include <QFile>
+#include <QDebug>
 
 StdModel::StdModel()
 {
@@ -18,7 +19,7 @@ StdModel::~StdModel()
 
 uint StdModel::NbExercises() const
 {
-    return myExercises.size();
+    return (uint)myExercises.size();
 }
 
 const Grammar& StdModel::grammar() const
@@ -40,6 +41,7 @@ bool StdModel::Load( const QString& theFilePath, const QString& theLang, bool is
         gen.append( new EG_Place() );
         if( isVerbose )
             Tools::print( "" );
+
         myExercises = lf.Build( gen, isVerbose );
 
         foreach( const Exercise& e, myExercises )
@@ -74,4 +76,16 @@ bool StdModel::LoadPrivate( const QString& theFilePath )
         myGrammar.AddAsKnown( aLine, true );
 
     return true;
+}
+
+QString StdModel::Translation( const QString& theWord ) const
+{
+    QString aLeft = theWord + " = ";
+    foreach( const Exercise& e, myExercises )
+    {
+        //qDebug() << e.Question << e.Answer;
+        if(e.Question.startsWith(aLeft))
+            return e.Answer;
+    }
+    return "";
 }
