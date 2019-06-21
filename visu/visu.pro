@@ -4,6 +4,7 @@ CONFIG += c++11
 DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
+        helper.cpp \
         main.cpp \
         textmodel.cpp
 
@@ -23,6 +24,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 INCLUDEPATH += $$PWD/..
 
 HEADERS += \
+    helper.h \
     textmodel.h
 
 DESTDIR = ../../bin

@@ -163,6 +163,7 @@ bool TextModel::load()
         return false;
 
     QString aData = aFile.readAll();
+    aFile.close();
     setText(aData);
     return true;
 }

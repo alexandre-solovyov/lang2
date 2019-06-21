@@ -18,6 +18,11 @@ Window {
         fileName: "1_course_beginner.txt";
     }
 
+    Helper {
+        id: helperId;
+        path: "/home/alex/lang/progress/german";
+    }
+
     Image {
         anchors.fill: parent;
         source: "images/meadow.jpg";
