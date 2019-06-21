@@ -81,12 +81,15 @@ bool StdModel::LoadPrivate( const QString& theFilePath )
 QStringList StdModel::Translation( const QString& theWord ) const
 {
     QStringList aResult;
-    QString aLeft = theWord + " = ";
+    QString aLeft = theWord.toLower() + " = ";
+    //qDebug() << "Search for:" << aLeft;
     foreach( const Exercise& e, myExercises )
     {
-        if(e.Question.toLower().contains(aLeft))
+        QString qLower = e.Question.toLower();
+        int anIndex = qLower.indexOf(aLeft);
+        if(anIndex==0 || (anIndex>0 && !qLower[anIndex-1].isLetterOrNumber()))
         {
-            //qDebug() << e.Question << e.Answer;
+            //qDebug() << e.Question << e.Answer << anIndex;
             aResult.append(e.Answer);
         }
     }
