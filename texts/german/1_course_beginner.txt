@@ -2,7 +2,7 @@
 Wie heißt du? = Как тебя зовут?
 Wie geht's? Wie geht es dir? = Как у тебя дела?
 Woher kommst du? = Откуда ты?
-Wie alt bist du? = Сколько тебе лет? (букв Насколько ты старый?)
+Wie alt bist du? = Сколько тебе лет? (букв. Насколько ты старый?)
 Was sind deine Hobbys? = Какие у тебя хобби?
 Seit wann lernst du Deutsch? = С какого времени ты учишь немецкий?
 Was ist dein Ziel beim Deutsch lernen? = Какова цель, чтобы учить немецкий?
@@ -36,3 +36,22 @@ Mein Hobby ist Tischtennis spielen. = Мое хобби -- играть в на�
 
 Ich lerne seit ... Tagen / Monaten / Jahren Deutsch. = Я учу немецкий ... дней / месяцев / лет.
 Mein Ziel ist ... = моя цель -- ...
+Mein Ziel ist es Deutsch zu lernen. = Моя цель -- это выучить немецкий.
+
+
+---  Dialogs  ---
+- Hallo, ich heiße Tom und wie heißt du?
+- Hallo Tom, ich heiße Eva. Seit wann lernst du schon (уже) Deutsch?
+- Ich lerne seit zwei Wochen Deutsch.
+- Wow, cool. Warum lernst du Deutsch?
+- Ich möchte in Deutschland studieren.
+- Sehr (очень) gut (хорошо), bis bald! (до скорого)
+- Bis bald! (до скорого)
+
+
+Bis zum nächstes (следующий) mal (раз) = до следующей встречи
+Ciao (из итальянского) = пока
+Bis dann = увидимся
+Bis bald = до скорого
+Bis später = увидимся позднее (букв. до позднее)
+
