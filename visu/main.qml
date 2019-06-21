@@ -80,9 +80,6 @@ Window {
                 addPanelId.visible = !item.isKnown;
             }
         }
-
-        Row {
-        }
     }
 
     InfoRect {
@@ -102,5 +99,7 @@ Window {
         font.pointSize: 16;
         categories: helperId.categories;
         visible: false;
+
+        helper: helperId;
     }
 }

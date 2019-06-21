@@ -57,6 +57,7 @@ Item {
 
                 focus: true;
                 font: rootId.font;
+                selectByMouse: true;
             }
         }
     }

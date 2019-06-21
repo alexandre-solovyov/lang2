@@ -81,7 +81,24 @@ QString Helper::category(QString theFileName) const
     return aCategory;
 }
 
+bool Helper::isSorted(QString theCategory) const
+{
+    return theCategory=="adjectives" || theCategory=="verbs";
+}
+
 void Helper::insert(int theIndex, QString theWord, QString theTranslation)
 {
-    //TODO
+    //qDebug() << theIndex << theWord << theTranslation;
+
+    QString aCategory = categories()[theIndex];
+    QString aNewLine = theWord + " = " + theTranslation;
+    QStringList& data = myData[aCategory];
+    if(isSorted(aCategory))
+    {
+        QStringList::const_iterator it = qBinaryFind(data, aNewLine);
+        int anIndex = it - data.begin();
+        data.insert(anIndex, aNewLine);
+    }
+    else
+        data.append(aNewLine);
 }

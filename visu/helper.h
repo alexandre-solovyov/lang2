@@ -27,6 +27,7 @@ signals:
 
 protected:
     QString category(QString theFileName) const;
+    bool isSorted(QString theCategory) const;
     void flush(bool isLoad);
 
 private:

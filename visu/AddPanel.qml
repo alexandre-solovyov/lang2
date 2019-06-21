@@ -3,6 +3,7 @@ import QtQuick 2.9;
 import QtQuick.Controls 2.4;
 import QtQuick.Controls.Styles 1.4;
 import QtQuick.Layouts 1.2;
+import com.alex.lang 1.0;
 
 Item {
     id: rootId;
@@ -12,12 +13,17 @@ Item {
     property alias translation: translationId.value;
     property variant categories;
     property int margin: 10;
+    property Helper helper: null;
 
     Rectangle {
         id: mainId;
         anchors.fill: parent;
         color: "#81C784";
         opacity: 0.75;
+
+        MouseArea {
+            anchors.fill: parent;
+        }
 
         ColumnLayout {
             spacing: 0;
@@ -72,6 +78,34 @@ Item {
                 font: rootId.font;
                 Layout.fillWidth: true;
                 Layout.topMargin: rootId.margin;
+            }
+
+            RowLayout {
+
+                Layout.fillWidth: true;
+                Layout.topMargin: rootId.margin;
+
+                Button {
+                    text: "OK";
+                    Layout.fillHeight: true;
+                    Layout.leftMargin: rootId.margin;
+                    font: rootId.font;
+
+                    onClicked: {
+                        helperId.insert(categoryId.currentIndex, wordId.value, translationId.value);
+                        rootId.visible = false;
+                    }
+                }
+                Button {
+                    text: "Cancel";
+                    Layout.fillHeight: true;
+                    Layout.leftMargin: rootId.margin;
+                    font: rootId.font;
+
+                    onClicked: {
+                        rootId.visible = false;
+                    }
+                }
             }
         }
     }
