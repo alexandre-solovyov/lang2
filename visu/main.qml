@@ -18,9 +18,28 @@ Window {
         fileName: "1_course_beginner.txt";
     }
 
+    Image {
+        anchors.fill: parent;
+        source: "images/meadow.jpg";
+        opacity: 0.5;
+    }
+
     ColumnLayout {
         spacing: 10;
-        anchors.fill: parent;
+        x: 10;
+        y: 10;
+        width: parent.width-2*x;
+        height: parent.height-2*y;
+
+        Row {
+            Layout.fillWidth: true;
+
+            Rectangle {
+                width: parent.width;
+                height: 25;
+                color: "green";
+            }
+        }
 
         TextVisuArea {
 
@@ -30,10 +49,13 @@ Window {
 
             onItemSelectedByClick: {
                 var item = modelId.selectedItem();
-                infoId.x = x;
+                infoId.x = x + 10;
                 infoId.y = y;
                 infoId.item = item;
             }
+        }
+
+        Row {
         }
     }
 
@@ -50,5 +72,6 @@ Window {
         width: 300;
         height: mainId.height;
         font.pointSize: 16;
+        visible: false;
     }
 }

@@ -78,14 +78,17 @@ bool StdModel::LoadPrivate( const QString& theFilePath )
     return true;
 }
 
-QString StdModel::Translation( const QString& theWord ) const
+QStringList StdModel::Translation( const QString& theWord ) const
 {
+    QStringList aResult;
     QString aLeft = theWord + " = ";
     foreach( const Exercise& e, myExercises )
     {
-        //qDebug() << e.Question << e.Answer;
-        if(e.Question.startsWith(aLeft))
-            return e.Answer;
+        if(e.Question.toLower().contains(aLeft))
+        {
+            //qDebug() << e.Question << e.Answer;
+            aResult.append(e.Answer);
+        }
     }
-    return "";
+    return aResult;
 }

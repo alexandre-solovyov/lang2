@@ -43,7 +43,7 @@ Item {
         }
         border.width: {
             if(text==="\r" || text==="  ")
-                0;
+                1;
             else if(selection)
                 2;
             else
@@ -51,18 +51,27 @@ Item {
         }
         color: {
             if(text==="\r" || text==="  " || !isWord)
-                "white";
+                "lightgray";
             else if (isKnown)
                 knownColor;
             else
                 unknownColor;
         }
+        opacity: {
+            if(text==="\r" || text==="  ")
+                0.0;
+            else if(!isWord)
+                0.5;
+            else
+                1.0;
+        }
+
 
         Layout.fillWidth: true;
         Text {
             id: internalTextId;
             anchors.fill: parent;
-            color: rootId.isWord ? "darkblue" : "lightgray";
+            color: rootId.isWord ? "darkblue" : "black";
             horizontalAlignment: Text.AlignHCenter;
             verticalAlignment: Text.AlignVCenter;
         }

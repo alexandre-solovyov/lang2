@@ -3,10 +3,8 @@
 #include <QFile>
 #include <model/Tools.h>
 
-static QRegExp RE("\\s");    ///< the regular expression for spaces
 static QRegExp WW("^\\w+");  ///< the regular expression for words
-static QRegExp NW("^\\W+");  ///< the regular expression for not-words
-//|\\.
+static QRegExp NW("^[\\W\\s]+");  ///< the regular expression for not-words
 
 /**
  * @brief WordInfo::WordInfo
@@ -33,7 +31,12 @@ TextModel::TextModel(QObject* theParent)
     //QString LANGUAGE = "english";
     QString LANG = "de";
     QString LANGUAGE = "german";
+#ifdef WIN32
     QString LANG_FOLDER = "d:/lang/";
+#else
+    QString LANG_FOLDER = "/home/alex/lang/";
+#endif
+
 
     myProgressDir = LANG_FOLDER + "/progress/" + LANGUAGE;
     myTextDir = LANG_FOLDER + "/texts/" + LANGUAGE;
@@ -173,7 +176,7 @@ void TextModel::setText(QString theText)
 {
     myItems.clear();
     myItems.append(WordInfo("<newline>"));
-    QStringList items = theText.split(RE, QString::SkipEmptyParts);
+    QStringList items = theText.split("\n", QString::SkipEmptyParts);
     foreach(QString anItem, items)
     {
         while(!anItem.isEmpty())
@@ -188,15 +191,10 @@ void TextModel::setText(QString theText)
 
             aPart = aPart.trimmed();
             if(!aPart.isEmpty())
-            {
                 myItems.append(generate(aPart, isLetter));
-            }
-            if(aPart.contains(".") || aPart.contains("!") || aPart.contains("?"))
-            {
-                myItems.append(WordInfo("<endline>"));
-                myItems.append(WordInfo("<newline>"));
-            }
         }
+        myItems.append(WordInfo("<endline>"));
+        myItems.append(WordInfo("<newline>"));
     }
 }
 
@@ -218,6 +216,12 @@ WordInfo TextModel::generate(QString theText, bool isWord) const
     return WordInfo(theText, aTranslation, isWord, known);
 }
 
+/**
+ * @brief TextModel::isKnown
+ * Determine if the given word is known in the model
+ * @param theWord the word to analyze
+ * @return if the word is known
+ */
 bool TextModel::isKnown(QString theWord) const
 {
     bool isRussian = true;
@@ -238,6 +242,11 @@ bool TextModel::isKnown(QString theWord) const
     return known;
 }
 
+/**
+ * @brief TextModel::select
+ * Select the given item
+ * @param theItem the item to select
+ */
 void TextModel::select(QQuickItem* theItem)
 {
     if(myCurrent)
@@ -248,11 +257,22 @@ void TextModel::select(QQuickItem* theItem)
         myCurrent->setProperty("selection", true);
 }
 
+/**
+ * @brief TextModel::selectedItem
+ * Get the selected item
+ * @return the selected item
+ */
 QQuickItem* TextModel::selectedItem() const
 {
     return myCurrent;
 }
 
+/**
+ * @brief TextModel::translation
+ * Get the translation of the word
+ * @param theWord the word to translate
+ * @return the found translation
+ */
 QString TextModel::translation(QString theWord) const
 {
     QString aText = theWord.toLower();
@@ -264,9 +284,9 @@ QString TextModel::translation(QString theWord) const
     QString aResult;
     if( init != aText )
         aResult += " > " + init;
-    QString aTranslation = myModel->Translation(init);
+    QStringList aTranslation = myModel->Translation(init);
     if( !aTranslation.isEmpty() )
-        aResult += " > " + aTranslation;
+        aResult += " > " + aTranslation.join(", ");
     return aResult;
 }
 

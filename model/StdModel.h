@@ -18,7 +18,7 @@ public:
     uint NbExercises() const;
     const Grammar& grammar() const;
 
-    QString Translation( const QString& theWord ) const;
+    QStringList Translation( const QString& theWord ) const;
 
 private:
     Grammar myGrammar;

@@ -7,4 +7,7 @@
         <file>AddPanel.qml</file>
         <file>TextField.qml</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>meadow.jpg</file>
+    </qresource>
 </RCC>

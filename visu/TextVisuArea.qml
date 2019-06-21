@@ -43,13 +43,9 @@ Item {
                     isKnown: m_isKnown;
 
                     onSelectedByClick: {
-                        //console.log("onSelectedByClick");
                         modelId.select(this);
-                        var x = this.x + this.width;
-                        var d = vScrollId.position * flowId.height;
-                        var y = this.y + this.height - d;
-                        //console.log(x, y, vScrollId.position);
-                        itemSelectedByClick(x, y);
+                        var p = this.mapToGlobal(0, 0);
+                        itemSelectedByClick(p.x, p.y);
                     }
                 }
             }
