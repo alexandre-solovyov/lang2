@@ -31,13 +31,26 @@ Window {
         width: parent.width-2*x;
         height: parent.height-2*y;
 
-        Row {
+        Rectangle {
             Layout.fillWidth: true;
+            height: 80;
+            color: "#00AA00";
+            opacity: 0.5;
 
-            Rectangle {
-                width: parent.width;
-                height: 25;
-                color: "green";
+            RowLayout {
+                x: 10;
+                y: 8;
+                spacing: 20;
+
+                Image {
+                    source: "images/open.png";
+                }
+                Image {
+                    source: "images/prev.png";
+                }
+                Image {
+                    source: "images/next.png";
+                }
             }
         }
 

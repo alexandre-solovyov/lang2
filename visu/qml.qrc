@@ -9,5 +9,8 @@
     </qresource>
     <qresource prefix="/images">
         <file>meadow.jpg</file>
+        <file>open.png</file>
+        <file>prev.png</file>
+        <file>next.png</file>
     </qresource>
 </RCC>
