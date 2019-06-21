@@ -104,11 +104,12 @@ void Grammar::CacheAllForms( const QString& theWord, ITense* theTense )
     QStringList& lst = myCachedForms[theWord];
     foreach( QString f, aSet )
     {
-        if( !lst.contains(f) )
-            lst.append(f);
-        if( !myInit[f].contains( theWord ) )
-            myInit[f].append( theWord );
-        //Tools::print( "  " + f );
+        QString fl = f.toLower();
+        if( !lst.contains(fl) )
+            lst.append(fl);
+        if( !myInit[fl].contains( theWord ) )
+            myInit[fl].append( theWord );
+        //Tools::print( "  " + fl + " " + theWord );
     }
 }
 
@@ -135,6 +136,7 @@ QStringList Grammar::CachedForms( const QString& theWord ) const
 */
 QStringList Grammar::Init( const QString& theWord ) const
 {
+    //Tools::print("Init: " + theWord);
     if( myInit.contains( theWord ) )
         return myInit[theWord];
     else
@@ -149,6 +151,7 @@ QStringList Grammar::Init( const QString& theWord ) const
 void Grammar::AddAsKnown( const QString& theWord, bool isPrivate )
 {
     QString aWord = theWord.toLower().trimmed();
+    //Tools::print(aWord);
     ( isPrivate ? myKnownPrivate : myKnown )[aWord] = ' ';
 }
 
@@ -160,6 +163,13 @@ void Grammar::AddAsKnown( const QString& theWord, bool isPrivate )
 bool Grammar::IsKnown( const QString& theWord ) const
 {
     QString aWord = theWord.toLower().trimmed();
+    static bool print_knowns = false;
+    if( print_knowns )
+    {
+        QString all = myKnown.keys().join(" ");
+        Tools::print(all);
+        print_knowns = false;
+    }
     return myKnown.contains( aWord ) || myKnownPrivate.contains( aWord );
 }
 

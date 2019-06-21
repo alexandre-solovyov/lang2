@@ -161,3 +161,15 @@ QString Tools::simplifySpaces( const QString& theLine )
 
     return aLine;
 }
+
+bool Tools::notLetters( const QString& theWord )
+{
+    static QRegExp LETTER("\\w");
+    return ( LETTER.indexIn(theWord) < 0 );
+}
+
+bool Tools::isCyrillic( const QString& theWord )
+{
+    static QRegExp LETTER("[А-Яа-я\\W]*");
+    return LETTER.exactMatch(theWord);
+}

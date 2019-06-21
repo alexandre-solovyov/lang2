@@ -6,11 +6,11 @@
 const int     LIST_TRIM = 20;
 const QString END = "_END_";
 
-bool     IS_VERBOSE = false;
-QString  LANG_FOLDER;
-QString  TEXTS_FOLDER;
-QString  LANG;
-StdModel MODEL;
+static bool     IS_VERBOSE = false;
+static QString  LANG_FOLDER;
+static QString  TEXTS_FOLDER;
+static QString  LANG;
+static StdModel MODEL;
 
 void Load()
 {
@@ -49,10 +49,19 @@ bool CheckText( const QString& thePath )
 			break;
 
         w = w.toLower();
-        if( Tools::startsWithDigit(w) )
+        if( Tools::startsWithDigit(w) ||
+            Tools::notLetters(w) ||
+            Tools::isCyrillic(w) )
             continue;
-        QString init = MODEL.grammar().Init(w).join(" ");
-        bool known = MODEL.grammar().IsKnown(init);
+
+        const Grammar& aGram = MODEL.grammar();
+        QString init = aGram.Init(w).join(" ");
+        /*QString init2 = aGram.Init(init).join(" ");
+        Tools::print( init + " -- " + init2 );
+        if(init2!=init)
+            init = init2;*/
+
+        bool known = aGram.IsKnown(init);
         //Tools::print( QString( "%0 -- %1 -- %2" ).arg( w ).arg( init ).arg( known ) );
         if( !known )
         {
@@ -91,6 +100,7 @@ void CheckTexts( int theIndex, bool isSeveral )
     static QStringList TEXT_MASK = QStringList() << "*.txt";
     QDir aDir( TEXTS_FOLDER );
     QFileInfoList files = aDir.entryInfoList( TEXT_MASK );
+    Tools::print( "There are " + QString::number(files.size()) + " texts" );
 
     if( isSeveral )
     {
@@ -105,9 +115,9 @@ void CheckTexts( int theIndex, bool isSeveral )
         CheckText( files[theIndex-1].absoluteFilePath() );
 }
 
-#define ENGLISH
+//#define ENGLISH
 //#define FRANCAIS
-//#define GERMAN
+#define GERMAN
 
 int main( int /*argc*/, char** /*argv*/ )
 {
@@ -148,7 +158,7 @@ int main( int /*argc*/, char** /*argv*/ )
 
     Load();
 
-    CheckTexts( 4, false );
+    CheckTexts( 1, false );
     //CheckTexts( 5, false );
     
     //CheckTexts( 2, true );

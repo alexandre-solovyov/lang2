@@ -2,10 +2,26 @@
 //! lang: de, ru
 //! category: basic
 
+aus = от, из
+beim = для
+seit = с
 und = и
+wer = кто
+was = какие, что
+wie = как
+wo = где
+woher = откуда
+wann = когда
+warum = почему
+weshalb = почему, отчего
+wieso = почему, каким образом
+
+
 
 ich = я
 du = ты
+[Dat] ich >> mir
+[Dat] du >> dir
 er = он
 sie = она
 es = оно
@@ -13,3 +29,15 @@ wir = мы
 ihr = вы
 Sie = Вы
 sie = они
+
+mein = мой
+[Fem] mein >> meine
+dein = твой
+[Fem] dein >> deine
+sein = его
+[Fem] sein >> seine
+unser = наш
+[Fem] unser >> unsere
+euer = ваш
+[Fem] euer >> eure
+

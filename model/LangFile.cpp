@@ -49,7 +49,7 @@ bool LangFile::Load( const QString& theFilePath, bool isVerbose )
     QString aData = aFile.readAll();
     QStringList aLines = aData.split( "\n", QString::SkipEmptyParts );
 
-    int index = AddFile( theFilePath );
+    uint index = AddFile( theFilePath );
     foreach( QString aLine, aLines )
         Add( index, aLine );
 
@@ -64,7 +64,7 @@ uint LangFile::AddFile( const QString& theFilePath )
     d.Name = theFilePath;
     myFiles.append( d );
     myHashes.append( QHash<uint, uint>() );
-    return myFiles.size()-1;
+    return (uint)(myFiles.size()-1);
 }
 
 bool LangFile::Add( uint theFileIndex, const QString& theLine )

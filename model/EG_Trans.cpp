@@ -1,5 +1,6 @@
 
 #include <model/EG_Trans.h>
+#include <model/Tools.h>
 
 EG_Trans::EG_Trans( bool isBoth, bool isSimple )
     : myIsBoth( isBoth ), myIsSimple( isSimple )
@@ -36,6 +37,8 @@ ListOfExercises EG_Trans::Generate( const QString& theLine, const Context& theCo
     isOtherProduct = false;
     ListOfExercises ex;
 
+    //Tools::print(theLine);
+
     QStringList parts = theLine.split( EQ_MARK, QString::SkipEmptyParts );
     if( parts.size()==2 )
     {
@@ -51,6 +54,7 @@ ListOfExercises EG_Trans::Generate( const QString& theLine, const Context& theCo
         else
             e1.Question = QString( "%0 %1 %2").arg( p1 ).arg( EQ_MARK ).arg( QUEST );
         e1.Answer = p2;
+        //Tools::print(e1.Question + " " + e1.Answer);
         ex.append(e1);
 
         if( myIsBoth )

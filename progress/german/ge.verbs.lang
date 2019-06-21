@@ -2,5 +2,13 @@
 //! lang: de, ru
 //! category: verbs
 
-sein = быть
 [Pr] sein >> bin, bist, ist, sind, seid, sind
+[Pr] ~ten >> ~te, ~test, ~tet, ~ten, ~tet, ~ten
+[Pr] ~en >> ~e, ~st, ~t, ~en, ~t, ~en
+
+heißen = называться
+gehen = идти
+kommen = приходить
+lernen = учиться
+sein = быть
+spielen = играть

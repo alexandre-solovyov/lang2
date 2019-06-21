@@ -15,6 +15,8 @@ public:
     static bool    isVowel( const QChar&, const QString& theIgnore = "" );
     static bool    isConsonant( const QChar&, const QString& theIgnore = "" );
     static QString simplifySpaces( const QString& );
+    static bool    notLetters( const QString& );
+    static bool    isCyrillic( const QString& );
 };
 
 #endif // STATISTICS_H
