@@ -30,6 +30,8 @@ Window {
     }
 
     ColumnLayout {
+        id: containerId;
+
         spacing: 10;
         x: 10;
         y: 10;
@@ -60,16 +62,22 @@ Window {
         }
 
         TextVisuArea {
-
+            id: textVisuId;
             Layout.fillWidth: true;
             Layout.fillHeight: true;
             maxWidth: mainId.width;
 
             onItemSelectedByClick: {
                 var item = modelId.selectedItem();
-                infoId.x = x + 10;
-                infoId.y = y;
+                var localX = globalX - mainId.x
+                var localY = globalY - mainId.y;
+                infoId.x = localX + 10;
+                infoId.y = localY + item.height;
                 infoId.item = item;
+
+                addPanelId.text = item.text;
+                addPanelId.translation = "";
+                addPanelId.visible = !item.isKnown;
             }
         }
 
@@ -85,11 +93,14 @@ Window {
 
     AddPanel {
         id: addPanelId;
-        x: mainId.width - width;
-        y: 0;
-        width: 300;
-        height: mainId.height;
+
+        x: mainId.width - width - containerId.spacing;
+        y: textVisuId.y + containerId.spacing;
+        width: mainId.width * 0.4;
+        height: mainId.height - y - containerId.spacing;
+
         font.pointSize: 16;
+        categories: helperId.categories;
         visible: false;
     }
 }

@@ -10,7 +10,7 @@ Item {
     property int fontSize: 18;
     property int maxWidth: 1000;
 
-    signal itemSelectedByClick(int x, int y);
+    signal itemSelectedByClick(int globalX, int globalY);
 
     Flickable {
         id: flickable;
@@ -44,8 +44,9 @@ Item {
 
                     onSelectedByClick: {
                         modelId.select(this);
-                        var p = this.mapToGlobal(0, 0);
-                        itemSelectedByClick(p.x, p.y);
+                        var globalPoint = this.mapToGlobal(0, 0);
+                        //console.log(globalPoint);
+                        itemSelectedByClick(globalPoint.x, globalPoint.y);
                     }
                 }
             }

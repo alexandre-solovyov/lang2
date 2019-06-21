@@ -38,6 +38,7 @@ void Helper::setPath(QString thePath)
     flush(true);
     qDebug() << myData.keys();
     emit pathChanged(myPath);
+    emit categoriesChanged(myData.keys());
 }
 
 void Helper::flush(bool isLoad)
@@ -78,4 +79,9 @@ QString Helper::category(QString theFileName) const
     else if(parts.size()==1)
         aCategory = parts[0];
     return aCategory;
+}
+
+void Helper::insert(int theIndex, QString theWord, QString theTranslation)
+{
+    //TODO
 }
