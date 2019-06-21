@@ -14,7 +14,7 @@ Window {
 
     TextModel {
         id: modelId;
-        //fileName: "4_Peter_Pan.txt";
+        language: "de";
         fileName: "1_course_beginner.txt";
 
         function setAsKnown(text, index) {
@@ -25,8 +25,7 @@ Window {
 
     Helper {
         id: helperId;
-        path: "/home/alex/lang/progress/german";
-        language: "de";
+        language: modelId.language;
     }
 
     Image {
@@ -136,7 +135,6 @@ Window {
             verticalAlignment: Text.AlignVCenter;
         }
     }
-
 
     function translate(text, lang1, lang2, callback) {
         var xhr = new XMLHttpRequest();

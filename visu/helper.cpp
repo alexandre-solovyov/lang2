@@ -24,7 +24,7 @@ QStringList Helper::categories() const
 
 void Helper::setPath(QString thePath)
 {
-    qDebug() << "setPath";
+    qDebug() << "Helper::setPath";
     if (myPath == thePath)
         return;
 
@@ -115,11 +115,29 @@ QString Helper::language() const
     return myLanguage;
 }
 
-void Helper::setLanguage(QString language)
+void Helper::setLanguage(QString theLanguage)
 {
-    if (myLanguage == language)
+    qDebug() << "Helper::setLanguage";
+
+    if (myLanguage == theLanguage)
         return;
 
-    myLanguage = language;
+    myLanguage = theLanguage;
     emit languageChanged(myLanguage);
+}
+
+QString Helper::extLanguage(QString theLanguage)
+{
+    static QMap<QString, QString> languageCodes;
+    if(languageCodes.isEmpty())
+    {
+        languageCodes["en"] = "english";
+        languageCodes["fr"] = "french";
+        languageCodes["de"] = "german";
+    }
+
+    if(languageCodes.contains(theLanguage))
+        return languageCodes[theLanguage];
+    else
+        return theLanguage;
 }

@@ -4,6 +4,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <model/Tools.h>
+#include <helper.h>
 
 static QRegExp WW("^\\w+");  ///< the regular expression for words
 static QRegExp NW("^[\\W\\s]+");  ///< the regular expression for not-words
@@ -29,28 +30,6 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
 TextModel::TextModel(QObject* theParent)
     : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(nullptr), myNbUnknown(0)
 {
-    //QString LANG = "en";
-    //QString LANGUAGE = "english";
-    QString LANG = "de";
-    QString LANGUAGE = "german";
-#ifdef WIN32
-    QString LANG_FOLDER = "d:/lang/";
-#else
-    QString LANG_FOLDER = "/home/alex/lang/";
-#endif
-
-
-    myProgressDir = LANG_FOLDER + "/progress/" + LANGUAGE;
-    myTextDir = LANG_FOLDER + "/texts/" + LANGUAGE;
-
-    myModel->Load( myProgressDir, LANG, true );
-    myModel->LoadPrivate( myProgressDir + "/private" );
-
-    Tools::print( "" );
-    Tools::print( QString("Nb exercises: %0").arg( myModel->NbExercises() ) );
-    // This information should be always printed
-    Tools::print( QString("Nb known: %0").arg( myModel->grammar().NbKnown() ) );
-    Tools::print( "" );
 }
 
 /**
@@ -143,7 +122,8 @@ QString TextModel::fileName() const
  */
 void TextModel::setFileName(QString theFileName)
 {
-    //qDebug() << "setFileName";
+    qDebug() << "TextModel::setFileName" << theFileName;
+
     if (myFileName == theFileName)
         return;
 
@@ -158,8 +138,21 @@ void TextModel::setFileName(QString theFileName)
  */
 bool TextModel::load()
 {
-    QString aFileName = myTextDir + "/" + myFileName;
-    qDebug() << "TextModel::load()" << aFileName;
+    if(myProgressPath.isEmpty() || myTextPath.isEmpty() || myFileName.isEmpty())
+        return false;
+
+    qDebug() << "TextModel::load()";
+
+    // 1. Load the model's contents from language files
+    myModel->Load( myProgressPath, myLanguage, true );
+    myModel->LoadPrivate( myProgressPath + "/private" );
+
+    qDebug() << QString("Nb exercises: %0").arg( myModel->NbExercises() );
+    qDebug() << QString("Nb known: %0").arg( myModel->grammar().NbKnown() );
+
+    // 2. Load a text file for analysis
+    QString aFileName = myTextPath + "/" + myFileName;
+    qDebug() << "Text for analysis:" << aFileName;
     QFile aFile( aFileName );
     if( !aFile.open( QIODevice::ReadOnly | QIODevice::Text ) )
         return false;
@@ -177,6 +170,8 @@ bool TextModel::load()
  */
 void TextModel::setText(QString theText)
 {
+    qDebug() << "TextModel::setText";
+
     myItems.clear();
     myItems.append(WordInfo("<newline>"));
     myNbUnknown = 0;
@@ -319,6 +314,59 @@ void TextModel::setAsKnownCpp(QString theWord)
     }
 
     emit nbUnknownChanged(myNbUnknown);
+}
+
+QString TextModel::language() const
+{
+    return myLanguage;
+}
+
+void TextModel::setLanguage(QString theLanguage)
+{
+    qDebug() << "TextModel::setLanguage" << theLanguage;
+
+    if (myLanguage == theLanguage)
+        return;
+
+    myLanguage = theLanguage;
+    QString anExtLanguage = Helper::extLanguage(myLanguage);
+    setProgressPath("../lang/progress/" + anExtLanguage);
+    setTextPath("../lang/texts/" + anExtLanguage);
+    emit languageChanged(myLanguage);
+}
+
+void TextModel::setProgressPath(QString theProgressPath)
+{
+    qDebug() << "TextModel::setProgressPath" << theProgressPath;
+
+    if (myProgressPath == theProgressPath)
+        return;
+
+    myProgressPath = theProgressPath;
+    load();
+    emit progressPathChanged(myProgressPath);
+}
+
+void TextModel::setTextPath(QString theTextPath)
+{
+    qDebug() << "TextModel::setTextPath" << theTextPath;
+
+    if (myTextPath == theTextPath)
+        return;
+
+    myTextPath = theTextPath;
+    load();
+    emit textPathChanged(myTextPath);
+}
+
+QString TextModel::progressPath() const
+{
+    return myProgressPath;
+}
+
+QString TextModel::textPath() const
+{
+    return myTextPath;
 }
 
 int TextModel::nbUnknown() const

@@ -8,18 +8,19 @@
 class WordInfo
 {
 public:
-  WordInfo(QString theText="", QString theTranslation="", bool isWord=false, bool isKnown=false);
+    WordInfo(QString theText="", QString theTranslation="", bool isWord=false, bool isKnown=false);
 
-  QString Text;
-  QString Translation;
-  bool IsWord;
-  bool IsKnown;
+    QString Text;
+    QString Translation;
+    bool IsWord;
+    bool IsKnown;
 };
 
 class TextModel: public QAbstractListModel
 {
     Q_OBJECT
 
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
     Q_PROPERTY(int nbUnknown READ nbUnknown NOTIFY nbUnknownChanged)
 
@@ -39,11 +40,18 @@ public:
     virtual QVariant data(const QModelIndex &theIndex, int theRole) const override;
     virtual QHash<int, QByteArray> roleNames() const override;
 
-    QString fileName() const;
-    void setFileName(QString theFileName);
-
     int nbUnknown() const;
 
+    QString fileName() const;
+    void setFileName(QString theFileName);
+    QString progressPath() const;
+    void setProgressPath(QString progressPath);
+    QString textPath() const;
+    void setTextPath(QString textPath);
+    QString language() const;
+    void setLanguage(QString language);
+
+    Q_INVOKABLE bool load();
     Q_INVOKABLE void select(QQuickItem*);
     Q_INVOKABLE QQuickItem* selectedItem() const;
     Q_INVOKABLE QString translation(QString theWord) const;
@@ -52,21 +60,24 @@ public:
 signals:
     void fileNameChanged(QString theFileName);
     void nbUnknownChanged(int nbUnknowns);
+    void progressPathChanged(QString progressPath);
+    void textPathChanged(QString textPath);
+    void languageChanged(QString language);
 
 protected:
-    bool load();
     void setText(QString theText);
     WordInfo generate(QString theText, bool isWord) const;
     bool isKnown(QString theWord) const;
 
 private:
     QList<WordInfo> myItems;
-    QString         myProgressDir;
-    QString         myTextDir;
+    QString         myProgressPath;
+    QString         myTextPath;
     QString         myFileName;
     StdModel*       myModel;
     QQuickItem*     myCurrent;
     int             myNbUnknown;
+    QString         myLanguage;
 };
 
 #endif // TEXTMODEL_H

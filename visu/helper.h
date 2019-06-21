@@ -8,7 +8,6 @@ class Helper : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
     Q_PROPERTY(QStringList categories READ categories NOTIFY categoriesChanged)
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
 
@@ -25,10 +24,11 @@ public:
 
     Q_INVOKABLE void insert(int theIndex, QString theWord, QString theTranslation);
 
+    static QString extLanguage(QString theLanguage);
+
 signals:
     void pathChanged(QString thePath);
     void categoriesChanged(QStringList categories);
-
     void languageChanged(QString language);
 
 protected:
