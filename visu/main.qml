@@ -26,6 +26,7 @@ Window {
     Helper {
         id: helperId;
         path: "/home/alex/lang/progress/german";
+        language: "de";
     }
 
     Image {
@@ -81,10 +82,17 @@ Window {
                 infoId.y = localY + item.height;
                 infoId.item = item;
 
-                addPanelId.text = item.text;
+                addPanelId.text = item.text.toLowerCase();
                 //console.log(item.wordIndex);
                 addPanelId.translation = "";
                 addPanelId.visible = !item.isKnown;
+
+                if(addPanelId.visible) {
+                    translate(item.text, helperId.language, "ru", function(translation) {
+                        addPanelId.translation = translation;
+                        console.log(translation);
+                    })
+                }
             }
         }
     }
@@ -127,5 +135,26 @@ Window {
             horizontalAlignment: Text.AlignHCenter;
             verticalAlignment: Text.AlignVCenter;
         }
+    }
+
+
+    function translate(text, lang1, lang2, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState===XMLHttpRequest.HEADERS_RECEIVED) {
+                console.log("Headers received");
+            } else if(xhr.readyState===XMLHttpRequest.DONE) {
+                if(xhr.status===200) {
+                    var data = JSON.parse(xhr.responseText.toString());
+                    callback(data.text.join(" ").toLowerCase());
+                } else {
+                    callback("");
+                }
+            }
+        }
+
+        var url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20190621T185111Z.273701bcf5a4a70b.5cfddf72b96400a5db01e0b8b3c63dd22caf5abd&text="+text+"&lang="+lang1+"-"+lang2
+        xhr.open("POST", url);
+        xhr.send();
     }
 }

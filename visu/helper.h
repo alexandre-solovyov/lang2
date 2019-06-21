@@ -10,6 +10,7 @@ class Helper : public QObject
 
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
     Q_PROPERTY(QStringList categories READ categories NOTIFY categoriesChanged)
+    Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
 
 public:
     explicit Helper(QObject* theParent = nullptr);
@@ -19,11 +20,16 @@ public:
     void setPath(QString thePath);
     QStringList categories() const;
 
+    QString language() const;
+    void setLanguage(QString language);
+
     Q_INVOKABLE void insert(int theIndex, QString theWord, QString theTranslation);
 
 signals:
     void pathChanged(QString thePath);
     void categoriesChanged(QStringList categories);
+
+    void languageChanged(QString language);
 
 protected:
     QString category(QString theFileName) const;
@@ -31,10 +37,10 @@ protected:
     void flush(bool isLoad);
 
 private:
-    QString myPath;
-    QStringList myFiles;
+    QString                    myPath;
+    QStringList                myFiles;
     QMap<QString, QStringList> myData;
-    QStringList m_categories;
+    QString                    myLanguage;
 };
 
 #endif // HELPER_H

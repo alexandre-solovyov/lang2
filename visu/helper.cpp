@@ -109,3 +109,17 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
         data.insert(anIndex, aNewLine);
     }
 }
+
+QString Helper::language() const
+{
+    return myLanguage;
+}
+
+void Helper::setLanguage(QString language)
+{
+    if (myLanguage == language)
+        return;
+
+    myLanguage = language;
+    emit languageChanged(myLanguage);
+}
