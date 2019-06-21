@@ -1,6 +1,8 @@
 #include "textmodel.h"
 #include <QDebug>
 #include <QFile>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <model/Tools.h>
 
 static QRegExp WW("^\\w+");  ///< the regular expression for words
@@ -291,3 +293,10 @@ QString TextModel::translation(QString theWord) const
     return aResult;
 }
 
+void TextModel::setAsKnownCpp(QString theWord, int theIndex)
+{
+    //qDebug() << theWord << theIndex;
+    myItems[theIndex].IsKnown = true;
+    //if(myCurrent)
+    //    myCurrent->setProperty("isKnown", true);
+}

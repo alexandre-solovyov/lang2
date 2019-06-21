@@ -12,6 +12,14 @@ Item {
 
     signal itemSelectedByClick(int globalX, int globalY);
 
+    function setAsKnown(text) {
+
+        for(var i=0; i<flowId.data.length; i++) {
+            if(flowId.data[i].text === text)
+                flowId.data[i].isKnown = true;
+        }
+    }
+
     Flickable {
         id: flickable;
         anchors.fill: parent;
@@ -41,6 +49,7 @@ Item {
                     translation: m_translation;
                     isWord: m_isWord;
                     isKnown: m_isKnown;
+                    wordIndex: index;
 
                     onSelectedByClick: {
                         modelId.select(this);

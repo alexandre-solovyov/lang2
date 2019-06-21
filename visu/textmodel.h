@@ -44,6 +44,7 @@ public:
     Q_INVOKABLE void select(QQuickItem*);
     Q_INVOKABLE QQuickItem* selectedItem() const;
     Q_INVOKABLE QString translation(QString theWord) const;
+    Q_INVOKABLE void setAsKnownCpp(QString theWord, int theIndex);
 
 signals:
     void fileNameChanged(QString theFileName);

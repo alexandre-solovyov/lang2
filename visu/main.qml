@@ -16,6 +16,11 @@ Window {
         id: modelId;
         //fileName: "4_Peter_Pan.txt";
         fileName: "1_course_beginner.txt";
+
+        function setAsKnown(text, index) {
+            setAsKnownCpp(text, index);
+            textVisuId.setAsKnown(text);
+        }
     }
 
     Helper {
@@ -66,6 +71,7 @@ Window {
             Layout.fillWidth: true;
             Layout.fillHeight: true;
             maxWidth: mainId.width;
+            objectName: "text_visu_area";
 
             onItemSelectedByClick: {
                 var item = modelId.selectedItem();
@@ -76,6 +82,8 @@ Window {
                 infoId.item = item;
 
                 addPanelId.text = item.text;
+                //console.log(item.wordIndex);
+                addPanelId.itemIndex = item.wordIndex;
                 addPanelId.translation = "";
                 addPanelId.visible = !item.isKnown;
             }
@@ -101,5 +109,6 @@ Window {
         visible: false;
 
         helper: helperId;
+        model: modelId;
     }
 }
