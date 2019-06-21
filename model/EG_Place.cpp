@@ -31,7 +31,7 @@ void EG_Place::Ignore( const QStringList& )
 
 /**
 */
-ListOfExercises EG_Place::Generate( const QString& theLine, const Context& theContext, bool& isOtherProduct ) const
+ListOfExercises EG_Place::Generate( const QString& theLine, const Context& theContext, bool& /*isOtherProduct*/ ) const
 {
     ListOfExercises ex;
 

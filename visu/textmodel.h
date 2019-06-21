@@ -42,6 +42,7 @@ public:
     void setFileName(QString theFileName);
 
     Q_INVOKABLE void select(QQuickItem*);
+    Q_INVOKABLE QQuickItem* selectedItem() const;
     Q_INVOKABLE QString translation(QString theWord) const;
 
 signals:

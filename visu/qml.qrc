@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Word.qml</file>
+        <file>TextVisuArea.qml</file>
+        <file>InfoRect.qml</file>
+        <file>AddPanel.qml</file>
+        <file>TextField.qml</file>
     </qresource>
 </RCC>

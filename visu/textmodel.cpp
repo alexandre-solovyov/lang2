@@ -27,7 +27,7 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
  * @param theParent the parent object
  */
 TextModel::TextModel(QObject* theParent)
-    : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(0)
+    : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(nullptr)
 {
     //QString LANG = "en";
     //QString LANGUAGE = "english";
@@ -138,7 +138,7 @@ QString TextModel::fileName() const
  */
 void TextModel::setFileName(QString theFileName)
 {
-    qDebug() << "setFileName";
+    //qDebug() << "setFileName";
     if (myFileName == theFileName)
         return;
 
@@ -224,7 +224,7 @@ bool TextModel::isKnown(QString theWord) const
     foreach(QChar c, theWord)
     {
         QChar cc = c.toLower();
-        if(c.isLetter() && !(c>=u'а' && c<=u'я'))
+        if(cc.isLetter() && !(cc>=u'а' && cc<=u'я'))
         {
             isRussian = false;
             break;
@@ -246,6 +246,11 @@ void TextModel::select(QQuickItem* theItem)
     myCurrent = theItem;
     if(myCurrent)
         myCurrent->setProperty("selection", true);
+}
+
+QQuickItem* TextModel::selectedItem() const
+{
+    return myCurrent;
 }
 
 QString TextModel::translation(QString theWord) const

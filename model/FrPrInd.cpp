@@ -82,7 +82,7 @@ GrammarSet group_2( const QString& base )
     return sum_verb( aBase, STD_2 );
 }
 
-GrammarSet group_3( const QString& base, const QString& end )
+GrammarSet group_3( const QString& base, const QString& /*end*/ )
 {
     static GrammarSet SS( "s, s, , tons, tez, tent", ", " );
     if( base.endsWith("batt") || base.endsWith("mett") )

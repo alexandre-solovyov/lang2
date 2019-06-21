@@ -18,64 +18,37 @@ Window {
         fileName: "1_course_beginner.txt";
     }
 
-    Flickable {
-        id: flickable;
+    ColumnLayout {
+        spacing: 10;
         anchors.fill: parent;
-        contentHeight: flowId.implicitHeight;
-        clip: true;
-        ScrollBar.vertical: ScrollBar{
-            id: vScrollId;
-        }
 
-        Flow {
-            id: flowId;
-            anchors.fill: parent;
-            flow: Flow.LeftToRight;
-            layoutDirection: Qt.LeftToRight;
-            spacing: 10;
+        TextVisuArea {
 
-            Repeater {
-                id: repeatId;
-                model: modelId;
+            Layout.fillWidth: true;
+            Layout.fillHeight: true;
+            maxWidth: mainId.width;
 
-                delegate: Word {
-                    spacing: 15;
-                    fontSize: 18;
-                    maxWidth: mainId.width;
-                    text: m_text;
-                    translation: m_translation;
-                    isWord: m_isWord;
-                    isKnown: m_isKnown;
-
-                    onSelectedByClick: {
-                        modelId.select(this);
-                        infoId.x = this.x + this.width;
-                        var d = vScrollId.position * flowId.height;
-                        infoId.y = this.y + this.height - d;
-                        //console.log(vScrollId.position);
-                        infoId.visible = true;
-                        internalInfoId.text = modelId.translation(this.text);
-                    }
-                }
+            onItemSelectedByClick: {
+                var item = modelId.selectedItem();
+                infoId.x = x;
+                infoId.y = y;
+                infoId.item = item;
             }
         }
     }
 
-    Rectangle {
+    InfoRect {
         id: infoId;
-        width: internalInfoId.implicitWidth + 10;
-        height: internalInfoId.implicitHeight + 10;
-        color: "dodgerblue";
+        model: modelId;
         visible: false;
+    }
 
-        Text {
-            id: internalInfoId;
-            anchors.fill: parent;
-            text: "test";
-            color: "white";
-            font.pointSize: 16;
-            horizontalAlignment: Text.AlignHCenter;
-            verticalAlignment: Text.AlignVCenter;
-        }
+    AddPanel {
+        id: addPanelId;
+        x: mainId.width - width;
+        y: 0;
+        width: 300;
+        height: mainId.height;
+        font.pointSize: 16;
     }
 }

@@ -34,6 +34,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent;
+        radius: 10;
         border.color: {
             if(selection)
                 "red";
