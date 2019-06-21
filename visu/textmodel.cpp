@@ -27,7 +27,7 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
  * @param theParent the parent object
  */
 TextModel::TextModel(QObject* theParent)
-    : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(nullptr)
+    : QAbstractListModel(theParent), myModel(new StdModel()), myCurrent(nullptr), myNbUnknown(0)
 {
     //QString LANG = "en";
     //QString LANGUAGE = "english";
@@ -179,6 +179,7 @@ void TextModel::setText(QString theText)
 {
     myItems.clear();
     myItems.append(WordInfo("<newline>"));
+    myNbUnknown = 0;
     QStringList items = theText.split("\n", QString::SkipEmptyParts);
     foreach(QString anItem, items)
     {
@@ -194,11 +195,18 @@ void TextModel::setText(QString theText)
 
             aPart = aPart.trimmed();
             if(!aPart.isEmpty())
-                myItems.append(generate(aPart, isLetter));
+            {
+                WordInfo anInfo = generate(aPart, isLetter);
+                if(anInfo.IsWord && !anInfo.IsKnown)
+                    myNbUnknown++;
+                myItems.append(anInfo);
+            }
         }
         myItems.append(WordInfo("<endline>"));
         myItems.append(WordInfo("<newline>"));
     }
+
+    emit nbUnknownChanged(myNbUnknown);
 }
 
 /**
@@ -293,10 +301,27 @@ QString TextModel::translation(QString theWord) const
     return aResult;
 }
 
-void TextModel::setAsKnownCpp(QString theWord, int theIndex)
+void TextModel::setAsKnownCpp(QString theWord)
 {
     //qDebug() << theWord << theIndex;
-    myItems[theIndex].IsKnown = true;
-    //if(myCurrent)
-    //    myCurrent->setProperty("isKnown", true);
+
+    myNbUnknown = 0;
+    QString aWord = theWord.toLower();
+    for(int i=0, n=myItems.size(); i<n; i++)
+    {
+        if(myItems[i].Text.toLower()==aWord)
+            myItems[i].IsKnown = true;
+        if(myItems[i].IsWord && !myItems[i].IsKnown)
+        {
+            //qDebug() << myItems[i].Text;
+            myNbUnknown++;
+        }
+    }
+
+    emit nbUnknownChanged(myNbUnknown);
+}
+
+int TextModel::nbUnknown() const
+{
+    return myNbUnknown;
 }

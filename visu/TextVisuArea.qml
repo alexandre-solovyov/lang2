@@ -14,9 +14,13 @@ Item {
 
     function setAsKnown(text) {
 
+        var ltext = text.toLowerCase();
         for(var i=0; i<flowId.data.length; i++) {
-            if(flowId.data[i].text === text)
-                flowId.data[i].isKnown = true;
+            if(flowId.data[i].text !== undefined ) {
+                var ctext = flowId.data[i].text.toLowerCase();
+                if( ctext !==undefined && ctext === text )
+                    flowId.data[i].isKnown = true;
+            }
         }
     }
 
@@ -49,7 +53,6 @@ Item {
                     translation: m_translation;
                     isWord: m_isWord;
                     isKnown: m_isKnown;
-                    wordIndex: index;
 
                     onSelectedByClick: {
                         modelId.select(this);

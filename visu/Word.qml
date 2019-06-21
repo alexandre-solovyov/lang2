@@ -15,7 +15,6 @@ Item {
     property string translation: "";
     property bool isWord: true;
     property bool isKnown: true;
-    property int wordIndex: 0;
 
     property bool selection: false;
     signal selectedByClick();

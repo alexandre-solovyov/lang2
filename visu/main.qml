@@ -83,7 +83,6 @@ Window {
 
                 addPanelId.text = item.text;
                 //console.log(item.wordIndex);
-                addPanelId.itemIndex = item.wordIndex;
                 addPanelId.translation = "";
                 addPanelId.visible = !item.isKnown;
             }
@@ -110,5 +109,23 @@ Window {
 
         helper: helperId;
         model: modelId;
+    }
+
+    Rectangle {
+        id: nbUnknownId;
+        x: mainId.width - width - containerId.spacing;
+        y: containerId.spacing;
+        width: 120;
+        height: 80;
+        color: "white";
+        opacity: 0.75;
+
+        Text {
+            anchors.fill: parent;
+            font.pointSize: 22;
+            text: modelId.nbUnknown;
+            horizontalAlignment: Text.AlignHCenter;
+            verticalAlignment: Text.AlignVCenter;
+        }
     }
 }

@@ -15,7 +15,6 @@ Item {
     property int margin: 10;
     property Helper helper: null;
     property TextModel model: null;
-    property int itemIndex: 0;
 
     Rectangle {
         id: mainId;
@@ -95,7 +94,7 @@ Item {
 
                     onClicked: {
                         helperId.insert(categoryId.currentIndex, wordId.value, translationId.value);
-                        modelId.setAsKnown(wordId.value, rootId.itemIndex);
+                        modelId.setAsKnown(wordId.value);
                         rootId.visible = false;
                     }
                 }

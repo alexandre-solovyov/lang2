@@ -21,6 +21,7 @@ class TextModel: public QAbstractListModel
     Q_OBJECT
 
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
+    Q_PROPERTY(int nbUnknown READ nbUnknown NOTIFY nbUnknownChanged)
 
 public:
     enum Roles
@@ -41,13 +42,16 @@ public:
     QString fileName() const;
     void setFileName(QString theFileName);
 
+    int nbUnknown() const;
+
     Q_INVOKABLE void select(QQuickItem*);
     Q_INVOKABLE QQuickItem* selectedItem() const;
     Q_INVOKABLE QString translation(QString theWord) const;
-    Q_INVOKABLE void setAsKnownCpp(QString theWord, int theIndex);
+    Q_INVOKABLE void setAsKnownCpp(QString theWord);
 
 signals:
     void fileNameChanged(QString theFileName);
+    void nbUnknownChanged(int nbUnknowns);
 
 protected:
     bool load();
@@ -62,6 +66,7 @@ private:
     QString         myFileName;
     StdModel*       myModel;
     QQuickItem*     myCurrent;
+    int             myNbUnknown;
 };
 
 #endif // TEXTMODEL_H

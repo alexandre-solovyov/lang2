@@ -39,7 +39,7 @@ Mein Ziel ist ... = моя цель -- ...
 Mein Ziel ist es Deutsch zu lernen. = Моя цель -- это выучить немецкий.
 
 
----  Dialogs  ---
+---  die Dialoge = диалоги  ---
 - Hallo, ich heiße Tom und wie heißt du?
 - Hallo Tom, ich heiße Eva. Seit wann lernst du schon (уже) Deutsch?
 - Ich lerne seit zwei Wochen Deutsch.

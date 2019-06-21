@@ -91,7 +91,9 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
     //qDebug() << theIndex << theWord << theTranslation;
 
     QString aCategory = categories()[theIndex];
-    QString aNewLine = theWord + " = " + theTranslation;
+    QString aNewLine = theWord;
+    if(!theTranslation.isEmpty())
+        aNewLine = aNewLine + " = " + theTranslation;
     QStringList& data = myData[aCategory];
     if(isSorted(aCategory))
     {
@@ -100,5 +102,10 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
         data.insert(anIndex, aNewLine);
     }
     else
-        data.append(aNewLine);
+    {
+        int anIndex = data.size();
+        if( anIndex>0 && data[anIndex-1].isEmpty() )
+            anIndex--;
+        data.insert(anIndex, aNewLine);
+    }
 }
