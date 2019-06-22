@@ -2,13 +2,18 @@
 //! lang: en, ru
 //! category: verbs
 
-[Present] be >> am, is, are, being
+[Present] be >> am, is, are
+[Present] have >> has
+[Present] say >> says
+[Present] ~ss >> ~sses
 [Present] ~y >> ~ies
 [Present] ~o >> ~oes
 [Present] ~ >> ~s
+[PresentParticiple] be > being
 [PresentParticiple] ~e >> ~ing
 [PresentParticiple] ~ean >> ~eaning
 [PresentParticiple] ~an >> ~anning
+[PresentParticiple] sit >> sitting
 [PresentParticiple] ~ >> ~ing
 
 [Past] be >> was, were, been
@@ -97,26 +102,44 @@ cut = резать
 dance = танцевать
 dash = бросаться, нестись
 decide = принимать решение
+delight = наслаждаться
 dispute = спорить
 do = делать
 doubt = сомневаться
 drag = тащить
+dream = мечтать
 dress = одевать
 dry = сушить
 eat = кушать
 enter = войти
 escape = сбежать
+excite = возбуждать
 explain = объяснять
 expect = ожидать
 eye = разглядывать
 fail = потерпеть неудачу
 fall = падать
 fasten = пристегнуть
+fight = бороться
+follow = следовать
 go = идти
+hide = скрыть
 kiss = целовать
+listen = слушать
+play = играть
+protect = защитить
+put = ставить
+return = вернуться
+sew = шить
+shoot = стрелять
+show = показать
+shut = закрывать
 sit = сидеть
 sleep = спать
+surprise = удивлять
+swim = плавать
 teach = учить
+tire = устать
 unfasten = отстегнуть
 fill = наполнять
 find = находить
@@ -145,6 +168,7 @@ invite = пригласить
 jump = прыгать
 keep = держать
 kill = убивать
+kiss = целовать
 know = знать
 lay = лежать
 lead = вести
@@ -208,6 +232,8 @@ turn = поворачивать
 understand = понимать
 use = использовать
 view = смотреть
+wag = махать
+wait = ждать
 want = хотеть
 wash = мыть
 win = выиграть

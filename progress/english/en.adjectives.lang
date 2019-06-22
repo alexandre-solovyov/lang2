@@ -1,4 +1,5 @@
 
+//! lang: en, ru
 //! category: adjectives
 
 [Adv] ~y >> ~ily
@@ -34,11 +35,13 @@ discontented = недовольный
 eager = нетерпеливый
 easy = легкий
 electric = электрический
+empty = пустой
 entire = целый, полный
 especial = особенный
 every = каждый
 everyday = повседневный
 exact = точный
+fair = справедливый
 fast = быстрый
 fine = утонченный
 firm = твердый
@@ -89,6 +92,7 @@ pure = чистый
 quick = быстрый
 quiet = тихий
 ready = готовый
+real = реальный
 reasonable = разумный
 rich = богатый
 right = правый, верный
