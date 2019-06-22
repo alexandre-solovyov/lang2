@@ -10,19 +10,6 @@ static QRegExp WW("^\\w+");  ///< the regular expression for words
 static QRegExp NW("^[\\W\\s]+");  ///< the regular expression for not-words
 
 /**
- * @brief WordInfo::WordInfo
- * Constructor
- * @param theText the text of the word
- * @param theTranslation the translation
- * @param isWord if the text corresponds to a word
- * @param isKnown if the word is known
- */
-WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool isKnown)
-    : Text(theText), Translation(theTranslation), IsWord(isWord), IsKnown(isKnown)
-{
-}
-
-/**
  * @brief TextModel::TextModel
  * Constructor
  * @param theParent the parent object
@@ -174,8 +161,8 @@ void TextModel::setText(QString theText)
 
     myItems.clear();
     myItems.append(WordInfo("<newline>"));
-    myNbUnknown = 0;
     QStringList items = theText.split("\n", QString::SkipEmptyParts);
+
     foreach(QString anItem, items)
     {
         while(!anItem.isEmpty())
@@ -192,8 +179,6 @@ void TextModel::setText(QString theText)
             if(!aPart.isEmpty())
             {
                 WordInfo anInfo = generate(aPart, isLetter);
-                if(anInfo.IsWord && !anInfo.IsKnown)
-                    myNbUnknown++;
                 myItems.append(anInfo);
             }
         }
@@ -201,6 +186,7 @@ void TextModel::setText(QString theText)
         myItems.append(WordInfo("<newline>"));
     }
 
+    myNbUnknown = myItems.nbUnknown();
     emit nbUnknownChanged(myNbUnknown);
 }
 
@@ -314,6 +300,28 @@ void TextModel::setAsKnownCpp(QString theWord)
     }
 
     emit nbUnknownChanged(myNbUnknown);
+}
+
+void TextModel::setTrim(bool isTrim)
+{
+    myItems.setTrim(isTrim);
+    emit trimChanged(isTrim);
+}
+
+void TextModel::setLimit(int theLimit)
+{
+    myItems.setLimit(theLimit);
+    emit limitChanged(theLimit);
+}
+
+bool TextModel::trim() const
+{
+    return myItems.trim();
+}
+
+int TextModel::limit() const
+{
+    return myItems.limit();
 }
 
 QString TextModel::language() const

@@ -1,20 +1,10 @@
-#ifndef TEXTMODEL_H
+﻿#ifndef TEXTMODEL_H
 #define TEXTMODEL_H
 
 #include <QAbstractListModel>
 #include <QQuickItem>
 #include <model/StdModel.h>
-
-class WordInfo
-{
-public:
-    WordInfo(QString theText="", QString theTranslation="", bool isWord=false, bool isKnown=false);
-
-    QString Text;
-    QString Translation;
-    bool IsWord;
-    bool IsKnown;
-};
+#include <wordslist.h>
 
 class TextModel: public QAbstractListModel
 {
@@ -23,6 +13,8 @@ class TextModel: public QAbstractListModel
     Q_PROPERTY(QString language READ language WRITE setLanguage NOTIFY languageChanged)
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
     Q_PROPERTY(int nbUnknown READ nbUnknown NOTIFY nbUnknownChanged)
+    Q_PROPERTY(bool trim READ trim WRITE setTrim NOTIFY trimChanged)
+    Q_PROPERTY(int limit READ limit WRITE setLimit NOTIFY limitChanged)
 
 public:
     enum Roles
@@ -50,6 +42,10 @@ public:
     void setTextPath(QString textPath);
     QString language() const;
     void setLanguage(QString language);
+    bool trim() const;
+    void setTrim(bool trim);
+    int limit() const;
+    void setLimit(int limit);
 
     Q_INVOKABLE bool load();
     Q_INVOKABLE void select(QQuickItem*);
@@ -63,6 +59,8 @@ signals:
     void progressPathChanged(QString progressPath);
     void textPathChanged(QString textPath);
     void languageChanged(QString language);
+    void trimChanged(bool trim);
+    void limitChanged(int limit);
 
 protected:
     void setText(QString theText);
@@ -70,7 +68,7 @@ protected:
     bool isKnown(QString theWord) const;
 
 private:
-    QList<WordInfo> myItems;
+    WordsList       myItems;
     QString         myProgressPath;
     QString         myTextPath;
     QString         myFileName;

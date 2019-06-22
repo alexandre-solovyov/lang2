@@ -17,7 +17,9 @@ Window {
         //language: "de";
         //fileName: "1_course_beginner.txt";
         language: "en";
-        fileName: "4_Peter_Pan.txt";
+        fileName: "5_Baum_Oz_1.txt";
+        trim: true;
+        limit: 1000;
 
         function setAsKnown(text, index) {
             setAsKnownCpp(text, index);

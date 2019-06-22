@@ -6,7 +6,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         helper.cpp \
         main.cpp \
-        textmodel.cpp
+        textmodel.cpp \
+        wordslist.cpp
 
 RESOURCES += qml.qrc
 
@@ -25,7 +26,8 @@ INCLUDEPATH += $$PWD/..
 
 HEADERS += \
     helper.h \
-    textmodel.h
+    textmodel.h \
+    wordslist.h
 
 DESTDIR = ../../bin
 LIBS += -L$$DESTDIR -llang_model
