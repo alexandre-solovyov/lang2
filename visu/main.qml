@@ -161,7 +161,7 @@ Window {
                art = 'der ';
             else if(tr.gen==="f")
                art = 'die ';
-            else
+            else if(tr.gen==="n")
                art = 'das ';
         }
         callback(art + tr.text);

@@ -83,7 +83,7 @@ QString Helper::category(QString theFileName) const
 
 bool Helper::isSorted(QString theCategory) const
 {
-    return theCategory=="adjectives" || theCategory=="verbs" || theCategory=="noms";
+    return theCategory=="adjectives" || theCategory=="verbs" || (theCategory=="nouns" && myLanguage!="de");
 }
 
 void Helper::insert(int theIndex, QString theWord, QString theTranslation)
