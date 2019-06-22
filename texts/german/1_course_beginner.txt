@@ -55,3 +55,36 @@ Bis dann = увидимся
 Bis bald = до скорого
 Bis später = увидимся позднее (букв. до позднее)
 
+Tschüss = до свидания (неформально)
+Auf Wiedersehen = до свидания (формально)
+
+
+Tom: Hey. Woher kommst du?
+Eva: Hallo Tom, ich komme aus Deutschland und du?
+Tom: Ich komme aus England. Ich bin Englische Person.
+Eva: Du kannst sagen "Ich bin ein Engländer".
+Tom: Ah, ok, ich verstehe. Danke.
+
+Woher kommst du? = Aus welchem Land kommst du?
+    Ich komme aus Deutschland.
+    Ich bin ein Deutscher.
+    Ich bin eine Deutsche.
+
+Was arbeitest du?
+    Ich bin ein Arzt.
+    Ich bin eine Ärztin.
+    Ich bin ein Lehrer.
+    Ich bin eine Lehrerin.
+    Ich bin ein Autor.
+    Ich bin eine Autorin.
+
+
+die Hobbys:
+    lesen = читать
+    Musik hören = слушать музыку
+    fahrrad fahren = ездить на велосипеде
+    spazieren gehen = гулять
+    schwimmen = плавать
+    und so weiter = и так далее
+
+Deutsch ist meine muttersprache = Немецкий -- мой родной язык.

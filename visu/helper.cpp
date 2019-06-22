@@ -83,7 +83,10 @@ QString Helper::category(QString theFileName) const
 
 bool Helper::isSorted(QString theCategory) const
 {
-    return theCategory=="adjectives" || theCategory=="verbs" || (theCategory=="nouns" && myLanguage!="de");
+    return theCategory=="adjectives" || theCategory=="verbs"
+           || theCategory=="adverbs"
+           || (theCategory=="nouns" && myLanguage!="de")
+        ;
 }
 
 void Helper::insert(int theIndex, QString theWord, QString theTranslation)
@@ -109,11 +112,13 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
                 if(!prev.isEmpty() && prev < cur && aNewLine > prev && aNewLine < cur)
                 {
                     data.insert(i, aNewLine);
-                    break;
+                    return;
                 }
                 prev = cur;
             }
         }
+
+        data.append(aNewLine);
     }
     else
     {

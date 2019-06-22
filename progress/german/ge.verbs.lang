@@ -3,14 +3,24 @@
 //! category: verbs
 
 [Pr] sein >> bin, bist, ist, sind, seid, sind
+[Pr] können >> kann, kannst, kann, können, könnt, können
 [Pr] ~ten >> ~te, ~test, ~tet, ~ten, ~tet, ~ten
 [Pr] ~en >> ~e, ~st, ~t, ~en, ~t, ~en
 
+arbeiten = работать
+fahren = ездить
 heißen = называться
 gehen = идти
+hören = слушать
 kommen = приходить
+können = мочь
 lernen = учиться
+lesen = читать
 möchten = хотеть
+sagen = сказать
+schwimmen = плавать
 sein = быть
+spazieren = гулять
 spielen = играть
 studieren = учиться
+verstehen = понимать

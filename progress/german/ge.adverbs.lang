@@ -2,7 +2,12 @@
 //! lang: de, ru
 //! category: adverbs
 
-sehr = очень
 bald = скоро
+dann = тогда
+naja = хорошо
 schon = уже
+so = так
+sehr = очень
 späte = поздно
+[F] späte >> später
+weiter = далее

@@ -22,13 +22,14 @@ würdig = достойный
 *das Fragewort = вопросительное слово
 [Pl] Fragewort >> Fragewörter
 
-
 *der Tisch = стол
 *das Tennis = теннис
 *das Tischtennis = настольный теннис
 
 *der Tag = день
 [Pl] Tag >> Tagen
+die Woche = неделя
+[Pl] Woche >> Wochen
 *der Monat = месяц
 [Pl] Monat >> Monaten
 *das Jahr = год
@@ -37,11 +38,33 @@ würdig = достойный
 *der Dialog = диалог
 [Pl] Dialog >> Dialoge
 
-die Woche = неделя
-[Pl] Woche >> Wochen
-
 Deutschland = Германия
 England = Англия
 Amerika = США
 Frankreich = Франция
-das Mal = раз
+
+*das Mal = раз
+
+wieder = снова
+sehen = увидеть
+Auf Wiedersehen = до свидания
+
+*die Person = персона
+*der Engländer = англичанин
+*das Land = страна
+*der Arzt = врач
+[Fem] Arzt >> Ärztin
+*der Lehrer = учитель
+[Fem] Lehrer >> Lehrerin
+*der Autor = автор
+[Fem] Autor >> Autorin
+
+*der Deutscher = немец
+[Fem] Deutscher >> Deutsche
+
+*die Mutter = мать
+*die Sprache = язык
+*die Muttersprache = родной язык
+
+*die Musik = музыка
+*das Fahrrad = велосипед
