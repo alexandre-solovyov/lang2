@@ -1,12 +1,30 @@
 
 //! lang: en, ru
-//! category: noms
+//! category: date/time
 //! ignore: 
+
+January = январь
+February = февраль
+March = март
+April = апрель
+May = май
+June = июнь
+July = июль
+August = август
+September = сентябрь
+October = октябрь
+November = ноябрь
+December = декабрь
+
+//! lang: en, ru
+//! category: noms
+//! ignore:
 
 [Pl] child >> children
 [Pl] foot >> feet
 [Pl] man >> men
 [Pl] mage >> magi
+[Pl] mouse >> mice
 [Pl] woman >> women
 [Pl] tooth >> teeth
 [Pl] ~ay >> ~ays
@@ -26,7 +44,9 @@ arm = рука
 arrow = стрелка
 art = изобразительное искусство
 article = статья
+aunt = тетя
 ball = мяч
+balloon = воздушный шар
 basket = корзина
 bath = ванна
 [Comp] bath >> bathroom
@@ -41,6 +61,7 @@ bed = постель
 bell = колокольчик
 bird = птица
 blast = взрыв
+blood = кровь
 boat = лодка
 body = тело
 box = коробка
@@ -55,6 +76,7 @@ cap = кепка
 captain = капитан
 care = забота
 [Adje] care >> careful
+cellar = погреб
 cent = цент
 ceremony = обряд
 chain = цепь
@@ -63,6 +85,7 @@ chapter = глава (в книге)
 cheek = щека
 chief = начальник
 child = ребенок
+childhood = детство
 chipmunk = бурундук
 christmas = рождество
 cinder = зола
@@ -77,15 +100,20 @@ comb = гребень
 comfort = комфорт
 color = цвет
 [Adje] color >> colourful
+contents = содержание
+corner = угол
 cost = стоимость
+council = совет
 country = страна
 countryside = сельская местность
 courage = мужество
 [Adje] courage >> courageous, courageously
+cow = корова
 creature = существо
 crocodile = крокодил
 crow = ворона
 curiosity = любопытство
+cyclone = циклон
 daughter = дочь
 day = день
 destination = пункт назначения
@@ -95,12 +123,17 @@ dish = блюдо
 dog = собака
 dollar = доллар
 door = дверь
+doorway = дверной проем
 doubt = сомнение
 [Adje] doubt >> doubtless
 drawer = ящик
 duck = утка
 dust = пыль
+dwarf = гном
+ear = ухо
+edge = край
 effort = усилие
+emerald = изумруд
 end = конец
 enemy = враг
 evening = вечер
@@ -108,13 +141,16 @@ eye = глаз
 face = лицо
 fairy = фея
 family = семья
+farmer = фермер
 fashion = мода
 father = отец
 fear = страх
 fellow = парень
+field = поле
 finger = палец
 fireplace = камин
 floor = пол
+folklore = фольклор
 food = еда
 foot = ступня, фут
 force = сила
@@ -123,8 +159,11 @@ friend = друг
 fun = удовольствие
 game = игра
 garden = сад
+gate = ворота
 girl = девочка
 god = бог
+grass = трава
+guardian = охранник
 hair = волосы
 haircut = стрижка
 hall = холл
@@ -132,7 +171,9 @@ hat = шапка
 head = голова
 heart = сердце
 hero = герой
+hole = отверстие
 hook = крюк
+horse = лошадь
 house, home = дом
 gift = подарок
 glass = стекло, стакан
@@ -149,8 +190,10 @@ husband = муж
 idea = идея
 idiot = идиот
 interest = интерес
+introduction = введение
 island = остров
 jewel = драгоценный камень
+journey = путешествие
 joy = радость
 kennel = конура
 kind = сорт
@@ -158,37 +201,47 @@ king = король
 kite = воздушный змей
 knee = колено
 labor = труд
+ladder = лестница
 lady = леди
 lagoon = лагуна
 leader = лидер
 leg = нога
+legend = легенда
 length = длина
 letter = письмо
 life = жизнь
 light = свет
+lion = лев
+lip = губа
 looking-glass = зеркало
 love = любовь
 mage = маг
 man = мужчина
 [Rich] man >> gentleman
 mark = отметка
+mass = масса
 material = материал
 matter = сущность
 meat = мясо
 mermaid = русалка
+mile = миля
 mind = разум
 minute = минута
 misfortune = несчастье
 moment = момент
+monkey = обезьяна
 month = месяц
 money = деньги
 moon = луна
 mother = мать
 mountain = гора
+mouse = мышь
 mouth = рот
+myth = миф
 name = имя
 nanny = няня
 night = ночь
+nightmare = кошмар
 noise = шум
 north = север
 nursery = детская
@@ -198,6 +251,7 @@ paper = бумага
 parent = родитель
 party = часть, вечеринка
 past = прошлое
+path = путь
 paw = лапа
 people = люди
 person = человек
@@ -206,6 +260,7 @@ picture = картинка
 piece = кусок
 pirate = пират
 plank = доска
+poppy = мак
 prayer = молитва
 prisoner = заключенный
 pyjama = пижама
@@ -213,12 +268,14 @@ quality = качество
 quarrel = ссора
 queen = королева
 ray = луч
+rescue = спасение
 result = результат
 riches = богатство
 road = дорога
 rock = камень
 room = комната
 rope = веревка
+scarecrow = страшила
 school = школа
 sea = море
 second = секунда
@@ -241,6 +298,7 @@ spring = весна
 stay-at-home = домосед
 stick = палка
 stomach = желудок
+storm = гроза
 story = рассказ
 stream = поток
 street = улица
@@ -251,12 +309,14 @@ surprise = сюрприз
 sword = меч
 table = стол
 tail = хвост
+tale = сказка
 tear = слеза
 temper = характер
 temperature = температура
 thing = вещь
 tiger = тигр
 time = время, раз
+tin = олово
 tooth = зуб
 tortoise = черепаха
 town = небольшой город
@@ -266,6 +326,7 @@ tree = дерево
 trouble = неприятность
 true = правда
 twin = близнец
+uncle = дядя
 underground = метро
 value = ценность
 [Adje] value >> valuable
@@ -281,7 +342,10 @@ way = путь
 wedding = свадьба
 week = неделя
 weight = вес
+witch = ведьма
+wizard = волшебник
 woman = женщина
+woodman = лесоруб
 word = слово
 world = мир
 wife = жена
