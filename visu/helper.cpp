@@ -91,15 +91,29 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
     //qDebug() << theIndex << theWord << theTranslation;
 
     QString aCategory = categories()[theIndex];
+    if(aCategory=="private")
+        theTranslation = "";
+
     QString aNewLine = theWord;
     if(!theTranslation.isEmpty())
         aNewLine = aNewLine + " = " + theTranslation;
     QStringList& data = myData[aCategory];
     if(isSorted(aCategory))
     {
-        QStringList::const_iterator it = qBinaryFind(data, aNewLine);
-        int anIndex = it - data.begin();
-        data.insert(anIndex, aNewLine);
+        QString prev;
+        for(int i=0, n=data.size(); i<n; i++)
+        {
+            QString cur = data[i];
+            if(cur.contains('='))
+            {
+                if(!prev.isEmpty() && prev < cur && aNewLine > prev && aNewLine < cur)
+                {
+                    data.insert(i, aNewLine);
+                    break;
+                }
+                prev = cur;
+            }
+        }
     }
     else
     {

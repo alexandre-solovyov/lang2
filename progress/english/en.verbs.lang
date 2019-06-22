@@ -4,6 +4,7 @@
 
 [Present] be >> am, is, are, being
 [Present] ~y >> ~ies
+[Present] ~o >> ~oes
 [Present] ~ >> ~s
 [PresentParticiple] ~e >> ~ing
 [PresentParticiple] ~ean >> ~eaning
@@ -111,6 +112,11 @@ eye = разглядывать
 fail = потерпеть неудачу
 fall = падать
 fasten = пристегнуть
+go = идти
+kiss = целовать
+sit = сидеть
+sleep = спать
+teach = учить
 unfasten = отстегнуть
 fill = наполнять
 find = находить
