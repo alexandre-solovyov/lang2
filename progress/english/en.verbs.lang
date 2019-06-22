@@ -4,7 +4,9 @@
 
 [Present] be >> am, is, are
 [Present] have >> has
-[Present] say >> says
+[Present] ~tch >> ~tches
+[Present] ~sh >> ~shes
+[Present] ~ay >> ~ays
 [Present] ~ss >> ~sses
 [Present] ~y >> ~ies
 [Present] ~o >> ~oes
@@ -103,6 +105,7 @@ dance = танцевать
 dash = бросаться, нестись
 decide = принимать решение
 delight = наслаждаться
+die = умереть
 dispute = спорить
 do = делать
 doubt = сомневаться
@@ -111,6 +114,7 @@ dream = мечтать
 dress = одевать
 dry = сушить
 eat = кушать
+embrace = обнимать
 enter = войти
 escape = сбежать
 excite = возбуждать
@@ -122,20 +126,32 @@ fall = падать
 fasten = пристегнуть
 fight = бороться
 follow = следовать
+forget = забыть
 go = идти
+hate = ненавидеть
 hide = скрыть
+hurt = причинить боль
+imitate = имитировать
 kiss = целовать
+laugh = смеяться
 listen = слушать
+obey = повиноваться
 play = играть
+promise = обещать
 protect = защитить
+push = толкать
 put = ставить
 return = вернуться
+rise = подниматься
+save = спасти
 sew = шить
 shoot = стрелять
+shout = кричать
 show = показать
 shut = закрывать
 sit = сидеть
 sleep = спать
+stay = остаться
 surprise = удивлять
 swim = плавать
 teach = учить
@@ -232,10 +248,13 @@ turn = поворачивать
 understand = понимать
 use = использовать
 view = смотреть
+visit = посещать
 wag = махать
 wait = ждать
+walk = гулять
 want = хотеть
 wash = мыть
+watch = смотреть
 win = выиграть
 wish = желать
 wonder = удивляться, интересоваться
