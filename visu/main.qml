@@ -14,8 +14,10 @@ Window {
 
     TextModel {
         id: modelId;
-        language: "de";
-        fileName: "1_course_beginner.txt";
+        //language: "de";
+        //fileName: "1_course_beginner.txt";
+        language: "en";
+        fileName: "4_Peter_Pan.txt";
 
         function setAsKnown(text, index) {
             setAsKnownCpp(text, index);
@@ -80,18 +82,7 @@ Window {
                 infoId.x = localX + 10;
                 infoId.y = localY + item.height;
                 infoId.item = item;
-
-                addPanelId.text = item.text.toLowerCase();
-                //console.log(item.wordIndex);
-                addPanelId.translation = "";
-                addPanelId.visible = !item.isKnown;
-
-                if(addPanelId.visible) {
-                    translate(item.text, helperId.language, "ru", function(translation) {
-                        addPanelId.translation = translation;
-                        console.log(translation);
-                    })
-                }
+                addPanelId.show(item);
             }
         }
     }
@@ -116,6 +107,30 @@ Window {
 
         helper: helperId;
         model: modelId;
+
+        function show(item) {
+
+            text = item.text.toLowerCase();
+            translation = "";
+
+            visible = !item.isKnown;
+            if(visible)
+                dirTranslation();
+        }
+
+        onDirTranslation: {
+            translate(addPanelId.text, helperId.language, "ru", function(translation) {
+                addPanelId.translation = translation;
+                console.log("Tr: " + translation);
+            });
+        }
+
+        onRevTranslation: {
+            translate(addPanelId.translation, "ru", helperId.language, function(translation) {
+                addPanelId.text = translation;
+                console.log("Rev tr: " + translation);
+            });
+        }
     }
 
     Rectangle {
@@ -146,7 +161,7 @@ Window {
                     var data = JSON.parse(xhr.responseText.toString());
                     callback(data.text.join(" ").toLowerCase());
                 } else {
-                    callback("");
+                    callback("<error>");
                 }
             }
         }

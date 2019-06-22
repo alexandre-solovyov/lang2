@@ -16,6 +16,9 @@ Item {
     property Helper helper: null;
     property TextModel model: null;
 
+    signal dirTranslation();
+    signal revTranslation();
+
     Rectangle {
         id: mainId;
         anchors.fill: parent;
@@ -79,6 +82,30 @@ Item {
                 font: rootId.font;
                 Layout.fillWidth: true;
                 Layout.topMargin: rootId.margin;
+            }
+
+            RowLayout {
+
+                Layout.fillWidth: true;
+                Layout.topMargin: rootId.margin;
+
+                Button {
+                    text: "Tran";
+                    Layout.fillHeight: true;
+                    Layout.leftMargin: rootId.margin;
+                    font: rootId.font;
+
+                    onClicked: dirTranslation();
+                }
+
+                Button {
+                    text: "RevT";
+                    Layout.fillHeight: true;
+                    Layout.leftMargin: rootId.margin;
+                    font: rootId.font;
+
+                    onClicked: revTranslation();
+                }
             }
 
             RowLayout {

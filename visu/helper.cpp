@@ -24,7 +24,7 @@ QStringList Helper::categories() const
 
 void Helper::setPath(QString thePath)
 {
-    qDebug() << "Helper::setPath";
+    qDebug() << "Helper::setPath" << thePath;
     if (myPath == thePath)
         return;
 
@@ -83,7 +83,7 @@ QString Helper::category(QString theFileName) const
 
 bool Helper::isSorted(QString theCategory) const
 {
-    return theCategory=="adjectives" || theCategory=="verbs";
+    return theCategory=="adjectives" || theCategory=="verbs" || theCategory=="noms";
 }
 
 void Helper::insert(int theIndex, QString theWord, QString theTranslation)
@@ -123,6 +123,8 @@ void Helper::setLanguage(QString theLanguage)
         return;
 
     myLanguage = theLanguage;
+    QString anExtLanguage = Helper::extLanguage(myLanguage);
+    setPath("../lang/progress/" + anExtLanguage);
     emit languageChanged(myLanguage);
 }
 
