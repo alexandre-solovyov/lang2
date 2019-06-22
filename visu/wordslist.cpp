@@ -15,7 +15,7 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
 }
 
 WordsList::WordsList()
-    : myNbWords(0)
+    : myTrim(false), myLimit(0), myNbWords(0)
 {
 }
 

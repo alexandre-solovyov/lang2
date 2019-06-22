@@ -1,0 +1,15 @@
+
+//! lang: de, ru
+//! category: numbers
+
+null = ноль
+ein = один
+zwei = два
+drei = три
+vier = четыре
+fünf = пять
+sechs = шесть
+sieben = семь
+acht = восемь
+neun = девять
+zehn = десять

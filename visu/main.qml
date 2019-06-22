@@ -14,12 +14,12 @@ Window {
 
     TextModel {
         id: modelId;
-        //language: "de";
-        //fileName: "1_course_beginner.txt";
-        language: "en";
+        language: "de";
+        fileName: "1_course_beginner.txt";
+        /*language: "en";
         fileName: "5_Baum_Oz_1.txt";
         trim: true;
-        limit: 1000;
+        limit: 1000;*/
 
         function setAsKnown(text, index) {
             setAsKnownCpp(text, index);
@@ -128,7 +128,7 @@ Window {
         }
 
         onRevTranslation: {
-            translate(addPanelId.translation, "ru", helperId.language, function(translation) {
+            translateWithDict(addPanelId.translation, "ru", helperId.language, function(translation) {
                 addPanelId.text = translation;
                 console.log("Rev tr: " + translation);
             });
@@ -151,6 +151,40 @@ Window {
             horizontalAlignment: Text.AlignHCenter;
             verticalAlignment: Text.AlignVCenter;
         }
+    }
+
+    function parseDict(data, lang, callback) {
+        var tr = data.def[0].tr[0];
+        var art = '';
+        if(lang==="de") {
+            if(tr.gen==="m")
+               art = 'der ';
+            else if(tr.gen==="f")
+               art = 'die ';
+            else
+               art = 'das ';
+        }
+        callback(art + tr.text);
+    }
+
+    function translateWithDict(text, lang1, lang2, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState===XMLHttpRequest.HEADERS_RECEIVED) {
+                console.log("Headers received");
+            } else if(xhr.readyState===XMLHttpRequest.DONE) {
+                if(xhr.status===200) {
+                    var data = JSON.parse(xhr.responseText.toString());
+                    parseDict(data, lang2, callback);
+                } else {
+                    callback("");
+                }
+            }
+        }
+        var key2 = "dict.1.1.20190622T145724Z.7ea4b950838f66b7.5d5be843c6cbe9e93a204eb670957dc230d0e990";
+        var url = "https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=" + key2 + "&lang=" + lang1 + "-" + lang2 + "&text=" + text;
+        xhr.open("POST", url);
+        xhr.send();
     }
 
     function translate(text, lang1, lang2, callback) {
