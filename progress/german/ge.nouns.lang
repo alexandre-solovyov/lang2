@@ -2,6 +2,13 @@
 //! lang: de, ru
 //! category: noms
 
+Amerika = США
+Deutschland = Германия
+England = Англия
+Frankreich = Франция
+Spanien = Испания
+
+
 *der Universität = университет
 
 *das Haupt = голова
@@ -16,7 +23,9 @@ würdig = достойный
 [Pl] Hobby >> Hobbys
 
 *das Ziel = цель
+
 *die Frage = вопрос
+[Pl] Frage >> Fragen
 *das Wort = слово
 [Pl] Wort >> Wörter
 *das Fragewort = вопросительное слово
@@ -37,11 +46,6 @@ die Woche = неделя
 
 *der Dialog = диалог
 [Pl] Dialog >> Dialoge
-
-Deutschland = Германия
-England = Англия
-Amerika = США
-Frankreich = Франция
 
 *das Mal = раз
 
@@ -68,3 +72,9 @@ Auf Wiedersehen = до свидания
 
 *die Musik = музыка
 *das Fahrrad = велосипед
+*der Baum = дерево
+*die Pizza = пицца
+
+*der Liebling = любимец
+essen = кушать
+*das Lieblingsessen = любимая еда

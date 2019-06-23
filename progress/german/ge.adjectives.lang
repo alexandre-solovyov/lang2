@@ -6,7 +6,9 @@ alt = старый
 cool = прохладный, классный
 deutsch = немецкий
 englische = английский
+grün = зеленый
 gut = хороший
+[F] gut >> gute
 nächste = следующий
 [F] nächste >> nächstes
 schlecht = плохой

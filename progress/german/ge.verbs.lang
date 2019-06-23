@@ -7,8 +7,14 @@
 [Pr] ~ten >> ~te, ~test, ~tet, ~ten, ~tet, ~ten
 [Pr] ~en >> ~e, ~st, ~t, ~en, ~t, ~en
 
+[Part1] ~en >> ~end
+[Part2] sehen >> gesehen
+[Part2] ~en >> ge~t
+
 arbeiten = работать
+essen = кушать
 fahren = ездить
+freuen sich = радоваться
 heißen = называться
 gehen = идти
 hören = слушать
@@ -16,11 +22,13 @@ kommen = приходить
 können = мочь
 lernen = учиться
 lesen = читать
+machen = делать
 möchten = хотеть
 sagen = сказать
 schwimmen = плавать
 sein = быть
 spazieren = гулять
 spielen = играть
+stimmen = быть верным
 studieren = учиться
 verstehen = понимать

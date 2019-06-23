@@ -3,6 +3,7 @@
 #include <model/GrammarSet.h>
 #include <model/PrefixModel.h>
 #include <model/Tools.h>
+#include <QDebug>
 
 GrammarRule::GrammarRule( const QString& theRule )
 {
@@ -66,6 +67,11 @@ GrammarSet GrammarRule::Result() const
 
 bool GrammarRule::Match( const QString& theWord, const PrefixModel* thePrefixModel ) const
 {
+    if(theWord.endsWith(" sich"))
+    {
+        const_cast<QString&>(theWord) = theWord.left(theWord.size()-5).trimmed();
+    }
+
     bool isOK = myRule.exactMatch( theWord );
     if( isOK && myIsPrefix && thePrefixModel )
     {
@@ -95,7 +101,7 @@ GrammarSet GrammarRule::Forms( const QString& theWord, const PrefixModel* thePre
     GrammarSet aResult(myResult);
     for( uint i=0; i<myParts; i++ )
     {
-        QString aPlaceHolder = myRule.cap( i+1 );
+        QString aPlaceHolder = myRule.cap( static_cast<int>(i)+1 );
         aResult.ReplaceNext( aPlaceHolder );
     }
 

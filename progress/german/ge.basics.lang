@@ -2,26 +2,42 @@
 //! lang: de, ru
 //! category: basic
 
+ja = да
+nein = нет
+Hallo = привет
+Ciao = пока
+Tschüss = до свидания
+danke = спасибо
+
+
+auch = также
+auf = на
 aus = от, из
 beim = для
+bis = до
+in = в
+nicht = не
+oder = или
 seit = с
 und = и
-wer = кто
-was = какие, что
-wie = как
-wo = где
-woher = откуда
 wann = когда
 warum = почему
+was = какие, что
+wer = кто
 weshalb = почему, отчего
+wie = как
 wieso = почему, каким образом
-
+wo = где
+woher = откуда
+wow = вау
+zu = в
+zum = к
 
 
 ich = я
 du = ты
-[Dat] ich >> mir
-[Dat] du >> dir
+[Case] ich >> mir, mich
+[Case] du >> dir
 er = он
 sie = она
 es = оно
@@ -40,14 +56,3 @@ unser = наш
 [Fem] unser >> unsere
 euer = ваш
 [Fem] euer >> eure
-
-zu = в
-Hallo = привет
-Ciao = пока
-bis = до
-wow = вау
-zum = к
-in = в
-tschüss = до свидания
-auf = на
-danke = спасибо
