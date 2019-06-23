@@ -112,3 +112,28 @@ Friedrich: Danke mir auch, was machst du heute?
 Thomas: Ich gehe heute essen. Ich freue mich sehr auf eine gute Pizza.
 Friedrich: Ist Pizza dein Lieblingsessen?
 Thomas: Ja genau. Und was ist dein Lieblingsessen?
+
+
+Liebling = любимый
+Можно образовывать: Liebling + s + существительное
+das Lieblingsessen = любимая еда
+der Lieblingsfilm = любимый фильм (der Film = фильм)
+    аналогично:
+    das Buch (книга), die Zeitung (газета), der Autor (автор),
+    der Schauspieler (актер), das Spiel (игра).
+
+
+Kellner: Guten Tag, haben Sie sich schon entschieden?
+Gast: Hallo, ich brauche noch einen Moment.
+Gast: Ich habe mich entschieden. Ich würde gerne ein Wasser 
+      und die Nummer 10 bestellen.
+      Kann ich bitte die Rechnung bekommen?
+      Auf Wiedersehen.
+
+
+Артикли: der, die, das.
+
+der -- мужской род -- люди мужского рода, дни, месяцы, окончание -er;
+die -- женский род и множественное число -- 
+        люди женского рода, окончание -ung, -in;
+das -- средний род -- окончание -chen;
