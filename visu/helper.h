@@ -37,9 +37,15 @@ protected:
     void flush(bool isLoad);
 
 private:
+    struct FileData
+    {
+        QStringList Lines;
+        bool        Modified;
+    };
+
     QString                    myPath;
     QStringList                myFiles;
-    QMap<QString, QStringList> myData;
+    QMap<QString, FileData>    myData;
     QString                    myLanguage;
 };
 

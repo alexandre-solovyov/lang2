@@ -122,6 +122,7 @@ void TextModel::setFileName(QString theFileName)
 /**
  * @brief TextModel::load
  * Load the given file
+ * @return if the loading is successful
  */
 bool TextModel::load()
 {
@@ -282,6 +283,11 @@ QString TextModel::translation(QString theWord) const
     return aResult;
 }
 
+/**
+ * @brief TextModel::setAsKnownCpp
+ * Mark the word as known in the model
+ * @param theWord the word to mark as known
+ */
 void TextModel::setAsKnownCpp(QString theWord)
 {
     //qDebug() << theWord << theIndex;
@@ -302,33 +308,63 @@ void TextModel::setAsKnownCpp(QString theWord)
     emit nbUnknownChanged(myNbUnknown);
 }
 
+/**
+ * @brief TextModel::trim
+ * Get if the model applies trimming
+ * @return if the model applies trimming
+ */
+bool TextModel::trim() const
+{
+    return myItems.trim();
+}
+
+/**
+ * @brief TextModel::setTrim
+ * Set if the model applies trimming
+ * @param isTrim if the trimming should be applied
+ */
 void TextModel::setTrim(bool isTrim)
 {
     myItems.setTrim(isTrim);
     emit trimChanged(isTrim);
 }
 
+/**
+ * @brief TextModel::limit
+ * Get the limit of shown words in GUI
+ * @return the limit of shown words in GUI
+ */
+int TextModel::limit() const
+{
+    return myItems.limit();
+}
+
+/**
+ * @brief TextModel::setLimit
+ * Change the limit of shown words in GUI
+ * @param theLimit the new limit
+ */
 void TextModel::setLimit(int theLimit)
 {
     myItems.setLimit(theLimit);
     emit limitChanged(theLimit);
 }
 
-bool TextModel::trim() const
-{
-    return myItems.trim();
-}
-
-int TextModel::limit() const
-{
-    return myItems.limit();
-}
-
+/**
+ * @brief TextModel::language
+ * Get the associated language
+ * @return the associated language
+ */
 QString TextModel::language() const
 {
     return myLanguage;
 }
 
+/**
+ * @brief TextModel::setLanguage
+ * Change the associated language
+ * @param theLanguage the new associated language
+ */
 void TextModel::setLanguage(QString theLanguage)
 {
     qDebug() << "TextModel::setLanguage" << theLanguage;
@@ -343,6 +379,21 @@ void TextModel::setLanguage(QString theLanguage)
     emit languageChanged(myLanguage);
 }
 
+/**
+ * @brief TextModel::progressPath
+ * Get the associated path with files of progress
+ * @return the progress path
+ */
+QString TextModel::progressPath() const
+{
+    return myProgressPath;
+}
+
+/**
+ * @brief TextModel::setProgressPath
+ * Change the associated path with files of progress
+ * @param theProgressPath the new progress path
+ */
 void TextModel::setProgressPath(QString theProgressPath)
 {
     qDebug() << "TextModel::setProgressPath" << theProgressPath;
@@ -355,6 +406,21 @@ void TextModel::setProgressPath(QString theProgressPath)
     emit progressPathChanged(myProgressPath);
 }
 
+/**
+ * @brief TextModel::textPath
+ * Get the associated path with files of texts
+ * @return the texts path
+ */
+QString TextModel::textPath() const
+{
+    return myTextPath;
+}
+
+/**
+ * @brief TextModel::setTextPath
+ * Change the associated path with files of texts
+ * @param theTextPath the new texts path
+ */
 void TextModel::setTextPath(QString theTextPath)
 {
     qDebug() << "TextModel::setTextPath" << theTextPath;
@@ -367,16 +433,11 @@ void TextModel::setTextPath(QString theTextPath)
     emit textPathChanged(myTextPath);
 }
 
-QString TextModel::progressPath() const
-{
-    return myProgressPath;
-}
-
-QString TextModel::textPath() const
-{
-    return myTextPath;
-}
-
+/**
+ * @brief TextModel::nbUnknown
+ * Get number of unknown words in the model
+ * @return the number of unknown words
+ */
 int TextModel::nbUnknown() const
 {
     return myNbUnknown;

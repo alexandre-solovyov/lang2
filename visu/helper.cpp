@@ -2,26 +2,40 @@
 #include <QDir>
 #include <QDebug>
 
+/**
+ * @brief Helper::Helper
+ * Constructor
+ * @param theParent the parent object
+ */
 Helper::Helper(QObject* theParent)
     : QObject(theParent)
 {
 }
 
+/**
+ * @brief Helper::~Helper
+ * Destructor
+ */
 Helper::~Helper()
 {
     flush(false);
 }
 
+/**
+ * @brief Helper::path
+ * Get the controlled folder's path
+ * @return the controlled folder's path
+ */
 QString Helper::path() const
 {
     return myPath;
 }
 
-QStringList Helper::categories() const
-{
-    return myData.keys();
-}
-
+/**
+ * @brief Helper::setPath
+ * Change the controlled path
+ * @param thePath the new controlled path
+ */
 void Helper::setPath(QString thePath)
 {
     qDebug() << "Helper::setPath" << thePath;
@@ -41,6 +55,21 @@ void Helper::setPath(QString thePath)
     emit categoriesChanged(myData.keys());
 }
 
+/**
+ * @brief Helper::categories
+ * Get the categories (corresponding to files)
+ * @return the categories
+ */
+QStringList Helper::categories() const
+{
+    return myData.keys();
+}
+
+/**
+ * @brief Helper::flush
+ * Synchronize the internal (memory) data structures with the files contents
+ * @param isLoad if the data should be loaded (true) or saved (false)
+ */
 void Helper::flush(bool isLoad)
 {
     if(isLoad)
@@ -49,27 +78,41 @@ void Helper::flush(bool isLoad)
     foreach(QString aFileName, myFiles)
     {
         QString aCategory = category(aFileName);
-        QStringList& aFileData = myData[aCategory];
+        FileData& aFileData = myData[aCategory];
         QFile aFile( myPath + "/" + aFileName );
         QFile::OpenMode aMode = (isLoad ? QIODevice::ReadOnly : QIODevice::WriteOnly)
-                                | QIODevice::Text;
-        if( aFile.open(aMode) )
+                | QIODevice::Text;
+        if(isLoad)
         {
-            if(isLoad)
+            if( aFile.open(aMode) )
             {
                 QString aTextData = aFile.readAll();
-                aFileData = aTextData.split("\n", QString::KeepEmptyParts);
+                aFileData.Lines = aTextData.split("\n", QString::KeepEmptyParts);
+                aFileData.Modified = false;
+                aFile.close();
             }
-            else {
-                QString aTextData = aFileData.join("\n");
-                aFile.write(aTextData.toUtf8());
-            }
-            aFile.close();
         }
-        myData[aCategory] = aFileData;
+        else
+        {
+            if(aFileData.Modified)
+            {
+                if( aFile.open(aMode) )
+                {
+                    QString aTextData = aFileData.Lines.join("\n");
+                    aFile.write(aTextData.toUtf8());
+                    aFile.close();
+                }
+            }
+        }
     }
 }
 
+/**
+ * @brief Helper::category
+ * Determine the name of category on the base of name of file
+ * @param theFileName the name of the file
+ * @return the category's name
+ */
 QString Helper::category(QString theFileName) const
 {
     QStringList parts = theFileName.split(".", QString::KeepEmptyParts);
@@ -81,14 +124,27 @@ QString Helper::category(QString theFileName) const
     return aCategory;
 }
 
+/**
+ * @brief Helper::isSorted
+ * Determine if the category is sorted
+ * @param theCategory the name of the category
+ * @return if the category is sorted
+ */
 bool Helper::isSorted(QString theCategory) const
 {
     return theCategory=="adjectives" || theCategory=="verbs"
-           || theCategory=="adverbs"
-           || (theCategory=="nouns" && myLanguage!="de")
-        ;
+            || theCategory=="adverbs"
+            || (theCategory=="nouns" && myLanguage!="de")
+            ;
 }
 
+/**
+ * @brief Helper::insert
+ * Insert a new line into a category
+ * @param theIndex the category's index
+ * @param theWord the new word to insert
+ * @param theTranslation the translation of the word
+ */
 void Helper::insert(int theIndex, QString theWord, QString theTranslation)
 {
     //qDebug() << theIndex << theWord << theTranslation;
@@ -100,7 +156,11 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
     QString aNewLine = theWord;
     if(!theTranslation.isEmpty())
         aNewLine = aNewLine + " = " + theTranslation;
-    QStringList& data = myData[aCategory];
+
+    FileData& fdata = myData[aCategory];
+    QStringList& data = fdata.Lines;
+    fdata.Modified = true;
+
     if(isSorted(aCategory))
     {
         QString prev;
@@ -117,7 +177,6 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
                 prev = cur;
             }
         }
-
         data.append(aNewLine);
     }
     else
@@ -129,11 +188,21 @@ void Helper::insert(int theIndex, QString theWord, QString theTranslation)
     }
 }
 
+/**
+ * @brief Helper::language
+ * Get the associated language
+ * @return the associated language
+ */
 QString Helper::language() const
 {
     return myLanguage;
 }
 
+/**
+ * @brief Helper::setLanguage
+ * Change the associated language
+ * @param theLanguage the new associated language
+ */
 void Helper::setLanguage(QString theLanguage)
 {
     qDebug() << "Helper::setLanguage";
@@ -147,6 +216,12 @@ void Helper::setLanguage(QString theLanguage)
     emit languageChanged(myLanguage);
 }
 
+/**
+ * @brief Helper::extLanguage
+ * Determine the extended language name from its code
+ * @param theLanguage the language code
+ * @return the extended language name
+ */
 QString Helper::extLanguage(QString theLanguage)
 {
     static QMap<QString, QString> languageCodes;

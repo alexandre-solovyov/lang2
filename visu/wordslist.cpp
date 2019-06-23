@@ -14,37 +14,66 @@ WordInfo::WordInfo(QString theText, QString theTranslation, bool isWord, bool is
 {
 }
 
+/**
+ * @brief WordsList::WordsList
+ * Constructor
+ */
 WordsList::WordsList()
     : myTrim(false), myLimit(0), myNbWords(0)
 {
 }
 
-void WordsList::setTrim(bool trim)
-{
-    if (myTrim == trim)
-        return;
-
-    myTrim = trim;
-}
-
-void WordsList::setLimit(int limit)
-{
-    if (myLimit == limit)
-        return;
-
-    myLimit = limit;
-}
-
+/**
+ * @brief WordsList::trim
+ * Get if the list applies trimming
+ * @return if the list applies trimming
+ */
 bool WordsList::trim() const
 {
     return myTrim;
 }
 
+/**
+ * @brief WordsList::setTrim
+ * Set if the list applies trimming
+ * @param isTrim if the trimming should be applied
+ */
+void WordsList::setTrim(bool isTrim)
+{
+    if (myTrim == isTrim)
+        return;
+
+    myTrim = isTrim;
+}
+
+/**
+ * @brief WordsList::limit
+ * Get the limit of included words
+ * @return the limit of included words
+ */
 int WordsList::limit() const
 {
     return myLimit;
 }
 
+/**
+ * @brief TextModel::setLimit
+ * Change the limit of included words
+ * @param theLimit the new limit of included words
+ */
+void WordsList::setLimit(int theLimit)
+{
+    if (myLimit == theLimit)
+        return;
+
+    myLimit = theLimit;
+}
+
+/**
+ * @brief WordsList::append
+ * Append a new word information to the list
+ * @param theWordInfo the word information to append
+ */
 void WordsList::append(WordInfo theWordInfo)
 {
     bool canAppend = !myTrim;
@@ -59,6 +88,11 @@ void WordsList::append(WordInfo theWordInfo)
     }
 }
 
+/**
+ * @brief WordsList::nbUnknown
+ * Get number of unknown words in the list
+ * @return the number of unknown words
+ */
 int WordsList::nbUnknown() const
 {
     int aNbUnknown = 0;
