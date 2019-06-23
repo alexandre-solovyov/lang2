@@ -78,6 +78,9 @@ Was arbeitest du?
     Ich bin ein Autor.
     Ich bin eine Autorin.
 
+Окончание мужского рода -er
+Окончание женского рода -in
+
 
 die Hobbys:
     lesen = читать
@@ -88,3 +91,24 @@ die Hobbys:
     und so weiter = и так далее
 
 Deutsch ist meine muttersprache = Немецкий -- мой родной язык.
+
+
+
+
+---  die Fragen = вопросы  ---
+Der Baum ist grün.
+Ist der Baum grün?
+Der Baum ist grün, oder?
+
+Er kommt aus Spanien.
+Kommt er aus Spanien?
+
+
+
+---  die Dialoge  ---
+Friedrich: Hey Thomas, lang nicht mehr gesehen. Wie geht's?
+Thomas: Hey Friedrich, stimmt. Mir geht es sehr gut und dir?
+Friedrich: Danke mir auch, was machst du heute?
+Thomas: Ich gehe heute essen. Ich freue mich sehr auf eine gute Pizza.
+Friedrich: Ist Pizza dein Lieblingsessen?
+Thomas: Ja genau. Und was ist dein Lieblingsessen?
