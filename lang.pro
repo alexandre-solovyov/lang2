@@ -1,6 +1,6 @@
 
 TEMPLATE = subdirs
 #SUBDIRS += model tests analysis db families visu gui
-SUBDIRS += model visu
+SUBDIRS += model tests visu
 CONFIG += ordered
 

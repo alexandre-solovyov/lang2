@@ -14,12 +14,12 @@ Window {
 
     TextModel {
         id: modelId;
-        language: "de";
-        fileName: "1_course_beginner.txt";
-        /*language: "en";
+        /*language: "de";
+        fileName: "1_course_beginner.txt";*/
+        language: "en";
         fileName: "5_Baum_Oz_1.txt";
         trim: true;
-        limit: 1000;*/
+        limit: 1000;
 
         function setAsKnown(text, index) {
             setAsKnownCpp(text, index);

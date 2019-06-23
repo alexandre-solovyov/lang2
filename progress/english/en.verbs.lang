@@ -23,6 +23,7 @@
 [Past] blow >> blew
 [Past] bring >> brought
 [Past] can >> cannot, could
+[Past] catch >> caught
 [Past] ~come >> ~came
 [Past] do >> did, done
 [Past] eat >> ate, eaten
@@ -36,11 +37,14 @@
 [Past] have >> had
 [Past] hear >> heard
 [Past] hold >> held
+[Past] keep >> kept
 [Past] know >> knew, known
+[Past] leave >> left
 [Past] lose >> lost
 [Past] meet >> met
 [Past] make >> made
 [Past] pay >> paid
+[Past] rise >> rose, risen
 [Past] run >> ran
 [Past] say >> said
 [Past] see >> saw, seen
@@ -53,6 +57,7 @@
 [Past] tell >> told
 [Past] throw >> threw
 [Past] win >> won
+[Past] write >> wrote, written
 [Past] ~ap >> ~apped
 [Past] ~op >> ~opped
 [Past] ~ep >> ~epped
@@ -93,9 +98,11 @@ check = проверять
 cheer = ободрять
 choose = выбирать
 clean = чистить
+climb = взбираться
 close = закрыть
 come = приходить
 confuse = сбивать с толку
+contain = содержать
 cook = готовить еду
 count = подсчитывать
 cover = накрывать
@@ -127,15 +134,21 @@ fasten = пристегнуть
 fight = бороться
 follow = следовать
 forget = забыть
+frighten = пугать
 go = идти
+grant = даровать
 hate = ненавидеть
 hide = скрыть
 hurt = причинить боль
 imitate = имитировать
+keep = держать
 kiss = целовать
 laugh = смеяться
+launch = запускать
+leave = оставлять
 listen = слушать
 obey = повиноваться
+paint = красить
 play = играть
 promise = обещать
 protect = защитить
@@ -144,6 +157,8 @@ put = ставить
 return = вернуться
 rise = подниматься
 save = спасти
+scream = кричать
+search = искать
 sew = шить
 shoot = стрелять
 shout = кричать
@@ -218,6 +233,7 @@ punish = наказать
 quiet = успокаивать
 reach = достичь
 receive = получать
+rise = подниматься
 run = бежать
 sail = плавать
 say = сказать
@@ -261,3 +277,4 @@ wonder = удивляться, интересоваться
 [Adje] wonder >> wonderful, wonderfully
 work = работать
 wrap = заворачивать
+write = писать

@@ -21,6 +21,7 @@ December = декабрь
 //! ignore:
 
 [Pl] child >> children
+[Adj] child >> childish
 [Pl] foot >> feet
 [Pl] man >> men
 [Pl] mage >> magi
@@ -28,6 +29,7 @@ December = декабрь
 [Pl] woman >> women
 [Pl] tooth >> teeth
 [Pl] ~ay >> ~ays
+[Pl] ~ey >> ~eys
 [Pl] ~oy >> ~oys
 [Pl] ~y >> ~ies
 [Pl] ~sh >> ~shes
@@ -36,6 +38,7 @@ December = декабрь
 
 
 adventure = приключение
+age = возраст
 air = воздух
 alarm = тревога
 anger = гнев
@@ -53,6 +56,7 @@ bath = ванна
 bay = залив
 beam = луч
 beard = борода
+beast = зверь
 beauty = красота
 [Adje] beauty >> beautiful
 bear = медведь
@@ -76,10 +80,13 @@ cap = кепка
 captain = капитан
 care = забота
 [Adje] care >> careful
+case = случай
 cellar = погреб
 cent = цент
+center = центр
 ceremony = обряд
 chain = цепь
+chair = стул
 chamber = камера, комната
 chapter = глава (в книге)
 cheek = щека
@@ -109,9 +116,11 @@ countryside = сельская местность
 courage = мужество
 [Adje] courage >> courageous, courageously
 cow = корова
+creation = создание
 creature = существо
 crocodile = крокодил
 crow = ворона
+cupboard = шкаф
 curiosity = любопытство
 cyclone = циклон
 daughter = дочь
@@ -119,6 +128,7 @@ day = день
 destination = пункт назначения
 dinner = обед
 direction = направление
+discovery = открытие
 dish = блюдо
 dog = собака
 dollar = доллар
@@ -160,16 +170,19 @@ fun = удовольствие
 game = игра
 garden = сад
 gate = ворота
+generation = поколение
 girl = девочка
 god = бог
 grass = трава
 guardian = охранник
 hair = волосы
 haircut = стрижка
+halfway = на полпути
 hall = холл
 hat = шапка
 head = голова
 heart = сердце
+heartache = боль в сердце
 hero = герой
 hole = отверстие
 hook = крюк
@@ -185,10 +198,13 @@ hare = заяц
 hand = рука (кисть)
 honor = честь
 hour = час
+human = человек
+humbug = шарлатанство
 humor = юмор
 husband = муж
 idea = идея
 idiot = идиот
+incident = происшествие
 interest = интерес
 introduction = введение
 island = остров
@@ -209,6 +225,7 @@ leg = нога
 legend = легенда
 length = длина
 letter = письмо
+library = библиотека
 life = жизнь
 light = свет
 lion = лев
@@ -224,6 +241,7 @@ material = материал
 matter = сущность
 meat = мясо
 mermaid = русалка
+middle = середина
 mile = миля
 mind = разум
 minute = минута
@@ -261,6 +279,7 @@ piece = кусок
 pirate = пират
 plank = доска
 poppy = мак
+prairie = прерия
 prayer = молитва
 prisoner = заключенный
 pyjama = пижама
@@ -279,12 +298,14 @@ scarecrow = страшила
 school = школа
 sea = море
 second = секунда
+series = серия
 shade = тень
 shadow = тень
 shine = блеск
 ship = корабль
 shoulder = плечо
 shop = магазин
+side = сторона
 sight = взгляд, вид
 sign = знак
 sir = сэр
@@ -293,6 +314,7 @@ sky = небо
 soap = мыло
 son = сын
 sound = звук
+south = юг
 spirit = дух
 spring = весна
 stay-at-home = домосед
@@ -332,6 +354,7 @@ value = ценность
 [Adje] value >> valuable
 vanity = суета
 voice = голос
+wagon = вагон
 wake = разбудить
 wall = стена
 warmth = тепло
@@ -342,6 +365,7 @@ way = путь
 wedding = свадьба
 week = неделя
 weight = вес
+whirlwind = вихрь
 witch = ведьма
 wizard = волшебник
 woman = женщина
@@ -352,3 +376,4 @@ wife = жена
 wind = ветер
 window = окно
 year = год
+youngster = юнец

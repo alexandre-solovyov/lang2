@@ -8,15 +8,24 @@
 [Pr] ~en >> ~e, ~st, ~t, ~en, ~t, ~en
 
 [Part1] ~en >> ~end
+[Part2] entscheiden >> entschieden
 [Part2] sehen >> gesehen
 [Part2] ~en >> ge~t
+
+[Konj2] werden >> würde, würdest, würde, würden, würdet, würden
+
+
 
 arbeiten = работать
 bekommen = получить
 bestellen = заказать
+brauchen = нуждаться
+denken = думать
+entscheiden = решить
 essen = кушать
 fahren = ездить
 freuen sich = радоваться
+haben = иметь
 heißen = называться
 gehen = идти
 hören = слушать
@@ -33,4 +42,7 @@ spazieren = гулять
 spielen = играть
 stimmen = быть верным
 studieren = учиться
+trinken = пить
 verstehen = понимать
+werden = стать
+wohnen = жить

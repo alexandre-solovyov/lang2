@@ -137,3 +137,11 @@ der -- мужской род -- люди мужского рода, дни, ме
 die -- женский род и множественное число -- 
         люди женского рода, окончание -ung, -in;
 das -- средний род -- окончание -chen;
+
+Спряжение глаголов:
+
+Denken: Ich denke, du denkst, er denkt, wir denken, ihr denkt, sie denken.
+Trinken: Ich trinke, du trinkst, er trinkt, wir trinken, ihr trinkt, sie trinken.
+Wohnen: Ich wohne, du wohnst, er wohnt, wir wohnen, ihr wohnt, sie wohnen.
+
+Sein: Ich bin, du bist, er ist, wir sind, ihr seid, sie sind;
