@@ -25,6 +25,7 @@
 [Past] can >> cannot, could
 [Past] catch >> caught
 [Past] ~come >> ~came
+[Past] dig >> dug
 [Past] do >> did, done
 [Past] eat >> ate, eaten
 [Past] fall >> fell, fallen
@@ -40,11 +41,12 @@
 [Past] keep >> kept
 [Past] know >> knew, known
 [Past] leave >> left
+[Past] lead >> led
 [Past] lose >> lost
 [Past] meet >> met
 [Past] make >> made
 [Past] pay >> paid
-[Past] rise >> rose, risen
+[Past] ~rise >> ~rose, ~risen
 [Past] run >> ran
 [Past] say >> said
 [Past] see >> saw, seen
@@ -55,6 +57,7 @@
 [Past] stand >> stood
 [Past] take >> took, taken
 [Past] tell >> told
+[Past] think >> thought
 [Past] throw >> threw
 [Past] win >> won
 [Past] write >> wrote, written
@@ -71,8 +74,10 @@ amaze = изумлять
 amend = исправлять
 answer = отвечать
 appear = появляться
+arise = возникать
 arrive = прибывать
 ask = просить
+aspire = стремиться
 astonish = удивлять
 attack = атаковать
 bark = лаять
@@ -97,6 +102,7 @@ change = менять
 check = проверять
 cheer = ободрять
 choose = выбирать
+class = классифицировать
 clean = чистить
 climb = взбираться
 close = закрыть
@@ -112,15 +118,20 @@ dance = танцевать
 dash = бросаться, нестись
 decide = принимать решение
 delight = наслаждаться
+devise = разработать
 die = умереть
+dig = копать
+dispense = распределять
 dispute = спорить
 do = делать
 doubt = сомневаться
 drag = тащить
 dream = мечтать
 dress = одевать
+drop = падать
 dry = сушить
 eat = кушать
+eliminate = устранить
 embrace = обнимать
 enter = войти
 escape = сбежать
@@ -141,12 +152,14 @@ hate = ненавидеть
 hide = скрыть
 hurt = причинить боль
 imitate = имитировать
+include = включать
 keep = держать
 kiss = целовать
 laugh = смеяться
 launch = запускать
 leave = оставлять
 listen = слушать
+modernize = модернизировать
 obey = повиноваться
 paint = красить
 play = играть
@@ -154,11 +167,18 @@ promise = обещать
 protect = защитить
 push = толкать
 put = ставить
+raise = поднять
+remain = оставаться
+retain = сохранить
 return = вернуться
+ride = ехать
 rise = подниматься
+rock = качать
 save = спасти
 scream = кричать
 search = искать
+seek = искать
+serve = служить
 sew = шить
 shoot = стрелять
 shout = кричать
@@ -170,6 +190,7 @@ stay = остаться
 surprise = удивлять
 swim = плавать
 teach = учить
+tip = наклонять
 tire = устать
 unfasten = отстегнуть
 fill = наполнять
@@ -228,6 +249,7 @@ pass = проходить
 pay = платить
 plan = планировать
 place = размещать
+play = играть
 pull = вытащить
 punish = наказать
 quiet = успокаивать

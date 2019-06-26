@@ -3,6 +3,7 @@
 //! category: adjectives
 
 [Adv] ~y >> ~ily
+[Adv] sole >> solely
 [Adv] ~le >> ~ly
 [Adv] ~ >> ~ly
 [Deg] ~ >> ~er, ~est
@@ -29,6 +30,7 @@ common = общий
 complete = полный
 coward = трусливый
 cruel = жестокий
+curdling = леденящий
 curly = кудрявый
 dainty = изысканный
 danger = опасный
@@ -40,6 +42,7 @@ deep = глубокий
 desolate = заброшенный
 different = отличающийся
 difficult = трудный
+disagreeable = неприятный
 discontented = недовольный
 eager = нетерпеливый
 easy = легкий
@@ -51,7 +54,9 @@ every = каждый
 everyday = повседневный
 exact = точный
 fair = справедливый
+fantastic = фантастический
 fast = быстрый
+fearsome = грозный
 final = финальный
 fine = утонченный
 firm = твердый
@@ -72,6 +77,7 @@ happy = счастливый
 hard = жесткий
 haughty = надменный
 healthy = здоровый
+high = высокий
 historical = исторический
 horrible = ужасный
 horrid = противный
@@ -81,6 +87,7 @@ immediate = немедленный
 important = важный
 incredible = невероятный
 indian = индийский
+instinctive = инстинктивный
 intelligent = умный
 kind = добрый
 large = крупный
@@ -95,6 +102,8 @@ loose = свободный
 loud = громкий
 lovely = прекрасный
 magic = магический
+manifestly = явный
+marvelous = чудесный
 modern = современный
 most = самый
 narrow = узкий
@@ -136,7 +145,9 @@ slight = небольшой
 slow = медленный
 small = маленький
 soft = мягкий
+sole = единственный
 sorry = сожалеющий
+stereotyped = стереотипный
 strange = странный
 strong = сильный
 such = такой
@@ -151,6 +162,7 @@ tight = плотный
 tiny = крошечный
 ugly = некрасивый
 unparalleled = беспримерный
+unreal = нереальный
 usual = обычный
 vain = тщеславный
 warm = теплый
