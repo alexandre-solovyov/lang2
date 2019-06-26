@@ -18,10 +18,15 @@ protected:
 
     void split(const QStringList&);
     QString join() const;
-    void appendGroup(const QStringList&);
+    void appendGroup(const QStringList&, const bool isSortable);
 
 private:
-    QList<QStringList> myGroups;
+    struct Group
+    {
+        QStringList Lines;
+        bool        IsSortable;
+    };
+    QList<Group> myGroups;
 };
 
 #endif // SORTTOOL_H

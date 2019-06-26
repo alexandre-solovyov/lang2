@@ -53,33 +53,44 @@ bool SortTool::save(QString theFileName)
 void SortTool::split(const QStringList& theLines)
 {
     QStringList aGroup;
+    bool isSortable = true;
 
     myGroups.clear();
     foreach(QString aLine, theLines)
     {
         if(aLine.isEmpty())
         {
-            appendGroup(aGroup);
+            appendGroup(aGroup, isSortable);
             aGroup.clear();
+            isSortable = true;
         }
         else
+        {
             aGroup.append(aLine);
+            if(aLine.contains('[') || aLine.contains('~') || aLine.contains('~'))
+                isSortable = false;
+        }
     }
-    appendGroup(aGroup);
+    appendGroup(aGroup, isSortable);
 }
 
-void SortTool::appendGroup(const QStringList& theGroup)
+void SortTool::appendGroup(const QStringList& theGroup, const bool isSortable)
 {
     if(!theGroup.isEmpty())
-        myGroups.append(theGroup);
+    {
+        Group aGroup;
+        aGroup.Lines = theGroup;
+        aGroup.IsSortable = isSortable;
+        myGroups.append(aGroup);
+    }
 }
 
 QString SortTool::join() const
 {
     QString aResult;
-    foreach(const QStringList& aGroup, myGroups)
+    foreach(const Group& aGroup, myGroups)
     {
-        aResult += aGroup.join("\n");
+        aResult += aGroup.Lines.join("\n");
         aResult += "\n\n";
     }
     aResult = aResult.trimmed();
@@ -107,6 +118,24 @@ void clean(QString& theWord)
     theWord = theWord.trimmed();
 }
 
+QChar Std(const QChar& c, const QString& s)
+{
+    if(c>='a' && c<='z')
+        return c;
+    if(c>=u'а' && c<=u'я')
+        return c;
+    if(c.isSpace() || c=='/' || c=='!' || c=='=')
+        return c;
+
+    if(c==u'é' || c==u'ê' || c==u'è')
+        return 'e';
+    if(c==u'î')
+        return 'i';
+
+    qDebug() << "Special not treated:" << QString(c) << s;
+    return c;
+}
+
 bool compareWords(const QString& theFirst, const QString& theSecond)
 {
     QString aFirst = theFirst;
@@ -114,11 +143,23 @@ bool compareWords(const QString& theFirst, const QString& theSecond)
     QString aSecond = theSecond;
     clean(aSecond);
     //qDebug() << aFirst << aSecond;
-    return aFirst < aSecond;
+
+    for(int i=0, n=qMin(aFirst.size(), aSecond.size()); i<n; i++)
+    {
+        QChar c1 = Std(aFirst[i], aFirst);
+        QChar c2 = Std(aSecond[i], aSecond);
+        if(c1 < c2)
+            return true;
+        else if(c1 > c2)
+            return false;
+    }
+
+    return aFirst.size() < aSecond.size();
 }
 
 void SortTool::sort()
 {
     for(int i=0, n=myGroups.size(); i<n; i++)
-        std::sort(myGroups[i].begin(), myGroups[i].end(), compareWords);
+        if(myGroups[i].IsSortable)
+            std::sort(myGroups[i].Lines.begin(), myGroups[i].Lines.end(), compareWords);
 }

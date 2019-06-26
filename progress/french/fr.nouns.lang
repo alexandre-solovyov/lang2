@@ -2,10 +2,10 @@
 //! ignore: une, un
 //! lang: fr, ru
 
-[NomPl] ~ >> ~s
 [NomPl] ~eau >> ~eaux
 [NomPl] ~eu >> ~eux
 [NomPl] ~s >> ~s
+[NomPl] ~ >> ~s
 
 *une abondance = изобилие
 *un accompagnement = сопровождение
@@ -34,17 +34,17 @@
 *une chambre = комната
 *une chance = удача
 *une Chandeleur = Сретение
+*une chèvre = коза
 *un choix = выбор
 *une chose = вещь
-*une chèvre = коза
 *une circulation = оборот, обращение
 *une classe = класс
 *un classement = классификация
 *un colis = ящик
 *une commande = заказ
 *une compagnie = компания, фирма
-*une composition = составление, состав
 *une compétition = соревнование
+*une composition = составление, состав
 *un concert = концерт
 *une concurrence = конкуренция
 *une conjugaison = спряжение
@@ -55,25 +55,30 @@
 *un courrier = курьер, почта
 *un cours = занятия, течение
 *une crêpe = блин
-*une destination = назначение
 *un début = начало
 *un défilé = шествие
 *une dégustation = дегустация
+*une destination = назначение
+*un écho = отголосок
+*une école = школа
 en effet = действительно
 *un effet = эффект
+*un égouttage = стекание
+*une époque = эпоха
 *une escroquerie = мошенничество
 *un espoir = надежда
+*un évêque = епископ
 *un examen = экзамен
 *un exemple = пример
 *une fabrication = производство
 *un fait = факт
+*une fête = праздник
 *un feu = огонь
 *une feuille = лист
 *une fierté = гордость
 *une fin = конец
 *un fleuron = цветок, украшение
 *un fromage = сыр
-*une fête = праздник
 *une garantie = гарантия
 *un goût = вкус, стиль
 *une grammaire = грамматика
@@ -115,37 +120,37 @@ en effet = действительно
 *un plateau = поднос, плоскогорье
 *un port = порт
 *une porte = дверь
+*une préservation = предохранение
 *un pressage = прессование
 *un principe = принцип
 *un prix = цена
 *un problème = проблема
 *une production = производство
 *une programme = программа
-*une préservation = предохранение
 *un quartier = квартал
 *une question = вопрос
 *une radio = радио
 *une raison = довод, разум
 *un rayon = луч, полка
 *un record = рекорд
+*une région = область
+*une règle = правило
 *une rentrée = возвращение
 *un repas = еда
 *un restaurant = ресторан
 *un retard = опоздание
-*une règle = правило
-*une règle = правило
-*une région = область
 *un salage = соление
-*une science = наука
 *une scène = сцена
+*une science = наука
 *un secret = секрет
 *un service = служба
-*un sigle = аббревиатура
 *un siècle = век
+*un sigle = аббревиатура
 *une sorte = род
 *un style = стиль
 *un symbole = символ
 *un tableau = картина
+*une télé = телевидение
 *un territoire = территория
 *un terroir = почва
 *une tour = башня
@@ -156,7 +161,6 @@ en effet = действительно
 *un travail = работа
 *un triomphe = триумф
 *un type = тип
-*une télé = телевидение
 *une vacance = вакансия
 *des vacances = каникулы
 *une variété = разнообразие
@@ -164,11 +168,6 @@ en effet = действительно
 *un verre = стекло, стакан
 *une vitesse = скорость
 *une zone = зона
-*un écho = отголосок
-*une école = школа
-*un égouttage = стекание
-*une époque = эпоха
-*un évêque = епископ
 
 Allemagne = Германия
 Belgique = Бельгия
